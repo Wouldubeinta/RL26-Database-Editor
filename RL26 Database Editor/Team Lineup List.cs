@@ -112,8 +112,7 @@ namespace RL26_Database_Editor
                 int index1 = dataGridView1.CurrentCell.RowIndex;
                 int index2 = MainDataGridView2.CurrentCell.RowIndex;
 
-                Global.team[Team_Index].lineups[index2].lineupId = Convert.ToInt32(dataGridView1.Rows[index1].Cells[2].Value);
-                Global.team[Team_Index].lineups[index2].shirtNumber = Convert.ToByte(dataGridView1.Rows[index1].Cells[1].Value);
+                Global.team[Team_Index].lineups[index2].lineupId = Convert.ToInt32(dataGridView1.Rows[index1].Cells[1].Value);
 
                 Lineup();
 

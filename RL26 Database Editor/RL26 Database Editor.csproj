@@ -44,13 +44,13 @@
 
   <ItemGroup>
     <None Update="commentary_data\dialogue_wildcardhash_surnames">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="commentary_data\dialogue_wildcardhash_teamslocation">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="commentary_data\dialogue_wildcardhash_teamsmascot">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="defaultdata\defaultdata_clubs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

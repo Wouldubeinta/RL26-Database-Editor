@@ -1203,7 +1203,7 @@ namespace RL26_Database_Editor
             {
                 int rowIndex = lineup_dataGridView.CurrentCell.RowIndex;
 
-                int playerID = Convert.ToInt32(lineup_dataGridView.Rows[rowIndex].Cells[1].Value);
+                int playerID = Convert.ToInt32(lineup_dataGridView.Rows[rowIndex].Cells[2].Value);
                 Global.player_index = SearchID.PlayersIndex(playerID);
 
                 Player_Editor form = new(Players_dgv);

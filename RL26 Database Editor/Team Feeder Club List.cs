@@ -28,8 +28,8 @@ namespace RL26_Database_Editor
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Team Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Team ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Index", Type.GetType("System.Int32"));
+                dt.Columns.Add("Team Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("Location Name", Type.GetType("System.String"));
                 dt.Columns.Add("Club Name", Type.GetType("System.String"));
                 int index = -1;
@@ -40,8 +40,8 @@ namespace RL26_Database_Editor
                     {
                         index++;
                         dt.Rows.Add();
-                        dt.Rows[dt.Rows.Count - 1]["Team Index"] = index;
-                        dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[i].id;
+                        dt.Rows[dt.Rows.Count - 1]["Index"] = index;
+                        dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id;
                         dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                         dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
                     }
@@ -49,8 +49,8 @@ namespace RL26_Database_Editor
                     {
                         index++;
                         dt.Rows.Add();
-                        dt.Rows[dt.Rows.Count - 1]["Team Index"] = index;
-                        dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[i].id;
+                        dt.Rows[dt.Rows.Count - 1]["Index"] = index;
+                        dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id;
                         dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                         dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
                     }
@@ -173,7 +173,7 @@ namespace RL26_Database_Editor
                     dt = new DataTable();
 
                     dt.Columns.Add("FeederClubs Index", Type.GetType("System.Int32"));
-                    dt.Columns.Add("Team ID", Type.GetType("System.Int32"));
+                    dt.Columns.Add("Team Id", Type.GetType("System.Int32"));
                     dt.Columns.Add("Location Name", Type.GetType("System.String"));
                     dt.Columns.Add("Club Name", Type.GetType("System.String"));
 
@@ -182,7 +182,7 @@ namespace RL26_Database_Editor
                         int selectedIndex = SearchID.TeamsIndex(Global.team[Team_Index].feederClubs[i].feederClubsId);
                         dt.Rows.Add();
                         dt.Rows[dt.Rows.Count - 1]["FeederClubs Index"] = i;
-                        dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[Team_Index].feederClubs[i].feederClubsId;
+                        dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[Team_Index].feederClubs[i].feederClubsId;
                         dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[selectedIndex].locationName;
                         dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[selectedIndex].clubName;
                     }

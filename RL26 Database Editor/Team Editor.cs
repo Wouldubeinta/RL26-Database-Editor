@@ -6,16 +6,16 @@ namespace RL26_Database_Editor
 {
     public partial class Team_Editor : Form
     {
-        private readonly DataGridView Teams_dataGridView;
-        private readonly DataGridView Players_dataGridView;
+        private readonly DataGridView Teams_dgv;
+        private readonly DataGridView Players_dgv;
         private Dialogue_Wildcardhash.WildcardHash[]? commentaryLocation = null;
         private Dialogue_Wildcardhash.WildcardHash[]? commentaryMascot = null;
 
-        public Team_Editor(DataGridView Teams_dataGridView, DataGridView Players_dataGridView)
+        public Team_Editor(DataGridView Teams_dgv, DataGridView Players_dgv)
         {
             InitializeComponent();
-            this.Teams_dataGridView = Teams_dataGridView;
-            this.Players_dataGridView = Players_dataGridView;
+            this.Teams_dgv = Teams_dgv;
+            this.Players_dgv = Players_dgv;
         }
 
         private DataTable? Playersdt = null;
@@ -80,8 +80,8 @@ namespace RL26_Database_Editor
             string Logo = Global.currentPath + @"\Logos\" + Global.team[Team_Index].logo + ".pc.png";
             if (File.Exists(Logo))
             {
-                pictureBox.ImageLocation = Logo;
-                pictureBox1.ImageLocation = Logo;
+                largeLogo_pictureBox.ImageLocation = Logo;
+                smallLogo_pictureBox.ImageLocation = Logo;
             }
 
             isFrontendVisible_checkBox.Checked = Global.team[Team_Index].frontendVisible;
@@ -136,13 +136,13 @@ namespace RL26_Database_Editor
 
             TeamPlayerAmount_textBox.Text = Global.team[Team_Index].playerAmount.ToString();
 
-            dataGridView1.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView1_CellValueChanged);
-            dataGridView2.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView2_CellValueChanged);
-            dataGridView3.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView3_CellValueChanged);
-            dataGridView4.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView4_CellValueChanged);
-            dataGridView5.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView5_CellValueChanged);
-            dataGridView6.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView6_CellValueChanged);
-            dataGridView7.CellValueChanged -= new DataGridViewCellEventHandler(dataGridView7_CellValueChanged);
+            players_dataGridView.CellValueChanged -= new DataGridViewCellEventHandler(players_dataGridView_CellValueChanged);
+            lineup_dataGridView.CellValueChanged -= new DataGridViewCellEventHandler(lineup_dataGridView_CellValueChanged);
+            assignRoles_dataGridView.CellValueChanged -= new DataGridViewCellEventHandler(assignRoles_dataGridView_CellValueChanged);
+            ninesLineup_dataGridView.CellValueChanged -= new DataGridViewCellEventHandler(ninesLineup_dataGridView_CellValueChanged);
+            ninesAssignRoles_dataGridView.CellValueChanged -= new DataGridViewCellEventHandler(ninesAssignRoles_dataGridView_CellValueChanged);
+            feederClubs_dataGridView.CellValueChanged -= new DataGridViewCellEventHandler(feederClubs_dataGridView_CellValueChanged);
+            fedFromClubs_dataGridView.CellValueChanged -= new DataGridViewCellEventHandler(fedFromClubs_dataGridView_CellValueChanged);
 
             Players();
             PlayerLineup();
@@ -152,13 +152,13 @@ namespace RL26_Database_Editor
             FeederClubs();
             fedFromClubs();
 
-            dataGridView1.CellValueChanged += new DataGridViewCellEventHandler(dataGridView1_CellValueChanged);
-            dataGridView2.CellValueChanged += new DataGridViewCellEventHandler(dataGridView2_CellValueChanged);
-            dataGridView3.CellValueChanged += new DataGridViewCellEventHandler(dataGridView3_CellValueChanged);
-            dataGridView4.CellValueChanged += new DataGridViewCellEventHandler(dataGridView4_CellValueChanged);
-            dataGridView5.CellValueChanged += new DataGridViewCellEventHandler(dataGridView5_CellValueChanged);
-            dataGridView6.CellValueChanged += new DataGridViewCellEventHandler(dataGridView6_CellValueChanged);
-            dataGridView7.CellValueChanged += new DataGridViewCellEventHandler(dataGridView7_CellValueChanged);
+            players_dataGridView.CellValueChanged += new DataGridViewCellEventHandler(players_dataGridView_CellValueChanged);
+            lineup_dataGridView.CellValueChanged += new DataGridViewCellEventHandler(lineup_dataGridView_CellValueChanged);
+            assignRoles_dataGridView.CellValueChanged += new DataGridViewCellEventHandler(assignRoles_dataGridView_CellValueChanged);
+            ninesLineup_dataGridView.CellValueChanged += new DataGridViewCellEventHandler(ninesLineup_dataGridView_CellValueChanged);
+            ninesAssignRoles_dataGridView.CellValueChanged += new DataGridViewCellEventHandler(ninesAssignRoles_dataGridView_CellValueChanged);
+            feederClubs_dataGridView.CellValueChanged += new DataGridViewCellEventHandler(feederClubs_dataGridView_CellValueChanged);
+            fedFromClubs_dataGridView.CellValueChanged += new DataGridViewCellEventHandler(fedFromClubs_dataGridView_CellValueChanged);
 
             int TeamRating = 0;
 
@@ -392,93 +392,86 @@ namespace RL26_Database_Editor
 
         private void JerseyNameColour_button_Click(object sender, EventArgs e)
         {
-            colorDialog1.Color = JerseyNameColour_button.BackColor;
+            team_colorDialog.Color = JerseyNameColour_button.BackColor;
 
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                JerseyNameColour_button.BackColor = Color.FromArgb(colorDialog1.Color.ToArgb());
-            }
-            colorDialog1.Dispose();
+            if (team_colorDialog.ShowDialog() == DialogResult.OK)
+                JerseyNameColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
+
+            team_colorDialog.Dispose();
         }
 
         private void JerseyNumberColour_button_Click(object sender, EventArgs e)
         {
-            colorDialog1.Color = JerseyNumberColour_button.BackColor;
+            team_colorDialog.Color = JerseyNumberColour_button.BackColor;
 
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                JerseyNumberColour_button.BackColor = Color.FromArgb(colorDialog1.Color.ToArgb());
-            }
-            colorDialog1.Dispose();
+            if (team_colorDialog.ShowDialog() == DialogResult.OK)
+                JerseyNumberColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
+
+            team_colorDialog.Dispose();
         }
 
         private void KeylineColour_button_Click(object sender, EventArgs e)
         {
-            colorDialog1.Color = KeylineColour_button.BackColor;
+            team_colorDialog.Color = KeylineColour_button.BackColor;
 
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                KeylineColour_button.BackColor = Color.FromArgb(colorDialog1.Color.ToArgb());
-            }
-            colorDialog1.Dispose();
+            if (team_colorDialog.ShowDialog() == DialogResult.OK)
+                KeylineColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
+
+            team_colorDialog.Dispose();
         }
 
         private void Logo_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (File.Exists(Global.currentPath + @"\Logos\" + StringArrays.LogosPNG[Logo_comboBox.SelectedIndex]))
             {
-                pictureBox.ImageLocation = Global.currentPath + @"\Logos\" + StringArrays.LogosPNG[Logo_comboBox.SelectedIndex];
-                pictureBox1.ImageLocation = Global.currentPath + @"\Logos\" + StringArrays.LogosPNG[Logo_comboBox.SelectedIndex];
+                largeLogo_pictureBox.ImageLocation = Global.currentPath + @"\Logos\" + StringArrays.LogosPNG[Logo_comboBox.SelectedIndex];
+                smallLogo_pictureBox.ImageLocation = Global.currentPath + @"\Logos\" + StringArrays.LogosPNG[Logo_comboBox.SelectedIndex];
             }
         }
 
         private void PrimaryColour_button_Click(object sender, EventArgs e)
         {
-            colorDialog1.Color = PrimaryColour_button.BackColor;
+            team_colorDialog.Color = PrimaryColour_button.BackColor;
 
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            if (team_colorDialog.ShowDialog() == DialogResult.OK)
             {
-                PrimaryColour_button.BackColor = Color.FromArgb(colorDialog1.Color.ToArgb());
+                PrimaryColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
             }
-            colorDialog1.Dispose();
+            team_colorDialog.Dispose();
         }
 
         private void SecondaryColour_button_Click(object sender, EventArgs e)
         {
-            colorDialog1.Color = SecondaryColour_button.BackColor;
+            team_colorDialog.Color = SecondaryColour_button.BackColor;
 
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            if (team_colorDialog.ShowDialog() == DialogResult.OK)
             {
-                SecondaryColour_button.BackColor = Color.FromArgb(colorDialog1.Color.ToArgb());
+                SecondaryColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
             }
-            colorDialog1.Dispose();
+            team_colorDialog.Dispose();
         }
 
         private void HudTextColour_button_Click(object sender, EventArgs e)
         {
-            colorDialog1.Color = HudTextColour_button.BackColor;
+            team_colorDialog.Color = HudTextColour_button.BackColor;
 
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            if (team_colorDialog.ShowDialog() == DialogResult.OK)
             {
-                HudTextColour_button.BackColor = Color.FromArgb(colorDialog1.Color.ToArgb());
+                HudTextColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
             }
-            colorDialog1.Dispose();
+            team_colorDialog.Dispose();
         }
 
         private void Team_Save_Changers_button_Click(object sender, EventArgs e)
         {
             Global.team[Team_Index].id = Convert.ToInt32(TeamID_textBox.Text);
 
+            Global.team[Team_Index].isClubType = true;
+
             if (TeamType_comboBox.SelectedIndex != 0)
-            {
-                Global.team[Team_Index].isClubType = true;
                 Global.team[Team_Index].clubType = Convert.ToInt32(TeamType_comboBox.SelectedIndex);
-            }
             else
-            {
-                Global.team[Team_Index].isClubType = false;
                 Global.team[Team_Index].clubType = 0;
-            }
 
             switch (Affiliations_comboBox.SelectedIndex)
             {
@@ -681,30 +674,31 @@ namespace RL26_Database_Editor
             Global.team[Team_Index].jerseys[JerseySelection_comboBox.SelectedIndex].showInternalKeyline = InternalKeyline_checkBox.Checked;
             */
 
-            Global.team[Team_Index].playerAmount = Convert.ToByte(dataGridView1.Rows.Count);
+            Global.team[Team_Index].playerAmount = Convert.ToByte(players_dataGridView.Rows.Count);
 
-            if (dataGridView1.Rows.Count != 0)
+            if (players_dataGridView.Rows.Count != 0)
             {
-                for (int i = 0; i < 64; i++)
+                for (int i = 0; i < Global.MAX_PLAYERS_PER_TEAM; i++)
                 {
                     Global.team[Team_Index].players[i].isPlayerId = false;
                 }
 
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                for (int i = 0; i < players_dataGridView.Rows.Count; i++)
                 {
                     Global.team[Team_Index].players[i].isPlayerId = true;
-                    Global.team[Team_Index].players[i].playerId = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].players[i].playerId = Convert.ToInt32(players_dataGridView.Rows[i].Cells[1].Value);
                 }
 
-                for (int i = 0; i < 17; i++)
+                for (int i = 0; i < Global.MIN_PLAYERS_PER_TEAM; i++)
                 {
                     Global.team[Team_Index].lineups[i].isLineupId = false;
                 }
 
-                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                for (int i = 0; i < lineup_dataGridView.Rows.Count; i++)
                 {
                     Global.team[Team_Index].lineups[i].isLineupId = true;
-                    Global.team[Team_Index].lineups[i].lineupId = Convert.ToInt32(dataGridView2.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].lineups[i].shirtNumber = Convert.ToByte(lineup_dataGridView.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].lineups[i].lineupId = Convert.ToInt32(lineup_dataGridView.Rows[i].Cells[2].Value);
                 }
 
                 for (int i = 0; i < 4; i++)
@@ -712,10 +706,10 @@ namespace RL26_Database_Editor
                     Global.team[Team_Index].roles[i].isRoleId = false;
                 }
 
-                for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                for (int i = 0; i < assignRoles_dataGridView.Rows.Count; i++)
                 {
                     Global.team[Team_Index].roles[i].isRoleId = true;
-                    Global.team[Team_Index].roles[i].roleId = Convert.ToInt32(dataGridView3.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].roles[i].roleId = Convert.ToInt32(assignRoles_dataGridView.Rows[i].Cells[1].Value);
                 }
 
                 for (int i = 0; i < 14; i++)
@@ -723,10 +717,10 @@ namespace RL26_Database_Editor
                     Global.team[Team_Index].nineLineups[i].isNineLineupId = false;
                 }
 
-                for (int i = 0; i < dataGridView4.Rows.Count; i++)
+                for (int i = 0; i < ninesLineup_dataGridView.Rows.Count; i++)
                 {
                     Global.team[Team_Index].nineLineups[i].isNineLineupId = true;
-                    Global.team[Team_Index].nineLineups[i].nineLineupId = Convert.ToInt32(dataGridView4.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].nineLineups[i].nineLineupId = Convert.ToInt32(ninesLineup_dataGridView.Rows[i].Cells[1].Value);
                 }
 
                 for (int i = 0; i < 4; i++)
@@ -734,10 +728,10 @@ namespace RL26_Database_Editor
                     Global.team[Team_Index].nineRoles[i].isNinesRoleId = false;
                 }
 
-                for (int i = 0; i < dataGridView5.Rows.Count; i++)
+                for (int i = 0; i < ninesAssignRoles_dataGridView.Rows.Count; i++)
                 {
                     Global.team[Team_Index].nineRoles[i].isNinesRoleId = true;
-                    Global.team[Team_Index].nineRoles[i].nineRoleId = Convert.ToInt32(dataGridView5.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].nineRoles[i].nineRoleId = Convert.ToInt32(ninesAssignRoles_dataGridView.Rows[i].Cells[1].Value);
                 }
             }
 
@@ -748,10 +742,10 @@ namespace RL26_Database_Editor
                     Global.team[Team_Index].feederClubs[i].isFeederClubs = false;
                 }
 
-                for (int i = 0; i < dataGridView6.Rows.Count; i++)
+                for (int i = 0; i < feederClubs_dataGridView.Rows.Count; i++)
                 {
                     Global.team[Team_Index].feederClubs[i].isFeederClubs = true;
-                    Global.team[Team_Index].feederClubs[i].feederClubsId = Convert.ToInt32(dataGridView6.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].feederClubs[i].feederClubsId = Convert.ToInt32(feederClubs_dataGridView.Rows[i].Cells[1].Value);
                 }
             }
 
@@ -762,14 +756,14 @@ namespace RL26_Database_Editor
                     Global.team[Team_Index].fedFromClubs[i].isFedFromClubs = false;
                 }
 
-                for (int i = 0; i < dataGridView7.Rows.Count; i++)
+                for (int i = 0; i < fedFromClubs_dataGridView.Rows.Count; i++)
                 {
                     Global.team[Team_Index].fedFromClubs[i].isFedFromClubs = true;
-                    Global.team[Team_Index].fedFromClubs[i].fedFromClubsId = Convert.ToInt32(dataGridView7.Rows[i].Cells[1].Value);
+                    Global.team[Team_Index].fedFromClubs[i].fedFromClubsId = Convert.ToInt32(fedFromClubs_dataGridView.Rows[i].Cells[1].Value);
                 }
             }
 
-            RefreshList.Update_TeamList(Teams_dataGridView);
+            RefreshList.Update_TeamList(Teams_dgv);
 
             int TeamRating = 0;
 
@@ -791,8 +785,8 @@ namespace RL26_Database_Editor
             {
                 Playersdt = new DataTable();
 
-                Playersdt.Columns.Add("Player Index", Type.GetType("System.Int32"));
-                Playersdt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                Playersdt.Columns.Add("Index", Type.GetType("System.Int32"));
+                Playersdt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 Playersdt.Columns.Add("First Name", Type.GetType("System.String"));
                 Playersdt.Columns.Add("Last Name", Type.GetType("System.String"));
                 Playersdt.Columns.Add("Primary Role", Type.GetType("System.String"));
@@ -803,8 +797,8 @@ namespace RL26_Database_Editor
                 {
                     int selectedIndex = SearchID.PlayersIndex(Global.team[Team_Index].players[i].playerId);
                     Playersdt.Rows.Add();
-                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Player Index"] = i;
-                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Player ID"] = Global.player[selectedIndex].id;
+                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Index"] = i;
+                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Player Id"] = Global.player[selectedIndex].id;
                     Playersdt.Rows[Playersdt.Rows.Count - 1]["First Name"] = Global.player[selectedIndex].firstName;
                     Playersdt.Rows[Playersdt.Rows.Count - 1]["Last Name"] = Global.player[selectedIndex].lastName;
                     Playersdt.Rows[Playersdt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[selectedIndex].primaryRole);
@@ -812,7 +806,7 @@ namespace RL26_Database_Editor
                     Playersdt.Rows[Playersdt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[selectedIndex].tertiaryRole);
                 }
 
-                dataGridView1.DataSource = Playersdt;
+                players_dataGridView.DataSource = Playersdt;
             }
             catch (Exception error)
             {
@@ -822,27 +816,29 @@ namespace RL26_Database_Editor
 
         private void PlayerLineup()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
             string[] Positions = new string[17] { "1 - Fullback", "2 - RWing", "3 - RCentre", "4 - LCentre", "5 - LWing", "6 - Five Eighth", "7 - Halfback", "8 - Prop", "9 - Hooker", "10 - FrontRow", "11 - RSecondRow", "12 - LSecondRow", "13 - Lock", "14 - Int1", "15 - Int2", "16 - Int3", "17 - Int4" };
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Player Position", Type.GetType("System.String"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Position", Type.GetType("System.String"));
+                dt.Columns.Add("Shirt Number", Type.GetType("System.Byte"));
+                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
                 dt.Columns.Add("Primary Role", Type.GetType("System.String"));
                 dt.Columns.Add("Secondary Role", Type.GetType("System.String"));
                 dt.Columns.Add("Tertiary Role", Type.GetType("System.String"));
 
-                for (int i = 0; i < 17; i++)
+                for (int i = 0; i < Global.MIN_PLAYERS_PER_TEAM; i++)
                 {
                     int selectedIndex = SearchID.PlayersIndex(Global.team[Team_Index].lineups[i].lineupId);
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Player Position"] = Positions[i];
-                    dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[selectedIndex].id;
+                    dt.Rows[dt.Rows.Count - 1]["Position"] = Positions[i];
+                    dt.Rows[dt.Rows.Count - 1]["Shirt Number"] = Global.team[Team_Index].lineups[i].shirtNumber;
+                    dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[selectedIndex].id;
                     dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[selectedIndex].firstName;
                     dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[selectedIndex].lastName;
                     dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[selectedIndex].primaryRole);
@@ -850,11 +846,11 @@ namespace RL26_Database_Editor
                     dt.Rows[dt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[selectedIndex].tertiaryRole);
                 }
 
-                dataGridView2.DataSource = dt;
+                lineup_dataGridView.DataSource = dt;
 
-                for (int i = 0; i < dataGridView2.Columns.Count; i++)
+                for (int i = 0; i < lineup_dataGridView.Columns.Count; i++)
                 {
-                    dataGridView2.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    lineup_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
             catch (Exception error)
@@ -865,7 +861,7 @@ namespace RL26_Database_Editor
 
         private void PlayerRoles()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
             string[] PlyRoles = new string[4] { "Captain", "GoalKicker", "PlayMaker1", "PlayMaker2" };
 
             try
@@ -873,7 +869,7 @@ namespace RL26_Database_Editor
                 dt = new DataTable();
 
                 dt.Columns.Add("Roles", Type.GetType("System.String"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
                 dt.Columns.Add("Primary Role", Type.GetType("System.String"));
@@ -885,7 +881,7 @@ namespace RL26_Database_Editor
                     int selectedIndex = SearchID.PlayersIndex(Global.team[Team_Index].roles[i].roleId);
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["Roles"] = PlyRoles[i];
-                    dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[selectedIndex].id;
+                    dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[selectedIndex].id;
                     dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[selectedIndex].firstName;
                     dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[selectedIndex].lastName;
                     dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[selectedIndex].primaryRole);
@@ -893,11 +889,11 @@ namespace RL26_Database_Editor
                     dt.Rows[dt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[selectedIndex].tertiaryRole);
                 }
 
-                dataGridView3.DataSource = dt;
+                assignRoles_dataGridView.DataSource = dt;
 
-                for (int i = 0; i < dataGridView3.Columns.Count; i++)
+                for (int i = 0; i < assignRoles_dataGridView.Columns.Count; i++)
                 {
-                    dataGridView3.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    assignRoles_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
             catch (Exception error)
@@ -908,15 +904,15 @@ namespace RL26_Database_Editor
 
         private void NinesLineup()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
             string[] Positions = new string[14] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10 - Int1", "11 - Int2", "12 - Int3", "13 - Int4", "14 - Int5" };
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Player Position", Type.GetType("System.String"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Position", Type.GetType("System.String"));
+                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
                 dt.Columns.Add("Primary Role", Type.GetType("System.String"));
@@ -928,8 +924,8 @@ namespace RL26_Database_Editor
                 {
                     int selectedIndex = SearchID.PlayersIndex(Global.team[Team_Index].nineLineups[i].nineLineupId);
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Player Position"] = Positions[i];
-                    dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[selectedIndex].id;
+                    dt.Rows[dt.Rows.Count - 1]["Position"] = Positions[i];
+                    dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[selectedIndex].id;
                     dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[selectedIndex].firstName;
                     dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[selectedIndex].lastName;
                     dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[selectedIndex].primaryRole);
@@ -937,11 +933,11 @@ namespace RL26_Database_Editor
                     dt.Rows[dt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[selectedIndex].tertiaryRole);
                 }
 
-                dataGridView4.DataSource = dt;
+                ninesLineup_dataGridView.DataSource = dt;
 
-                for (int i = 0; i < dataGridView4.Columns.Count; i++)
+                for (int i = 0; i < ninesLineup_dataGridView.Columns.Count; i++)
                 {
-                    dataGridView4.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    ninesLineup_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
             catch (Exception error)
@@ -952,7 +948,7 @@ namespace RL26_Database_Editor
 
         private void NinesRoles()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
             string[] PlyRoles = new string[4] { "Captain", "GoalKicker", "PlayMaker1", "PlayMaker2" };
 
             try
@@ -960,7 +956,7 @@ namespace RL26_Database_Editor
                 dt = new DataTable();
 
                 dt.Columns.Add("Roles", Type.GetType("System.String"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
                 dt.Columns.Add("Primary Role", Type.GetType("System.String"));
@@ -973,7 +969,7 @@ namespace RL26_Database_Editor
                     dt.Rows.Add();
 
                     dt.Rows[dt.Rows.Count - 1]["Roles"] = PlyRoles[i];
-                    dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[selectedIndex].id;
+                    dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[selectedIndex].id;
                     dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[selectedIndex].firstName;
                     dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[selectedIndex].lastName;
                     dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[selectedIndex].primaryRole);
@@ -981,11 +977,11 @@ namespace RL26_Database_Editor
                     dt.Rows[dt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[selectedIndex].tertiaryRole);
                 }
 
-                dataGridView5.DataSource = dt;
+                ninesAssignRoles_dataGridView.DataSource = dt;
 
-                for (int i = 0; i < dataGridView5.Columns.Count; i++)
+                for (int i = 0; i < ninesAssignRoles_dataGridView.Columns.Count; i++)
                 {
-                    dataGridView5.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    ninesAssignRoles_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
             catch (Exception error)
@@ -996,14 +992,14 @@ namespace RL26_Database_Editor
 
         private void FeederClubs()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
                 dt = new DataTable();
 
                 dt.Columns.Add("FeederClubs Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Team ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Team Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("Location Name", Type.GetType("System.String"));
                 dt.Columns.Add("Club Name", Type.GetType("System.String"));
 
@@ -1012,16 +1008,16 @@ namespace RL26_Database_Editor
                     int selectedIndex = SearchID.TeamsIndex(Global.team[Team_Index].feederClubs[i].feederClubsId);
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["FeederClubs Index"] = i;
-                    dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[Team_Index].feederClubs[i].feederClubsId;
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[Team_Index].feederClubs[i].feederClubsId;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[selectedIndex].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[selectedIndex].clubName;
                 }
 
-                dataGridView6.DataSource = dt;
+                feederClubs_dataGridView.DataSource = dt;
 
-                for (int i = 0; i < dataGridView6.Columns.Count; i++)
+                for (int i = 0; i < feederClubs_dataGridView.Columns.Count; i++)
                 {
-                    dataGridView6.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    feederClubs_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
             catch (Exception error)
@@ -1039,7 +1035,7 @@ namespace RL26_Database_Editor
                 dt = new DataTable();
 
                 dt.Columns.Add("FedFromClubs Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Team ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Team Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("Location Name", Type.GetType("System.String"));
                 dt.Columns.Add("Club Name", Type.GetType("System.String"));
 
@@ -1048,16 +1044,16 @@ namespace RL26_Database_Editor
                     int selectedIndex = SearchID.TeamsIndex(Global.team[Team_Index].fedFromClubs[i].fedFromClubsId);
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["FedFromClubs Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[Team_Index].fedFromClubs[i].fedFromClubsId;
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[Team_Index].fedFromClubs[i].fedFromClubsId;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[selectedIndex].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[selectedIndex].clubName;
                 }
 
-                dataGridView7.DataSource = dt;
+                fedFromClubs_dataGridView.DataSource = dt;
 
-                for (int i = 0; i < dataGridView7.Columns.Count; i++)
+                for (int i = 0; i < fedFromClubs_dataGridView.Columns.Count; i++)
                 {
-                    dataGridView7.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    fedFromClubs_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
             catch (Exception error)
@@ -1066,199 +1062,198 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void players_dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.BeginEdit(false);
-            dataGridView1.NotifyCurrentCellDirty(false);
-            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            players_dataGridView.BeginEdit(false);
+            players_dataGridView.NotifyCurrentCellDirty(false);
+            int rowIndex = players_dataGridView.CurrentCell.RowIndex;
 
-            if (dataGridView1.Rows.Count != 0)
+            if (players_dataGridView.Rows.Count != 0)
             {
-                if (dataGridView1.Rows[rowIndex].Cells[1].Value != DBNull.Value)
+                if (players_dataGridView.Rows[rowIndex].Cells[1].Value != DBNull.Value)
                 {
-                    Global.team[Team_Index].players[rowIndex].playerId = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[1].Value);
+                    Global.team[Team_Index].players[rowIndex].playerId = Convert.ToInt32(players_dataGridView.Rows[rowIndex].Cells[1].Value);
                 }
             }
 
-            dataGridView1.EndEdit();
+            players_dataGridView.EndEdit();
             Players();
         }
 
-        private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void lineup_dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView2.BeginEdit(false);
-            dataGridView2.NotifyCurrentCellDirty(false);
-            int rowIndex = dataGridView2.CurrentCell.RowIndex;
+            lineup_dataGridView.BeginEdit(false);
+            lineup_dataGridView.NotifyCurrentCellDirty(false);
+            int rowIndex = lineup_dataGridView.CurrentCell.RowIndex;
 
-            if (dataGridView2.Rows.Count != 0)
+            if (lineup_dataGridView.Rows.Count != 0)
             {
-                if (dataGridView2.Rows[rowIndex].Cells[1].Value != DBNull.Value)
-                {
-                    Global.team[Team_Index].lineups[rowIndex].lineupId = Convert.ToInt32(dataGridView2.Rows[rowIndex].Cells[1].Value);
-                }
+                if (lineup_dataGridView.Rows[rowIndex].Cells[1].Value != DBNull.Value)
+                    Global.team[Team_Index].lineups[rowIndex].shirtNumber = Convert.ToByte(lineup_dataGridView.Rows[rowIndex].Cells[1].Value);
+
+                if (lineup_dataGridView.Rows[rowIndex].Cells[2].Value != DBNull.Value)
+                    Global.team[Team_Index].lineups[rowIndex].lineupId = Convert.ToInt32(lineup_dataGridView.Rows[rowIndex].Cells[2].Value);
             }
 
-            dataGridView2.EndEdit();
+            lineup_dataGridView.EndEdit();
             PlayerLineup();
         }
 
-        private void dataGridView3_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void assignRoles_dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView3.BeginEdit(false);
-            dataGridView3.NotifyCurrentCellDirty(false);
-            int rowIndex = dataGridView3.CurrentCell.RowIndex;
+            assignRoles_dataGridView.BeginEdit(false);
+            assignRoles_dataGridView.NotifyCurrentCellDirty(false);
+            int rowIndex = assignRoles_dataGridView.CurrentCell.RowIndex;
 
-            if (dataGridView3.Rows.Count != 0)
+            if (assignRoles_dataGridView.Rows.Count != 0)
             {
-                if (dataGridView3.Rows[rowIndex].Cells[1].Value != DBNull.Value)
+                if (assignRoles_dataGridView.Rows[rowIndex].Cells[1].Value != DBNull.Value)
                 {
-                    Global.team[Team_Index].roles[rowIndex].roleId = Convert.ToInt32(dataGridView3.Rows[rowIndex].Cells[1].Value);
+                    Global.team[Team_Index].roles[rowIndex].roleId = Convert.ToInt32(assignRoles_dataGridView.Rows[rowIndex].Cells[1].Value);
                 }
             }
 
-            dataGridView3.EndEdit();
+            assignRoles_dataGridView.EndEdit();
             PlayerRoles();
         }
 
-        private void dataGridView4_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void ninesLineup_dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView4.BeginEdit(false);
-            dataGridView4.NotifyCurrentCellDirty(false);
-            int rowIndex = dataGridView4.CurrentCell.RowIndex;
+            ninesLineup_dataGridView.BeginEdit(false);
+            ninesLineup_dataGridView.NotifyCurrentCellDirty(false);
+            int rowIndex = ninesLineup_dataGridView.CurrentCell.RowIndex;
 
-            if (dataGridView4.Rows.Count != 0)
+            if (ninesLineup_dataGridView.Rows.Count != 0)
             {
-                if (dataGridView4.Rows[rowIndex].Cells[1].Value != DBNull.Value)
+                if (ninesLineup_dataGridView.Rows[rowIndex].Cells[1].Value != DBNull.Value)
                 {
-                    Global.team[Team_Index].nineLineups[rowIndex].nineLineupId = Convert.ToInt32(dataGridView4.Rows[rowIndex].Cells[1].Value);
+                    Global.team[Team_Index].nineLineups[rowIndex].nineLineupId = Convert.ToInt32(ninesLineup_dataGridView.Rows[rowIndex].Cells[1].Value);
                 }
             }
 
-            dataGridView4.EndEdit();
+            ninesLineup_dataGridView.EndEdit();
             NinesLineup();
         }
 
-        private void dataGridView5_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void ninesAssignRoles_dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView5.BeginEdit(false);
-            dataGridView5.NotifyCurrentCellDirty(false);
-            int rowIndex = dataGridView5.CurrentCell.RowIndex;
+            ninesAssignRoles_dataGridView.BeginEdit(false);
+            ninesAssignRoles_dataGridView.NotifyCurrentCellDirty(false);
+            int rowIndex = ninesAssignRoles_dataGridView.CurrentCell.RowIndex;
 
-            if (dataGridView5.Rows.Count != 0)
+            if (ninesAssignRoles_dataGridView.Rows.Count != 0)
             {
-                if (dataGridView5.Rows[rowIndex].Cells[1].Value != DBNull.Value)
-                {
-                    Global.team[Team_Index].nineRoles[rowIndex].nineRoleId = Convert.ToInt32(dataGridView5.Rows[rowIndex].Cells[1].Value);
-                }
+                if (ninesAssignRoles_dataGridView.Rows[rowIndex].Cells[1].Value != DBNull.Value)
+                    Global.team[Team_Index].nineRoles[rowIndex].nineRoleId = Convert.ToInt32(ninesAssignRoles_dataGridView.Rows[rowIndex].Cells[1].Value);
             }
 
-            dataGridView5.EndEdit();
+            ninesAssignRoles_dataGridView.EndEdit();
             NinesRoles();
         }
 
-        private void dataGridView6_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void feederClubs_dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView6.BeginEdit(false);
-            dataGridView6.NotifyCurrentCellDirty(false);
-            int rowIndex = dataGridView6.CurrentCell.RowIndex;
+            feederClubs_dataGridView.BeginEdit(false);
+            feederClubs_dataGridView.NotifyCurrentCellDirty(false);
+            int rowIndex = feederClubs_dataGridView.CurrentCell.RowIndex;
 
             if (Global.team[Team_Index].feederClubsAmount != 0)
             {
-                if (dataGridView6.Rows[rowIndex].Cells[1].Value != DBNull.Value)
-                    Global.team[Team_Index].feederClubs[rowIndex].feederClubsId = Convert.ToInt32(dataGridView6.Rows[rowIndex].Cells[1].Value);
+                if (feederClubs_dataGridView.Rows[rowIndex].Cells[1].Value != DBNull.Value)
+                    Global.team[Team_Index].feederClubs[rowIndex].feederClubsId = Convert.ToInt32(feederClubs_dataGridView.Rows[rowIndex].Cells[1].Value);
             }
 
-            dataGridView6.EndEdit();
+            feederClubs_dataGridView.EndEdit();
             FeederClubs();
         }
 
-        private void dataGridView7_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void fedFromClubs_dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView7.BeginEdit(false);
-            dataGridView7.NotifyCurrentCellDirty(false);
-            int rowIndex = dataGridView7.CurrentCell.RowIndex;
+            fedFromClubs_dataGridView.BeginEdit(false);
+            fedFromClubs_dataGridView.NotifyCurrentCellDirty(false);
+            int rowIndex = fedFromClubs_dataGridView.CurrentCell.RowIndex;
 
             if (Global.team[Team_Index].fedFromClubsAmount != 0)
             {
-                if (dataGridView7.Rows[rowIndex].Cells[1].Value != DBNull.Value)
-                    Global.team[Team_Index].fedFromClubs[rowIndex].fedFromClubsId = Convert.ToInt32(dataGridView7.Rows[rowIndex].Cells[1].Value);
+                if (fedFromClubs_dataGridView.Rows[rowIndex].Cells[1].Value != DBNull.Value)
+                    Global.team[Team_Index].fedFromClubs[rowIndex].fedFromClubsId = Convert.ToInt32(fedFromClubs_dataGridView.Rows[rowIndex].Cells[1].Value);
             }
 
-            dataGridView7.EndEdit();
+            fedFromClubs_dataGridView.EndEdit();
             fedFromClubs();
         }
 
-        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void players_dataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
+            if (players_dataGridView.Rows.Count > 0)
             {
-                int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                int rowIndex = players_dataGridView.CurrentCell.RowIndex;
 
-                int playerID = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[1].Value);
+                int playerID = Convert.ToInt32(players_dataGridView.Rows[rowIndex].Cells[1].Value);
                 Global.player_index = SearchID.PlayersIndex(playerID);
 
-                Player_Editor form = new(Players_dataGridView);
+                Player_Editor form = new(Players_dgv);
                 form.Show();
             }
         }
 
-        private void dataGridView2_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void lineup_dataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (dataGridView2.Rows.Count > 0)
+            if (lineup_dataGridView.Rows.Count > 0)
             {
-                int rowIndex = dataGridView2.CurrentCell.RowIndex;
+                int rowIndex = lineup_dataGridView.CurrentCell.RowIndex;
 
-                int playerID = Convert.ToInt32(dataGridView2.Rows[rowIndex].Cells[1].Value);
+                int playerID = Convert.ToInt32(lineup_dataGridView.Rows[rowIndex].Cells[1].Value);
                 Global.player_index = SearchID.PlayersIndex(playerID);
 
-                Player_Editor form = new(Players_dataGridView);
+                Player_Editor form = new(Players_dgv);
                 form.Show();
             }
         }
 
-        private void dataGridView3_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void assignRoles_dataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (dataGridView3.Rows.Count > 0)
+            if (assignRoles_dataGridView.Rows.Count > 0)
             {
-                int rowIndex = dataGridView3.CurrentCell.RowIndex;
+                int rowIndex = assignRoles_dataGridView.CurrentCell.RowIndex;
 
-                int playerID = Convert.ToInt32(dataGridView3.Rows[rowIndex].Cells[1].Value);
+                int playerID = Convert.ToInt32(assignRoles_dataGridView.Rows[rowIndex].Cells[1].Value);
                 Global.player_index = SearchID.PlayersIndex(playerID);
 
-                Player_Editor form = new(Players_dataGridView);
+                Player_Editor form = new(Players_dgv);
                 form.Show();
             }
         }
 
-        private void dataGridView4_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ninesLineup_dataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (dataGridView4.Rows.Count > 0)
+            if (ninesLineup_dataGridView.Rows.Count > 0)
             {
-                int rowIndex = dataGridView4.CurrentCell.RowIndex;
+                int rowIndex = ninesLineup_dataGridView.CurrentCell.RowIndex;
 
-                int playerID = Convert.ToInt32(dataGridView4.Rows[rowIndex].Cells[1].Value);
+                int playerID = Convert.ToInt32(ninesLineup_dataGridView.Rows[rowIndex].Cells[1].Value);
                 Global.player_index = SearchID.PlayersIndex(playerID);
 
-                Player_Editor form = new(Players_dataGridView);
+                Player_Editor form = new(Players_dgv);
                 form.Show();
             }
         }
 
-        private void dataGridView5_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ninesAssignRoles_dataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (dataGridView5.Rows.Count > 0)
+            if (ninesAssignRoles_dataGridView.Rows.Count > 0)
             {
-                int rowIndex = dataGridView5.CurrentCell.RowIndex;
+                int rowIndex = ninesAssignRoles_dataGridView.CurrentCell.RowIndex;
 
-                int playerID = Convert.ToInt32(dataGridView5.Rows[rowIndex].Cells[1].Value);
+                int playerID = Convert.ToInt32(ninesAssignRoles_dataGridView.Rows[rowIndex].Cells[1].Value);
                 Global.player_index = SearchID.PlayersIndex(playerID);
 
-                Player_Editor form = new(Players_dataGridView);
+                Player_Editor form = new(Players_dgv);
                 form.Show();
             }
         }
 
-        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        private void players_dataGridView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1266,7 +1261,7 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
+        private void lineup_dataGridView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1274,7 +1269,7 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView3_MouseClick(object sender, MouseEventArgs e)
+        private void assignRoles_dataGridView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1282,7 +1277,7 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView4_MouseClick(object sender, MouseEventArgs e)
+        private void ninesLineup_dataGridView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1290,7 +1285,7 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView5_MouseClick(object sender, MouseEventArgs e)
+        private void ninesAssignRoles_dataGridView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1298,7 +1293,7 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView6_MouseClick(object sender, MouseEventArgs e)
+        private void feederClubs_dataGridView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1306,7 +1301,7 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView7_MouseClick(object sender, MouseEventArgs e)
+        private void fedFromClubs_dataGridView_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1316,9 +1311,9 @@ namespace RL26_Database_Editor
 
         private void teamPlayerListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count != 0)
+            if (players_dataGridView.Rows.Count != 0)
             {
-                Team_Player_List form = new(dataGridView1, Team_Index);
+                Team_Player_List form = new(players_dataGridView, Team_Index);
                 bool IsOpen = false;
 
                 foreach (Form f in Application.OpenForms)
@@ -1340,9 +1335,9 @@ namespace RL26_Database_Editor
 
         private void Lineup_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.Rows.Count != 0)
+            if (lineup_dataGridView.Rows.Count != 0)
             {
-                Team_Lineup_List form = new(dataGridView2, Team_Index);
+                Team_Lineup_List form = new(lineup_dataGridView, Team_Index);
                 bool IsOpen = false;
 
                 foreach (Form f in Application.OpenForms)
@@ -1364,9 +1359,9 @@ namespace RL26_Database_Editor
 
         private void teamRolesPlayerListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView3.Rows.Count != 0)
+            if (assignRoles_dataGridView.Rows.Count != 0)
             {
-                Team_Roles_List form = new(dataGridView3, Team_Index);
+                Team_Roles_List form = new(assignRoles_dataGridView, Team_Index);
                 bool IsOpen = false;
 
                 foreach (Form f in Application.OpenForms)
@@ -1388,9 +1383,9 @@ namespace RL26_Database_Editor
 
         private void NinesLineup_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView4.Rows.Count != 0)
+            if (ninesLineup_dataGridView.Rows.Count != 0)
             {
-                Team_Nines_Lineup_List form = new(dataGridView4, Team_Index);
+                Team_Nines_Lineup_List form = new(ninesLineup_dataGridView, Team_Index);
                 bool IsOpen = false;
 
                 foreach (Form f in Application.OpenForms)
@@ -1412,9 +1407,9 @@ namespace RL26_Database_Editor
 
         private void NinesRoles_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView5.Rows.Count != 0)
+            if (ninesAssignRoles_dataGridView.Rows.Count != 0)
             {
-                Team_Nines_Roles_List form = new(dataGridView5, Team_Index);
+                Team_Nines_Roles_List form = new(ninesAssignRoles_dataGridView, Team_Index);
                 bool IsOpen = false;
 
                 foreach (Form f in Application.OpenForms)
@@ -1436,7 +1431,7 @@ namespace RL26_Database_Editor
 
         private void teamFeederClubListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Team_Feeder_Club_List form = new(dataGridView6, Team_Index);
+            Team_Feeder_Club_List form = new(feederClubs_dataGridView, Team_Index);
             bool IsOpen = false;
 
             foreach (Form f in Application.OpenForms)
@@ -1457,7 +1452,7 @@ namespace RL26_Database_Editor
 
         private void teamFedFromClubListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Team_Fed_From_Club_List form = new(dataGridView7, Team_Index);
+            Team_Fed_From_Club_List form = new(fedFromClubs_dataGridView, Team_Index);
             bool IsOpen = false;
 
             foreach (Form f in Application.OpenForms)
@@ -1490,9 +1485,9 @@ namespace RL26_Database_Editor
 
             if (ModifierKeys == Keys.Control && e.KeyCode == Keys.P)
             {
-                if (dataGridView1.Rows.Count != 0)
+                if (players_dataGridView.Rows.Count != 0)
                 {
-                    Team_Player_List form = new(dataGridView1, Team_Index);
+                    Team_Player_List form = new(players_dataGridView, Team_Index);
                     bool IsOpen = false;
 
                     foreach (Form f in Application.OpenForms)
@@ -1514,9 +1509,9 @@ namespace RL26_Database_Editor
 
             if (ModifierKeys == Keys.Control && e.KeyCode == Keys.L)
             {
-                if (dataGridView2.Rows.Count != 0)
+                if (lineup_dataGridView.Rows.Count != 0)
                 {
-                    Team_Lineup_List form = new(dataGridView2, Team_Index);
+                    Team_Lineup_List form = new(lineup_dataGridView, Team_Index);
                     bool IsOpen = false;
 
                     foreach (Form f in Application.OpenForms)
@@ -1538,9 +1533,9 @@ namespace RL26_Database_Editor
 
             if (ModifierKeys == Keys.Control && e.KeyCode == Keys.R)
             {
-                if (dataGridView3.Rows.Count != 0)
+                if (assignRoles_dataGridView.Rows.Count != 0)
                 {
-                    Team_Roles_List form = new(dataGridView3, Team_Index);
+                    Team_Roles_List form = new(assignRoles_dataGridView, Team_Index);
                     bool IsOpen = false;
 
                     foreach (Form f in Application.OpenForms)
@@ -1563,7 +1558,7 @@ namespace RL26_Database_Editor
 
         private void sortAZ()
         {
-            if (dataGridView1.Rows.Count != 0)
+            if (players_dataGridView.Rows.Count != 0)
             {
                 Players();
 
@@ -1571,11 +1566,11 @@ namespace RL26_Database_Editor
                 dv.Sort = "Last Name";
                 Playersdt = dv.ToTable();
 
-                if (dataGridView1.Rows.Count != 0)
+                if (players_dataGridView.Rows.Count != 0)
                 {
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    for (int i = 0; i < players_dataGridView.Rows.Count; i++)
                     {
-                        Global.team[Team_Index].players[i].playerId = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);
+                        Global.team[Team_Index].players[i].playerId = Convert.ToInt32(players_dataGridView.Rows[i].Cells[1].Value);
                     }
                 }
 
@@ -1590,9 +1585,9 @@ namespace RL26_Database_Editor
 
         private void addPlayer()
         {
-            if (dataGridView1.Rows.Count != 50)
+            if (players_dataGridView.Rows.Count != Global.MAX_PLAYERS_PER_TEAM)
             {
-                int Count = dataGridView1.Rows.Count;
+                int Count = players_dataGridView.Rows.Count;
 
                 Global.team[Team_Index].playerAmount = Convert.ToByte(Count + 1);
                 TeamPlayerAmount_textBox.Text = (Count + 1).ToString();
@@ -1600,14 +1595,14 @@ namespace RL26_Database_Editor
                 Global.team[Team_Index].players[Count].playerId = 1;
                 Players();
 
-                dataGridView1.Rows[Count].Selected = true;
-                dataGridView1.Focus();
-                dataGridView1.CurrentCell = dataGridView1.Rows[Count].Cells[0];
-                dataGridView1.Rows[Count].Visible = true;
+                players_dataGridView.Rows[Count].Selected = true;
+                players_dataGridView.Focus();
+                players_dataGridView.CurrentCell = players_dataGridView.Rows[Count].Cells[0];
+                players_dataGridView.Rows[Count].Visible = true;
             }
             else
             {
-                MessageBox.Show("You have reached the maximum 50 players", "Team Players Maxed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You have reached the maximum 64 players", "Team Players Maxed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1618,16 +1613,16 @@ namespace RL26_Database_Editor
 
         private void deletePlayer(bool UserDeleted)
         {
-            if (dataGridView1.Rows.Count != 0)
+            if (players_dataGridView.Rows.Count != 0)
             {
-                int RowIndex = dataGridView1.CurrentCell.RowIndex;
+                int RowIndex = players_dataGridView.CurrentCell.RowIndex;
 
                 if (UserDeleted)
-                    RowIndex = dataGridView1.CurrentCell.RowIndex + 1;
+                    RowIndex = players_dataGridView.CurrentCell.RowIndex + 1;
 
                 int TeamPlayerAmount = Global.team[Team_Index].playerAmount - 1;
 
-                int[] TeamPlayers = new int[50];
+                int[] TeamPlayers = new int[Global.MAX_PLAYERS_PER_TEAM];
 
                 for (int i = 0, j = 0; i < TeamPlayerAmount; i++, j++)
                 {
@@ -1639,7 +1634,7 @@ namespace RL26_Database_Editor
                     TeamPlayers[i] = Global.team[Team_Index].players[j].playerId;
                 }
 
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < Global.MAX_PLAYERS_PER_TEAM; i++)
                 {
                     Global.team[Team_Index].players[i].playerId = TeamPlayers[i];
                     Global.team[Team_Index].players[i].isPlayerId = false;
@@ -1661,7 +1656,7 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        private void players_dataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             deletePlayer(true);
         }
@@ -1673,19 +1668,19 @@ namespace RL26_Database_Editor
 
         private void addTeam1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView6.Rows.Count != 7)
+            if (feederClubs_dataGridView.Rows.Count != 7)
             {
-                int Count = dataGridView6.Rows.Count;
+                int Count = feederClubs_dataGridView.Rows.Count;
 
                 Global.team[Team_Index].feederClubsAmount = Convert.ToByte(Count + 1);
                 Global.team[Team_Index].feederClubs[Count].isFeederClubs = true;
                 Global.team[Team_Index].feederClubs[Count].feederClubsId = 1;
                 FeederClubs();
 
-                dataGridView6.Rows[Count].Selected = true;
-                dataGridView6.Focus();
-                dataGridView6.CurrentCell = dataGridView6.Rows[Count].Cells[0];
-                dataGridView6.Rows[Count].Visible = true;
+                feederClubs_dataGridView.Rows[Count].Selected = true;
+                feederClubs_dataGridView.Focus();
+                feederClubs_dataGridView.CurrentCell = feederClubs_dataGridView.Rows[Count].Cells[0];
+                feederClubs_dataGridView.Rows[Count].Visible = true;
             }
             else
             {
@@ -1695,7 +1690,7 @@ namespace RL26_Database_Editor
 
         private void deleteTeam1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView6.Rows.Count != 0)
+            if (feederClubs_dataGridView.Rows.Count != 0)
             {
                 int feederClub_Amount = Global.team[Team_Index].feederClubsAmount - 1;
 
@@ -1703,7 +1698,7 @@ namespace RL26_Database_Editor
 
                 for (int i = 0, j = 0; i < feederClub_Amount; i++, j++)
                 {
-                    if (i == dataGridView6.CurrentCell.RowIndex)
+                    if (i == feederClubs_dataGridView.CurrentCell.RowIndex)
                     {
                         j++;
                     }
@@ -1730,19 +1725,19 @@ namespace RL26_Database_Editor
 
         private void addTeam2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView7.Rows.Count != 7)
+            if (fedFromClubs_dataGridView.Rows.Count != 7)
             {
-                int Count = dataGridView7.Rows.Count;
+                int Count = fedFromClubs_dataGridView.Rows.Count;
 
                 Global.team[Team_Index].fedFromClubsAmount = Convert.ToByte(Count + 1);
                 Global.team[Team_Index].fedFromClubs[Count].isFedFromClubs = true;
                 Global.team[Team_Index].fedFromClubs[Count].fedFromClubsId = 1;
                 fedFromClubs();
 
-                dataGridView7.Rows[Count].Selected = true;
-                dataGridView7.Focus();
-                dataGridView7.CurrentCell = dataGridView7.Rows[Count].Cells[0];
-                dataGridView7.Rows[Count].Visible = true;
+                fedFromClubs_dataGridView.Rows[Count].Selected = true;
+                fedFromClubs_dataGridView.Focus();
+                fedFromClubs_dataGridView.CurrentCell = fedFromClubs_dataGridView.Rows[Count].Cells[0];
+                fedFromClubs_dataGridView.Rows[Count].Visible = true;
             }
             else
             {
@@ -1752,7 +1747,7 @@ namespace RL26_Database_Editor
 
         private void deleteTeam2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView7.Rows.Count != 0)
+            if (fedFromClubs_dataGridView.Rows.Count != 0)
             {
                 int fedFromClubs_Amount = Global.team[Team_Index].fedFromClubsAmount - 1;
 
@@ -1760,7 +1755,7 @@ namespace RL26_Database_Editor
 
                 for (int i = 0, j = 0; i < fedFromClubs_Amount; i++, j++)
                 {
-                    if (i == dataGridView7.CurrentCell.RowIndex)
+                    if (i == fedFromClubs_dataGridView.CurrentCell.RowIndex)
                     {
                         j++;
                     }

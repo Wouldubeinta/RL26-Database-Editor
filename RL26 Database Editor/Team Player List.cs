@@ -22,14 +22,14 @@ namespace RL26_Database_Editor
 
         private void OriginalPlayers()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Player Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Index", Type.GetType("System.Int32"));
+                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("Rating", Type.GetType("System.Int32"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
@@ -44,8 +44,8 @@ namespace RL26_Database_Editor
                     {
                         index++;
                         dt.Rows.Add();
-                        dt.Rows[dt.Rows.Count - 1]["Player Index"] = index;
-                        dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[i].id;
+                        dt.Rows[dt.Rows.Count - 1]["Index"] = index;
+                        dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[i].id;
                         dt.Rows[dt.Rows.Count - 1]["Rating"] = Rating.PlayerRating(i);
                         dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName;
                         dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName;
@@ -57,8 +57,8 @@ namespace RL26_Database_Editor
                     {
                         index++;
                         dt.Rows.Add();
-                        dt.Rows[dt.Rows.Count - 1]["Player Index"] = index;
-                        dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[i].id;
+                        dt.Rows[dt.Rows.Count - 1]["Index"] = index;
+                        dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[i].id;
                         dt.Rows[dt.Rows.Count - 1]["Rating"] = Rating.PlayerRating(i);
                         dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName;
                         dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName;
@@ -175,14 +175,14 @@ namespace RL26_Database_Editor
 
         private void Players()
         {
-            DataTable Playersdt = null;
+            DataTable? Playersdt = null;
 
             try
             {
                 Playersdt = new DataTable();
 
-                Playersdt.Columns.Add("Player Index", Type.GetType("System.Int32"));
-                Playersdt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                Playersdt.Columns.Add("Index", Type.GetType("System.Int32"));
+                Playersdt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 Playersdt.Columns.Add("First Name", Type.GetType("System.String"));
                 Playersdt.Columns.Add("Last Name", Type.GetType("System.String"));
                 Playersdt.Columns.Add("Primary Role", Type.GetType("System.String"));
@@ -194,8 +194,8 @@ namespace RL26_Database_Editor
                 {
                     int SelectedIndex = SearchID.PlayersIndex(Global.team[TeamIndex].players[i].playerId);
                     Playersdt.Rows.Add();
-                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Player Index"] = i;
-                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Player ID"] = Global.player[SelectedIndex].id;
+                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Index"] = i;
+                    Playersdt.Rows[Playersdt.Rows.Count - 1]["Player Id"] = Global.player[SelectedIndex].id;
                     Playersdt.Rows[Playersdt.Rows.Count - 1]["First Name"] = Global.player[SelectedIndex].firstName;
                     Playersdt.Rows[Playersdt.Rows.Count - 1]["Last Name"] = Global.player[SelectedIndex].lastName;
                     Playersdt.Rows[Playersdt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[SelectedIndex].primaryRole);

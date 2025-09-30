@@ -17,8 +17,8 @@ namespace RL26_Database_Editor
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Team Index", Type.GetType("System.String"));
-                dt.Columns.Add("Team ID", Type.GetType("System.String"));
+                dt.Columns.Add("Index", Type.GetType("System.String"));
+                dt.Columns.Add("Team Id", Type.GetType("System.String"));
                 dt.Columns.Add("Location Name", Type.GetType("System.String"));
                 dt.Columns.Add("Club Name", Type.GetType("System.String"));
                 dt.Columns.Add("Feeder Club Amount", Type.GetType("System.String"));
@@ -32,8 +32,8 @@ namespace RL26_Database_Editor
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Team Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
                     dt.Rows[dt.Rows.Count - 1]["Feeder Club Amount"] = Global.team[i].feederClubsAmount.ToString();

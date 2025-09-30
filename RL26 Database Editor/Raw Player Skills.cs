@@ -21,7 +21,7 @@ namespace RL26_Database_Editor
                 dt = new DataTable();
 
                 dt.Columns.Add("Index", Type.GetType("System.String"));
-                dt.Columns.Add("ID", Type.GetType("System.String"));
+                dt.Columns.Add("Id", Type.GetType("System.String"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
                 dt.Columns.Add("Gender", Type.GetType("System.String"));
@@ -49,7 +49,7 @@ namespace RL26_Database_Editor
                 {
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["ID"] = Global.player[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Id"] = Global.player[i].id.ToString();
                     dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Gender"] = Global.player[i].gender.ToString();

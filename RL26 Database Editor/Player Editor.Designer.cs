@@ -108,10 +108,10 @@ namespace RL26_Database_Editor
             Perks_comboBox = new ComboBox();
             Stats_groupBox = new GroupBox();
             SprintSpeed_label = new Label();
-            Fitness_label = new Label();
+            Stamina_label = new Label();
             Strength_label = new Label();
             SprintSpeed_numericUpDown = new NumericUpDown();
-            Fitness_numericUpDown = new NumericUpDown();
+            Stamina_numericUpDown = new NumericUpDown();
             Strength_numericUpDown = new NumericUpDown();
             Agility_numericUpDown = new NumericUpDown();
             Acceleration_label = new Label();
@@ -351,7 +351,7 @@ namespace RL26_Database_Editor
             Perks_groupBox.SuspendLayout();
             Stats_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SprintSpeed_numericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Fitness_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Stamina_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Strength_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Agility_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Acceleration_numericUpDown).BeginInit();
@@ -710,7 +710,7 @@ namespace RL26_Database_Editor
             // 
             Allstars_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             Allstars_comboBox.FormattingEnabled = true;
-            Allstars_comboBox.Items.AddRange(new object[] { "None", "World All Stars", "Indigenous All Stars" });
+            Allstars_comboBox.Items.AddRange(new object[] { "None", "Maori All Stars", "Indigenous All Stars" });
             Allstars_comboBox.Location = new Point(576, 314);
             Allstars_comboBox.Name = "Allstars_comboBox";
             Allstars_comboBox.Size = new Size(196, 23);
@@ -1258,10 +1258,10 @@ namespace RL26_Database_Editor
             // Stats_groupBox
             // 
             Stats_groupBox.Controls.Add(SprintSpeed_label);
-            Stats_groupBox.Controls.Add(Fitness_label);
+            Stats_groupBox.Controls.Add(Stamina_label);
             Stats_groupBox.Controls.Add(Strength_label);
             Stats_groupBox.Controls.Add(SprintSpeed_numericUpDown);
-            Stats_groupBox.Controls.Add(Fitness_numericUpDown);
+            Stats_groupBox.Controls.Add(Stamina_numericUpDown);
             Stats_groupBox.Controls.Add(Strength_numericUpDown);
             Stats_groupBox.Controls.Add(Agility_numericUpDown);
             Stats_groupBox.Controls.Add(Acceleration_label);
@@ -1288,15 +1288,15 @@ namespace RL26_Database_Editor
             SprintSpeed_label.TabIndex = 35;
             SprintSpeed_label.Text = "Sprint Speed:";
             // 
-            // Fitness_label
+            // Stamina_label
             // 
-            Fitness_label.AutoSize = true;
-            Fitness_label.BackColor = Color.Transparent;
-            Fitness_label.Location = new Point(127, 84);
-            Fitness_label.Name = "Fitness_label";
-            Fitness_label.Size = new Size(46, 15);
-            Fitness_label.TabIndex = 45;
-            Fitness_label.Text = "Fitness:";
+            Stamina_label.AutoSize = true;
+            Stamina_label.BackColor = Color.Transparent;
+            Stamina_label.Location = new Point(120, 84);
+            Stamina_label.Name = "Stamina_label";
+            Stamina_label.Size = new Size(53, 15);
+            Stamina_label.TabIndex = 45;
+            Stamina_label.Text = "Stamina:";
             // 
             // Strength_label
             // 
@@ -1316,13 +1316,13 @@ namespace RL26_Database_Editor
             SprintSpeed_numericUpDown.Size = new Size(38, 23);
             SprintSpeed_numericUpDown.TabIndex = 36;
             // 
-            // Fitness_numericUpDown
+            // Stamina_numericUpDown
             // 
-            Fitness_numericUpDown.Location = new Point(176, 80);
-            Fitness_numericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
-            Fitness_numericUpDown.Name = "Fitness_numericUpDown";
-            Fitness_numericUpDown.Size = new Size(38, 23);
-            Fitness_numericUpDown.TabIndex = 46;
+            Stamina_numericUpDown.Location = new Point(176, 80);
+            Stamina_numericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+            Stamina_numericUpDown.Name = "Stamina_numericUpDown";
+            Stamina_numericUpDown.Size = new Size(38, 23);
+            Stamina_numericUpDown.TabIndex = 46;
             // 
             // Strength_numericUpDown
             // 
@@ -3539,7 +3539,7 @@ namespace RL26_Database_Editor
             Stats_groupBox.ResumeLayout(false);
             Stats_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)SprintSpeed_numericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Fitness_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Stamina_numericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)Strength_numericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)Agility_numericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)Acceleration_numericUpDown).EndInit();
@@ -3715,8 +3715,8 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.Label Height_label;
         private System.Windows.Forms.NumericUpDown Durability_numericUpDown;
         private System.Windows.Forms.Label Durability_label;
-        private System.Windows.Forms.NumericUpDown Fitness_numericUpDown;
-        private System.Windows.Forms.Label Fitness_label;
+        private System.Windows.Forms.NumericUpDown Stamina_numericUpDown;
+        private System.Windows.Forms.Label Stamina_label;
         private System.Windows.Forms.NumericUpDown Agility_numericUpDown;
         private System.Windows.Forms.Label Agility_label;
         private System.Windows.Forms.NumericUpDown Discipline_numericUpDown;

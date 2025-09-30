@@ -21,14 +21,14 @@ namespace RL26_Database_Editor
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Team Index", Type.GetType("System.String"));
-                dt.Columns.Add("Team ID", Type.GetType("System.String"));
+                dt.Columns.Add("Index", Type.GetType("System.String"));
+                dt.Columns.Add("Team Id", Type.GetType("System.String"));
                 dt.Columns.Add("Location Name", Type.GetType("System.String"));
                 dt.Columns.Add("Club Name", Type.GetType("System.String"));
-                dt.Columns.Add("Team Captain ID", Type.GetType("System.String"));
-                dt.Columns.Add("Team GoalKicker ID", Type.GetType("System.String"));
-                dt.Columns.Add("Team PlayMaker1 ID", Type.GetType("System.String"));
-                dt.Columns.Add("Team PlayMaker2 ID", Type.GetType("System.String"));
+                dt.Columns.Add("Team Captain Id", Type.GetType("System.String"));
+                dt.Columns.Add("Team GoalKicker Id", Type.GetType("System.String"));
+                dt.Columns.Add("Team PlayMaker1 Id", Type.GetType("System.String"));
+                dt.Columns.Add("Team PlayMaker2 Id", Type.GetType("System.String"));
 
                 for (int i = 0; i < 17; i++)
                 {
@@ -39,14 +39,14 @@ namespace RL26_Database_Editor
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Team Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
-                    dt.Rows[dt.Rows.Count - 1]["Team Captain ID"] = Global.team[i].roles[0].roleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team GoalKicker ID"] = Global.team[i].roles[1].roleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker1 ID"] = Global.team[i].roles[2].roleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker2 ID"] = Global.team[i].roles[3].roleId.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team Captain Id"] = Global.team[i].roles[0].roleId.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team GoalKicker Id"] = Global.team[i].roles[1].roleId.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker1 Id"] = Global.team[i].roles[2].roleId.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker2 Id"] = Global.team[i].roles[3].roleId.ToString();
 
                     for (int j = 0; j < 17; j++)
                     {
@@ -76,7 +76,7 @@ namespace RL26_Database_Editor
                     Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].roles[j].isRoleId = false;
                 }
 
-                for (int j = 0; j < 20; j++)
+                for (int j = 0; j < 17; j++)
                 {
                     Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineups[j].isLineupId = false;
                 }

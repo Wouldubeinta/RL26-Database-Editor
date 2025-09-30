@@ -20,8 +20,8 @@ namespace RL26_Database_Editor
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Team Index", Type.GetType("System.String"));
-                dt.Columns.Add("Team ID", Type.GetType("System.String"));
+                dt.Columns.Add("Index", Type.GetType("System.String"));
+                dt.Columns.Add("Id", Type.GetType("System.String"));
                 dt.Columns.Add("Full Name", Type.GetType("System.String"));
                 dt.Columns.Add("Location Name", Type.GetType("System.String"));
                 dt.Columns.Add("Club Name", Type.GetType("System.String"));
@@ -41,14 +41,16 @@ namespace RL26_Database_Editor
                 dt.Columns.Add("Supporters", Type.GetType("System.String"));
                 dt.Columns.Add("Commentary Team Location Hash", Type.GetType("System.String"));
                 dt.Columns.Add("Commentary Team Mascot Hash", Type.GetType("System.String"));
-                dt.Columns.Add("Alternate Numbering", Type.GetType("System.String"));
+                dt.Columns.Add("Alternate Numbering", Type.GetType("System.Boolean"));
                 dt.Columns.Add("Alternate Numbering System", Type.GetType("System.String"));
+                dt.Columns.Add("Frontend Visible", Type.GetType("System.Boolean"));
+                dt.Columns.Add("World Cup Team", Type.GetType("System.Boolean"));
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Team Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team ID"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Id"] = Global.team[i].id.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Full Name"] = Global.team[i].fullName;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
@@ -68,8 +70,10 @@ namespace RL26_Database_Editor
                     dt.Rows[dt.Rows.Count - 1]["Supporters"] = Global.team[i].supporters.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Commentary Team Location Hash"] = Global.team[i].commentaryTeamLocationHash.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Commentary Team Mascot Hash"] = Global.team[i].commentaryTeamMascotHash.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Alternate Numbering"] = Global.team[i].alternateNumbering.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Alternate Numbering"] = Global.team[i].alternateNumbering;
                     dt.Rows[dt.Rows.Count - 1]["Alternate Numbering System"] = Global.team[i].alternateNumberingSystem.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Frontend Visible"] = Global.team[i].frontendVisible;
+                    dt.Rows[dt.Rows.Count - 1]["World Cup Team"] = Global.team[i].WorldCupTeam;
                 }
 
                 dataGridView1.DataSource = dt;
@@ -114,6 +118,8 @@ namespace RL26_Database_Editor
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].commentaryTeamMascotHash = Convert.ToUInt32(dataGridView1.Rows[i].Cells[19].Value);
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumbering = Convert.ToBoolean(dataGridView1.Rows[i].Cells[20].Value);
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumberingSystem = Convert.ToInt32(dataGridView1.Rows[i].Cells[21].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].frontendVisible = Convert.ToBoolean(dataGridView1.Rows[i].Cells[22].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].WorldCupTeam = Convert.ToBoolean(dataGridView1.Rows[i].Cells[23].Value);
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
                 toolStripProgressBar1.Value = (i);

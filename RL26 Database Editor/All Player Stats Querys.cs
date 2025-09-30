@@ -32,7 +32,7 @@
             // Technical Ability
             Global.player[i].technicalAbility.strength = Results(Global.player[i].technicalAbility.strength, Strength_numericUpDown.Value);
             Global.player[i].technicalAbility.agility = Results(Global.player[i].technicalAbility.agility, Agility_numericUpDown.Value);
-            Global.player[i].technicalAbility.fitness = Results(Global.player[i].technicalAbility.fitness, Fitness_numericUpDown.Value);
+            Global.player[i].technicalAbility.stamina = Results(Global.player[i].technicalAbility.stamina, Fitness_numericUpDown.Value);
             Global.player[i].technicalAbility.acceleration = Results(Global.player[i].technicalAbility.acceleration, Acceleration_numericUpDown.Value);
             Global.player[i].technicalAbility.discipline = Results(Global.player[i].technicalAbility.discipline, Discipline_numericUpDown.Value);
             Global.player[i].technicalAbility.durability = Results(Global.player[i].technicalAbility.durability, Durability_numericUpDown.Value);

@@ -35,13 +35,13 @@ namespace RL26_Database_Editor
             team_name_label = new Label();
             StadiumAmount_numericUpDown = new NumericUpDown();
             StadiumAmount_Label = new Label();
-            tabPage5 = new TabPage();
-            dataGridView3 = new DataGridView();
-            tabPage4 = new TabPage();
-            dataGridView2 = new DataGridView();
-            tabPage3 = new TabPage();
-            dataGridView1 = new DataGridView();
-            tabPage2 = new TabPage();
+            assignRoles_tabPage = new TabPage();
+            assignRoles_dataGridView = new DataGridView();
+            lineup_tabPage = new TabPage();
+            lineup_dataGridView = new DataGridView();
+            players_tabPage = new TabPage();
+            players_dataGridView = new DataGridView();
+            jerseys_tabPage = new TabPage();
             ExportJersey_button = new Button();
             ImportJersey_button = new Button();
             JerseyNumber_groupBox = new GroupBox();
@@ -75,7 +75,7 @@ namespace RL26_Database_Editor
             JerseyName_label = new Label();
             JerseySelection_comboBox = new ComboBox();
             JerseyName_textBox = new TextBox();
-            tabPage1 = new TabPage();
+            Identity_tabPage = new TabPage();
             alternateNumberingSystem_textBox = new TextBox();
             Affiliations_comboBox = new ComboBox();
             isFrontendVisible_checkBox = new CheckBox();
@@ -103,7 +103,7 @@ namespace RL26_Database_Editor
             Affiliations_label = new Label();
             TeamType_comboBox = new ComboBox();
             TeamType_label = new Label();
-            pictureBox = new PictureBox();
+            largeLogo_pictureBox = new PictureBox();
             TeamID_textBox = new TextBox();
             TeamIndex_textBox = new TextBox();
             AbbreviatedName_textBox = new TextBox();
@@ -120,15 +120,15 @@ namespace RL26_Database_Editor
             AbbreviatedName_label = new Label();
             LocationName_label = new Label();
             Fullname_label = new Label();
-            tabControl1 = new TabControl();
-            tabPage6 = new TabPage();
-            dataGridView4 = new DataGridView();
-            tabPage7 = new TabPage();
-            dataGridView5 = new DataGridView();
-            tabPage8 = new TabPage();
-            dataGridView6 = new DataGridView();
-            tabPage9 = new TabPage();
-            dataGridView7 = new DataGridView();
+            Team_tabControl = new TabControl();
+            ninesLineup_tabPage = new TabPage();
+            ninesLineup_dataGridView = new DataGridView();
+            ninesAssignRoles_tabPage = new TabPage();
+            ninesAssignRoles_dataGridView = new DataGridView();
+            feederClubs_tabPage = new TabPage();
+            feederClubs_dataGridView = new DataGridView();
+            fedFromClubs_tabPage = new TabPage();
+            fedFromClubs_dataGridView = new DataGridView();
             TeamPlayerAmount_textBox = new TextBox();
             Players_contextMenuStrip = new ContextMenuStrip(components);
             addPlayerToolStripMenuItem = new ToolStripMenuItem();
@@ -144,8 +144,8 @@ namespace RL26_Database_Editor
             NinesLineup_toolStripMenuItem = new ToolStripMenuItem();
             NinesRoles_contextMenuStrip = new ContextMenuStrip(components);
             NinesRoles_toolStripMenuItem = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
-            colorDialog1 = new ColorDialog();
+            smallLogo_pictureBox = new PictureBox();
+            team_colorDialog = new ColorDialog();
             FeederClubs_contextMenuStrip = new ContextMenuStrip(components);
             addTeam1ToolStripMenuItem = new ToolStripMenuItem();
             deleteTeam1ToolStripMenuItem = new ToolStripMenuItem();
@@ -156,13 +156,13 @@ namespace RL26_Database_Editor
             teamFedFromClubListToolStripMenuItem = new ToolStripMenuItem();
             Jersey_ofd = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)StadiumAmount_numericUpDown).BeginInit();
-            tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage2.SuspendLayout();
+            assignRoles_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)assignRoles_dataGridView).BeginInit();
+            lineup_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)lineup_dataGridView).BeginInit();
+            players_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)players_dataGridView).BeginInit();
+            jerseys_tabPage.SuspendLayout();
             JerseyNumber_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)KeylineOffset_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)JerseyNumberFont_numericUpDown).BeginInit();
@@ -171,23 +171,23 @@ namespace RL26_Database_Editor
             ((System.ComponentModel.ISupportInitialize)JerseyNameFont_numericUpDown).BeginInit();
             Jersey_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)JerseyAmount_numericUpDown).BeginInit();
-            tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
-            tabControl1.SuspendLayout();
-            tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
-            tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
-            tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).BeginInit();
-            tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).BeginInit();
+            Identity_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)largeLogo_pictureBox).BeginInit();
+            Team_tabControl.SuspendLayout();
+            ninesLineup_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ninesLineup_dataGridView).BeginInit();
+            ninesAssignRoles_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ninesAssignRoles_dataGridView).BeginInit();
+            feederClubs_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)feederClubs_dataGridView).BeginInit();
+            fedFromClubs_tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fedFromClubs_dataGridView).BeginInit();
             Players_contextMenuStrip.SuspendLayout();
             Roles_contextMenuStrip.SuspendLayout();
             Lineup_contextMenuStrip.SuspendLayout();
             NinesLineup_contextMenuStrip.SuspendLayout();
             NinesRoles_contextMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)smallLogo_pictureBox).BeginInit();
             FeederClubs_contextMenuStrip.SuspendLayout();
             FedFromClubs_contextMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -237,105 +237,105 @@ namespace RL26_Database_Editor
             StadiumAmount_Label.TabIndex = 38;
             StadiumAmount_Label.Text = "Stadium Amount";
             // 
-            // tabPage5
+            // assignRoles_tabPage
             // 
-            tabPage5.Controls.Add(dataGridView3);
-            tabPage5.Location = new Point(4, 24);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(642, 530);
-            tabPage5.TabIndex = 5;
-            tabPage5.Text = "Assign Roles";
-            tabPage5.UseVisualStyleBackColor = true;
+            assignRoles_tabPage.Controls.Add(assignRoles_dataGridView);
+            assignRoles_tabPage.Location = new Point(4, 24);
+            assignRoles_tabPage.Name = "assignRoles_tabPage";
+            assignRoles_tabPage.Size = new Size(642, 530);
+            assignRoles_tabPage.TabIndex = 5;
+            assignRoles_tabPage.Text = "Assign Roles";
+            assignRoles_tabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // assignRoles_dataGridView
             // 
-            dataGridView3.AllowUserToAddRows = false;
-            dataGridView3.AllowUserToDeleteRows = false;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Dock = DockStyle.Fill;
-            dataGridView3.Location = new Point(0, 0);
-            dataGridView3.MultiSelect = false;
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView3.Size = new Size(642, 530);
-            dataGridView3.TabIndex = 3;
-            dataGridView3.CellValueChanged += dataGridView3_CellValueChanged;
-            dataGridView3.MouseClick += dataGridView3_MouseClick;
-            dataGridView3.MouseDoubleClick += dataGridView3_MouseDoubleClick;
+            assignRoles_dataGridView.AllowUserToAddRows = false;
+            assignRoles_dataGridView.AllowUserToDeleteRows = false;
+            assignRoles_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            assignRoles_dataGridView.Dock = DockStyle.Fill;
+            assignRoles_dataGridView.Location = new Point(0, 0);
+            assignRoles_dataGridView.MultiSelect = false;
+            assignRoles_dataGridView.Name = "assignRoles_dataGridView";
+            assignRoles_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            assignRoles_dataGridView.Size = new Size(642, 530);
+            assignRoles_dataGridView.TabIndex = 3;
+            assignRoles_dataGridView.CellValueChanged += assignRoles_dataGridView_CellValueChanged;
+            assignRoles_dataGridView.MouseClick += assignRoles_dataGridView_MouseClick;
+            assignRoles_dataGridView.MouseDoubleClick += assignRoles_dataGridView_MouseDoubleClick;
             // 
-            // tabPage4
+            // lineup_tabPage
             // 
-            tabPage4.Controls.Add(dataGridView2);
-            tabPage4.Location = new Point(4, 24);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(642, 530);
-            tabPage4.TabIndex = 4;
-            tabPage4.Text = "Lineup";
-            tabPage4.UseVisualStyleBackColor = true;
+            lineup_tabPage.Controls.Add(lineup_dataGridView);
+            lineup_tabPage.Location = new Point(4, 24);
+            lineup_tabPage.Name = "lineup_tabPage";
+            lineup_tabPage.Size = new Size(642, 530);
+            lineup_tabPage.TabIndex = 4;
+            lineup_tabPage.Text = "Lineup";
+            lineup_tabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // lineup_dataGridView
             // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(0, 0);
-            dataGridView2.MultiSelect = false;
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(642, 530);
-            dataGridView2.TabIndex = 2;
-            dataGridView2.CellValueChanged += dataGridView2_CellValueChanged;
-            dataGridView2.MouseClick += dataGridView2_MouseClick;
-            dataGridView2.MouseDoubleClick += dataGridView2_MouseDoubleClick;
+            lineup_dataGridView.AllowUserToAddRows = false;
+            lineup_dataGridView.AllowUserToDeleteRows = false;
+            lineup_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            lineup_dataGridView.Dock = DockStyle.Fill;
+            lineup_dataGridView.Location = new Point(0, 0);
+            lineup_dataGridView.MultiSelect = false;
+            lineup_dataGridView.Name = "lineup_dataGridView";
+            lineup_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            lineup_dataGridView.Size = new Size(642, 530);
+            lineup_dataGridView.TabIndex = 2;
+            lineup_dataGridView.CellValueChanged += lineup_dataGridView_CellValueChanged;
+            lineup_dataGridView.MouseClick += lineup_dataGridView_MouseClick;
+            lineup_dataGridView.MouseDoubleClick += lineup_dataGridView_MouseDoubleClick;
             // 
-            // tabPage3
+            // players_tabPage
             // 
-            tabPage3.Controls.Add(dataGridView1);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(642, 530);
-            tabPage3.TabIndex = 3;
-            tabPage3.Text = "Players";
-            tabPage3.UseVisualStyleBackColor = true;
+            players_tabPage.Controls.Add(players_dataGridView);
+            players_tabPage.Location = new Point(4, 24);
+            players_tabPage.Name = "players_tabPage";
+            players_tabPage.Size = new Size(642, 530);
+            players_tabPage.TabIndex = 3;
+            players_tabPage.Text = "Players";
+            players_tabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // players_dataGridView
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(642, 530);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
-            dataGridView1.UserDeletedRow += dataGridView1_UserDeletedRow;
-            dataGridView1.MouseClick += dataGridView1_MouseClick;
-            dataGridView1.MouseDoubleClick += dataGridView1_MouseDoubleClick;
+            players_dataGridView.AllowUserToAddRows = false;
+            players_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            players_dataGridView.Dock = DockStyle.Fill;
+            players_dataGridView.Location = new Point(0, 0);
+            players_dataGridView.MultiSelect = false;
+            players_dataGridView.Name = "players_dataGridView";
+            players_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            players_dataGridView.Size = new Size(642, 530);
+            players_dataGridView.TabIndex = 0;
+            players_dataGridView.CellValueChanged += players_dataGridView_CellValueChanged;
+            players_dataGridView.UserDeletedRow += players_dataGridView_UserDeletedRow;
+            players_dataGridView.MouseClick += players_dataGridView_MouseClick;
+            players_dataGridView.MouseDoubleClick += players_dataGridView_MouseDoubleClick;
             // 
-            // tabPage2
+            // jerseys_tabPage
             // 
-            tabPage2.AutoScroll = true;
-            tabPage2.Controls.Add(ExportJersey_button);
-            tabPage2.Controls.Add(ImportJersey_button);
-            tabPage2.Controls.Add(JerseyNumber_groupBox);
-            tabPage2.Controls.Add(JerseyName_groupBox);
-            tabPage2.Controls.Add(Jersey_groupBox);
-            tabPage2.Controls.Add(JerseySelection_label);
-            tabPage2.Controls.Add(JerseyAmount_label);
-            tabPage2.Controls.Add(JerseyAmount_numericUpDown);
-            tabPage2.Controls.Add(JerseyName_label);
-            tabPage2.Controls.Add(JerseySelection_comboBox);
-            tabPage2.Controls.Add(JerseyName_textBox);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(642, 530);
-            tabPage2.TabIndex = 2;
-            tabPage2.Text = "Jerseys";
-            tabPage2.UseVisualStyleBackColor = true;
+            jerseys_tabPage.AutoScroll = true;
+            jerseys_tabPage.Controls.Add(ExportJersey_button);
+            jerseys_tabPage.Controls.Add(ImportJersey_button);
+            jerseys_tabPage.Controls.Add(JerseyNumber_groupBox);
+            jerseys_tabPage.Controls.Add(JerseyName_groupBox);
+            jerseys_tabPage.Controls.Add(Jersey_groupBox);
+            jerseys_tabPage.Controls.Add(JerseySelection_label);
+            jerseys_tabPage.Controls.Add(JerseyAmount_label);
+            jerseys_tabPage.Controls.Add(JerseyAmount_numericUpDown);
+            jerseys_tabPage.Controls.Add(JerseyName_label);
+            jerseys_tabPage.Controls.Add(JerseySelection_comboBox);
+            jerseys_tabPage.Controls.Add(JerseyName_textBox);
+            jerseys_tabPage.Location = new Point(4, 24);
+            jerseys_tabPage.Name = "jerseys_tabPage";
+            jerseys_tabPage.Padding = new Padding(3);
+            jerseys_tabPage.Size = new Size(642, 530);
+            jerseys_tabPage.TabIndex = 2;
+            jerseys_tabPage.Text = "Jerseys";
+            jerseys_tabPage.UseVisualStyleBackColor = true;
             // 
             // ExportJersey_button
             // 
@@ -666,59 +666,59 @@ namespace RL26_Database_Editor
             JerseyName_textBox.TabIndex = 53;
             JerseyName_textBox.Tag = "  ";
             // 
-            // tabPage1
+            // Identity_tabPage
             // 
-            tabPage1.BackColor = Color.Gainsboro;
-            tabPage1.Controls.Add(alternateNumberingSystem_textBox);
-            tabPage1.Controls.Add(Affiliations_comboBox);
-            tabPage1.Controls.Add(isFrontendVisible_checkBox);
-            tabPage1.Controls.Add(CommentaryMascot_comboBox);
-            tabPage1.Controls.Add(CommentaryMascot_label);
-            tabPage1.Controls.Add(isWorldCup_checkBox);
-            tabPage1.Controls.Add(TeamGender_textBox);
-            tabPage1.Controls.Add(TeamGender_label);
-            tabPage1.Controls.Add(TeamGenderImage_label);
-            tabPage1.Controls.Add(alternateNumbering_checkBox);
-            tabPage1.Controls.Add(CustomName_textBox);
-            tabPage1.Controls.Add(CustomName_checkBox);
-            tabPage1.Controls.Add(HudTextColour_button);
-            tabPage1.Controls.Add(HudTextColour_label);
-            tabPage1.Controls.Add(SecondaryColour_button);
-            tabPage1.Controls.Add(SecondaryColour_label);
-            tabPage1.Controls.Add(PrimaryColour_button);
-            tabPage1.Controls.Add(PrimaryColour_label);
-            tabPage1.Controls.Add(ClubName_textBox);
-            tabPage1.Controls.Add(ClubName_label);
-            tabPage1.Controls.Add(StadiumType_label);
-            tabPage1.Controls.Add(StadiumType_comboBox);
-            tabPage1.Controls.Add(Stadium_label);
-            tabPage1.Controls.Add(Stadium_comboBox);
-            tabPage1.Controls.Add(Affiliations_label);
-            tabPage1.Controls.Add(TeamType_comboBox);
-            tabPage1.Controls.Add(TeamType_label);
-            tabPage1.Controls.Add(pictureBox);
-            tabPage1.Controls.Add(TeamID_textBox);
-            tabPage1.Controls.Add(TeamIndex_textBox);
-            tabPage1.Controls.Add(AbbreviatedName_textBox);
-            tabPage1.Controls.Add(LocationName_textBox);
-            tabPage1.Controls.Add(Fullname_textBox);
-            tabPage1.Controls.Add(TeamID_label);
-            tabPage1.Controls.Add(CommentaryLocation_comboBox);
-            tabPage1.Controls.Add(CommentaryLocation_label);
-            tabPage1.Controls.Add(Supporters_comboBox);
-            tabPage1.Controls.Add(Supporters_label);
-            tabPage1.Controls.Add(Logo_comboBox);
-            tabPage1.Controls.Add(Logo_label);
-            tabPage1.Controls.Add(TeamIndex_label);
-            tabPage1.Controls.Add(AbbreviatedName_label);
-            tabPage1.Controls.Add(LocationName_label);
-            tabPage1.Controls.Add(Fullname_label);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(642, 530);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Identity";
+            Identity_tabPage.BackColor = Color.Gainsboro;
+            Identity_tabPage.Controls.Add(alternateNumberingSystem_textBox);
+            Identity_tabPage.Controls.Add(Affiliations_comboBox);
+            Identity_tabPage.Controls.Add(isFrontendVisible_checkBox);
+            Identity_tabPage.Controls.Add(CommentaryMascot_comboBox);
+            Identity_tabPage.Controls.Add(CommentaryMascot_label);
+            Identity_tabPage.Controls.Add(isWorldCup_checkBox);
+            Identity_tabPage.Controls.Add(TeamGender_textBox);
+            Identity_tabPage.Controls.Add(TeamGender_label);
+            Identity_tabPage.Controls.Add(TeamGenderImage_label);
+            Identity_tabPage.Controls.Add(alternateNumbering_checkBox);
+            Identity_tabPage.Controls.Add(CustomName_textBox);
+            Identity_tabPage.Controls.Add(CustomName_checkBox);
+            Identity_tabPage.Controls.Add(HudTextColour_button);
+            Identity_tabPage.Controls.Add(HudTextColour_label);
+            Identity_tabPage.Controls.Add(SecondaryColour_button);
+            Identity_tabPage.Controls.Add(SecondaryColour_label);
+            Identity_tabPage.Controls.Add(PrimaryColour_button);
+            Identity_tabPage.Controls.Add(PrimaryColour_label);
+            Identity_tabPage.Controls.Add(ClubName_textBox);
+            Identity_tabPage.Controls.Add(ClubName_label);
+            Identity_tabPage.Controls.Add(StadiumType_label);
+            Identity_tabPage.Controls.Add(StadiumType_comboBox);
+            Identity_tabPage.Controls.Add(Stadium_label);
+            Identity_tabPage.Controls.Add(Stadium_comboBox);
+            Identity_tabPage.Controls.Add(Affiliations_label);
+            Identity_tabPage.Controls.Add(TeamType_comboBox);
+            Identity_tabPage.Controls.Add(TeamType_label);
+            Identity_tabPage.Controls.Add(largeLogo_pictureBox);
+            Identity_tabPage.Controls.Add(TeamID_textBox);
+            Identity_tabPage.Controls.Add(TeamIndex_textBox);
+            Identity_tabPage.Controls.Add(AbbreviatedName_textBox);
+            Identity_tabPage.Controls.Add(LocationName_textBox);
+            Identity_tabPage.Controls.Add(Fullname_textBox);
+            Identity_tabPage.Controls.Add(TeamID_label);
+            Identity_tabPage.Controls.Add(CommentaryLocation_comboBox);
+            Identity_tabPage.Controls.Add(CommentaryLocation_label);
+            Identity_tabPage.Controls.Add(Supporters_comboBox);
+            Identity_tabPage.Controls.Add(Supporters_label);
+            Identity_tabPage.Controls.Add(Logo_comboBox);
+            Identity_tabPage.Controls.Add(Logo_label);
+            Identity_tabPage.Controls.Add(TeamIndex_label);
+            Identity_tabPage.Controls.Add(AbbreviatedName_label);
+            Identity_tabPage.Controls.Add(LocationName_label);
+            Identity_tabPage.Controls.Add(Fullname_label);
+            Identity_tabPage.Location = new Point(4, 24);
+            Identity_tabPage.Name = "Identity_tabPage";
+            Identity_tabPage.Padding = new Padding(3);
+            Identity_tabPage.Size = new Size(642, 530);
+            Identity_tabPage.TabIndex = 0;
+            Identity_tabPage.Text = "Identity";
             // 
             // alternateNumberingSystem_textBox
             // 
@@ -972,15 +972,15 @@ namespace RL26_Database_Editor
             TeamType_label.TabIndex = 69;
             TeamType_label.Text = "Type:";
             // 
-            // pictureBox
+            // largeLogo_pictureBox
             // 
-            pictureBox.BackColor = Color.Transparent;
-            pictureBox.Location = new Point(356, 20);
-            pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(275, 272);
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox.TabIndex = 18;
-            pictureBox.TabStop = false;
+            largeLogo_pictureBox.BackColor = Color.Transparent;
+            largeLogo_pictureBox.Location = new Point(356, 20);
+            largeLogo_pictureBox.Name = "largeLogo_pictureBox";
+            largeLogo_pictureBox.Size = new Size(275, 272);
+            largeLogo_pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            largeLogo_pictureBox.TabIndex = 18;
+            largeLogo_pictureBox.TabStop = false;
             // 
             // TeamID_textBox
             // 
@@ -1124,124 +1124,124 @@ namespace RL26_Database_Editor
             Fullname_label.TabIndex = 0;
             Fullname_label.Text = "Full Name:";
             // 
-            // tabControl1
+            // Team_tabControl
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Controls.Add(tabPage4);
-            tabControl1.Controls.Add(tabPage5);
-            tabControl1.Controls.Add(tabPage6);
-            tabControl1.Controls.Add(tabPage7);
-            tabControl1.Controls.Add(tabPage8);
-            tabControl1.Controls.Add(tabPage9);
-            tabControl1.Location = new Point(15, 75);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(650, 558);
-            tabControl1.TabIndex = 0;
+            Team_tabControl.Controls.Add(Identity_tabPage);
+            Team_tabControl.Controls.Add(jerseys_tabPage);
+            Team_tabControl.Controls.Add(players_tabPage);
+            Team_tabControl.Controls.Add(lineup_tabPage);
+            Team_tabControl.Controls.Add(assignRoles_tabPage);
+            Team_tabControl.Controls.Add(ninesLineup_tabPage);
+            Team_tabControl.Controls.Add(ninesAssignRoles_tabPage);
+            Team_tabControl.Controls.Add(feederClubs_tabPage);
+            Team_tabControl.Controls.Add(fedFromClubs_tabPage);
+            Team_tabControl.Location = new Point(15, 75);
+            Team_tabControl.Name = "Team_tabControl";
+            Team_tabControl.SelectedIndex = 0;
+            Team_tabControl.Size = new Size(650, 558);
+            Team_tabControl.TabIndex = 0;
             // 
-            // tabPage6
+            // ninesLineup_tabPage
             // 
-            tabPage6.Controls.Add(dataGridView4);
-            tabPage6.Location = new Point(4, 24);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(642, 530);
-            tabPage6.TabIndex = 6;
-            tabPage6.Text = "Nines Lineup";
-            tabPage6.UseVisualStyleBackColor = true;
+            ninesLineup_tabPage.Controls.Add(ninesLineup_dataGridView);
+            ninesLineup_tabPage.Location = new Point(4, 24);
+            ninesLineup_tabPage.Name = "ninesLineup_tabPage";
+            ninesLineup_tabPage.Size = new Size(642, 530);
+            ninesLineup_tabPage.TabIndex = 6;
+            ninesLineup_tabPage.Text = "Nines Lineup";
+            ninesLineup_tabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // ninesLineup_dataGridView
             // 
-            dataGridView4.AllowUserToAddRows = false;
-            dataGridView4.AllowUserToDeleteRows = false;
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Dock = DockStyle.Fill;
-            dataGridView4.Location = new Point(0, 0);
-            dataGridView4.MultiSelect = false;
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView4.Size = new Size(642, 530);
-            dataGridView4.TabIndex = 3;
-            dataGridView4.CellValueChanged += dataGridView4_CellValueChanged;
-            dataGridView4.MouseClick += dataGridView4_MouseClick;
-            dataGridView4.MouseDoubleClick += dataGridView4_MouseDoubleClick;
+            ninesLineup_dataGridView.AllowUserToAddRows = false;
+            ninesLineup_dataGridView.AllowUserToDeleteRows = false;
+            ninesLineup_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ninesLineup_dataGridView.Dock = DockStyle.Fill;
+            ninesLineup_dataGridView.Location = new Point(0, 0);
+            ninesLineup_dataGridView.MultiSelect = false;
+            ninesLineup_dataGridView.Name = "ninesLineup_dataGridView";
+            ninesLineup_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            ninesLineup_dataGridView.Size = new Size(642, 530);
+            ninesLineup_dataGridView.TabIndex = 3;
+            ninesLineup_dataGridView.CellValueChanged += ninesLineup_dataGridView_CellValueChanged;
+            ninesLineup_dataGridView.MouseClick += ninesLineup_dataGridView_MouseClick;
+            ninesLineup_dataGridView.MouseDoubleClick += ninesLineup_dataGridView_MouseDoubleClick;
             // 
-            // tabPage7
+            // ninesAssignRoles_tabPage
             // 
-            tabPage7.Controls.Add(dataGridView5);
-            tabPage7.Location = new Point(4, 24);
-            tabPage7.Name = "tabPage7";
-            tabPage7.Size = new Size(642, 530);
-            tabPage7.TabIndex = 7;
-            tabPage7.Text = "Nines Assign Roles";
-            tabPage7.UseVisualStyleBackColor = true;
+            ninesAssignRoles_tabPage.Controls.Add(ninesAssignRoles_dataGridView);
+            ninesAssignRoles_tabPage.Location = new Point(4, 24);
+            ninesAssignRoles_tabPage.Name = "ninesAssignRoles_tabPage";
+            ninesAssignRoles_tabPage.Size = new Size(642, 530);
+            ninesAssignRoles_tabPage.TabIndex = 7;
+            ninesAssignRoles_tabPage.Text = "Nines Assign Roles";
+            ninesAssignRoles_tabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView5
+            // ninesAssignRoles_dataGridView
             // 
-            dataGridView5.AllowUserToAddRows = false;
-            dataGridView5.AllowUserToDeleteRows = false;
-            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Dock = DockStyle.Fill;
-            dataGridView5.Location = new Point(0, 0);
-            dataGridView5.MultiSelect = false;
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView5.Size = new Size(642, 530);
-            dataGridView5.TabIndex = 4;
-            dataGridView5.CellValueChanged += dataGridView5_CellValueChanged;
-            dataGridView5.MouseClick += dataGridView5_MouseClick;
-            dataGridView5.MouseDoubleClick += dataGridView5_MouseDoubleClick;
+            ninesAssignRoles_dataGridView.AllowUserToAddRows = false;
+            ninesAssignRoles_dataGridView.AllowUserToDeleteRows = false;
+            ninesAssignRoles_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ninesAssignRoles_dataGridView.Dock = DockStyle.Fill;
+            ninesAssignRoles_dataGridView.Location = new Point(0, 0);
+            ninesAssignRoles_dataGridView.MultiSelect = false;
+            ninesAssignRoles_dataGridView.Name = "ninesAssignRoles_dataGridView";
+            ninesAssignRoles_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            ninesAssignRoles_dataGridView.Size = new Size(642, 530);
+            ninesAssignRoles_dataGridView.TabIndex = 4;
+            ninesAssignRoles_dataGridView.CellValueChanged += ninesAssignRoles_dataGridView_CellValueChanged;
+            ninesAssignRoles_dataGridView.MouseClick += ninesAssignRoles_dataGridView_MouseClick;
+            ninesAssignRoles_dataGridView.MouseDoubleClick += ninesAssignRoles_dataGridView_MouseDoubleClick;
             // 
-            // tabPage8
+            // feederClubs_tabPage
             // 
-            tabPage8.Controls.Add(dataGridView6);
-            tabPage8.Location = new Point(4, 24);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(642, 530);
-            tabPage8.TabIndex = 8;
-            tabPage8.Text = "Feeder Clubs";
-            tabPage8.UseVisualStyleBackColor = true;
+            feederClubs_tabPage.Controls.Add(feederClubs_dataGridView);
+            feederClubs_tabPage.Location = new Point(4, 24);
+            feederClubs_tabPage.Name = "feederClubs_tabPage";
+            feederClubs_tabPage.Size = new Size(642, 530);
+            feederClubs_tabPage.TabIndex = 8;
+            feederClubs_tabPage.Text = "Feeder Clubs";
+            feederClubs_tabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView6
+            // feederClubs_dataGridView
             // 
-            dataGridView6.AllowUserToAddRows = false;
-            dataGridView6.AllowUserToDeleteRows = false;
-            dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView6.Dock = DockStyle.Fill;
-            dataGridView6.Location = new Point(0, 0);
-            dataGridView6.MultiSelect = false;
-            dataGridView6.Name = "dataGridView6";
-            dataGridView6.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView6.Size = new Size(642, 530);
-            dataGridView6.TabIndex = 5;
-            dataGridView6.CellValueChanged += dataGridView6_CellValueChanged;
-            dataGridView6.MouseClick += dataGridView6_MouseClick;
+            feederClubs_dataGridView.AllowUserToAddRows = false;
+            feederClubs_dataGridView.AllowUserToDeleteRows = false;
+            feederClubs_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            feederClubs_dataGridView.Dock = DockStyle.Fill;
+            feederClubs_dataGridView.Location = new Point(0, 0);
+            feederClubs_dataGridView.MultiSelect = false;
+            feederClubs_dataGridView.Name = "feederClubs_dataGridView";
+            feederClubs_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            feederClubs_dataGridView.Size = new Size(642, 530);
+            feederClubs_dataGridView.TabIndex = 5;
+            feederClubs_dataGridView.CellValueChanged += feederClubs_dataGridView_CellValueChanged;
+            feederClubs_dataGridView.MouseClick += feederClubs_dataGridView_MouseClick;
             // 
-            // tabPage9
+            // fedFromClubs_tabPage
             // 
-            tabPage9.Controls.Add(dataGridView7);
-            tabPage9.Location = new Point(4, 24);
-            tabPage9.Name = "tabPage9";
-            tabPage9.Size = new Size(642, 530);
-            tabPage9.TabIndex = 9;
-            tabPage9.Text = "Fed From Clubs";
-            tabPage9.UseVisualStyleBackColor = true;
+            fedFromClubs_tabPage.Controls.Add(fedFromClubs_dataGridView);
+            fedFromClubs_tabPage.Location = new Point(4, 24);
+            fedFromClubs_tabPage.Name = "fedFromClubs_tabPage";
+            fedFromClubs_tabPage.Size = new Size(642, 530);
+            fedFromClubs_tabPage.TabIndex = 9;
+            fedFromClubs_tabPage.Text = "Fed From Clubs";
+            fedFromClubs_tabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView7
+            // fedFromClubs_dataGridView
             // 
-            dataGridView7.AllowUserToAddRows = false;
-            dataGridView7.AllowUserToDeleteRows = false;
-            dataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView7.Dock = DockStyle.Fill;
-            dataGridView7.Location = new Point(0, 0);
-            dataGridView7.MultiSelect = false;
-            dataGridView7.Name = "dataGridView7";
-            dataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView7.Size = new Size(642, 530);
-            dataGridView7.TabIndex = 6;
-            dataGridView7.CellValueChanged += dataGridView7_CellValueChanged;
-            dataGridView7.MouseClick += dataGridView7_MouseClick;
+            fedFromClubs_dataGridView.AllowUserToAddRows = false;
+            fedFromClubs_dataGridView.AllowUserToDeleteRows = false;
+            fedFromClubs_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            fedFromClubs_dataGridView.Dock = DockStyle.Fill;
+            fedFromClubs_dataGridView.Location = new Point(0, 0);
+            fedFromClubs_dataGridView.MultiSelect = false;
+            fedFromClubs_dataGridView.Name = "fedFromClubs_dataGridView";
+            fedFromClubs_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            fedFromClubs_dataGridView.Size = new Size(642, 530);
+            fedFromClubs_dataGridView.TabIndex = 6;
+            fedFromClubs_dataGridView.CellValueChanged += fedFromClubs_dataGridView_CellValueChanged;
+            fedFromClubs_dataGridView.MouseClick += fedFromClubs_dataGridView_MouseClick;
             // 
             // TeamPlayerAmount_textBox
             // 
@@ -1346,19 +1346,19 @@ namespace RL26_Database_Editor
             NinesRoles_toolStripMenuItem.Text = "Team Nines Roles List";
             NinesRoles_toolStripMenuItem.Click += NinesRoles_toolStripMenuItem_Click;
             // 
-            // pictureBox1
+            // smallLogo_pictureBox
             // 
-            pictureBox1.Location = new Point(10, 8);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(68, 61);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 51;
-            pictureBox1.TabStop = false;
+            smallLogo_pictureBox.Location = new Point(10, 8);
+            smallLogo_pictureBox.Name = "smallLogo_pictureBox";
+            smallLogo_pictureBox.Size = new Size(68, 61);
+            smallLogo_pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            smallLogo_pictureBox.TabIndex = 51;
+            smallLogo_pictureBox.TabStop = false;
             // 
-            // colorDialog1
+            // team_colorDialog
             // 
-            colorDialog1.AnyColor = true;
-            colorDialog1.FullOpen = true;
+            team_colorDialog.AnyColor = true;
+            team_colorDialog.FullOpen = true;
             // 
             // FeederClubs_contextMenuStrip
             // 
@@ -1423,11 +1423,11 @@ namespace RL26_Database_Editor
             // 
             AutoScroll = true;
             ClientSize = new Size(681, 706);
-            Controls.Add(pictureBox1);
+            Controls.Add(smallLogo_pictureBox);
             Controls.Add(TeamPlayerAmount_textBox);
             Controls.Add(StadiumAmount_numericUpDown);
             Controls.Add(StadiumAmount_Label);
-            Controls.Add(tabControl1);
+            Controls.Add(Team_tabControl);
             Controls.Add(team_name_label);
             Controls.Add(TeamPlayerAmount_label);
             Controls.Add(Team_Save_Changers_button);
@@ -1441,14 +1441,14 @@ namespace RL26_Database_Editor
             Load += Team_Editor_Load;
             KeyDown += Team_Editor_KeyDown;
             ((System.ComponentModel.ISupportInitialize)StadiumAmount_numericUpDown).EndInit();
-            tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            assignRoles_tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)assignRoles_dataGridView).EndInit();
+            lineup_tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)lineup_dataGridView).EndInit();
+            players_tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)players_dataGridView).EndInit();
+            jerseys_tabPage.ResumeLayout(false);
+            jerseys_tabPage.PerformLayout();
             JerseyNumber_groupBox.ResumeLayout(false);
             JerseyNumber_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)KeylineOffset_numericUpDown).EndInit();
@@ -1460,24 +1460,24 @@ namespace RL26_Database_Editor
             Jersey_groupBox.ResumeLayout(false);
             Jersey_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)JerseyAmount_numericUpDown).EndInit();
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
-            tabControl1.ResumeLayout(false);
-            tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
-            tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
-            tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).EndInit();
-            tabPage9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).EndInit();
+            Identity_tabPage.ResumeLayout(false);
+            Identity_tabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)largeLogo_pictureBox).EndInit();
+            Team_tabControl.ResumeLayout(false);
+            ninesLineup_tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ninesLineup_dataGridView).EndInit();
+            ninesAssignRoles_tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ninesAssignRoles_dataGridView).EndInit();
+            feederClubs_tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)feederClubs_dataGridView).EndInit();
+            fedFromClubs_tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)fedFromClubs_dataGridView).EndInit();
             Players_contextMenuStrip.ResumeLayout(false);
             Roles_contextMenuStrip.ResumeLayout(false);
             Lineup_contextMenuStrip.ResumeLayout(false);
             NinesLineup_contextMenuStrip.ResumeLayout(false);
             NinesRoles_contextMenuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)smallLogo_pictureBox).EndInit();
             FeederClubs_contextMenuStrip.ResumeLayout(false);
             FedFromClubs_contextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
@@ -1491,15 +1491,15 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.Label team_name_label;
         private System.Windows.Forms.NumericUpDown StadiumAmount_numericUpDown;
         private System.Windows.Forms.Label StadiumAmount_Label;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.TabPage assignRoles_tabPage;
+        private System.Windows.Forms.DataGridView assignRoles_dataGridView;
+        private System.Windows.Forms.TabPage lineup_tabPage;
+        private System.Windows.Forms.DataGridView lineup_dataGridView;
+        private System.Windows.Forms.TabPage players_tabPage;
+        private System.Windows.Forms.DataGridView players_dataGridView;
+        private System.Windows.Forms.TabPage jerseys_tabPage;
+        private System.Windows.Forms.TabPage Identity_tabPage;
+        private System.Windows.Forms.PictureBox largeLogo_pictureBox;
         private System.Windows.Forms.TextBox TeamID_textBox;
         private System.Windows.Forms.TextBox TeamIndex_textBox;
         private System.Windows.Forms.TextBox AbbreviatedName_textBox;
@@ -1516,15 +1516,15 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.Label AbbreviatedName_label;
         private System.Windows.Forms.Label LocationName_label;
         private System.Windows.Forms.Label Fullname_label;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.TabControl Team_tabControl;
+        private System.Windows.Forms.TabPage ninesLineup_tabPage;
+        private System.Windows.Forms.DataGridView ninesLineup_dataGridView;
+        private System.Windows.Forms.TabPage ninesAssignRoles_tabPage;
+        private System.Windows.Forms.DataGridView ninesAssignRoles_dataGridView;
+        private System.Windows.Forms.TabPage feederClubs_tabPage;
+        private System.Windows.Forms.DataGridView feederClubs_dataGridView;
+        private System.Windows.Forms.TabPage fedFromClubs_tabPage;
+        private System.Windows.Forms.DataGridView fedFromClubs_dataGridView;
         private System.Windows.Forms.TextBox TeamPlayerAmount_textBox;
         private System.Windows.Forms.Label Affiliations_label;
         private System.Windows.Forms.ComboBox TeamType_comboBox;
@@ -1547,7 +1547,7 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.ToolStripMenuItem NinesLineup_toolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip NinesRoles_contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem NinesRoles_toolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox smallLogo_pictureBox;
         private System.Windows.Forms.TextBox ClubName_textBox;
         private System.Windows.Forms.Label ClubName_label;
         private System.Windows.Forms.Button HudTextColour_button;
@@ -1559,7 +1559,7 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.TextBox CustomName_textBox;
         private System.Windows.Forms.CheckBox CustomName_checkBox;
         private System.Windows.Forms.CheckBox alternateNumbering_checkBox;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ColorDialog team_colorDialog;
         private System.Windows.Forms.TextBox TeamGender_textBox;
         private System.Windows.Forms.Label TeamGender_label;
         private System.Windows.Forms.Label TeamGenderImage_label;

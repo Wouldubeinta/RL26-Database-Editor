@@ -85,7 +85,7 @@
             credits_richTextBox.ReadOnly = true;
             credits_richTextBox.Size = new Size(587, 242);
             credits_richTextBox.TabIndex = 0;
-            credits_richTextBox.Text = "*** Special Thanks To ***\n\n - BigAnt for the support.\n - Luigi Auriemma for he's expertise over the year's.\n - FeudalNate for PackageIO class.";
+            credits_richTextBox.Text = resources.GetString("credits_richTextBox.Text");
             credits_richTextBox.WordWrap = false;
             // 
             // info_tabPage
@@ -152,7 +152,7 @@
             changelog_richTextBox.ReadOnly = true;
             changelog_richTextBox.Size = new Size(587, 242);
             changelog_richTextBox.TabIndex = 0;
-            changelog_richTextBox.Text = "-1.0.0.5-\nInitial Release";
+            changelog_richTextBox.Text = resources.GetString("changelog_richTextBox.Text");
             changelog_richTextBox.WordWrap = false;
             // 
             // title_pictureBox

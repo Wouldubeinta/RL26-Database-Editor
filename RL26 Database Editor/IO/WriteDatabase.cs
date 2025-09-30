@@ -2,6 +2,33 @@
 
 namespace RL26_Database_Editor
 {
+    /// <summary>
+    /// Write Database Class.
+    /// </summary>
+    /// <remarks>
+    ///   RL26 Database Editor. Written by Wouldubeinta
+    ///   Copyright (C) 2025 Wouldy Mods.
+    ///   
+    ///   This program is free software; you can redistribute it and/or
+    ///   modify it under the terms of the GNU General Public License
+    ///   as published by the Free Software Foundation; either version 3
+    ///   of the License, or (at your option) any later version.
+    ///   
+    ///   This program is distributed in the hope that it will be useful,
+    ///   but WITHOUT ANY WARRANTY; without even the implied warranty of
+    ///   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ///   GNU General Public License for more details.
+    ///   
+    ///   You should have received a copy of the GNU General Public License
+    ///   along with this program; if not, write to the Free Software
+    ///   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+    /// 
+    ///   The author may be contacted at:
+    ///   Discord: Wouldubeinta
+    /// </remarks>
+    /// <history>
+    /// [Wouldubeinta]	   30/09/2025	Created
+    /// </history>
     internal class WriteDatabase
     {
         public static void WriteTeamData(string file)
@@ -204,6 +231,26 @@ namespace RL26_Database_Editor
                             bw.WriteInt32(Global.team[i].roles[j].roleId, Endian.Little);
                     }
 
+                    // Swap Wingers
+                    int LWingId = Global.team[i].lineups[1].lineupId;
+                    byte LWingShirtNumber = Global.team[i].lineups[1].shirtNumber;
+                    int RWingId = Global.team[i].lineups[4].lineupId;
+                    byte RWingShirtNumber = Global.team[i].lineups[4].shirtNumber;
+                    Global.team[i].lineups[1].lineupId = RWingId;
+                    Global.team[i].lineups[1].shirtNumber = RWingShirtNumber;
+                    Global.team[i].lineups[4].lineupId = LWingId;
+                    Global.team[i].lineups[4].shirtNumber = LWingShirtNumber;
+
+                    // Swap Centre's
+                    int LCentre = Global.team[i].lineups[2].lineupId;
+                    byte LCentreShirtNumber = Global.team[i].lineups[2].shirtNumber;
+                    int RCentre = Global.team[i].lineups[3].lineupId;
+                    byte RCentreShirtNumber = Global.team[i].lineups[3].shirtNumber;
+                    Global.team[i].lineups[2].lineupId = RCentre;
+                    Global.team[i].lineups[2].shirtNumber = RCentreShirtNumber;
+                    Global.team[i].lineups[3].lineupId = LCentre;
+                    Global.team[i].lineups[3].shirtNumber = LCentreShirtNumber;
+
                     for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM; j++)
                     {
                         bw.WriteBool(Global.team[i].lineups[j].isLineupId);
@@ -211,7 +258,7 @@ namespace RL26_Database_Editor
                         if (Global.team[i].lineups[j].isLineupId)
                         {
                             bw.WriteInt32(Global.team[i].lineups[j].lineupId, Endian.Little);
-                            bw.WriteUInt8(Global.team[i].lineups[j].posNumber);
+                            bw.WriteUInt8(Global.team[i].lineups[j].shirtNumber);
                         }
 
                     }
@@ -507,8 +554,8 @@ namespace RL26_Database_Editor
                     bw.WriteBool(Global.player[i].technicalAbility.isAgility);
                     bw.WriteInt32(Global.player[i].technicalAbility.agility, Endian.Little);
 
-                    bw.WriteBool(Global.player[i].technicalAbility.isFitness);
-                    bw.WriteInt32(Global.player[i].technicalAbility.fitness, Endian.Little);
+                    bw.WriteBool(Global.player[i].technicalAbility.isStamina);
+                    bw.WriteInt32(Global.player[i].technicalAbility.stamina, Endian.Little);
 
                     bw.WriteBool(Global.player[i].technicalAbility.isAcceleration);
                     bw.WriteInt32(Global.player[i].technicalAbility.acceleration, Endian.Little);

@@ -22,7 +22,7 @@ namespace RL26_Database_Editor
 
                 dt.Columns.Add("Index", Type.GetType("System.String"));
                 dt.Columns.Add("Enabled", Type.GetType("System.Boolean"));
-                dt.Columns.Add("ID", Type.GetType("System.String"));
+                dt.Columns.Add("Id", Type.GetType("System.String"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
                 dt.Columns.Add("Gender", Type.GetType("System.String"));
@@ -69,7 +69,7 @@ namespace RL26_Database_Editor
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Enabled"] = Global.player[i].isPlayerEnabled;
-                    dt.Rows[dt.Rows.Count - 1]["ID"] = Global.player[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Id"] = Global.player[i].id.ToString();
                     dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Gender"] = Global.player[i].gender.ToString();
@@ -105,7 +105,7 @@ namespace RL26_Database_Editor
                     dt.Rows[dt.Rows.Count - 1]["Perks"] = Global.player[i].attributes.perk.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Strength"] = Global.player[i].technicalAbility.strength.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Agility"] = Global.player[i].technicalAbility.agility.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Fitness"] = Global.player[i].technicalAbility.fitness.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Fitness"] = Global.player[i].technicalAbility.stamina.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Acceleration"] = Global.player[i].technicalAbility.acceleration.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Discipline"] = Global.player[i].technicalAbility.discipline.ToString();
                     dt.Rows[dt.Rows.Count - 1]["Durability"] = Global.player[i].technicalAbility.durability.ToString();
@@ -170,7 +170,7 @@ namespace RL26_Database_Editor
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.perk = Convert.ToInt32(dataGridView1.Rows[i].Cells[36].Value);
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.strength = Convert.ToInt32(dataGridView1.Rows[i].Cells[37].Value);
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.agility = Convert.ToInt32(dataGridView1.Rows[i].Cells[38].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.fitness = Convert.ToInt32(dataGridView1.Rows[i].Cells[39].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.stamina = Convert.ToInt32(dataGridView1.Rows[i].Cells[39].Value);
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.acceleration = Convert.ToInt32(dataGridView1.Rows[i].Cells[40].Value);
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.discipline = Convert.ToInt32(dataGridView1.Rows[i].Cells[41].Value);
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.durability = Convert.ToInt32(dataGridView1.Rows[i].Cells[42].Value);

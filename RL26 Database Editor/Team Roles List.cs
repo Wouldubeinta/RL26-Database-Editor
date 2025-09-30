@@ -27,8 +27,8 @@ namespace RL26_Database_Editor
             try
             {
                 dt = new DataTable();
-                dt.Columns.Add("Player Position", Type.GetType("System.String"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Position", Type.GetType("System.String"));
+                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("Rating", Type.GetType("System.Int32"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
@@ -40,8 +40,8 @@ namespace RL26_Database_Editor
                 {
                     int SelectedIndex = SearchID.PlayersIndex(Global.team[TeamIndex].lineups[i].lineupId);
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Player Position"] = Positions[i];
-                    dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[SelectedIndex].id;
+                    dt.Rows[dt.Rows.Count - 1]["Position"] = Positions[i];
+                    dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[SelectedIndex].id;
                     dt.Rows[dt.Rows.Count - 1]["Rating"] = Rating.PlayerRating(SelectedIndex);
                     dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[SelectedIndex].firstName;
                     dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[SelectedIndex].lastName;
@@ -74,7 +74,7 @@ namespace RL26_Database_Editor
                 dt = new DataTable();
 
                 dt.Columns.Add("Roles", Type.GetType("System.String"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
+                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
                 dt.Columns.Add("First Name", Type.GetType("System.String"));
                 dt.Columns.Add("Last Name", Type.GetType("System.String"));
                 dt.Columns.Add("Primary Role", Type.GetType("System.String"));
@@ -88,7 +88,7 @@ namespace RL26_Database_Editor
                         int SelectedIndex = SearchID.PlayersIndex(Global.team[TeamIndex].roles[i].roleId);
                         dt.Rows.Add();
                         dt.Rows[dt.Rows.Count - 1]["Roles"] = PlyRoles[i];
-                        dt.Rows[dt.Rows.Count - 1]["Player ID"] = Global.player[SelectedIndex].id;
+                        dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[SelectedIndex].id;
                         dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[SelectedIndex].firstName;
                         dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[SelectedIndex].lastName;
                         dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[SelectedIndex].primaryRole);

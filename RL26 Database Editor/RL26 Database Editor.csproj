@@ -13,8 +13,8 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <Description>Edit the original Rugby League 26 Default Database.</Description>
     <Copyright>Wouldy Mods 2025</Copyright>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
-    <FileVersion>1.0.0.5</FileVersion>
+    <AssemblyVersion>1.0.1.8</AssemblyVersion>
+    <FileVersion>1.0.1.8</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

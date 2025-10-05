@@ -34,6 +34,12 @@ namespace RL26_Database_Editor
     {
         public static void CreateM3MP(ToolStripProgressBar PB, ToolStripLabel tslp, StatusStrip ss)
         {
+            if (File.Exists(Global.currentPath + @"\database.xml"))
+                File.Delete(Global.currentPath + @"\database.xml");
+
+            if (File.Exists(Global.currentPath + @"\database.m3mp"))
+                File.Delete(Global.currentPath + @"\database.m3mp");
+
             List<byte[]> RawData = new(3);
             List<int> RawFileOffsets = new(3);
             int[] RawFileSize = new int[3];
@@ -78,15 +84,12 @@ namespace RL26_Database_Editor
 
                 WriteM3MP(buffer, RawFileSize, RawFileOffsets, PB, tslp, ss);
 
-                if (File.Exists(Global.currentPath + @"\database.xml"))
-                    File.Delete(Global.currentPath + @"\database.xml");
-
                 ModifyFileInfo m3mpXmlOut = new();
 
                 int fileIndex = -1;
 
-                if (File.Exists(Global.currentPath + @"\FileIndex.txt"))
-                    fileIndex = Convert.ToInt32(File.ReadAllText(Global.currentPath + @"\FileIndex.txt"));
+                if (File.Exists(Global.currentPath + @"\File Index.txt"))
+                    fileIndex = Convert.ToInt32(File.ReadAllText(Global.currentPath + @"\File Index.txt"));
  
                 m3mpXmlOut.Index = fileIndex;
                 m3mpXmlOut.IsCompressed = false;

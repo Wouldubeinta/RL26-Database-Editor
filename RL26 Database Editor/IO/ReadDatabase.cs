@@ -336,8 +336,9 @@ namespace RL26_Database_Editor
 
                     Global.team[i].dataSize = br.ReadInt32(Endian.Little);
                     //long pos = br.Position;
-                    //Global.team[i].data = br.ReadBytes(Global.team[i].dataSize, Endian.Little);
+                    Global.team[i].data = br.ReadBytes(Global.team[i].dataSize, Endian.Little);
 
+                    /*
                     int dataSize = Global.team[i].dataSize - (2 + (440 * 8) + 9);
                     Global.team[i].data = br.ReadBytes(dataSize, Endian.Little);
 
@@ -393,12 +394,11 @@ namespace RL26_Database_Editor
                         Global.team[i].jerseys[j].padding17 = br.ReadBytes(39, Endian.Little);
                         Global.team[i].jerseys[j].keylineColour.r = br.ReadByte();
                         Global.team[i].jerseys[j].padding18 = br.ReadBytes(9, Endian.Little);
-                        Global.team[i].jerseys[j].numberColour.r = br.ReadByte();
-                        */
+                        Global.team[i].jerseys[j].numberColour.r = br.ReadByte();  
                     }
 
                     Global.team[i].padding2 = br.ReadBytes(9, Endian.Little);
-
+                    */
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["Gender"] = Imagelist[Global.team[i].gender];
                     dt.Rows[dt.Rows.Count - 1]["Team Index"] = i;

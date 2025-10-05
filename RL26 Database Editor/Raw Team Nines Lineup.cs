@@ -70,6 +70,8 @@ namespace RL26_Database_Editor
 
         private void SaveChangers()
         {
+            dataGridView1.Rows[0].Cells[0].Selected = true;
+
             for (int i = 0; i < Global.team_amount; i++)
             {
                 for (int j = 0; j < 4; j++)

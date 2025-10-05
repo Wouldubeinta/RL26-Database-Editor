@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Text;
 
 namespace RL26_Database_Editor
 {
@@ -31,33 +33,58 @@ namespace RL26_Database_Editor
     /// </history>
     public static class CSV
     {
-        public static void FromCSV(DataGridView dGV, string filename)
+        public static void FromCSV(DataGridView dgv, string filePath, char delimiter = ',', bool hasHeader = true)
         {
-            System.Data.OleDb.OleDbConnection? MyConnection = null;
+            DataSet dataSet = new DataSet();
+            DataTable dataTable = new DataTable();
 
             try
             {
-                System.Data.DataSet DtSet;
-                System.Data.OleDb.OleDbDataAdapter MyCommand;
-                MyConnection = new System.Data.OleDb.OleDbConnection(string.Format(@"Provider=Microsoft.Jet.OleDb.4.0; Data Source={0};Extended Properties=""Text;HDR=YES;FMT=Delimited""", Path.GetDirectoryName(filename)));
-                MyCommand = new System.Data.OleDb.OleDbDataAdapter("SELECT * FROM [" + Path.GetFileName(filename) + "]", MyConnection);
-                DtSet = new System.Data.DataSet();
-                MyCommand.Fill(DtSet);
-
-                dGV.DataSource = DtSet.Tables[0];
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            finally
-            {
-                if (MyConnection != null)
+                using (StreamReader sr = new StreamReader(filePath))
                 {
-                    MyConnection.Close();
+                    string[] headers = null;
+                    if (hasHeader)
+                    {
+                        string headerLine = sr.ReadLine();
+                        headers = headerLine.Split(delimiter);
+                        foreach (string header in headers)
+                        {
+                            dataTable.Columns.Add(header.Trim());
+                        }
+                    }
+
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine();
+                        string[] fields = line.Split(delimiter);
+
+                        // If no header, create columns based on the first row
+                        if (!hasHeader && dataTable.Columns.Count == 0)
+                        {
+                            for (int i = 0; i < fields.Length; i++)
+                            {
+                                dataTable.Columns.Add($"Column{i + 1}");
+                            }
+                        }
+
+                        DataRow row = dataTable.NewRow();
+                        for (int i = 0; i < fields.Length; i++)
+                        {
+                            if (i < dataTable.Columns.Count) // Prevent index out of bounds if rows have fewer columns
+                            {
+                                row[i] = fields[i].Trim();
+                            }
+                        }
+                        dataTable.Rows.Add(row);
+                    }
                 }
 
-                MessageBox.Show("Importing csv file has finished", "Import CSV Is Complete :)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataSet.Tables.Add(dataTable);
+                dgv.DataSource = dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error converting CSV to DataSet: {ex.Message}");
             }
         }
 

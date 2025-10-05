@@ -82,7 +82,13 @@ namespace RL26_Database_Editor
                     File.Delete(Global.currentPath + @"\database.xml");
 
                 ModifyFileInfo m3mpXmlOut = new();
-                m3mpXmlOut.Index = 37249;
+
+                int fileIndex = -1;
+
+                if (File.Exists(Global.currentPath + @"\FileIndex.txt"))
+                    fileIndex = Convert.ToInt32(File.ReadAllText(Global.currentPath + @"\FileIndex.txt"));
+ 
+                m3mpXmlOut.Index = fileIndex;
                 m3mpXmlOut.IsCompressed = false;
 
                 int fileSize = (int)IO.FileInfo(Global.currentPath + @"\database.m3mp");

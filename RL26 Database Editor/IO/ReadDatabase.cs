@@ -336,16 +336,10 @@ namespace RL26_Database_Editor
 
                     Global.team[i].dataSize = br.ReadInt32(Endian.Little);
                     //long pos = br.Position;
-                    //br.Position = pos + Global.team[i].dataSize;
-                    Global.team[i].data = br.ReadBytes(Global.team[i].dataSize, Endian.Little);
+                    //Global.team[i].data = br.ReadBytes(Global.team[i].dataSize, Endian.Little);
 
-                    /*
-                    if (Global.team[i].dataSize == 8603)
-                        Global.team[i].data = br.ReadBytes(4448, Endian.Little); // Data
-                    else if (Global.team[i].dataSize == 8643)
-                        Global.team[i].data = br.ReadBytes(Global.team[i].dataSize - 4195, Endian.Little); // Data
-                    else if (Global.team[i].dataSize == 9103)
-                        Global.team[i].data = br.ReadBytes(4748, Endian.Little); // Data
+                    int dataSize = Global.team[i].dataSize - (2 + (440 * 8) + 9);
+                    Global.team[i].data = br.ReadBytes(dataSize, Endian.Little);
 
                     Global.team[i].jerseyAmount = br.ReadInt16();
                     Global.team[i].jerseys = new TeamData.Jerseys[8];
@@ -355,14 +349,15 @@ namespace RL26_Database_Editor
                         Global.team[i].jerseys[j].name = br.ReadNullTerminatedString();
                         br.ReadBytes(24 - Global.team[i].jerseys[j].name.Length, Endian.Little);
 
-                        Global.team[i].jerseys[j].padding2 = br.ReadBytes(167, Endian.Little);
+                        Global.team[i].jerseys[j].padding2 = br.ReadBytes(140, Endian.Little);
                         Global.team[i].jerseys[j].licensedShortsId = br.ReadInt16();
-                        Global.team[i].jerseys[j].padding3 = br.ReadBytes(115, Endian.Little);
+                        Global.team[i].jerseys[j].padding3 = br.ReadBytes(98, Endian.Little);
                         Global.team[i].jerseys[j].licensedTopId = br.ReadInt16();
                         Global.team[i].jerseys[j].padding4 = br.ReadBytes(16, Endian.Little);
                         Global.team[i].jerseys[j].licensedSocksId = br.ReadInt16();
-                        Global.team[i].jerseys[j].padding5 = br.ReadBytes(189, Endian.Little);
+                        Global.team[i].jerseys[j].padding5 = br.ReadBytes(155, Endian.Little);
 
+                        /*
                         Global.team[i].jerseys[j].padding1 = br.ReadUInt16(Endian.Little);
                         Global.team[i].jerseys[j].nameColour.g = br.ReadByte();
                         Global.team[i].jerseys[j].padding2 = br.ReadBytes(14, Endian.Little);
@@ -382,7 +377,6 @@ namespace RL26_Database_Editor
                         Global.team[i].jerseys[j].padding9 = br.ReadBytes(53, Endian.Little);
                         Global.team[i].jerseys[j].numberColour.b = br.ReadByte();
                         Global.team[i].jerseys[j].padding10 = br.ReadBytes(42, Endian.Little);
-                        Global.team[i].jerseys[j].manufactureId = br.ReadByte();
                         Global.team[i].jerseys[j].padding11 = br.ReadBytes(19, Endian.Little);
                         Global.team[i].jerseys[j].licensedId = br.ReadInt16(Endian.Little);
                         Global.team[i].jerseys[j].padding12 = br.ReadBytes(39, Endian.Little);
@@ -400,16 +394,10 @@ namespace RL26_Database_Editor
                         Global.team[i].jerseys[j].keylineColour.r = br.ReadByte();
                         Global.team[i].jerseys[j].padding18 = br.ReadBytes(9, Endian.Little);
                         Global.team[i].jerseys[j].numberColour.r = br.ReadByte();
-
-                        if (Global.team[i].dataSize == 11103)
-                            Global.team[i].jerseys[j].padding19 = br.ReadBytes(64, Endian.Little);
-                        else if (Global.team[i].dataSize == 11123)
-                            Global.team[i].jerseys[j].padding19 = br.ReadBytes(65, Endian.Little);
+                        */
                     }
 
                     Global.team[i].padding2 = br.ReadBytes(9, Endian.Little);
-                    int y = 0;
-                    */
 
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["Gender"] = Imagelist[Global.team[i].gender];

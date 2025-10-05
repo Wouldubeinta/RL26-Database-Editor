@@ -1243,7 +1243,7 @@ namespace RL26_Database_Editor
             Perks_groupBox.Size = new Size(333, 237);
             Perks_groupBox.TabIndex = 59;
             Perks_groupBox.TabStop = false;
-            Perks_groupBox.Text = "Perks";
+            Perks_groupBox.Text = "Career Perks";
             // 
             // Perks_comboBox
             // 

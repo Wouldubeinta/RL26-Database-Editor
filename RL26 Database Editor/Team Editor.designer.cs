@@ -381,7 +381,7 @@ namespace RL26_Database_Editor
             // JerseyNumberEnabled_checkBox
             // 
             JerseyNumberEnabled_checkBox.AutoSize = true;
-            JerseyNumberEnabled_checkBox.Location = new Point(154, 19);
+            JerseyNumberEnabled_checkBox.Location = new Point(113, 17);
             JerseyNumberEnabled_checkBox.Name = "JerseyNumberEnabled_checkBox";
             JerseyNumberEnabled_checkBox.Size = new Size(115, 19);
             JerseyNumberEnabled_checkBox.TabIndex = 86;
@@ -390,7 +390,7 @@ namespace RL26_Database_Editor
             // 
             // JerseyNumberColour_button
             // 
-            JerseyNumberColour_button.Location = new Point(149, 118);
+            JerseyNumberColour_button.Location = new Point(108, 116);
             JerseyNumberColour_button.Name = "JerseyNumberColour_button";
             JerseyNumberColour_button.Size = new Size(221, 23);
             JerseyNumberColour_button.TabIndex = 85;
@@ -436,7 +436,7 @@ namespace RL26_Database_Editor
             // ShowLeadingZero_Enabled_checkBox
             // 
             ShowLeadingZero_Enabled_checkBox.AutoSize = true;
-            ShowLeadingZero_Enabled_checkBox.Location = new Point(153, 87);
+            ShowLeadingZero_Enabled_checkBox.Location = new Point(112, 85);
             ShowLeadingZero_Enabled_checkBox.Name = "ShowLeadingZero_Enabled_checkBox";
             ShowLeadingZero_Enabled_checkBox.Size = new Size(127, 19);
             ShowLeadingZero_Enabled_checkBox.TabIndex = 25;
@@ -446,7 +446,7 @@ namespace RL26_Database_Editor
             // JerseyNumberFont_label
             // 
             JerseyNumberFont_label.AutoSize = true;
-            JerseyNumberFont_label.Location = new Point(114, 54);
+            JerseyNumberFont_label.Location = new Point(73, 52);
             JerseyNumberFont_label.Name = "JerseyNumberFont_label";
             JerseyNumberFont_label.Size = new Size(34, 15);
             JerseyNumberFont_label.TabIndex = 10;
@@ -454,7 +454,7 @@ namespace RL26_Database_Editor
             // 
             // JerseyNumberFont_numericUpDown
             // 
-            JerseyNumberFont_numericUpDown.Location = new Point(151, 50);
+            JerseyNumberFont_numericUpDown.Location = new Point(110, 48);
             JerseyNumberFont_numericUpDown.Maximum = new decimal(new int[] { 8, 0, 0, 0 });
             JerseyNumberFont_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             JerseyNumberFont_numericUpDown.Name = "JerseyNumberFont_numericUpDown";
@@ -465,7 +465,7 @@ namespace RL26_Database_Editor
             // JerseyNumberColour_label
             // 
             JerseyNumberColour_label.AutoSize = true;
-            JerseyNumberColour_label.Location = new Point(54, 122);
+            JerseyNumberColour_label.Location = new Point(13, 120);
             JerseyNumberColour_label.Name = "JerseyNumberColour_label";
             JerseyNumberColour_label.Size = new Size(93, 15);
             JerseyNumberColour_label.TabIndex = 17;
@@ -474,7 +474,7 @@ namespace RL26_Database_Editor
             // KeylineSize_label
             // 
             KeylineSize_label.AutoSize = true;
-            KeylineSize_label.Location = new Point(75, 156);
+            KeylineSize_label.Location = new Point(34, 154);
             KeylineSize_label.Name = "KeylineSize_label";
             KeylineSize_label.Size = new Size(71, 15);
             KeylineSize_label.TabIndex = 19;
@@ -482,7 +482,7 @@ namespace RL26_Database_Editor
             // 
             // KeylineSize_numericUpDown
             // 
-            KeylineSize_numericUpDown.Location = new Point(149, 152);
+            KeylineSize_numericUpDown.Location = new Point(108, 150);
             KeylineSize_numericUpDown.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             KeylineSize_numericUpDown.Name = "KeylineSize_numericUpDown";
             KeylineSize_numericUpDown.Size = new Size(38, 23);
@@ -513,7 +513,7 @@ namespace RL26_Database_Editor
             // 
             // JerseyNameColour_button
             // 
-            JerseyNameColour_button.Location = new Point(95, 89);
+            JerseyNameColour_button.Location = new Point(108, 89);
             JerseyNameColour_button.Name = "JerseyNameColour_button";
             JerseyNameColour_button.Size = new Size(221, 23);
             JerseyNameColour_button.TabIndex = 83;
@@ -523,7 +523,7 @@ namespace RL26_Database_Editor
             // JerseyNameEnabled_checkBox
             // 
             JerseyNameEnabled_checkBox.AutoSize = true;
-            JerseyNameEnabled_checkBox.Location = new Point(60, 33);
+            JerseyNameEnabled_checkBox.Location = new Point(73, 33);
             JerseyNameEnabled_checkBox.Name = "JerseyNameEnabled_checkBox";
             JerseyNameEnabled_checkBox.Size = new Size(130, 19);
             JerseyNameEnabled_checkBox.TabIndex = 11;
@@ -533,7 +533,7 @@ namespace RL26_Database_Editor
             // JerseyNameFont_label
             // 
             JerseyNameFont_label.AutoSize = true;
-            JerseyNameFont_label.Location = new Point(58, 63);
+            JerseyNameFont_label.Location = new Point(71, 63);
             JerseyNameFont_label.Name = "JerseyNameFont_label";
             JerseyNameFont_label.Size = new Size(34, 15);
             JerseyNameFont_label.TabIndex = 7;
@@ -541,7 +541,7 @@ namespace RL26_Database_Editor
             // 
             // JerseyNameFont_numericUpDown
             // 
-            JerseyNameFont_numericUpDown.Location = new Point(95, 59);
+            JerseyNameFont_numericUpDown.Location = new Point(108, 59);
             JerseyNameFont_numericUpDown.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
             JerseyNameFont_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             JerseyNameFont_numericUpDown.Name = "JerseyNameFont_numericUpDown";
@@ -552,7 +552,7 @@ namespace RL26_Database_Editor
             // JerseyNameColour_label
             // 
             JerseyNameColour_label.AutoSize = true;
-            JerseyNameColour_label.Location = new Point(13, 93);
+            JerseyNameColour_label.Location = new Point(26, 93);
             JerseyNameColour_label.Name = "JerseyNameColour_label";
             JerseyNameColour_label.Size = new Size(81, 15);
             JerseyNameColour_label.TabIndex = 8;

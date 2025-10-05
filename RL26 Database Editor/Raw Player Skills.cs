@@ -89,6 +89,8 @@ namespace RL26_Database_Editor
 
         private void SaveChangers()
         {
+            dataGridView1.Rows[0].Cells[0].Selected = true;
+
             for (int i = 0; i < Global.player_amount; i++)
             {
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].id = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value);

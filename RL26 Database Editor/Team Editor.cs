@@ -1820,7 +1820,7 @@ namespace RL26_Database_Editor
                     Global.team[team_index].jerseys[jersey_index].padding9 = br.ReadBytes(53, Endian.Little);
                     Global.team[team_index].jerseys[jersey_index].numberColour.b = br.ReadByte();
                     Global.team[team_index].jerseys[jersey_index].padding10 = br.ReadBytes(42, Endian.Little);
-                    Global.team[team_index].jerseys[jersey_index].manufactureId = br.ReadByte();
+                    //Global.team[team_index].jerseys[jersey_index].manufactureId = br.ReadByte();
                     Global.team[team_index].jerseys[jersey_index].padding11 = br.ReadBytes(19, Endian.Little);
                     Global.team[team_index].jerseys[jersey_index].licensedId = br.ReadInt16(Endian.Little);
                     Global.team[team_index].jerseys[jersey_index].padding12 = br.ReadBytes(39, Endian.Little);
@@ -1897,7 +1897,7 @@ namespace RL26_Database_Editor
                 bw.Write(Global.team[team_index].jerseys[jersey_index].padding9, Endian.Little);
                 bw.WriteUInt8(Global.team[team_index].jerseys[jersey_index].numberColour.b);
                 bw.Write(Global.team[team_index].jerseys[jersey_index].padding10, Endian.Little);
-                bw.WriteUInt8(Global.team[team_index].jerseys[jersey_index].manufactureId);
+                //bw.WriteUInt8(Global.team[team_index].jerseys[jersey_index].manufactureId);
                 bw.Write(Global.team[team_index].jerseys[jersey_index].padding11, Endian.Little);
                 bw.WriteInt16(Global.team[team_index].jerseys[jersey_index].licensedId, Endian.Little);
                 bw.Write(Global.team[team_index].jerseys[jersey_index].padding12, Endian.Little);

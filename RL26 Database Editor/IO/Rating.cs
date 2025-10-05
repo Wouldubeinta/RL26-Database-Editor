@@ -57,76 +57,76 @@
 
         private static int PlayerRatingFB(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 94) + ((Global.player[index].technicalAbility.agility * 100) / 96) + ((Global.player[index].technicalAbility.stamina * 100) / 97) + ((Global.player[index].technicalAbility.acceleration * 100) / 94)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 92) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 95) + ((Global.player[index].skills.passingSkills.basicPass * 100) / 94) + ((Global.player[index].skills.passingSkills.longPass * 100) / 94)
-            + ((Global.player[index].skills.evasionSkills.sideStep * 100) / 94) + ((Global.player[index].skills.miscSkills.contestedCollect * 100) / 94)) / 11;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 94) + ((Global.player[index].technicalAbility.agility * 99) / 96) + ((Global.player[index].technicalAbility.stamina * 99) / 97) + ((Global.player[index].technicalAbility.acceleration * 99) / 94)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 92) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 95) + ((Global.player[index].skills.passingSkills.basicPass * 99) / 94) + ((Global.player[index].skills.passingSkills.longPass * 99) / 94)
+            + ((Global.player[index].skills.evasionSkills.sideStep * 99) / 96) + ((Global.player[index].skills.miscSkills.contestedCollect * 99) / 98)) / 11;
             return (int)playerRating;
         }
 
         private static int PlayerRatingW(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 94) + ((Global.player[index].technicalAbility.agility * 100) / 96) + ((Global.player[index].technicalAbility.stamina * 100) / 95) + ((Global.player[index].technicalAbility.acceleration * 100) / 98)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 97) + ((Global.player[index].skills.passingSkills.offload * 100) / 94) + ((Global.player[index].skills.evasionSkills.dummyPass * 100) / 94)
-            + ((Global.player[index].skills.evasionSkills.fend * 100) / 94) + ((Global.player[index].skills.evasionSkills.sideStep * 100) / 94) + ((Global.player[index].skills.evasionSkills.breakTackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.tackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.driveTackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.diveTackle * 100) / 94)
-            + ((Global.player[index].skills.miscSkills.contestedCollect * 100) / 94) + ((Global.player[index].skills.miscSkills.diveCollect * 100) / 94)) / 17;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 94) + ((Global.player[index].technicalAbility.agility * 99) / 96) + ((Global.player[index].technicalAbility.stamina * 99) / 95) + ((Global.player[index].technicalAbility.acceleration * 99) / 98)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 97) + ((Global.player[index].skills.passingSkills.offload * 99) / 93) + ((Global.player[index].skills.evasionSkills.dummyPass * 99) / 90)
+            + ((Global.player[index].skills.evasionSkills.fend * 99) / 94) + ((Global.player[index].skills.evasionSkills.sideStep * 99) / 99) + ((Global.player[index].skills.evasionSkills.breakTackle * 99) / 95) + ((Global.player[index].skills.tackleSkills.tackle * 99) / 94) + ((Global.player[index].skills.tackleSkills.driveTackle * 99) / 94) + ((Global.player[index].skills.tackleSkills.diveTackle * 99) / 94)
+            + ((Global.player[index].skills.miscSkills.contestedCollect * 99) / 94) + ((Global.player[index].skills.miscSkills.diveCollect * 99) / 96)) / 17;
             return (int)playerRating;
         }
 
         private static int PlayerRatingC(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 99) + ((Global.player[index].technicalAbility.agility * 100) / 94) + ((Global.player[index].technicalAbility.stamina * 100) / 95) + ((Global.player[index].technicalAbility.acceleration * 100) / 96)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 95) + ((Global.player[index].skills.passingSkills.basicPass * 100) / 94) + ((Global.player[index].skills.passingSkills.offload * 100) / 94)
-            + ((Global.player[index].skills.evasionSkills.dummyPass * 100) / 94) + ((Global.player[index].skills.evasionSkills.sideStep * 100) / 94) + ((Global.player[index].skills.tackleSkills.tackle * 100) / 94) + ((Global.player[index].skills.miscSkills.contestedCollect * 100) / 94)) / 13;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 99) + ((Global.player[index].technicalAbility.agility * 99) / 94) + ((Global.player[index].technicalAbility.stamina * 99) / 95) + ((Global.player[index].technicalAbility.acceleration * 99) / 96)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 95) + ((Global.player[index].skills.passingSkills.basicPass * 99) / 94) + ((Global.player[index].skills.passingSkills.offload * 99) / 94)
+            + ((Global.player[index].skills.evasionSkills.dummyPass * 99) / 90) + ((Global.player[index].skills.evasionSkills.sideStep * 99) / 98) + ((Global.player[index].skills.tackleSkills.tackle * 99) / 94) + ((Global.player[index].skills.miscSkills.contestedCollect * 99) / 94)) / 13;
             return (int)playerRating;
         }
 
         private static int PlayerRatingFE(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 92) + ((Global.player[index].technicalAbility.agility * 100) / 90) + ((Global.player[index].technicalAbility.stamina * 100) / 94) + ((Global.player[index].technicalAbility.acceleration * 100) / 92)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 93) + ((Global.player[index].skills.evasionSkills.dummyPass * 100) / 94) + ((Global.player[index].skills.kickingSkills.grubberKick * 100) / 94)
-            + ((Global.player[index].skills.kickingSkills.puntKick * 100) / 94) + ((Global.player[index].skills.kickingSkills.bombKick * 100) / 94) + ((Global.player[index].skills.kickingSkills.fieldgoalKick * 100) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 100) / 94) + ((Global.player[index].skills.passingSkills.longPass * 100) / 94)) / 14;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 92) + ((Global.player[index].technicalAbility.agility * 99) / 90) + ((Global.player[index].technicalAbility.stamina * 99) / 94) + ((Global.player[index].technicalAbility.acceleration * 99) / 92)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 93) + ((Global.player[index].skills.evasionSkills.dummyPass * 99) / 96) + ((Global.player[index].skills.kickingSkills.grubberKick * 99) / 94)
+            + ((Global.player[index].skills.kickingSkills.puntKick * 99) / 99) + ((Global.player[index].skills.kickingSkills.bombKick * 99) / 96) + ((Global.player[index].skills.kickingSkills.fieldgoalKick * 99) / 95) + ((Global.player[index].skills.passingSkills.basicPass * 99) / 98) + ((Global.player[index].skills.passingSkills.longPass * 99) / 97)) / 14;
             return (int)playerRating;
         }
 
         private static int PlayerRatingHB(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 90) + ((Global.player[index].technicalAbility.agility * 100) / 89) + ((Global.player[index].technicalAbility.stamina * 100) / 91) + ((Global.player[index].technicalAbility.acceleration * 100) / 94)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 93) + ((Global.player[index].skills.kickingSkills.grubberKick * 100) / 94) + ((Global.player[index].skills.kickingSkills.puntKick * 100) / 94)
-            + ((Global.player[index].skills.kickingSkills.bombKick * 100) / 94) + ((Global.player[index].skills.kickingSkills.fieldgoalKick * 100) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 100) / 94) + ((Global.player[index].skills.passingSkills.longPass * 100) / 94)) / 13;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 90) + ((Global.player[index].technicalAbility.agility * 99) / 89) + ((Global.player[index].technicalAbility.stamina * 99) / 91) + ((Global.player[index].technicalAbility.acceleration * 99) / 94)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 93) + ((Global.player[index].skills.kickingSkills.grubberKick * 99) / 94) + ((Global.player[index].skills.kickingSkills.puntKick * 97) / 94)
+            + ((Global.player[index].skills.kickingSkills.bombKick * 99) / 99) + ((Global.player[index].skills.kickingSkills.fieldgoalKick * 99) / 95) + ((Global.player[index].skills.passingSkills.basicPass * 99) / 96) + ((Global.player[index].skills.passingSkills.longPass * 99) / 98)) / 13;
             return (int)playerRating;
         }
 
         private static int PlayerRatingPR(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 94) + ((Global.player[index].technicalAbility.agility * 100) / 94) + ((Global.player[index].technicalAbility.stamina * 100) / 94) + ((Global.player[index].technicalAbility.acceleration * 100) / 94)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 93) + ((Global.player[index].skills.evasionSkills.fend * 100) / 94) + ((Global.player[index].skills.evasionSkills.breakTackle * 100) / 94)
-            + ((Global.player[index].skills.tackleSkills.tackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.driveTackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.impactTackle * 100) / 94) + ((Global.player[index].skills.passingSkills.offload * 100) / 94)) / 13;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 94) + ((Global.player[index].technicalAbility.agility * 99) / 94) + ((Global.player[index].technicalAbility.stamina * 99) / 94) + ((Global.player[index].technicalAbility.acceleration * 99) / 94)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 93) + ((Global.player[index].skills.evasionSkills.fend * 99) / 94) + ((Global.player[index].skills.evasionSkills.breakTackle * 99) / 94)
+            + ((Global.player[index].skills.tackleSkills.tackle * 99) / 98) + ((Global.player[index].skills.tackleSkills.driveTackle * 99) / 96) + ((Global.player[index].skills.tackleSkills.impactTackle * 99) / 99) + ((Global.player[index].skills.passingSkills.offload * 99) / 97)) / 13;
             return (int)(playerRating);
         }
 
         private static int PlayerRatingHK(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 92) + ((Global.player[index].technicalAbility.agility * 100) / 95) + ((Global.player[index].technicalAbility.stamina * 100) / 97) + ((Global.player[index].technicalAbility.acceleration * 100) / 90)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 94) + ((Global.player[index].skills.evasionSkills.dummyPass * 100) / 94) + ((Global.player[index].skills.evasionSkills.sideStep * 100) / 94)
-            + ((Global.player[index].skills.tackleSkills.tackle * 100) / 94) + ((Global.player[index].skills.kickingSkills.grubberKick * 100) / 94) + ((Global.player[index].skills.kickingSkills.puntKick * 100) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 100) / 94) + ((Global.player[index].skills.passingSkills.longPass * 100) / 94)
-            + ((Global.player[index].skills.passingSkills.offload * 100) / 94)) / 15;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 92) + ((Global.player[index].technicalAbility.agility * 99) / 95) + ((Global.player[index].technicalAbility.stamina * 99) / 97) + ((Global.player[index].technicalAbility.acceleration * 99) / 90)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 94) + ((Global.player[index].skills.evasionSkills.dummyPass * 99) / 94) + ((Global.player[index].skills.evasionSkills.sideStep * 99) / 94)
+            + ((Global.player[index].skills.tackleSkills.tackle * 99) / 95) + ((Global.player[index].skills.kickingSkills.grubberKick * 99) / 94) + ((Global.player[index].skills.kickingSkills.puntKick * 99) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 99) / 99) + ((Global.player[index].skills.passingSkills.longPass * 99) / 98)
+            + ((Global.player[index].skills.passingSkills.offload * 99) / 93)) / 15;
             return (int)playerRating;
         }
 
         private static int PlayerRatingSR(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 96) + ((Global.player[index].technicalAbility.agility * 100) / 93) + ((Global.player[index].technicalAbility.stamina * 100) / 94) + ((Global.player[index].technicalAbility.acceleration * 100) / 94)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 100) / 94) + ((Global.player[index].skills.passingSkills.offload * 100) / 94)
-            + ((Global.player[index].skills.evasionSkills.fend * 100) / 94) + ((Global.player[index].skills.evasionSkills.sideStep * 100) / 94) + ((Global.player[index].skills.evasionSkills.breakTackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.tackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.driveTackle * 100) / 94)
-            + ((Global.player[index].skills.tackleSkills.diveTackle * 100) / 94)) / 15;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 96) + ((Global.player[index].technicalAbility.agility * 99) / 93) + ((Global.player[index].technicalAbility.stamina * 99) / 94) + ((Global.player[index].technicalAbility.acceleration * 99) / 94)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 99) / 94) + ((Global.player[index].skills.passingSkills.offload * 99) / 99)
+            + ((Global.player[index].skills.evasionSkills.fend * 99) / 94) + ((Global.player[index].skills.evasionSkills.sideStep * 99) / 94) + ((Global.player[index].skills.evasionSkills.breakTackle * 99) / 95) + ((Global.player[index].skills.tackleSkills.tackle * 99) / 97) + ((Global.player[index].skills.tackleSkills.driveTackle * 99) / 96)
+            + ((Global.player[index].skills.tackleSkills.diveTackle * 99) / 94)) / 15;
             return (int)playerRating;
         }
 
         private static int PlayerRatingL(int index)
         {
-            decimal playerRating = (((Global.player[index].technicalAbility.strength * 100) / 95) + ((Global.player[index].technicalAbility.agility * 100) / 93) + ((Global.player[index].technicalAbility.stamina * 100) / 94) + ((Global.player[index].technicalAbility.acceleration * 100) / 94)
-            + ((Global.player[index].technicalAbility.discipline * 100) / 94) + ((Global.player[index].technicalAbility.durability * 100) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 100) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 100) / 94) + ((Global.player[index].skills.passingSkills.offload * 100) / 94)
-            + ((Global.player[index].skills.evasionSkills.fend * 100) / 94) + ((Global.player[index].skills.evasionSkills.breakTackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.tackle * 100) / 94) + ((Global.player[index].skills.tackleSkills.driveTackle * 100) / 94)) / 13;
+            decimal playerRating = (((Global.player[index].technicalAbility.strength * 99) / 95) + ((Global.player[index].technicalAbility.agility * 99) / 93) + ((Global.player[index].technicalAbility.stamina * 99) / 94) + ((Global.player[index].technicalAbility.acceleration * 99) / 94)
+            + ((Global.player[index].technicalAbility.discipline * 99) / 94) + ((Global.player[index].technicalAbility.durability * 99) / 94) + ((Global.player[index].technicalAbility.sprintSpeed * 99) / 94) + ((Global.player[index].skills.passingSkills.basicPass * 99) / 94) + ((Global.player[index].skills.passingSkills.offload * 99) / 97)
+            + ((Global.player[index].skills.evasionSkills.fend * 99) / 94) + ((Global.player[index].skills.evasionSkills.breakTackle * 99) / 94) + ((Global.player[index].skills.tackleSkills.tackle * 99) / 99) + ((Global.player[index].skills.tackleSkills.driveTackle * 99) / 96)) / 13;
             return (int)playerRating;
         }
     }

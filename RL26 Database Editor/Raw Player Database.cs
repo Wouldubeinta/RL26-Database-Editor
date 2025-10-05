@@ -1,4 +1,5 @@
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 
 namespace RL26_Database_Editor
 {
@@ -127,6 +128,8 @@ namespace RL26_Database_Editor
 
         private void SaveChangers()
         {
+            dataGridView1.Rows[0].Cells[0].Selected = true;
+
             for (int i = 0; i < Global.player_amount; i++)
             {
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].isPlayerEnabled = Convert.ToBoolean(dataGridView1.Rows[i].Cells[1].Value);
@@ -137,44 +140,44 @@ namespace RL26_Database_Editor
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lastName = dataGridView1.Rows[i].Cells[4].Value.ToString();
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].gender = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].licensed = Convert.ToBoolean(dataGridView1.Rows[i].Cells[6].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].isLicensed = Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value)].licensed;
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hidden = Convert.ToBoolean(dataGridView1.Rows[i].Cells[8].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].commentaryNameHash = Convert.ToUInt32(dataGridView1.Rows[i].Cells[9].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].club = Convert.ToInt32(dataGridView1.Rows[i].Cells[10].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].dob.day = Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].dob.month = Convert.ToInt32(dataGridView1.Rows[i].Cells[12].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].dob.year = Convert.ToInt32(dataGridView1.Rows[i].Cells[13].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].age = Convert.ToInt32(dataGridView1.Rows[i].Cells[14].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].jerseyNumber = Convert.ToInt32(dataGridView1.Rows[i].Cells[15].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].jerseyNameSize = Convert.ToByte(dataGridView1.Rows[i].Cells[16].Value.ToString().Length);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].jerseyName = dataGridView1.Rows[i].Cells[16].Value.ToString();
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryRole = Convert.ToInt32(dataGridView1.Rows[i].Cells[17].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryRole = Convert.ToInt32(dataGridView1.Rows[i].Cells[18].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].tertiaryRole = Convert.ToInt32(dataGridView1.Rows[i].Cells[19].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].stateOfOrigin = Convert.ToInt32(dataGridView1.Rows[i].Cells[20].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].originRepNumber = Convert.ToInt32(dataGridView1.Rows[i].Cells[21].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].originOtherNumber = Convert.ToInt32(dataGridView1.Rows[i].Cells[22].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].cityVsCountry = Convert.ToInt32(dataGridView1.Rows[i].Cells[23].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].allStars = Convert.ToInt32(dataGridView1.Rows[i].Cells[24].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].WorldCup = Convert.ToBoolean(dataGridView1.Rows[i].Cells[25].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].preferredHand = Convert.ToByte(dataGridView1.Rows[i].Cells[26].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].preferredFoot = Convert.ToByte(dataGridView1.Rows[i].Cells[27].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].repCountry = Convert.ToInt32(dataGridView1.Rows[i].Cells[28].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].countryOfBirth = Convert.ToInt32(dataGridView1.Rows[i].Cells[29].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].contractExpiry = Convert.ToInt32(dataGridView1.Rows[i].Cells[30].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].appearance.height = Convert.ToInt32(dataGridView1.Rows[i].Cells[31].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].appearance.weight = Convert.ToInt32(dataGridView1.Rows[i].Cells[32].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.reputation = Convert.ToInt32(dataGridView1.Rows[i].Cells[33].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.ego = Convert.ToInt32(dataGridView1.Rows[i].Cells[34].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.loyalty = Convert.ToInt32(dataGridView1.Rows[i].Cells[35].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.perk = Convert.ToInt32(dataGridView1.Rows[i].Cells[36].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.strength = Convert.ToInt32(dataGridView1.Rows[i].Cells[37].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.agility = Convert.ToInt32(dataGridView1.Rows[i].Cells[38].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.stamina = Convert.ToInt32(dataGridView1.Rows[i].Cells[39].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.acceleration = Convert.ToInt32(dataGridView1.Rows[i].Cells[40].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.discipline = Convert.ToInt32(dataGridView1.Rows[i].Cells[41].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.durability = Convert.ToInt32(dataGridView1.Rows[i].Cells[42].Value);
-                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.sprintSpeed = Convert.ToInt32(dataGridView1.Rows[i].Cells[43].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].isLicensed = true;
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hidden = Convert.ToBoolean(dataGridView1.Rows[i].Cells[7].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].commentaryNameHash = Convert.ToUInt32(dataGridView1.Rows[i].Cells[8].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].club = Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].dob.day = Convert.ToInt32(dataGridView1.Rows[i].Cells[10].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].dob.month = Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].dob.year = Convert.ToInt32(dataGridView1.Rows[i].Cells[12].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].age = Convert.ToInt32(dataGridView1.Rows[i].Cells[13].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].jerseyNumber = Convert.ToInt32(dataGridView1.Rows[i].Cells[14].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].jerseyNameSize = Convert.ToByte(dataGridView1.Rows[i].Cells[15].Value.ToString().Length);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].jerseyName = dataGridView1.Rows[i].Cells[15].Value.ToString();
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryRole = Convert.ToInt32(dataGridView1.Rows[i].Cells[16].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryRole = Convert.ToInt32(dataGridView1.Rows[i].Cells[17].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].tertiaryRole = Convert.ToInt32(dataGridView1.Rows[i].Cells[18].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].stateOfOrigin = Convert.ToInt32(dataGridView1.Rows[i].Cells[19].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].originRepNumber = Convert.ToInt32(dataGridView1.Rows[i].Cells[20].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].originOtherNumber = Convert.ToInt32(dataGridView1.Rows[i].Cells[21].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].cityVsCountry = Convert.ToInt32(dataGridView1.Rows[i].Cells[22].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].allStars = Convert.ToInt32(dataGridView1.Rows[i].Cells[23].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].WorldCup = Convert.ToBoolean(dataGridView1.Rows[i].Cells[24].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].preferredHand = Convert.ToByte(dataGridView1.Rows[i].Cells[25].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].preferredFoot = Convert.ToByte(dataGridView1.Rows[i].Cells[26].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].repCountry = Convert.ToInt32(dataGridView1.Rows[i].Cells[27].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].countryOfBirth = Convert.ToInt32(dataGridView1.Rows[i].Cells[28].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].contractExpiry = Convert.ToInt32(dataGridView1.Rows[i].Cells[29].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].appearance.height = Convert.ToInt32(dataGridView1.Rows[i].Cells[30].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].appearance.weight = Convert.ToInt32(dataGridView1.Rows[i].Cells[31].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.reputation = Convert.ToInt32(dataGridView1.Rows[i].Cells[32].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.ego = Convert.ToInt32(dataGridView1.Rows[i].Cells[33].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.loyalty = Convert.ToInt32(dataGridView1.Rows[i].Cells[34].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].attributes.perk = Convert.ToInt32(dataGridView1.Rows[i].Cells[35].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.strength = Convert.ToInt32(dataGridView1.Rows[i].Cells[36].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.agility = Convert.ToInt32(dataGridView1.Rows[i].Cells[37].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.stamina = Convert.ToInt32(dataGridView1.Rows[i].Cells[38].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.acceleration = Convert.ToInt32(dataGridView1.Rows[i].Cells[39].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.discipline = Convert.ToInt32(dataGridView1.Rows[i].Cells[40].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.durability = Convert.ToInt32(dataGridView1.Rows[i].Cells[41].Value);
+                Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].technicalAbility.sprintSpeed = Convert.ToInt32(dataGridView1.Rows[i].Cells[42].Value);
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
                 toolStripProgressBar1.Value = (i);

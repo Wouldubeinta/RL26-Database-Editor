@@ -175,7 +175,6 @@
             public RGB nameColour;
             public RGB keylineColour;
             public RGB numberColour;
-            public byte manufactureId;
             public short licensedId;
             public short licensedTopId;
             public short licensedShortsId;

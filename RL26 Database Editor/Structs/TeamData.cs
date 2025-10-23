@@ -25,7 +25,7 @@
     ///   Discord: Wouldubeinta
     /// </remarks>
     /// <history>
-    /// [Wouldubeinta]	   17/09/2025	Created
+    /// [Wouldubeinta]	   10/10/2025	Created
     /// </history>
     public class TeamData
     {
@@ -172,27 +172,23 @@
         public struct Jerseys
         {
             public string name;
-            public RGB nameColour;
-            public RGB keylineColour;
+            public RGB primaryKeylineColour;
+            public RGB secondaryKeylineColour;
             public RGB numberColour;
-            public short licensedId;
             public short licensedTopId;
             public short licensedShortsId;
             public short licensedSocksId;
-            public byte keylineSize;
+            public byte primaryKeylineWeight;
+            public byte secondaryKeylineWeight;
             public byte numberFont;
-            public byte nameFont;
-            public byte keylineOffset;
             public bool showingLeadingZero;
-            public bool showName;
             public bool showNumber;
-            public bool showInternalKeyline;
-            public ushort padding1;
-            public byte[] padding2;
+            public byte[] padding1;
+            public byte padding2;
             public byte[] padding3;
             public byte[] padding4;
             public byte[] padding5;
-            public ushort padding6;
+            public byte[] padding6;
             public byte[] padding7;
             public byte[] padding8;
             public byte[] padding9;

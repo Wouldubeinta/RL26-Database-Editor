@@ -34,27 +34,8 @@ namespace RL26_Database_Editor
 
             TeamType_comboBox.SelectedIndex = Global.team[Team_Index].clubType;
 
-            switch (Global.team[Team_Index].affiliations)
-            {
-                case 0:
-                    Affiliations_comboBox.SelectedIndex = 0;
-                    break;
-                case 9:
-                    Affiliations_comboBox.SelectedIndex = 1;
-                    break;
-                case 198:
-                    Affiliations_comboBox.SelectedIndex = 2;
-                    break;
-                case 197:
-                    Affiliations_comboBox.SelectedIndex = 3;
-                    break;
-                case 204:
-                    Affiliations_comboBox.SelectedIndex = 4;
-                    break;
-                case 203:
-                    Affiliations_comboBox.SelectedIndex = 5;
-                    break;
-            }
+            Affiliations_comboBox.Items.AddRange(StringArrays.Affiliations);
+            Affiliations_comboBox.SelectedIndex = Global.team[Team_Index].affiliations;
 
             AbbreviatedName_textBox.Text = Global.team[Team_Index].abbreviatedName;
 
@@ -126,7 +107,7 @@ namespace RL26_Database_Editor
             Supporters_comboBox.SelectedIndex = Global.team[Team_Index].supporters;
 
             Stadium_comboBox.Items.AddRange(StringArrays.Stadiums);
-            stadiumType = new string[3] { "Primary Ground", "Secondary Ground", "Tertiary Ground" };
+            stadiumType = ["Primary Ground", "Secondary Ground", "Tertiary Ground"];
             StadiumAmount_numericUpDown.Value = Global.team[Team_Index].stadiumAmount;
             StadiumAmount_numericUpDown.Minimum = 1;
 
@@ -162,12 +143,12 @@ namespace RL26_Database_Editor
 
             int TeamRating = 0;
 
-            for (int i = 0; i < 17; i++)
+            for (int i = 0; i < Global.MIN_PLAYERS_PER_TEAM; i++)
             {
                 TeamRating = TeamRating + Rating.PlayerRating(SearchID.PlayersIndex(Global.team[Team_Index].lineups[i].lineupId));
             }
 
-            TeamRating = TeamRating / 17;
+            TeamRating = TeamRating / Global.MIN_PLAYERS_PER_TEAM;
 
             team_name_label.Text = Fullname_textBox.Text + " - " + TeamRating.ToString();
         }
@@ -412,10 +393,10 @@ namespace RL26_Database_Editor
 
         private void KeylineColour_button_Click(object sender, EventArgs e)
         {
-            team_colorDialog.Color = KeylineColour_button.BackColor;
+            team_colorDialog.Color = PrimaryKeylineColour_button.BackColor;
 
             if (team_colorDialog.ShowDialog() == DialogResult.OK)
-                KeylineColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
+                PrimaryKeylineColour_button.BackColor = Color.FromArgb(team_colorDialog.Color.ToArgb());
 
             team_colorDialog.Dispose();
         }
@@ -473,27 +454,7 @@ namespace RL26_Database_Editor
             else
                 Global.team[Team_Index].clubType = 0;
 
-            switch (Affiliations_comboBox.SelectedIndex)
-            {
-                case 0:
-                    Global.team[Team_Index].affiliations = 0;
-                    break;
-                case 1:
-                    Affiliations_comboBox.SelectedIndex = 9;
-                    break;
-                case 2:
-                    Affiliations_comboBox.SelectedIndex = 198;
-                    break;
-                case 3:
-                    Affiliations_comboBox.SelectedIndex = 197;
-                    break;
-                case 4:
-                    Affiliations_comboBox.SelectedIndex = 204;
-                    break;
-                case 5:
-                    Affiliations_comboBox.SelectedIndex = 203;
-                    break;
-            }
+            Global.team[Team_Index].affiliations = Affiliations_comboBox.SelectedIndex;
 
             Global.team[Team_Index].fullNameSize = Convert.ToByte(Fullname_textBox.Text.Length);
             Global.team[Team_Index].fullName = Fullname_textBox.Text;
@@ -817,7 +778,7 @@ namespace RL26_Database_Editor
         private void PlayerLineup()
         {
             DataTable? dt = null;
-            string[] Positions = new string[17] { "1 - Fullback", "2 - RWing", "3 - RCentre", "4 - LCentre", "5 - LWing", "6 - Five Eighth", "7 - Halfback", "8 - Prop", "9 - Hooker", "10 - FrontRow", "11 - RSecondRow", "12 - LSecondRow", "13 - Lock", "14 - Int1", "15 - Int2", "16 - Int3", "17 - Int4" };
+            string[] Positions = { "1 - Fullback", "2 - RWing", "3 - RCentre", "4 - LCentre", "5 - LWing", "6 - Five Eighth", "7 - Halfback", "8 - Prop", "9 - Hooker", "10 - FrontRow", "11 - RSecondRow", "12 - LSecondRow", "13 - Lock", "14 - Int1", "15 - Int2", "16 - Int3", "17 - Int4" };
 
             try
             {
@@ -905,7 +866,7 @@ namespace RL26_Database_Editor
         private void NinesLineup()
         {
             DataTable? dt = null;
-            string[] Positions = new string[14] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10 - Int1", "11 - Int2", "12 - Int3", "13 - Int4", "14 - Int5" };
+            string[] Positions = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10 - Int1", "11 - Int2", "12 - Int3", "13 - Int4", "14 - Int5" };
 
             try
             {
@@ -949,7 +910,7 @@ namespace RL26_Database_Editor
         private void NinesRoles()
         {
             DataTable? dt = null;
-            string[] PlyRoles = new string[4] { "Captain", "GoalKicker", "PlayMaker1", "PlayMaker2" };
+            string[] PlyRoles = { "Captain", "GoalKicker", "PlayMaker1", "PlayMaker2" };
 
             try
             {
@@ -1782,7 +1743,7 @@ namespace RL26_Database_Editor
 
         public void JerseyImport(int jersey_index, int team_index)
         {
-            Reader br = null;
+            Reader? br = null;
 
             try
             {
@@ -1800,6 +1761,8 @@ namespace RL26_Database_Editor
 
                     Global.team[team_index].jerseys[jersey_index].name = br.ReadNullTerminatedString();
                     br.ReadBytes(24 - Global.team[team_index].jerseys[jersey_index].name.Length, Endian.Little);
+
+                    /*
 
                     Global.team[team_index].jerseys[jersey_index].padding1 = br.ReadUInt16(Endian.Little);
                     Global.team[team_index].jerseys[jersey_index].nameColour.g = br.ReadByte();
@@ -1840,6 +1803,8 @@ namespace RL26_Database_Editor
                     Global.team[team_index].jerseys[jersey_index].numberColour.r = br.ReadByte();
                     Global.team[team_index].jerseys[jersey_index].padding19 = br.ReadBytes(65, Endian.Little);
 
+                    */
+
                     MessageBox.Show("Team Jersey has finished importing", "Team Jersey Importing Is Complete :)", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -1862,7 +1827,7 @@ namespace RL26_Database_Editor
 
         public void JerseyExport(int jersey_index, int team_index)
         {
-            Writer bw = null;
+            Writer? bw = null;
 
             try
             {
@@ -1874,6 +1839,8 @@ namespace RL26_Database_Editor
                 string file = folder + @"\" + Global.team[team_index].fullName + " - " + Global.team[team_index].jerseys[jersey_index].name + ".jsy";
 
                 bw = new Writer(file, FileMode.Create, Endian.Little);
+
+                /*
 
                 bw.Write((Global.team[team_index].jerseys[jersey_index].name + new string(default, 24)).Take(24).Select(ch => (byte)ch).ToArray(), Endian.Little);
                 bw.WriteUInt8(0);
@@ -1916,6 +1883,8 @@ namespace RL26_Database_Editor
                 bw.Write(Global.team[team_index].jerseys[jersey_index].padding18, Endian.Little);
                 bw.WriteUInt8(Global.team[team_index].jerseys[jersey_index].numberColour.r);
                 bw.Write(Global.team[team_index].jerseys[jersey_index].padding19, Endian.Little);
+
+                */
 
                 MessageBox.Show("Team Jersey has finished exporting", "Team Jersey Exporting Is Complete :)", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

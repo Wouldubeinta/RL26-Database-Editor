@@ -45,30 +45,28 @@ namespace RL26_Database_Editor
             ExportJersey_button = new Button();
             ImportJersey_button = new Button();
             JerseyNumber_groupBox = new GroupBox();
+            NuberFont_pictureBox = new PictureBox();
+            SecondaryKeylineColour_button = new Button();
+            SecondaryKeylineWeight_label = new Label();
+            SecondaryKeylineWeight_numericUpDown = new NumericUpDown();
+            SecondaryKeylineColour_label = new Label();
             JerseyNumberEnabled_checkBox = new CheckBox();
             JerseyNumberColour_button = new Button();
-            KeylineColour_button = new Button();
-            InternalKeyline_checkBox = new CheckBox();
-            KeylineOffset_label = new Label();
-            KeylineOffset_numericUpDown = new NumericUpDown();
+            PrimaryKeylineColour_button = new Button();
             ShowLeadingZero_Enabled_checkBox = new CheckBox();
             JerseyNumberFont_label = new Label();
             JerseyNumberFont_numericUpDown = new NumericUpDown();
             JerseyNumberColour_label = new Label();
-            KeylineSize_label = new Label();
-            KeylineSize_numericUpDown = new NumericUpDown();
-            KeylineColour_label = new Label();
-            JerseyName_groupBox = new GroupBox();
-            JerseyNameColour_button = new Button();
-            JerseyNameEnabled_checkBox = new CheckBox();
-            JerseyNameFont_label = new Label();
-            JerseyNameFont_numericUpDown = new NumericUpDown();
-            JerseyNameColour_label = new Label();
+            PrimaryKeylineWeight_label = new Label();
+            PrimaryKeylineWeight_numericUpDown = new NumericUpDown();
+            PrimaryKeylineColour_label = new Label();
             Jersey_groupBox = new GroupBox();
-            JerseyManufacture_label = new Label();
-            JerseyManufacture_comboBox = new ComboBox();
-            LicensedJersey_label = new Label();
-            LicensedJersey_comboBox = new ComboBox();
+            LicensedSocks_label = new Label();
+            LicensedSocks_comboBox = new ComboBox();
+            LicensedShirts_label = new Label();
+            LicensedShirts_comboBox = new ComboBox();
+            LicensedShorts_label = new Label();
+            LicensedShorts_comboBox = new ComboBox();
             JerseySelection_label = new Label();
             JerseyAmount_label = new Label();
             JerseyAmount_numericUpDown = new NumericUpDown();
@@ -164,11 +162,10 @@ namespace RL26_Database_Editor
             ((System.ComponentModel.ISupportInitialize)players_dataGridView).BeginInit();
             jerseys_tabPage.SuspendLayout();
             JerseyNumber_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)KeylineOffset_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NuberFont_pictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SecondaryKeylineWeight_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)JerseyNumberFont_numericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)KeylineSize_numericUpDown).BeginInit();
-            JerseyName_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)JerseyNameFont_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrimaryKeylineWeight_numericUpDown).BeginInit();
             Jersey_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)JerseyAmount_numericUpDown).BeginInit();
             Identity_tabPage.SuspendLayout();
@@ -321,7 +318,6 @@ namespace RL26_Database_Editor
             jerseys_tabPage.Controls.Add(ExportJersey_button);
             jerseys_tabPage.Controls.Add(ImportJersey_button);
             jerseys_tabPage.Controls.Add(JerseyNumber_groupBox);
-            jerseys_tabPage.Controls.Add(JerseyName_groupBox);
             jerseys_tabPage.Controls.Add(Jersey_groupBox);
             jerseys_tabPage.Controls.Add(JerseySelection_label);
             jerseys_tabPage.Controls.Add(JerseyAmount_label);
@@ -339,7 +335,7 @@ namespace RL26_Database_Editor
             // 
             // ExportJersey_button
             // 
-            ExportJersey_button.Location = new Point(519, 69);
+            ExportJersey_button.Location = new Point(519, 50);
             ExportJersey_button.Name = "ExportJersey_button";
             ExportJersey_button.Size = new Size(95, 23);
             ExportJersey_button.TabIndex = 63;
@@ -348,7 +344,7 @@ namespace RL26_Database_Editor
             // 
             // ImportJersey_button
             // 
-            ImportJersey_button.Location = new Point(403, 70);
+            ImportJersey_button.Location = new Point(403, 51);
             ImportJersey_button.Name = "ImportJersey_button";
             ImportJersey_button.Size = new Size(95, 23);
             ImportJersey_button.TabIndex = 62;
@@ -358,85 +354,102 @@ namespace RL26_Database_Editor
             // JerseyNumber_groupBox
             // 
             JerseyNumber_groupBox.BackColor = Color.Transparent;
+            JerseyNumber_groupBox.Controls.Add(NuberFont_pictureBox);
+            JerseyNumber_groupBox.Controls.Add(SecondaryKeylineColour_button);
+            JerseyNumber_groupBox.Controls.Add(SecondaryKeylineWeight_label);
+            JerseyNumber_groupBox.Controls.Add(SecondaryKeylineWeight_numericUpDown);
+            JerseyNumber_groupBox.Controls.Add(SecondaryKeylineColour_label);
             JerseyNumber_groupBox.Controls.Add(JerseyNumberEnabled_checkBox);
             JerseyNumber_groupBox.Controls.Add(JerseyNumberColour_button);
-            JerseyNumber_groupBox.Controls.Add(KeylineColour_button);
-            JerseyNumber_groupBox.Controls.Add(InternalKeyline_checkBox);
-            JerseyNumber_groupBox.Controls.Add(KeylineOffset_label);
-            JerseyNumber_groupBox.Controls.Add(KeylineOffset_numericUpDown);
+            JerseyNumber_groupBox.Controls.Add(PrimaryKeylineColour_button);
             JerseyNumber_groupBox.Controls.Add(ShowLeadingZero_Enabled_checkBox);
             JerseyNumber_groupBox.Controls.Add(JerseyNumberFont_label);
             JerseyNumber_groupBox.Controls.Add(JerseyNumberFont_numericUpDown);
             JerseyNumber_groupBox.Controls.Add(JerseyNumberColour_label);
-            JerseyNumber_groupBox.Controls.Add(KeylineSize_label);
-            JerseyNumber_groupBox.Controls.Add(KeylineSize_numericUpDown);
-            JerseyNumber_groupBox.Controls.Add(KeylineColour_label);
-            JerseyNumber_groupBox.Location = new Point(8, 351);
+            JerseyNumber_groupBox.Controls.Add(PrimaryKeylineWeight_label);
+            JerseyNumber_groupBox.Controls.Add(PrimaryKeylineWeight_numericUpDown);
+            JerseyNumber_groupBox.Controls.Add(PrimaryKeylineColour_label);
+            JerseyNumber_groupBox.Location = new Point(8, 243);
             JerseyNumber_groupBox.Name = "JerseyNumber_groupBox";
-            JerseyNumber_groupBox.Size = new Size(611, 278);
+            JerseyNumber_groupBox.Size = new Size(611, 295);
             JerseyNumber_groupBox.TabIndex = 56;
             JerseyNumber_groupBox.TabStop = false;
             JerseyNumber_groupBox.Text = "Jersey Number";
             // 
+            // NuberFont_pictureBox
+            // 
+            NuberFont_pictureBox.Location = new Point(395, 23);
+            NuberFont_pictureBox.Name = "NuberFont_pictureBox";
+            NuberFont_pictureBox.Size = new Size(210, 210);
+            NuberFont_pictureBox.TabIndex = 91;
+            NuberFont_pictureBox.TabStop = false;
+            // 
+            // SecondaryKeylineColour_button
+            // 
+            SecondaryKeylineColour_button.Location = new Point(163, 260);
+            SecondaryKeylineColour_button.Name = "SecondaryKeylineColour_button";
+            SecondaryKeylineColour_button.Size = new Size(221, 23);
+            SecondaryKeylineColour_button.TabIndex = 90;
+            SecondaryKeylineColour_button.UseVisualStyleBackColor = false;
+            // 
+            // SecondaryKeylineWeight_label
+            // 
+            SecondaryKeylineWeight_label.AutoSize = true;
+            SecondaryKeylineWeight_label.Location = new Point(13, 229);
+            SecondaryKeylineWeight_label.Name = "SecondaryKeylineWeight_label";
+            SecondaryKeylineWeight_label.Size = new Size(147, 15);
+            SecondaryKeylineWeight_label.TabIndex = 88;
+            SecondaryKeylineWeight_label.Text = "Secondary Keyline Weight:";
+            // 
+            // SecondaryKeylineWeight_numericUpDown
+            // 
+            SecondaryKeylineWeight_numericUpDown.Location = new Point(163, 225);
+            SecondaryKeylineWeight_numericUpDown.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            SecondaryKeylineWeight_numericUpDown.Name = "SecondaryKeylineWeight_numericUpDown";
+            SecondaryKeylineWeight_numericUpDown.Size = new Size(38, 23);
+            SecondaryKeylineWeight_numericUpDown.TabIndex = 87;
+            // 
+            // SecondaryKeylineColour_label
+            // 
+            SecondaryKeylineColour_label.AutoSize = true;
+            SecondaryKeylineColour_label.Location = new Point(30, 264);
+            SecondaryKeylineColour_label.Name = "SecondaryKeylineColour_label";
+            SecondaryKeylineColour_label.Size = new Size(131, 15);
+            SecondaryKeylineColour_label.TabIndex = 89;
+            SecondaryKeylineColour_label.Text = "Primary Keyline Colour:";
+            // 
             // JerseyNumberEnabled_checkBox
             // 
             JerseyNumberEnabled_checkBox.AutoSize = true;
-            JerseyNumberEnabled_checkBox.Location = new Point(113, 17);
+            JerseyNumberEnabled_checkBox.Location = new Point(168, 23);
             JerseyNumberEnabled_checkBox.Name = "JerseyNumberEnabled_checkBox";
-            JerseyNumberEnabled_checkBox.Size = new Size(115, 19);
+            JerseyNumberEnabled_checkBox.Size = new Size(102, 19);
             JerseyNumberEnabled_checkBox.TabIndex = 86;
-            JerseyNumberEnabled_checkBox.Text = "Number Enabled";
+            JerseyNumberEnabled_checkBox.Text = "Show Number";
             JerseyNumberEnabled_checkBox.UseVisualStyleBackColor = true;
             // 
             // JerseyNumberColour_button
             // 
-            JerseyNumberColour_button.Location = new Point(108, 116);
+            JerseyNumberColour_button.Location = new Point(163, 122);
             JerseyNumberColour_button.Name = "JerseyNumberColour_button";
             JerseyNumberColour_button.Size = new Size(221, 23);
             JerseyNumberColour_button.TabIndex = 85;
             JerseyNumberColour_button.UseVisualStyleBackColor = false;
             JerseyNumberColour_button.Click += JerseyNumberColour_button_Click;
             // 
-            // KeylineColour_button
+            // PrimaryKeylineColour_button
             // 
-            KeylineColour_button.Location = new Point(149, 215);
-            KeylineColour_button.Name = "KeylineColour_button";
-            KeylineColour_button.Size = new Size(221, 23);
-            KeylineColour_button.TabIndex = 84;
-            KeylineColour_button.UseVisualStyleBackColor = false;
-            KeylineColour_button.Click += KeylineColour_button_Click;
-            // 
-            // InternalKeyline_checkBox
-            // 
-            InternalKeyline_checkBox.AutoSize = true;
-            InternalKeyline_checkBox.Location = new Point(152, 250);
-            InternalKeyline_checkBox.Name = "InternalKeyline_checkBox";
-            InternalKeyline_checkBox.Size = new Size(145, 19);
-            InternalKeyline_checkBox.TabIndex = 28;
-            InternalKeyline_checkBox.Text = "Enable Internal Keyline";
-            InternalKeyline_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // KeylineOffset_label
-            // 
-            KeylineOffset_label.AutoSize = true;
-            KeylineOffset_label.Location = new Point(63, 189);
-            KeylineOffset_label.Name = "KeylineOffset_label";
-            KeylineOffset_label.Size = new Size(83, 15);
-            KeylineOffset_label.TabIndex = 27;
-            KeylineOffset_label.Text = "Keyline Offset:";
-            // 
-            // KeylineOffset_numericUpDown
-            // 
-            KeylineOffset_numericUpDown.Location = new Point(149, 185);
-            KeylineOffset_numericUpDown.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            KeylineOffset_numericUpDown.Name = "KeylineOffset_numericUpDown";
-            KeylineOffset_numericUpDown.Size = new Size(38, 23);
-            KeylineOffset_numericUpDown.TabIndex = 26;
+            PrimaryKeylineColour_button.Location = new Point(163, 191);
+            PrimaryKeylineColour_button.Name = "PrimaryKeylineColour_button";
+            PrimaryKeylineColour_button.Size = new Size(221, 23);
+            PrimaryKeylineColour_button.TabIndex = 84;
+            PrimaryKeylineColour_button.UseVisualStyleBackColor = false;
+            PrimaryKeylineColour_button.Click += KeylineColour_button_Click;
             // 
             // ShowLeadingZero_Enabled_checkBox
             // 
             ShowLeadingZero_Enabled_checkBox.AutoSize = true;
-            ShowLeadingZero_Enabled_checkBox.Location = new Point(112, 85);
+            ShowLeadingZero_Enabled_checkBox.Location = new Point(167, 91);
             ShowLeadingZero_Enabled_checkBox.Name = "ShowLeadingZero_Enabled_checkBox";
             ShowLeadingZero_Enabled_checkBox.Size = new Size(127, 19);
             ShowLeadingZero_Enabled_checkBox.TabIndex = 25;
@@ -446,7 +459,7 @@ namespace RL26_Database_Editor
             // JerseyNumberFont_label
             // 
             JerseyNumberFont_label.AutoSize = true;
-            JerseyNumberFont_label.Location = new Point(73, 52);
+            JerseyNumberFont_label.Location = new Point(128, 58);
             JerseyNumberFont_label.Name = "JerseyNumberFont_label";
             JerseyNumberFont_label.Size = new Size(34, 15);
             JerseyNumberFont_label.TabIndex = 10;
@@ -454,7 +467,7 @@ namespace RL26_Database_Editor
             // 
             // JerseyNumberFont_numericUpDown
             // 
-            JerseyNumberFont_numericUpDown.Location = new Point(110, 48);
+            JerseyNumberFont_numericUpDown.Location = new Point(165, 54);
             JerseyNumberFont_numericUpDown.Maximum = new decimal(new int[] { 8, 0, 0, 0 });
             JerseyNumberFont_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             JerseyNumberFont_numericUpDown.Name = "JerseyNumberFont_numericUpDown";
@@ -465,151 +478,110 @@ namespace RL26_Database_Editor
             // JerseyNumberColour_label
             // 
             JerseyNumberColour_label.AutoSize = true;
-            JerseyNumberColour_label.Location = new Point(13, 120);
+            JerseyNumberColour_label.Location = new Point(68, 126);
             JerseyNumberColour_label.Name = "JerseyNumberColour_label";
             JerseyNumberColour_label.Size = new Size(93, 15);
             JerseyNumberColour_label.TabIndex = 17;
             JerseyNumberColour_label.Text = "Number Colour:";
             // 
-            // KeylineSize_label
+            // PrimaryKeylineWeight_label
             // 
-            KeylineSize_label.AutoSize = true;
-            KeylineSize_label.Location = new Point(34, 154);
-            KeylineSize_label.Name = "KeylineSize_label";
-            KeylineSize_label.Size = new Size(71, 15);
-            KeylineSize_label.TabIndex = 19;
-            KeylineSize_label.Text = "Keyline Size:";
+            PrimaryKeylineWeight_label.AutoSize = true;
+            PrimaryKeylineWeight_label.Location = new Point(27, 160);
+            PrimaryKeylineWeight_label.Name = "PrimaryKeylineWeight_label";
+            PrimaryKeylineWeight_label.Size = new Size(133, 15);
+            PrimaryKeylineWeight_label.TabIndex = 19;
+            PrimaryKeylineWeight_label.Text = "Primary Keyline Weight:";
             // 
-            // KeylineSize_numericUpDown
+            // PrimaryKeylineWeight_numericUpDown
             // 
-            KeylineSize_numericUpDown.Location = new Point(108, 150);
-            KeylineSize_numericUpDown.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            KeylineSize_numericUpDown.Name = "KeylineSize_numericUpDown";
-            KeylineSize_numericUpDown.Size = new Size(38, 23);
-            KeylineSize_numericUpDown.TabIndex = 18;
+            PrimaryKeylineWeight_numericUpDown.Location = new Point(163, 156);
+            PrimaryKeylineWeight_numericUpDown.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            PrimaryKeylineWeight_numericUpDown.Name = "PrimaryKeylineWeight_numericUpDown";
+            PrimaryKeylineWeight_numericUpDown.Size = new Size(38, 23);
+            PrimaryKeylineWeight_numericUpDown.TabIndex = 18;
             // 
-            // KeylineColour_label
+            // PrimaryKeylineColour_label
             // 
-            KeylineColour_label.AutoSize = true;
-            KeylineColour_label.Location = new Point(60, 219);
-            KeylineColour_label.Name = "KeylineColour_label";
-            KeylineColour_label.Size = new Size(87, 15);
-            KeylineColour_label.TabIndex = 21;
-            KeylineColour_label.Text = "Keyline Colour:";
-            // 
-            // JerseyName_groupBox
-            // 
-            JerseyName_groupBox.Controls.Add(JerseyNameColour_button);
-            JerseyName_groupBox.Controls.Add(JerseyNameEnabled_checkBox);
-            JerseyName_groupBox.Controls.Add(JerseyNameFont_label);
-            JerseyName_groupBox.Controls.Add(JerseyNameFont_numericUpDown);
-            JerseyName_groupBox.Controls.Add(JerseyNameColour_label);
-            JerseyName_groupBox.Location = new Point(8, 216);
-            JerseyName_groupBox.Name = "JerseyName_groupBox";
-            JerseyName_groupBox.Size = new Size(611, 129);
-            JerseyName_groupBox.TabIndex = 58;
-            JerseyName_groupBox.TabStop = false;
-            JerseyName_groupBox.Text = "Jersey Name";
-            // 
-            // JerseyNameColour_button
-            // 
-            JerseyNameColour_button.Location = new Point(108, 89);
-            JerseyNameColour_button.Name = "JerseyNameColour_button";
-            JerseyNameColour_button.Size = new Size(221, 23);
-            JerseyNameColour_button.TabIndex = 83;
-            JerseyNameColour_button.UseVisualStyleBackColor = false;
-            JerseyNameColour_button.Click += JerseyNameColour_button_Click;
-            // 
-            // JerseyNameEnabled_checkBox
-            // 
-            JerseyNameEnabled_checkBox.AutoSize = true;
-            JerseyNameEnabled_checkBox.Location = new Point(73, 33);
-            JerseyNameEnabled_checkBox.Name = "JerseyNameEnabled_checkBox";
-            JerseyNameEnabled_checkBox.Size = new Size(130, 19);
-            JerseyNameEnabled_checkBox.TabIndex = 11;
-            JerseyNameEnabled_checkBox.Text = "Enable Jersey Name";
-            JerseyNameEnabled_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // JerseyNameFont_label
-            // 
-            JerseyNameFont_label.AutoSize = true;
-            JerseyNameFont_label.Location = new Point(71, 63);
-            JerseyNameFont_label.Name = "JerseyNameFont_label";
-            JerseyNameFont_label.Size = new Size(34, 15);
-            JerseyNameFont_label.TabIndex = 7;
-            JerseyNameFont_label.Text = "Font:";
-            // 
-            // JerseyNameFont_numericUpDown
-            // 
-            JerseyNameFont_numericUpDown.Location = new Point(108, 59);
-            JerseyNameFont_numericUpDown.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
-            JerseyNameFont_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            JerseyNameFont_numericUpDown.Name = "JerseyNameFont_numericUpDown";
-            JerseyNameFont_numericUpDown.Size = new Size(38, 23);
-            JerseyNameFont_numericUpDown.TabIndex = 1;
-            JerseyNameFont_numericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // JerseyNameColour_label
-            // 
-            JerseyNameColour_label.AutoSize = true;
-            JerseyNameColour_label.Location = new Point(26, 93);
-            JerseyNameColour_label.Name = "JerseyNameColour_label";
-            JerseyNameColour_label.Size = new Size(81, 15);
-            JerseyNameColour_label.TabIndex = 8;
-            JerseyNameColour_label.Text = "Name Colour:";
+            PrimaryKeylineColour_label.AutoSize = true;
+            PrimaryKeylineColour_label.Location = new Point(30, 195);
+            PrimaryKeylineColour_label.Name = "PrimaryKeylineColour_label";
+            PrimaryKeylineColour_label.Size = new Size(131, 15);
+            PrimaryKeylineColour_label.TabIndex = 21;
+            PrimaryKeylineColour_label.Text = "Primary Keyline Colour:";
             // 
             // Jersey_groupBox
             // 
-            Jersey_groupBox.Controls.Add(JerseyManufacture_label);
-            Jersey_groupBox.Controls.Add(JerseyManufacture_comboBox);
-            Jersey_groupBox.Controls.Add(LicensedJersey_label);
-            Jersey_groupBox.Controls.Add(LicensedJersey_comboBox);
-            Jersey_groupBox.Location = new Point(8, 98);
+            Jersey_groupBox.Controls.Add(LicensedSocks_label);
+            Jersey_groupBox.Controls.Add(LicensedSocks_comboBox);
+            Jersey_groupBox.Controls.Add(LicensedShirts_label);
+            Jersey_groupBox.Controls.Add(LicensedShirts_comboBox);
+            Jersey_groupBox.Controls.Add(LicensedShorts_label);
+            Jersey_groupBox.Controls.Add(LicensedShorts_comboBox);
+            Jersey_groupBox.Location = new Point(8, 91);
             Jersey_groupBox.Name = "Jersey_groupBox";
-            Jersey_groupBox.Size = new Size(611, 112);
+            Jersey_groupBox.Size = new Size(611, 146);
             Jersey_groupBox.TabIndex = 55;
             Jersey_groupBox.TabStop = false;
             Jersey_groupBox.Text = "Jersey";
             // 
-            // JerseyManufacture_label
+            // LicensedSocks_label
             // 
-            JerseyManufacture_label.AutoSize = true;
-            JerseyManufacture_label.Location = new Point(32, 37);
-            JerseyManufacture_label.Name = "JerseyManufacture_label";
-            JerseyManufacture_label.Size = new Size(78, 15);
-            JerseyManufacture_label.TabIndex = 14;
-            JerseyManufacture_label.Text = "Manufacture:";
+            LicensedSocks_label.AutoSize = true;
+            LicensedSocks_label.Location = new Point(21, 105);
+            LicensedSocks_label.Name = "LicensedSocks_label";
+            LicensedSocks_label.Size = new Size(89, 15);
+            LicensedSocks_label.TabIndex = 16;
+            LicensedSocks_label.Text = "Licensed Socks:";
             // 
-            // JerseyManufacture_comboBox
+            // LicensedSocks_comboBox
             // 
-            JerseyManufacture_comboBox.BackColor = SystemColors.Window;
-            JerseyManufacture_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            JerseyManufacture_comboBox.FormattingEnabled = true;
-            JerseyManufacture_comboBox.Items.AddRange(new object[] { "1 - ISC Sport", "2 - Asics", "3 - Xblades", "4 - Canterbury", "5 - Classic Sportswear", "6 - Classic Collar", "7 - Errea", "8 - Women Jerseys" });
-            JerseyManufacture_comboBox.Location = new Point(113, 33);
-            JerseyManufacture_comboBox.Name = "JerseyManufacture_comboBox";
-            JerseyManufacture_comboBox.Size = new Size(221, 23);
-            JerseyManufacture_comboBox.TabIndex = 13;
-            JerseyManufacture_comboBox.SelectedIndexChanged += JerseyManufacture_comboBox_SelectedIndexChanged;
+            LicensedSocks_comboBox.BackColor = SystemColors.Window;
+            LicensedSocks_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            LicensedSocks_comboBox.FormattingEnabled = true;
+            LicensedSocks_comboBox.Location = new Point(113, 101);
+            LicensedSocks_comboBox.Name = "LicensedSocks_comboBox";
+            LicensedSocks_comboBox.Size = new Size(221, 23);
+            LicensedSocks_comboBox.TabIndex = 15;
             // 
-            // LicensedJersey_label
+            // LicensedShirts_label
             // 
-            LicensedJersey_label.AutoSize = true;
-            LicensedJersey_label.Location = new Point(20, 69);
-            LicensedJersey_label.Name = "LicensedJersey_label";
-            LicensedJersey_label.Size = new Size(90, 15);
-            LicensedJersey_label.TabIndex = 12;
-            LicensedJersey_label.Text = "Licensed Jersey:";
+            LicensedShirts_label.AutoSize = true;
+            LicensedShirts_label.Location = new Point(22, 37);
+            LicensedShirts_label.Name = "LicensedShirts_label";
+            LicensedShirts_label.Size = new Size(88, 15);
+            LicensedShirts_label.TabIndex = 14;
+            LicensedShirts_label.Text = "Licensed Shirts:";
             // 
-            // LicensedJersey_comboBox
+            // LicensedShirts_comboBox
             // 
-            LicensedJersey_comboBox.BackColor = SystemColors.Window;
-            LicensedJersey_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            LicensedJersey_comboBox.FormattingEnabled = true;
-            LicensedJersey_comboBox.Location = new Point(113, 65);
-            LicensedJersey_comboBox.Name = "LicensedJersey_comboBox";
-            LicensedJersey_comboBox.Size = new Size(221, 23);
-            LicensedJersey_comboBox.TabIndex = 11;
+            LicensedShirts_comboBox.BackColor = SystemColors.Window;
+            LicensedShirts_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            LicensedShirts_comboBox.FormattingEnabled = true;
+            LicensedShirts_comboBox.Location = new Point(113, 33);
+            LicensedShirts_comboBox.Name = "LicensedShirts_comboBox";
+            LicensedShirts_comboBox.Size = new Size(221, 23);
+            LicensedShirts_comboBox.TabIndex = 13;
+            LicensedShirts_comboBox.SelectedIndexChanged += JerseyManufacture_comboBox_SelectedIndexChanged;
+            // 
+            // LicensedShorts_label
+            // 
+            LicensedShorts_label.AutoSize = true;
+            LicensedShorts_label.Location = new Point(18, 69);
+            LicensedShorts_label.Name = "LicensedShorts_label";
+            LicensedShorts_label.Size = new Size(92, 15);
+            LicensedShorts_label.TabIndex = 12;
+            LicensedShorts_label.Text = "Licensed Shorts:";
+            // 
+            // LicensedShorts_comboBox
+            // 
+            LicensedShorts_comboBox.BackColor = SystemColors.Window;
+            LicensedShorts_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            LicensedShorts_comboBox.FormattingEnabled = true;
+            LicensedShorts_comboBox.Location = new Point(113, 65);
+            LicensedShorts_comboBox.Name = "LicensedShorts_comboBox";
+            LicensedShorts_comboBox.Size = new Size(221, 23);
+            LicensedShorts_comboBox.TabIndex = 11;
             // 
             // JerseySelection_label
             // 
@@ -733,7 +705,6 @@ namespace RL26_Database_Editor
             // 
             Affiliations_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             Affiliations_comboBox.FormattingEnabled = true;
-            Affiliations_comboBox.Items.AddRange(new object[] { "Australia", "England", "NSW Rep", "QLD Rep", "Indigenous Rep", "Maori Rep" });
             Affiliations_comboBox.Location = new Point(135, 116);
             Affiliations_comboBox.Name = "Affiliations_comboBox";
             Affiliations_comboBox.Size = new Size(203, 23);
@@ -957,7 +928,7 @@ namespace RL26_Database_Editor
             // 
             TeamType_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             TeamType_comboBox.FormattingEnabled = true;
-            TeamType_comboBox.Items.AddRange(new object[] { "Standard", "International", "State Of Origin", "City V's Country", "All Stars" });
+            TeamType_comboBox.Items.AddRange(new object[] { "League", "International", "State Of Origin", "City V's Country", "All Stars" });
             TeamType_comboBox.Location = new Point(135, 83);
             TeamType_comboBox.Name = "TeamType_comboBox";
             TeamType_comboBox.Size = new Size(203, 23);
@@ -1451,12 +1422,10 @@ namespace RL26_Database_Editor
             jerseys_tabPage.PerformLayout();
             JerseyNumber_groupBox.ResumeLayout(false);
             JerseyNumber_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)KeylineOffset_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NuberFont_pictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SecondaryKeylineWeight_numericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)JerseyNumberFont_numericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)KeylineSize_numericUpDown).EndInit();
-            JerseyName_groupBox.ResumeLayout(false);
-            JerseyName_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)JerseyNameFont_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrimaryKeylineWeight_numericUpDown).EndInit();
             Jersey_groupBox.ResumeLayout(false);
             Jersey_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)JerseyAmount_numericUpDown).EndInit();
@@ -1574,7 +1543,7 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.GroupBox JerseyNumber_groupBox;
         private System.Windows.Forms.CheckBox JerseyNumberEnabled_checkBox;
         private System.Windows.Forms.Button JerseyNumberColour_button;
-        private System.Windows.Forms.Button KeylineColour_button;
+        private System.Windows.Forms.Button PrimaryKeylineColour_button;
         private System.Windows.Forms.CheckBox InternalKeyline_checkBox;
         private System.Windows.Forms.Label KeylineOffset_label;
         private System.Windows.Forms.NumericUpDown KeylineOffset_numericUpDown;
@@ -1582,9 +1551,9 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.Label JerseyNumberFont_label;
         private System.Windows.Forms.NumericUpDown JerseyNumberFont_numericUpDown;
         private System.Windows.Forms.Label JerseyNumberColour_label;
-        private System.Windows.Forms.Label KeylineSize_label;
-        private System.Windows.Forms.NumericUpDown KeylineSize_numericUpDown;
-        private System.Windows.Forms.Label KeylineColour_label;
+        private System.Windows.Forms.Label PrimaryKeylineWeight_label;
+        private System.Windows.Forms.NumericUpDown PrimaryKeylineWeight_numericUpDown;
+        private System.Windows.Forms.Label PrimaryKeylineColour_label;
         private System.Windows.Forms.GroupBox JerseyName_groupBox;
         private System.Windows.Forms.Button JerseyNameColour_button;
         private System.Windows.Forms.CheckBox JerseyNameEnabled_checkBox;
@@ -1592,10 +1561,10 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.NumericUpDown JerseyNameFont_numericUpDown;
         private System.Windows.Forms.Label JerseyNameColour_label;
         private System.Windows.Forms.GroupBox Jersey_groupBox;
-        private System.Windows.Forms.Label JerseyManufacture_label;
-        private System.Windows.Forms.ComboBox JerseyManufacture_comboBox;
-        private System.Windows.Forms.Label LicensedJersey_label;
-        private System.Windows.Forms.ComboBox LicensedJersey_comboBox;
+        private System.Windows.Forms.Label LicensedShirts_label;
+        private System.Windows.Forms.ComboBox LicensedShirts_comboBox;
+        private System.Windows.Forms.Label LicensedShorts_label;
+        private System.Windows.Forms.ComboBox LicensedShorts_comboBox;
         private System.Windows.Forms.Label JerseySelection_label;
         private System.Windows.Forms.Label JerseyAmount_label;
         private System.Windows.Forms.NumericUpDown JerseyAmount_numericUpDown;
@@ -1611,5 +1580,12 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.CheckBox isFrontendVisible_checkBox;
         private System.Windows.Forms.ComboBox Affiliations_comboBox;
         private TextBox alternateNumberingSystem_textBox;
+        private Button SecondaryKeylineColour_button;
+        private Label SecondaryKeylineWeight_label;
+        private NumericUpDown SecondaryKeylineWeight_numericUpDown;
+        private Label SecondaryKeylineColour_label;
+        private Label LicensedSocks_label;
+        private ComboBox LicensedSocks_comboBox;
+        private PictureBox NuberFont_pictureBox;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RL26_Database_Editor
 {
@@ -29,7 +30,7 @@ namespace RL26_Database_Editor
     ///   Discord: Wouldubeinta
     /// </remarks>
     /// <history>
-    /// [Wouldubeinta]	   01/09/2025	Created
+    /// [Wouldubeinta]	   10/10/2025	Created
     /// </history>
     public static class CSV
     {
@@ -40,9 +41,9 @@ namespace RL26_Database_Editor
 
             try
             {
-                using (StreamReader sr = new StreamReader(filePath))
+                using (StreamReader? sr = new StreamReader(filePath))
                 {
-                    string[] headers = null;
+                    string[]? headers = null;
                     if (hasHeader)
                     {
                         string headerLine = sr.ReadLine();
@@ -56,7 +57,7 @@ namespace RL26_Database_Editor
                     while (!sr.EndOfStream)
                     {
                         string line = sr.ReadLine();
-                        string[] fields = line.Split(delimiter);
+                        string[]? fields = line.Split(delimiter);
 
                         // If no header, create columns based on the first row
                         if (!hasHeader && dataTable.Columns.Count == 0)
@@ -84,7 +85,7 @@ namespace RL26_Database_Editor
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error converting CSV to DataSet: {ex.Message}");
+                MessageBox.Show("Error occurred, report it to Wouldy : " + ex, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

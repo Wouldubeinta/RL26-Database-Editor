@@ -55,6 +55,10 @@ namespace RL26_Database_Editor
                 Global.TeamHeader = br.ReadBytes(3304, Endian.Little);
                 Global.team_amount = br.ReadInt32(Endian.Little);
 
+                //Writer writer = new(Global.currentPath + @"\jersey_database", Endian.Little);
+                //writer.WriteInt32(0); //count
+                //int count = 0;
+
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     Global.team[i].identifier = br.ReadInt32(Endian.Little);
@@ -335,31 +339,49 @@ namespace RL26_Database_Editor
                     }
 
                     Global.team[i].dataSize = br.ReadInt32(Endian.Little);
-                    //long pos = br.Position;
                     Global.team[i].data = br.ReadBytes(Global.team[i].dataSize, Endian.Little);
 
                     /*
-                    int dataSize = Global.team[i].dataSize - (2 + (440 * 8) + 9);
-                    Global.team[i].data = br.ReadBytes(dataSize, Endian.Little);
+                    //int dataSize = Global.team[i].dataSize - (2 + (518 * 8) + 9);
+                    //Global.team[i].data = br.ReadBytes(dataSize, Endian.Little);
 
                     Global.team[i].jerseyAmount = br.ReadInt16();
                     Global.team[i].jerseys = new TeamData.Jerseys[8];
+                    count += Global.team[i].jerseyAmount;
 
                     for (int j = 0; j < 8; j++)
                     {
                         Global.team[i].jerseys[j].name = br.ReadNullTerminatedString();
                         br.ReadBytes(24 - Global.team[i].jerseys[j].name.Length, Endian.Little);
-
-                        Global.team[i].jerseys[j].padding2 = br.ReadBytes(140, Endian.Little);
+                        Global.team[i].jerseys[j].padding1 = br.ReadBytes(83, Endian.Little);
+                        Global.team[i].jerseys[j].numberColour.r = br.ReadByte();
+                        Global.team[i].jerseys[j].padding2 = br.ReadByte();
+                        Global.team[i].jerseys[j].numberColour.b = br.ReadByte();
+                        Global.team[i].jerseys[j].padding3 = br.ReadBytes(54, Endian.Little);
                         Global.team[i].jerseys[j].licensedShortsId = br.ReadInt16();
-                        Global.team[i].jerseys[j].padding3 = br.ReadBytes(98, Endian.Little);
+                        Global.team[i].jerseys[j].padding4 = br.ReadBytes(98, Endian.Little);
                         Global.team[i].jerseys[j].licensedTopId = br.ReadInt16();
-                        Global.team[i].jerseys[j].padding4 = br.ReadBytes(16, Endian.Little);
+                        Global.team[i].jerseys[j].padding5 = br.ReadBytes(16, Endian.Little);
                         Global.team[i].jerseys[j].licensedSocksId = br.ReadInt16();
-                        Global.team[i].jerseys[j].padding5 = br.ReadBytes(155, Endian.Little);
+                        Global.team[i].jerseys[j].padding6 = br.ReadBytes(137, Endian.Little);
+                        Global.team[i].jerseys[j].numberColour.g = br.ReadByte();
+                        Global.team[i].jerseys[j].padding7 = br.ReadBytes(17, Endian.Little);
+                        int t = 0;
 
                         /*
-                        Global.team[i].jerseys[j].padding1 = br.ReadUInt16(Endian.Little);
+                        if (Global.team[i].jerseys[j].name != string.Empty) 
+                        {
+                            writer.WriteInt8(Convert.ToSByte(Global.team[i].fullName.Length));
+                            writer.WriteString(Global.team[i].fullName);
+                            writer.WriteInt8(Convert.ToSByte(Global.team[i].jerseys[j].name.Length));
+                            writer.WriteString(Global.team[i].jerseys[j].name);
+                            writer.WriteInt16(Global.team[i].jerseys[j].licensedTopId);
+                            writer.WriteInt16(Global.team[i].jerseys[j].licensedShortsId);
+                            writer.WriteInt16(Global.team[i].jerseys[j].licensedSocksId);
+                        }
+                        */
+
+                        /*
                         Global.team[i].jerseys[j].nameColour.g = br.ReadByte();
                         Global.team[i].jerseys[j].padding2 = br.ReadBytes(14, Endian.Little);
                         Global.team[i].jerseys[j].nameColour.r = br.ReadByte();
@@ -374,9 +396,7 @@ namespace RL26_Database_Editor
                         Global.team[i].jerseys[j].padding7 = br.ReadBytes(5, Endian.Little);
                         Global.team[i].jerseys[j].showInternalKeyline = br.ReadBoolean();
                         Global.team[i].jerseys[j].padding8 = br.ReadBytes(61, Endian.Little);
-                        Global.team[i].jerseys[j].numberColour.g = br.ReadByte();
                         Global.team[i].jerseys[j].padding9 = br.ReadBytes(53, Endian.Little);
-                        Global.team[i].jerseys[j].numberColour.b = br.ReadByte();
                         Global.team[i].jerseys[j].padding10 = br.ReadBytes(42, Endian.Little);
                         Global.team[i].jerseys[j].padding11 = br.ReadBytes(19, Endian.Little);
                         Global.team[i].jerseys[j].licensedId = br.ReadInt16(Endian.Little);
@@ -394,8 +414,11 @@ namespace RL26_Database_Editor
                         Global.team[i].jerseys[j].padding17 = br.ReadBytes(39, Endian.Little);
                         Global.team[i].jerseys[j].keylineColour.r = br.ReadByte();
                         Global.team[i].jerseys[j].padding18 = br.ReadBytes(9, Endian.Little);
-                        Global.team[i].jerseys[j].numberColour.r = br.ReadByte();  
                     }
+
+                    writer.Position = 0;
+
+                    writer.WriteInt32(count);
 
                     Global.team[i].padding2 = br.ReadBytes(9, Endian.Little);
                     */

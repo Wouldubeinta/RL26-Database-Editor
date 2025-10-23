@@ -48,7 +48,15 @@ namespace RL26_Database_Editor
             else
                 commentaryNameHash_comboBox.SelectedIndex = 0;
 
-            club_textBox.Text = Global.player[Player_Index].club.ToString();
+            string[] clubs = new string[Global.team_amount];
+
+            for (int i = 0; i < Global.team_amount; i++) 
+            {
+                clubs[i] = Global.team[i].fullName;
+            }
+
+            club_comboBox.Items.AddRange(clubs);
+            club_comboBox.SelectedIndex = Global.player[Player_Index].club;
 
             PlayerGender_textBox.Text = "Male";
             PlayerGenderImage_label.Image = Properties.Resources.Male;
@@ -282,11 +290,7 @@ namespace RL26_Database_Editor
             Global.player[Player_Index].lastName = Last_Name_textBox.Text;
 
             Global.player[Player_Index].isClub = true;
-
-            if (Convert.ToInt32(club_textBox.Text) == 0)
-                Global.player[Player_Index].club = 0;
-            else
-                Global.player[Player_Index].club = Convert.ToInt32(club_textBox.Text);
+            Global.player[Player_Index].club = club_comboBox.SelectedIndex;
 
             Global.player[Player_Index].isLicensed = true;
             Global.player[Player_Index].licensed = licensed_checkBox.Checked;

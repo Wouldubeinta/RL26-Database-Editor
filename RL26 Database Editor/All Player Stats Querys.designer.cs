@@ -29,1075 +29,913 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(All_Player_Stats_Querys));
-            this.PlayerRole_comboBox = new System.Windows.Forms.ComboBox();
-            this.Role_label = new System.Windows.Forms.Label();
-            this.ChangeStats_button = new System.Windows.Forms.Button();
-            this.Stats_groupBox = new System.Windows.Forms.GroupBox();
-            this.SprintSpeed_label = new System.Windows.Forms.Label();
-            this.Fitness_label = new System.Windows.Forms.Label();
-            this.Strength_label = new System.Windows.Forms.Label();
-            this.SprintSpeed_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Fitness_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Strength_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Agility_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Acceleration_label = new System.Windows.Forms.Label();
-            this.Durability_label = new System.Windows.Forms.Label();
-            this.Acceleration_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Agility_label = new System.Windows.Forms.Label();
-            this.Discipline_label = new System.Windows.Forms.Label();
-            this.Durability_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Discipline_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.MiscSkills_groupBox = new System.Windows.Forms.GroupBox();
-            this.ballStrip_label = new System.Windows.Forms.Label();
-            this.ballStrip_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.contestedCollect_label = new System.Windows.Forms.Label();
-            this.contestedCollect_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.diveCollect_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.diveCollect_label = new System.Windows.Forms.Label();
-            this.TackleSkills_groupBox = new System.Windows.Forms.GroupBox();
-            this.impactTackle_label = new System.Windows.Forms.Label();
-            this.impactTackle_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.diveTackle_label = new System.Windows.Forms.Label();
-            this.tackle_label = new System.Windows.Forms.Label();
-            this.diveTackle_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.tackle_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.driveTackle_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.driveTackle_label = new System.Windows.Forms.Label();
-            this.EvasionSkills_groupBox = new System.Windows.Forms.GroupBox();
-            this.breakTackle_label = new System.Windows.Forms.Label();
-            this.breakTackle_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.sideStep_label = new System.Windows.Forms.Label();
-            this.dummyPass_label = new System.Windows.Forms.Label();
-            this.sideStep_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.dummyPass_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.fend_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.fend_label = new System.Windows.Forms.Label();
-            this.PassingSkills_groupBox = new System.Windows.Forms.GroupBox();
-            this.offload_label = new System.Windows.Forms.Label();
-            this.basicPass_label = new System.Windows.Forms.Label();
-            this.offload_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.basicPass_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.longPass_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.longPass_label = new System.Windows.Forms.Label();
-            this.KickingSkills_groupBox = new System.Windows.Forms.GroupBox();
-            this.chipKick_label = new System.Windows.Forms.Label();
-            this.grubberKick_label = new System.Windows.Forms.Label();
-            this.chipKick_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.grubberKick_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.puntKick_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.bombKick_label = new System.Windows.Forms.Label();
-            this.placeKick_label = new System.Windows.Forms.Label();
-            this.bombKick_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.puntKick_label = new System.Windows.Forms.Label();
-            this.fieldgoalKick_label = new System.Windows.Forms.Label();
-            this.placeKick_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.fieldgoalKick_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.IncrementsValue_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.IncrementsValue_label = new System.Windows.Forms.Label();
-            this.Stats_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SprintSpeed_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fitness_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Strength_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Agility_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Acceleration_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Durability_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Discipline_numericUpDown)).BeginInit();
-            this.MiscSkills_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ballStrip_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contestedCollect_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diveCollect_numericUpDown)).BeginInit();
-            this.TackleSkills_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.impactTackle_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diveTackle_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tackle_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driveTackle_numericUpDown)).BeginInit();
-            this.EvasionSkills_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.breakTackle_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sideStep_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dummyPass_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fend_numericUpDown)).BeginInit();
-            this.PassingSkills_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.offload_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.basicPass_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.longPass_numericUpDown)).BeginInit();
-            this.KickingSkills_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chipKick_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grubberKick_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puntKick_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bombKick_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placeKick_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldgoalKick_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IncrementsValue_numericUpDown)).BeginInit();
-            this.SuspendLayout();
+            PlayerRole_comboBox = new ComboBox();
+            Role_label = new Label();
+            ChangeStats_button = new Button();
+            Stats_groupBox = new GroupBox();
+            SprintSpeed_label = new Label();
+            Fitness_label = new Label();
+            Strength_label = new Label();
+            SprintSpeed_numericUpDown = new NumericUpDown();
+            Fitness_numericUpDown = new NumericUpDown();
+            Strength_numericUpDown = new NumericUpDown();
+            Agility_numericUpDown = new NumericUpDown();
+            Acceleration_label = new Label();
+            Durability_label = new Label();
+            Acceleration_numericUpDown = new NumericUpDown();
+            Agility_label = new Label();
+            Discipline_label = new Label();
+            Durability_numericUpDown = new NumericUpDown();
+            Discipline_numericUpDown = new NumericUpDown();
+            MiscSkills_groupBox = new GroupBox();
+            ballStrip_label = new Label();
+            ballStrip_numericUpDown = new NumericUpDown();
+            contestedCollect_label = new Label();
+            contestedCollect_numericUpDown = new NumericUpDown();
+            diveCollect_numericUpDown = new NumericUpDown();
+            diveCollect_label = new Label();
+            TackleSkills_groupBox = new GroupBox();
+            impactTackle_label = new Label();
+            impactTackle_numericUpDown = new NumericUpDown();
+            diveTackle_label = new Label();
+            tackle_label = new Label();
+            diveTackle_numericUpDown = new NumericUpDown();
+            tackle_numericUpDown = new NumericUpDown();
+            driveTackle_numericUpDown = new NumericUpDown();
+            driveTackle_label = new Label();
+            EvasionSkills_groupBox = new GroupBox();
+            breakTackle_label = new Label();
+            breakTackle_numericUpDown = new NumericUpDown();
+            sideStep_label = new Label();
+            dummyPass_label = new Label();
+            sideStep_numericUpDown = new NumericUpDown();
+            dummyPass_numericUpDown = new NumericUpDown();
+            fend_numericUpDown = new NumericUpDown();
+            fend_label = new Label();
+            PassingSkills_groupBox = new GroupBox();
+            offload_label = new Label();
+            basicPass_label = new Label();
+            offload_numericUpDown = new NumericUpDown();
+            basicPass_numericUpDown = new NumericUpDown();
+            longPass_numericUpDown = new NumericUpDown();
+            longPass_label = new Label();
+            KickingSkills_groupBox = new GroupBox();
+            chipKick_label = new Label();
+            grubberKick_label = new Label();
+            chipKick_numericUpDown = new NumericUpDown();
+            grubberKick_numericUpDown = new NumericUpDown();
+            puntKick_numericUpDown = new NumericUpDown();
+            bombKick_label = new Label();
+            placeKick_label = new Label();
+            bombKick_numericUpDown = new NumericUpDown();
+            puntKick_label = new Label();
+            fieldgoalKick_label = new Label();
+            placeKick_numericUpDown = new NumericUpDown();
+            fieldgoalKick_numericUpDown = new NumericUpDown();
+            IncrementsValue_numericUpDown = new NumericUpDown();
+            IncrementsValue_label = new Label();
+            Stats_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SprintSpeed_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Fitness_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Strength_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Agility_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Acceleration_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Durability_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Discipline_numericUpDown).BeginInit();
+            MiscSkills_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ballStrip_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)contestedCollect_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)diveCollect_numericUpDown).BeginInit();
+            TackleSkills_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)impactTackle_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)diveTackle_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tackle_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)driveTackle_numericUpDown).BeginInit();
+            EvasionSkills_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)breakTackle_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sideStep_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dummyPass_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fend_numericUpDown).BeginInit();
+            PassingSkills_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)offload_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)basicPass_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)longPass_numericUpDown).BeginInit();
+            KickingSkills_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chipKick_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)grubberKick_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)puntKick_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bombKick_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)placeKick_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fieldgoalKick_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)IncrementsValue_numericUpDown).BeginInit();
+            SuspendLayout();
             // 
             // PlayerRole_comboBox
             // 
-            this.PlayerRole_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PlayerRole_comboBox.FormattingEnabled = true;
-            this.PlayerRole_comboBox.Items.AddRange(new object[] {
-            "Fullback",
-            "Winger",
-            "Centre",
-            "Five-Eighth",
-            "HalfBack",
-            "Prop",
-            "Hooker",
-            "Second Rower",
-            "Lock",
-            "All Roles"});
-            this.PlayerRole_comboBox.Location = new System.Drawing.Point(88, 28);
-            this.PlayerRole_comboBox.Name = "PlayerRole_comboBox";
-            this.PlayerRole_comboBox.Size = new System.Drawing.Size(174, 21);
-            this.PlayerRole_comboBox.TabIndex = 64;
+            PlayerRole_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            PlayerRole_comboBox.FormattingEnabled = true;
+            PlayerRole_comboBox.Items.AddRange(new object[] { "Fullback", "Winger", "Centre", "Five-Eighth", "HalfBack", "Prop", "Hooker", "Second Rower", "Lock", "All Roles" });
+            PlayerRole_comboBox.Location = new Point(103, 32);
+            PlayerRole_comboBox.Margin = new Padding(4, 3, 4, 3);
+            PlayerRole_comboBox.Name = "PlayerRole_comboBox";
+            PlayerRole_comboBox.Size = new Size(202, 23);
+            PlayerRole_comboBox.TabIndex = 64;
             // 
             // Role_label
             // 
-            this.Role_label.AutoSize = true;
-            this.Role_label.Location = new System.Drawing.Point(16, 32);
-            this.Role_label.Name = "Role_label";
-            this.Role_label.Size = new System.Drawing.Size(69, 13);
-            this.Role_label.TabIndex = 63;
-            this.Role_label.Text = "Players Role:";
+            Role_label.AutoSize = true;
+            Role_label.Location = new Point(19, 37);
+            Role_label.Margin = new Padding(4, 0, 4, 0);
+            Role_label.Name = "Role_label";
+            Role_label.Size = new Size(73, 15);
+            Role_label.TabIndex = 63;
+            Role_label.Text = "Players Role:";
             // 
             // ChangeStats_button
             // 
-            this.ChangeStats_button.Location = new System.Drawing.Point(286, 381);
-            this.ChangeStats_button.Name = "ChangeStats_button";
-            this.ChangeStats_button.Size = new System.Drawing.Size(91, 35);
-            this.ChangeStats_button.TabIndex = 65;
-            this.ChangeStats_button.Text = "Change Stats";
-            this.ChangeStats_button.UseVisualStyleBackColor = true;
-            this.ChangeStats_button.Click += new System.EventHandler(this.ChangeStats_button_Click);
+            ChangeStats_button.Location = new Point(334, 440);
+            ChangeStats_button.Margin = new Padding(4, 3, 4, 3);
+            ChangeStats_button.Name = "ChangeStats_button";
+            ChangeStats_button.Size = new Size(106, 40);
+            ChangeStats_button.TabIndex = 65;
+            ChangeStats_button.Text = "Change Stats";
+            ChangeStats_button.UseVisualStyleBackColor = true;
+            ChangeStats_button.Click += ChangeStats_button_Click;
             // 
             // Stats_groupBox
             // 
-            this.Stats_groupBox.Controls.Add(this.SprintSpeed_label);
-            this.Stats_groupBox.Controls.Add(this.Fitness_label);
-            this.Stats_groupBox.Controls.Add(this.Strength_label);
-            this.Stats_groupBox.Controls.Add(this.SprintSpeed_numericUpDown);
-            this.Stats_groupBox.Controls.Add(this.Fitness_numericUpDown);
-            this.Stats_groupBox.Controls.Add(this.Strength_numericUpDown);
-            this.Stats_groupBox.Controls.Add(this.Agility_numericUpDown);
-            this.Stats_groupBox.Controls.Add(this.Acceleration_label);
-            this.Stats_groupBox.Controls.Add(this.Durability_label);
-            this.Stats_groupBox.Controls.Add(this.Acceleration_numericUpDown);
-            this.Stats_groupBox.Controls.Add(this.Agility_label);
-            this.Stats_groupBox.Controls.Add(this.Discipline_label);
-            this.Stats_groupBox.Controls.Add(this.Durability_numericUpDown);
-            this.Stats_groupBox.Controls.Add(this.Discipline_numericUpDown);
-            this.Stats_groupBox.Location = new System.Drawing.Point(19, 76);
-            this.Stats_groupBox.Name = "Stats_groupBox";
-            this.Stats_groupBox.Size = new System.Drawing.Size(163, 289);
-            this.Stats_groupBox.TabIndex = 66;
-            this.Stats_groupBox.TabStop = false;
-            this.Stats_groupBox.Text = "Main Stats";
+            Stats_groupBox.Controls.Add(SprintSpeed_label);
+            Stats_groupBox.Controls.Add(Fitness_label);
+            Stats_groupBox.Controls.Add(Strength_label);
+            Stats_groupBox.Controls.Add(SprintSpeed_numericUpDown);
+            Stats_groupBox.Controls.Add(Fitness_numericUpDown);
+            Stats_groupBox.Controls.Add(Strength_numericUpDown);
+            Stats_groupBox.Controls.Add(Agility_numericUpDown);
+            Stats_groupBox.Controls.Add(Acceleration_label);
+            Stats_groupBox.Controls.Add(Durability_label);
+            Stats_groupBox.Controls.Add(Acceleration_numericUpDown);
+            Stats_groupBox.Controls.Add(Agility_label);
+            Stats_groupBox.Controls.Add(Discipline_label);
+            Stats_groupBox.Controls.Add(Durability_numericUpDown);
+            Stats_groupBox.Controls.Add(Discipline_numericUpDown);
+            Stats_groupBox.Location = new Point(22, 88);
+            Stats_groupBox.Margin = new Padding(4, 3, 4, 3);
+            Stats_groupBox.Name = "Stats_groupBox";
+            Stats_groupBox.Padding = new Padding(4, 3, 4, 3);
+            Stats_groupBox.Size = new Size(190, 333);
+            Stats_groupBox.TabIndex = 66;
+            Stats_groupBox.TabStop = false;
+            Stats_groupBox.Text = "Main Stats";
             // 
             // SprintSpeed_label
             // 
-            this.SprintSpeed_label.AutoSize = true;
-            this.SprintSpeed_label.BackColor = System.Drawing.Color.Transparent;
-            this.SprintSpeed_label.Location = new System.Drawing.Point(16, 217);
-            this.SprintSpeed_label.Name = "SprintSpeed_label";
-            this.SprintSpeed_label.Size = new System.Drawing.Size(83, 13);
-            this.SprintSpeed_label.TabIndex = 35;
-            this.SprintSpeed_label.Text = "Sprint Speed + -";
+            SprintSpeed_label.AutoSize = true;
+            SprintSpeed_label.BackColor = Color.Transparent;
+            SprintSpeed_label.Location = new Point(19, 250);
+            SprintSpeed_label.Margin = new Padding(4, 0, 4, 0);
+            SprintSpeed_label.Name = "SprintSpeed_label";
+            SprintSpeed_label.Size = new Size(92, 15);
+            SprintSpeed_label.TabIndex = 35;
+            SprintSpeed_label.Text = "Sprint Speed + -";
             // 
             // Fitness_label
             // 
-            this.Fitness_label.AutoSize = true;
-            this.Fitness_label.BackColor = System.Drawing.Color.Transparent;
-            this.Fitness_label.Location = new System.Drawing.Point(44, 97);
-            this.Fitness_label.Name = "Fitness_label";
-            this.Fitness_label.Size = new System.Drawing.Size(55, 13);
-            this.Fitness_label.TabIndex = 45;
-            this.Fitness_label.Text = "Fitness + -";
+            Fitness_label.AutoSize = true;
+            Fitness_label.BackColor = Color.Transparent;
+            Fitness_label.Location = new Point(51, 112);
+            Fitness_label.Margin = new Padding(4, 0, 4, 0);
+            Fitness_label.Name = "Fitness_label";
+            Fitness_label.Size = new Size(62, 15);
+            Fitness_label.TabIndex = 45;
+            Fitness_label.Text = "Fitness + -";
             // 
             // Strength_label
             // 
-            this.Strength_label.AutoSize = true;
-            this.Strength_label.BackColor = System.Drawing.Color.Transparent;
-            this.Strength_label.Location = new System.Drawing.Point(37, 37);
-            this.Strength_label.Name = "Strength_label";
-            this.Strength_label.Size = new System.Drawing.Size(62, 13);
-            this.Strength_label.TabIndex = 37;
-            this.Strength_label.Text = "Strength + -";
+            Strength_label.AutoSize = true;
+            Strength_label.BackColor = Color.Transparent;
+            Strength_label.Location = new Point(43, 43);
+            Strength_label.Margin = new Padding(4, 0, 4, 0);
+            Strength_label.Name = "Strength_label";
+            Strength_label.Size = new Size(71, 15);
+            Strength_label.TabIndex = 37;
+            Strength_label.Text = "Strength + -";
             // 
             // SprintSpeed_numericUpDown
             // 
-            this.SprintSpeed_numericUpDown.Location = new System.Drawing.Point(102, 214);
-            this.SprintSpeed_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.SprintSpeed_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.SprintSpeed_numericUpDown.Name = "SprintSpeed_numericUpDown";
-            this.SprintSpeed_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.SprintSpeed_numericUpDown.TabIndex = 36;
+            SprintSpeed_numericUpDown.Location = new Point(119, 247);
+            SprintSpeed_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            SprintSpeed_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            SprintSpeed_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            SprintSpeed_numericUpDown.Name = "SprintSpeed_numericUpDown";
+            SprintSpeed_numericUpDown.Size = new Size(44, 23);
+            SprintSpeed_numericUpDown.TabIndex = 36;
             // 
             // Fitness_numericUpDown
             // 
-            this.Fitness_numericUpDown.Location = new System.Drawing.Point(102, 94);
-            this.Fitness_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.Fitness_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.Fitness_numericUpDown.Name = "Fitness_numericUpDown";
-            this.Fitness_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.Fitness_numericUpDown.TabIndex = 46;
+            Fitness_numericUpDown.Location = new Point(119, 108);
+            Fitness_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            Fitness_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            Fitness_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            Fitness_numericUpDown.Name = "Fitness_numericUpDown";
+            Fitness_numericUpDown.Size = new Size(44, 23);
+            Fitness_numericUpDown.TabIndex = 46;
             // 
             // Strength_numericUpDown
             // 
-            this.Strength_numericUpDown.Location = new System.Drawing.Point(102, 34);
-            this.Strength_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.Strength_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.Strength_numericUpDown.Name = "Strength_numericUpDown";
-            this.Strength_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.Strength_numericUpDown.TabIndex = 38;
+            Strength_numericUpDown.Location = new Point(119, 39);
+            Strength_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            Strength_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            Strength_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            Strength_numericUpDown.Name = "Strength_numericUpDown";
+            Strength_numericUpDown.Size = new Size(44, 23);
+            Strength_numericUpDown.TabIndex = 38;
             // 
             // Agility_numericUpDown
             // 
-            this.Agility_numericUpDown.Location = new System.Drawing.Point(102, 64);
-            this.Agility_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.Agility_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.Agility_numericUpDown.Name = "Agility_numericUpDown";
-            this.Agility_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.Agility_numericUpDown.TabIndex = 44;
+            Agility_numericUpDown.Location = new Point(119, 74);
+            Agility_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            Agility_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            Agility_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            Agility_numericUpDown.Name = "Agility_numericUpDown";
+            Agility_numericUpDown.Size = new Size(44, 23);
+            Agility_numericUpDown.TabIndex = 44;
             // 
             // Acceleration_label
             // 
-            this.Acceleration_label.AutoSize = true;
-            this.Acceleration_label.BackColor = System.Drawing.Color.Transparent;
-            this.Acceleration_label.Location = new System.Drawing.Point(18, 127);
-            this.Acceleration_label.Name = "Acceleration_label";
-            this.Acceleration_label.Size = new System.Drawing.Size(81, 13);
-            this.Acceleration_label.TabIndex = 39;
-            this.Acceleration_label.Text = "Acceleration + -";
+            Acceleration_label.AutoSize = true;
+            Acceleration_label.BackColor = Color.Transparent;
+            Acceleration_label.Location = new Point(21, 147);
+            Acceleration_label.Margin = new Padding(4, 0, 4, 0);
+            Acceleration_label.Name = "Acceleration_label";
+            Acceleration_label.Size = new Size(92, 15);
+            Acceleration_label.TabIndex = 39;
+            Acceleration_label.Text = "Acceleration + -";
             // 
             // Durability_label
             // 
-            this.Durability_label.AutoSize = true;
-            this.Durability_label.BackColor = System.Drawing.Color.Transparent;
-            this.Durability_label.Location = new System.Drawing.Point(34, 187);
-            this.Durability_label.Name = "Durability_label";
-            this.Durability_label.Size = new System.Drawing.Size(65, 13);
-            this.Durability_label.TabIndex = 47;
-            this.Durability_label.Text = "Durability + -";
+            Durability_label.AutoSize = true;
+            Durability_label.BackColor = Color.Transparent;
+            Durability_label.Location = new Point(40, 216);
+            Durability_label.Margin = new Padding(4, 0, 4, 0);
+            Durability_label.Name = "Durability_label";
+            Durability_label.Size = new Size(77, 15);
+            Durability_label.TabIndex = 47;
+            Durability_label.Text = "Durability + -";
             // 
             // Acceleration_numericUpDown
             // 
-            this.Acceleration_numericUpDown.Location = new System.Drawing.Point(102, 124);
-            this.Acceleration_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.Acceleration_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.Acceleration_numericUpDown.Name = "Acceleration_numericUpDown";
-            this.Acceleration_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.Acceleration_numericUpDown.TabIndex = 40;
+            Acceleration_numericUpDown.Location = new Point(119, 143);
+            Acceleration_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            Acceleration_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            Acceleration_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            Acceleration_numericUpDown.Name = "Acceleration_numericUpDown";
+            Acceleration_numericUpDown.Size = new Size(44, 23);
+            Acceleration_numericUpDown.TabIndex = 40;
             // 
             // Agility_label
             // 
-            this.Agility_label.AutoSize = true;
-            this.Agility_label.BackColor = System.Drawing.Color.Transparent;
-            this.Agility_label.Location = new System.Drawing.Point(50, 67);
-            this.Agility_label.Name = "Agility_label";
-            this.Agility_label.Size = new System.Drawing.Size(49, 13);
-            this.Agility_label.TabIndex = 43;
-            this.Agility_label.Text = "Agility + -";
+            Agility_label.AutoSize = true;
+            Agility_label.BackColor = Color.Transparent;
+            Agility_label.Location = new Point(58, 77);
+            Agility_label.Margin = new Padding(4, 0, 4, 0);
+            Agility_label.Name = "Agility_label";
+            Agility_label.Size = new Size(60, 15);
+            Agility_label.TabIndex = 43;
+            Agility_label.Text = "Agility + -";
             // 
             // Discipline_label
             // 
-            this.Discipline_label.AutoSize = true;
-            this.Discipline_label.BackColor = System.Drawing.Color.Transparent;
-            this.Discipline_label.Location = new System.Drawing.Point(32, 157);
-            this.Discipline_label.Name = "Discipline_label";
-            this.Discipline_label.Size = new System.Drawing.Size(67, 13);
-            this.Discipline_label.TabIndex = 41;
-            this.Discipline_label.Text = "Discipline + -";
+            Discipline_label.AutoSize = true;
+            Discipline_label.BackColor = Color.Transparent;
+            Discipline_label.Location = new Point(37, 181);
+            Discipline_label.Margin = new Padding(4, 0, 4, 0);
+            Discipline_label.Name = "Discipline_label";
+            Discipline_label.Size = new Size(77, 15);
+            Discipline_label.TabIndex = 41;
+            Discipline_label.Text = "Discipline + -";
             // 
             // Durability_numericUpDown
             // 
-            this.Durability_numericUpDown.Location = new System.Drawing.Point(102, 184);
-            this.Durability_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.Durability_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.Durability_numericUpDown.Name = "Durability_numericUpDown";
-            this.Durability_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.Durability_numericUpDown.TabIndex = 48;
+            Durability_numericUpDown.Location = new Point(119, 212);
+            Durability_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            Durability_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            Durability_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            Durability_numericUpDown.Name = "Durability_numericUpDown";
+            Durability_numericUpDown.Size = new Size(44, 23);
+            Durability_numericUpDown.TabIndex = 48;
             // 
             // Discipline_numericUpDown
             // 
-            this.Discipline_numericUpDown.Location = new System.Drawing.Point(102, 154);
-            this.Discipline_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.Discipline_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.Discipline_numericUpDown.Name = "Discipline_numericUpDown";
-            this.Discipline_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.Discipline_numericUpDown.TabIndex = 42;
+            Discipline_numericUpDown.Location = new Point(119, 178);
+            Discipline_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            Discipline_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            Discipline_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            Discipline_numericUpDown.Name = "Discipline_numericUpDown";
+            Discipline_numericUpDown.Size = new Size(44, 23);
+            Discipline_numericUpDown.TabIndex = 42;
             // 
             // MiscSkills_groupBox
             // 
-            this.MiscSkills_groupBox.Controls.Add(this.ballStrip_label);
-            this.MiscSkills_groupBox.Controls.Add(this.ballStrip_numericUpDown);
-            this.MiscSkills_groupBox.Controls.Add(this.contestedCollect_label);
-            this.MiscSkills_groupBox.Controls.Add(this.contestedCollect_numericUpDown);
-            this.MiscSkills_groupBox.Controls.Add(this.diveCollect_numericUpDown);
-            this.MiscSkills_groupBox.Controls.Add(this.diveCollect_label);
-            this.MiscSkills_groupBox.Location = new System.Drawing.Point(531, 76);
-            this.MiscSkills_groupBox.Name = "MiscSkills_groupBox";
-            this.MiscSkills_groupBox.Size = new System.Drawing.Size(170, 128);
-            this.MiscSkills_groupBox.TabIndex = 71;
-            this.MiscSkills_groupBox.TabStop = false;
-            this.MiscSkills_groupBox.Text = "Misc Skills";
+            MiscSkills_groupBox.Controls.Add(ballStrip_label);
+            MiscSkills_groupBox.Controls.Add(ballStrip_numericUpDown);
+            MiscSkills_groupBox.Controls.Add(contestedCollect_label);
+            MiscSkills_groupBox.Controls.Add(contestedCollect_numericUpDown);
+            MiscSkills_groupBox.Controls.Add(diveCollect_numericUpDown);
+            MiscSkills_groupBox.Controls.Add(diveCollect_label);
+            MiscSkills_groupBox.Location = new Point(620, 88);
+            MiscSkills_groupBox.Margin = new Padding(4, 3, 4, 3);
+            MiscSkills_groupBox.Name = "MiscSkills_groupBox";
+            MiscSkills_groupBox.Padding = new Padding(4, 3, 4, 3);
+            MiscSkills_groupBox.Size = new Size(198, 148);
+            MiscSkills_groupBox.TabIndex = 71;
+            MiscSkills_groupBox.TabStop = false;
+            MiscSkills_groupBox.Text = "Misc Skills";
             // 
             // ballStrip_label
             // 
-            this.ballStrip_label.AutoSize = true;
-            this.ballStrip_label.BackColor = System.Drawing.Color.Transparent;
-            this.ballStrip_label.Location = new System.Drawing.Point(52, 92);
-            this.ballStrip_label.Name = "ballStrip_label";
-            this.ballStrip_label.Size = new System.Drawing.Size(63, 13);
-            this.ballStrip_label.TabIndex = 83;
-            this.ballStrip_label.Text = "Ball Strip + -";
+            ballStrip_label.AutoSize = true;
+            ballStrip_label.BackColor = Color.Transparent;
+            ballStrip_label.Location = new Point(61, 106);
+            ballStrip_label.Margin = new Padding(4, 0, 4, 0);
+            ballStrip_label.Name = "ballStrip_label";
+            ballStrip_label.Size = new Size(72, 15);
+            ballStrip_label.TabIndex = 83;
+            ballStrip_label.Text = "Ball Strip + -";
             // 
             // ballStrip_numericUpDown
             // 
-            this.ballStrip_numericUpDown.Location = new System.Drawing.Point(118, 89);
-            this.ballStrip_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.ballStrip_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.ballStrip_numericUpDown.Name = "ballStrip_numericUpDown";
-            this.ballStrip_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.ballStrip_numericUpDown.TabIndex = 84;
+            ballStrip_numericUpDown.Location = new Point(138, 103);
+            ballStrip_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            ballStrip_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            ballStrip_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            ballStrip_numericUpDown.Name = "ballStrip_numericUpDown";
+            ballStrip_numericUpDown.Size = new Size(44, 23);
+            ballStrip_numericUpDown.TabIndex = 84;
             // 
             // contestedCollect_label
             // 
-            this.contestedCollect_label.AutoSize = true;
-            this.contestedCollect_label.BackColor = System.Drawing.Color.Transparent;
-            this.contestedCollect_label.Location = new System.Drawing.Point(10, 30);
-            this.contestedCollect_label.Name = "contestedCollect_label";
-            this.contestedCollect_label.Size = new System.Drawing.Size(105, 13);
-            this.contestedCollect_label.TabIndex = 75;
-            this.contestedCollect_label.Text = "Contested Collect + -";
+            contestedCollect_label.AutoSize = true;
+            contestedCollect_label.BackColor = Color.Transparent;
+            contestedCollect_label.Location = new Point(12, 35);
+            contestedCollect_label.Margin = new Padding(4, 0, 4, 0);
+            contestedCollect_label.Name = "contestedCollect_label";
+            contestedCollect_label.Size = new Size(120, 15);
+            contestedCollect_label.TabIndex = 75;
+            contestedCollect_label.Text = "Contested Collect + -";
             // 
             // contestedCollect_numericUpDown
             // 
-            this.contestedCollect_numericUpDown.Location = new System.Drawing.Point(118, 27);
-            this.contestedCollect_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.contestedCollect_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.contestedCollect_numericUpDown.Name = "contestedCollect_numericUpDown";
-            this.contestedCollect_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.contestedCollect_numericUpDown.TabIndex = 76;
+            contestedCollect_numericUpDown.Location = new Point(138, 31);
+            contestedCollect_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            contestedCollect_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            contestedCollect_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            contestedCollect_numericUpDown.Name = "contestedCollect_numericUpDown";
+            contestedCollect_numericUpDown.Size = new Size(44, 23);
+            contestedCollect_numericUpDown.TabIndex = 76;
             // 
             // diveCollect_numericUpDown
             // 
-            this.diveCollect_numericUpDown.Location = new System.Drawing.Point(118, 57);
-            this.diveCollect_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.diveCollect_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.diveCollect_numericUpDown.Name = "diveCollect_numericUpDown";
-            this.diveCollect_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.diveCollect_numericUpDown.TabIndex = 78;
+            diveCollect_numericUpDown.Location = new Point(138, 66);
+            diveCollect_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            diveCollect_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            diveCollect_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            diveCollect_numericUpDown.Name = "diveCollect_numericUpDown";
+            diveCollect_numericUpDown.Size = new Size(44, 23);
+            diveCollect_numericUpDown.TabIndex = 78;
             // 
             // diveCollect_label
             // 
-            this.diveCollect_label.AutoSize = true;
-            this.diveCollect_label.BackColor = System.Drawing.Color.Transparent;
-            this.diveCollect_label.Location = new System.Drawing.Point(36, 60);
-            this.diveCollect_label.Name = "diveCollect_label";
-            this.diveCollect_label.Size = new System.Drawing.Size(79, 13);
-            this.diveCollect_label.TabIndex = 77;
-            this.diveCollect_label.Text = "Dive Collect + -";
+            diveCollect_label.AutoSize = true;
+            diveCollect_label.BackColor = Color.Transparent;
+            diveCollect_label.Location = new Point(42, 69);
+            diveCollect_label.Margin = new Padding(4, 0, 4, 0);
+            diveCollect_label.Name = "diveCollect_label";
+            diveCollect_label.Size = new Size(89, 15);
+            diveCollect_label.TabIndex = 77;
+            diveCollect_label.Text = "Dive Collect + -";
             // 
             // TackleSkills_groupBox
             // 
-            this.TackleSkills_groupBox.Controls.Add(this.impactTackle_label);
-            this.TackleSkills_groupBox.Controls.Add(this.impactTackle_numericUpDown);
-            this.TackleSkills_groupBox.Controls.Add(this.diveTackle_label);
-            this.TackleSkills_groupBox.Controls.Add(this.tackle_label);
-            this.TackleSkills_groupBox.Controls.Add(this.diveTackle_numericUpDown);
-            this.TackleSkills_groupBox.Controls.Add(this.tackle_numericUpDown);
-            this.TackleSkills_groupBox.Controls.Add(this.driveTackle_numericUpDown);
-            this.TackleSkills_groupBox.Controls.Add(this.driveTackle_label);
-            this.TackleSkills_groupBox.Location = new System.Drawing.Point(531, 207);
-            this.TackleSkills_groupBox.Name = "TackleSkills_groupBox";
-            this.TackleSkills_groupBox.Size = new System.Drawing.Size(170, 158);
-            this.TackleSkills_groupBox.TabIndex = 70;
-            this.TackleSkills_groupBox.TabStop = false;
-            this.TackleSkills_groupBox.Text = "Tackle Skills";
+            TackleSkills_groupBox.Controls.Add(impactTackle_label);
+            TackleSkills_groupBox.Controls.Add(impactTackle_numericUpDown);
+            TackleSkills_groupBox.Controls.Add(diveTackle_label);
+            TackleSkills_groupBox.Controls.Add(tackle_label);
+            TackleSkills_groupBox.Controls.Add(diveTackle_numericUpDown);
+            TackleSkills_groupBox.Controls.Add(tackle_numericUpDown);
+            TackleSkills_groupBox.Controls.Add(driveTackle_numericUpDown);
+            TackleSkills_groupBox.Controls.Add(driveTackle_label);
+            TackleSkills_groupBox.Location = new Point(620, 239);
+            TackleSkills_groupBox.Margin = new Padding(4, 3, 4, 3);
+            TackleSkills_groupBox.Name = "TackleSkills_groupBox";
+            TackleSkills_groupBox.Padding = new Padding(4, 3, 4, 3);
+            TackleSkills_groupBox.Size = new Size(198, 182);
+            TackleSkills_groupBox.TabIndex = 70;
+            TackleSkills_groupBox.TabStop = false;
+            TackleSkills_groupBox.Text = "Tackle Skills";
             // 
             // impactTackle_label
             // 
-            this.impactTackle_label.AutoSize = true;
-            this.impactTackle_label.BackColor = System.Drawing.Color.Transparent;
-            this.impactTackle_label.Location = new System.Drawing.Point(15, 125);
-            this.impactTackle_label.Name = "impactTackle_label";
-            this.impactTackle_label.Size = new System.Drawing.Size(90, 13);
-            this.impactTackle_label.TabIndex = 81;
-            this.impactTackle_label.Text = "Impact Tackle + -";
+            impactTackle_label.AutoSize = true;
+            impactTackle_label.BackColor = Color.Transparent;
+            impactTackle_label.Location = new Point(18, 144);
+            impactTackle_label.Margin = new Padding(4, 0, 4, 0);
+            impactTackle_label.Name = "impactTackle_label";
+            impactTackle_label.Size = new Size(99, 15);
+            impactTackle_label.TabIndex = 81;
+            impactTackle_label.Text = "Impact Tackle + -";
             // 
             // impactTackle_numericUpDown
             // 
-            this.impactTackle_numericUpDown.Location = new System.Drawing.Point(108, 122);
-            this.impactTackle_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.impactTackle_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.impactTackle_numericUpDown.Name = "impactTackle_numericUpDown";
-            this.impactTackle_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.impactTackle_numericUpDown.TabIndex = 82;
+            impactTackle_numericUpDown.Location = new Point(126, 141);
+            impactTackle_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            impactTackle_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            impactTackle_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            impactTackle_numericUpDown.Name = "impactTackle_numericUpDown";
+            impactTackle_numericUpDown.Size = new Size(44, 23);
+            impactTackle_numericUpDown.TabIndex = 82;
             // 
             // diveTackle_label
             // 
-            this.diveTackle_label.AutoSize = true;
-            this.diveTackle_label.BackColor = System.Drawing.Color.Transparent;
-            this.diveTackle_label.Location = new System.Drawing.Point(25, 95);
-            this.diveTackle_label.Name = "diveTackle_label";
-            this.diveTackle_label.Size = new System.Drawing.Size(80, 13);
-            this.diveTackle_label.TabIndex = 79;
-            this.diveTackle_label.Text = "Dive Tackle + -";
+            diveTackle_label.AutoSize = true;
+            diveTackle_label.BackColor = Color.Transparent;
+            diveTackle_label.Location = new Point(29, 110);
+            diveTackle_label.Margin = new Padding(4, 0, 4, 0);
+            diveTackle_label.Name = "diveTackle_label";
+            diveTackle_label.Size = new Size(85, 15);
+            diveTackle_label.TabIndex = 79;
+            diveTackle_label.Text = "Dive Tackle + -";
             // 
             // tackle_label
             // 
-            this.tackle_label.AutoSize = true;
-            this.tackle_label.BackColor = System.Drawing.Color.Transparent;
-            this.tackle_label.Location = new System.Drawing.Point(50, 35);
-            this.tackle_label.Name = "tackle_label";
-            this.tackle_label.Size = new System.Drawing.Size(55, 13);
-            this.tackle_label.TabIndex = 75;
-            this.tackle_label.Text = "Tackle + -";
+            tackle_label.AutoSize = true;
+            tackle_label.BackColor = Color.Transparent;
+            tackle_label.Location = new Point(58, 40);
+            tackle_label.Margin = new Padding(4, 0, 4, 0);
+            tackle_label.Name = "tackle_label";
+            tackle_label.Size = new Size(59, 15);
+            tackle_label.TabIndex = 75;
+            tackle_label.Text = "Tackle + -";
             // 
             // diveTackle_numericUpDown
             // 
-            this.diveTackle_numericUpDown.Location = new System.Drawing.Point(108, 92);
-            this.diveTackle_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.diveTackle_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.diveTackle_numericUpDown.Name = "diveTackle_numericUpDown";
-            this.diveTackle_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.diveTackle_numericUpDown.TabIndex = 80;
+            diveTackle_numericUpDown.Location = new Point(126, 106);
+            diveTackle_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            diveTackle_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            diveTackle_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            diveTackle_numericUpDown.Name = "diveTackle_numericUpDown";
+            diveTackle_numericUpDown.Size = new Size(44, 23);
+            diveTackle_numericUpDown.TabIndex = 80;
             // 
             // tackle_numericUpDown
             // 
-            this.tackle_numericUpDown.Location = new System.Drawing.Point(108, 32);
-            this.tackle_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.tackle_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.tackle_numericUpDown.Name = "tackle_numericUpDown";
-            this.tackle_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.tackle_numericUpDown.TabIndex = 76;
+            tackle_numericUpDown.Location = new Point(126, 37);
+            tackle_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            tackle_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            tackle_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            tackle_numericUpDown.Name = "tackle_numericUpDown";
+            tackle_numericUpDown.Size = new Size(44, 23);
+            tackle_numericUpDown.TabIndex = 76;
             // 
             // driveTackle_numericUpDown
             // 
-            this.driveTackle_numericUpDown.Location = new System.Drawing.Point(108, 62);
-            this.driveTackle_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.driveTackle_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.driveTackle_numericUpDown.Name = "driveTackle_numericUpDown";
-            this.driveTackle_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.driveTackle_numericUpDown.TabIndex = 78;
+            driveTackle_numericUpDown.Location = new Point(126, 72);
+            driveTackle_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            driveTackle_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            driveTackle_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            driveTackle_numericUpDown.Name = "driveTackle_numericUpDown";
+            driveTackle_numericUpDown.Size = new Size(44, 23);
+            driveTackle_numericUpDown.TabIndex = 78;
             // 
             // driveTackle_label
             // 
-            this.driveTackle_label.AutoSize = true;
-            this.driveTackle_label.BackColor = System.Drawing.Color.Transparent;
-            this.driveTackle_label.Location = new System.Drawing.Point(22, 65);
-            this.driveTackle_label.Name = "driveTackle_label";
-            this.driveTackle_label.Size = new System.Drawing.Size(83, 13);
-            this.driveTackle_label.TabIndex = 77;
-            this.driveTackle_label.Text = "Drive Tackle + -";
+            driveTackle_label.AutoSize = true;
+            driveTackle_label.BackColor = Color.Transparent;
+            driveTackle_label.Location = new Point(26, 75);
+            driveTackle_label.Margin = new Padding(4, 0, 4, 0);
+            driveTackle_label.Name = "driveTackle_label";
+            driveTackle_label.Size = new Size(89, 15);
+            driveTackle_label.TabIndex = 77;
+            driveTackle_label.Text = "Drive Tackle + -";
             // 
             // EvasionSkills_groupBox
             // 
-            this.EvasionSkills_groupBox.Controls.Add(this.breakTackle_label);
-            this.EvasionSkills_groupBox.Controls.Add(this.breakTackle_numericUpDown);
-            this.EvasionSkills_groupBox.Controls.Add(this.sideStep_label);
-            this.EvasionSkills_groupBox.Controls.Add(this.dummyPass_label);
-            this.EvasionSkills_groupBox.Controls.Add(this.sideStep_numericUpDown);
-            this.EvasionSkills_groupBox.Controls.Add(this.dummyPass_numericUpDown);
-            this.EvasionSkills_groupBox.Controls.Add(this.fend_numericUpDown);
-            this.EvasionSkills_groupBox.Controls.Add(this.fend_label);
-            this.EvasionSkills_groupBox.Location = new System.Drawing.Point(374, 207);
-            this.EvasionSkills_groupBox.Name = "EvasionSkills_groupBox";
-            this.EvasionSkills_groupBox.Size = new System.Drawing.Size(151, 158);
-            this.EvasionSkills_groupBox.TabIndex = 69;
-            this.EvasionSkills_groupBox.TabStop = false;
-            this.EvasionSkills_groupBox.Text = "Evasion Skills";
+            EvasionSkills_groupBox.Controls.Add(breakTackle_label);
+            EvasionSkills_groupBox.Controls.Add(breakTackle_numericUpDown);
+            EvasionSkills_groupBox.Controls.Add(sideStep_label);
+            EvasionSkills_groupBox.Controls.Add(dummyPass_label);
+            EvasionSkills_groupBox.Controls.Add(sideStep_numericUpDown);
+            EvasionSkills_groupBox.Controls.Add(dummyPass_numericUpDown);
+            EvasionSkills_groupBox.Controls.Add(fend_numericUpDown);
+            EvasionSkills_groupBox.Controls.Add(fend_label);
+            EvasionSkills_groupBox.Location = new Point(436, 239);
+            EvasionSkills_groupBox.Margin = new Padding(4, 3, 4, 3);
+            EvasionSkills_groupBox.Name = "EvasionSkills_groupBox";
+            EvasionSkills_groupBox.Padding = new Padding(4, 3, 4, 3);
+            EvasionSkills_groupBox.Size = new Size(176, 182);
+            EvasionSkills_groupBox.TabIndex = 69;
+            EvasionSkills_groupBox.TabStop = false;
+            EvasionSkills_groupBox.Text = "Evasion Skills";
             // 
             // breakTackle_label
             // 
-            this.breakTackle_label.AutoSize = true;
-            this.breakTackle_label.BackColor = System.Drawing.Color.Transparent;
-            this.breakTackle_label.Location = new System.Drawing.Point(10, 127);
-            this.breakTackle_label.Name = "breakTackle_label";
-            this.breakTackle_label.Size = new System.Drawing.Size(86, 13);
-            this.breakTackle_label.TabIndex = 73;
-            this.breakTackle_label.Text = "Break Tackle + -";
+            breakTackle_label.AutoSize = true;
+            breakTackle_label.BackColor = Color.Transparent;
+            breakTackle_label.Location = new Point(12, 147);
+            breakTackle_label.Margin = new Padding(4, 0, 4, 0);
+            breakTackle_label.Name = "breakTackle_label";
+            breakTackle_label.Size = new Size(91, 15);
+            breakTackle_label.TabIndex = 73;
+            breakTackle_label.Text = "Break Tackle + -";
             // 
             // breakTackle_numericUpDown
             // 
-            this.breakTackle_numericUpDown.Location = new System.Drawing.Point(99, 124);
-            this.breakTackle_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.breakTackle_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.breakTackle_numericUpDown.Name = "breakTackle_numericUpDown";
-            this.breakTackle_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.breakTackle_numericUpDown.TabIndex = 74;
+            breakTackle_numericUpDown.Location = new Point(115, 143);
+            breakTackle_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            breakTackle_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            breakTackle_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            breakTackle_numericUpDown.Name = "breakTackle_numericUpDown";
+            breakTackle_numericUpDown.Size = new Size(44, 23);
+            breakTackle_numericUpDown.TabIndex = 74;
             // 
             // sideStep_label
             // 
-            this.sideStep_label.AutoSize = true;
-            this.sideStep_label.BackColor = System.Drawing.Color.Transparent;
-            this.sideStep_label.Location = new System.Drawing.Point(28, 97);
-            this.sideStep_label.Name = "sideStep_label";
-            this.sideStep_label.Size = new System.Drawing.Size(68, 13);
-            this.sideStep_label.TabIndex = 71;
-            this.sideStep_label.Text = "Side Step + -";
+            sideStep_label.AutoSize = true;
+            sideStep_label.BackColor = Color.Transparent;
+            sideStep_label.Location = new Point(33, 112);
+            sideStep_label.Margin = new Padding(4, 0, 4, 0);
+            sideStep_label.Name = "sideStep_label";
+            sideStep_label.Size = new Size(74, 15);
+            sideStep_label.TabIndex = 71;
+            sideStep_label.Text = "Side Step + -";
             // 
             // dummyPass_label
             // 
-            this.dummyPass_label.AutoSize = true;
-            this.dummyPass_label.BackColor = System.Drawing.Color.Transparent;
-            this.dummyPass_label.Location = new System.Drawing.Point(13, 37);
-            this.dummyPass_label.Name = "dummyPass_label";
-            this.dummyPass_label.Size = new System.Drawing.Size(83, 13);
-            this.dummyPass_label.TabIndex = 67;
-            this.dummyPass_label.Text = "Dummy Pass + -";
+            dummyPass_label.AutoSize = true;
+            dummyPass_label.BackColor = Color.Transparent;
+            dummyPass_label.Location = new Point(15, 43);
+            dummyPass_label.Margin = new Padding(4, 0, 4, 0);
+            dummyPass_label.Name = "dummyPass_label";
+            dummyPass_label.Size = new Size(95, 15);
+            dummyPass_label.TabIndex = 67;
+            dummyPass_label.Text = "Dummy Pass + -";
             // 
             // sideStep_numericUpDown
             // 
-            this.sideStep_numericUpDown.Location = new System.Drawing.Point(99, 94);
-            this.sideStep_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.sideStep_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.sideStep_numericUpDown.Name = "sideStep_numericUpDown";
-            this.sideStep_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.sideStep_numericUpDown.TabIndex = 72;
+            sideStep_numericUpDown.Location = new Point(115, 108);
+            sideStep_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            sideStep_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            sideStep_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            sideStep_numericUpDown.Name = "sideStep_numericUpDown";
+            sideStep_numericUpDown.Size = new Size(44, 23);
+            sideStep_numericUpDown.TabIndex = 72;
             // 
             // dummyPass_numericUpDown
             // 
-            this.dummyPass_numericUpDown.Location = new System.Drawing.Point(99, 34);
-            this.dummyPass_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.dummyPass_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.dummyPass_numericUpDown.Name = "dummyPass_numericUpDown";
-            this.dummyPass_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.dummyPass_numericUpDown.TabIndex = 68;
+            dummyPass_numericUpDown.Location = new Point(115, 39);
+            dummyPass_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            dummyPass_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            dummyPass_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            dummyPass_numericUpDown.Name = "dummyPass_numericUpDown";
+            dummyPass_numericUpDown.Size = new Size(44, 23);
+            dummyPass_numericUpDown.TabIndex = 68;
             // 
             // fend_numericUpDown
             // 
-            this.fend_numericUpDown.Location = new System.Drawing.Point(99, 64);
-            this.fend_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.fend_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.fend_numericUpDown.Name = "fend_numericUpDown";
-            this.fend_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.fend_numericUpDown.TabIndex = 70;
+            fend_numericUpDown.Location = new Point(115, 74);
+            fend_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            fend_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            fend_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            fend_numericUpDown.Name = "fend_numericUpDown";
+            fend_numericUpDown.Size = new Size(44, 23);
+            fend_numericUpDown.TabIndex = 70;
             // 
             // fend_label
             // 
-            this.fend_label.AutoSize = true;
-            this.fend_label.BackColor = System.Drawing.Color.Transparent;
-            this.fend_label.Location = new System.Drawing.Point(50, 67);
-            this.fend_label.Name = "fend_label";
-            this.fend_label.Size = new System.Drawing.Size(46, 13);
-            this.fend_label.TabIndex = 69;
-            this.fend_label.Text = "Fend + -";
+            fend_label.AutoSize = true;
+            fend_label.BackColor = Color.Transparent;
+            fend_label.Location = new Point(58, 77);
+            fend_label.Margin = new Padding(4, 0, 4, 0);
+            fend_label.Name = "fend_label";
+            fend_label.Size = new Size(52, 15);
+            fend_label.TabIndex = 69;
+            fend_label.Text = "Fend + -";
             // 
             // PassingSkills_groupBox
             // 
-            this.PassingSkills_groupBox.Controls.Add(this.offload_label);
-            this.PassingSkills_groupBox.Controls.Add(this.basicPass_label);
-            this.PassingSkills_groupBox.Controls.Add(this.offload_numericUpDown);
-            this.PassingSkills_groupBox.Controls.Add(this.basicPass_numericUpDown);
-            this.PassingSkills_groupBox.Controls.Add(this.longPass_numericUpDown);
-            this.PassingSkills_groupBox.Controls.Add(this.longPass_label);
-            this.PassingSkills_groupBox.Location = new System.Drawing.Point(374, 76);
-            this.PassingSkills_groupBox.Name = "PassingSkills_groupBox";
-            this.PassingSkills_groupBox.Size = new System.Drawing.Size(151, 128);
-            this.PassingSkills_groupBox.TabIndex = 68;
-            this.PassingSkills_groupBox.TabStop = false;
-            this.PassingSkills_groupBox.Text = "Passing Skills";
+            PassingSkills_groupBox.Controls.Add(offload_label);
+            PassingSkills_groupBox.Controls.Add(basicPass_label);
+            PassingSkills_groupBox.Controls.Add(offload_numericUpDown);
+            PassingSkills_groupBox.Controls.Add(basicPass_numericUpDown);
+            PassingSkills_groupBox.Controls.Add(longPass_numericUpDown);
+            PassingSkills_groupBox.Controls.Add(longPass_label);
+            PassingSkills_groupBox.Location = new Point(436, 88);
+            PassingSkills_groupBox.Margin = new Padding(4, 3, 4, 3);
+            PassingSkills_groupBox.Name = "PassingSkills_groupBox";
+            PassingSkills_groupBox.Padding = new Padding(4, 3, 4, 3);
+            PassingSkills_groupBox.Size = new Size(176, 148);
+            PassingSkills_groupBox.TabIndex = 68;
+            PassingSkills_groupBox.TabStop = false;
+            PassingSkills_groupBox.Text = "Passing Skills";
             // 
             // offload_label
             // 
-            this.offload_label.AutoSize = true;
-            this.offload_label.BackColor = System.Drawing.Color.Transparent;
-            this.offload_label.Location = new System.Drawing.Point(36, 94);
-            this.offload_label.Name = "offload_label";
-            this.offload_label.Size = new System.Drawing.Size(56, 13);
-            this.offload_label.TabIndex = 65;
-            this.offload_label.Text = "Offload + -";
+            offload_label.AutoSize = true;
+            offload_label.BackColor = Color.Transparent;
+            offload_label.Location = new Point(42, 108);
+            offload_label.Margin = new Padding(4, 0, 4, 0);
+            offload_label.Name = "offload_label";
+            offload_label.Size = new Size(66, 15);
+            offload_label.TabIndex = 65;
+            offload_label.Text = "Offload + -";
             // 
             // basicPass_label
             // 
-            this.basicPass_label.AutoSize = true;
-            this.basicPass_label.BackColor = System.Drawing.Color.Transparent;
-            this.basicPass_label.Location = new System.Drawing.Point(18, 34);
-            this.basicPass_label.Name = "basicPass_label";
-            this.basicPass_label.Size = new System.Drawing.Size(74, 13);
-            this.basicPass_label.TabIndex = 61;
-            this.basicPass_label.Text = "Basic Pass + -";
+            basicPass_label.AutoSize = true;
+            basicPass_label.BackColor = Color.Transparent;
+            basicPass_label.Location = new Point(21, 39);
+            basicPass_label.Margin = new Padding(4, 0, 4, 0);
+            basicPass_label.Name = "basicPass_label";
+            basicPass_label.Size = new Size(79, 15);
+            basicPass_label.TabIndex = 61;
+            basicPass_label.Text = "Basic Pass + -";
             // 
             // offload_numericUpDown
             // 
-            this.offload_numericUpDown.Location = new System.Drawing.Point(95, 91);
-            this.offload_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.offload_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.offload_numericUpDown.Name = "offload_numericUpDown";
-            this.offload_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.offload_numericUpDown.TabIndex = 66;
+            offload_numericUpDown.Location = new Point(111, 105);
+            offload_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            offload_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            offload_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            offload_numericUpDown.Name = "offload_numericUpDown";
+            offload_numericUpDown.Size = new Size(44, 23);
+            offload_numericUpDown.TabIndex = 66;
             // 
             // basicPass_numericUpDown
             // 
-            this.basicPass_numericUpDown.Location = new System.Drawing.Point(95, 31);
-            this.basicPass_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.basicPass_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.basicPass_numericUpDown.Name = "basicPass_numericUpDown";
-            this.basicPass_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.basicPass_numericUpDown.TabIndex = 62;
+            basicPass_numericUpDown.Location = new Point(111, 36);
+            basicPass_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            basicPass_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            basicPass_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            basicPass_numericUpDown.Name = "basicPass_numericUpDown";
+            basicPass_numericUpDown.Size = new Size(44, 23);
+            basicPass_numericUpDown.TabIndex = 62;
             // 
             // longPass_numericUpDown
             // 
-            this.longPass_numericUpDown.Location = new System.Drawing.Point(95, 61);
-            this.longPass_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.longPass_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.longPass_numericUpDown.Name = "longPass_numericUpDown";
-            this.longPass_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.longPass_numericUpDown.TabIndex = 64;
+            longPass_numericUpDown.Location = new Point(111, 70);
+            longPass_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            longPass_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            longPass_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            longPass_numericUpDown.Name = "longPass_numericUpDown";
+            longPass_numericUpDown.Size = new Size(44, 23);
+            longPass_numericUpDown.TabIndex = 64;
             // 
             // longPass_label
             // 
-            this.longPass_label.AutoSize = true;
-            this.longPass_label.BackColor = System.Drawing.Color.Transparent;
-            this.longPass_label.Location = new System.Drawing.Point(20, 64);
-            this.longPass_label.Name = "longPass_label";
-            this.longPass_label.Size = new System.Drawing.Size(72, 13);
-            this.longPass_label.TabIndex = 63;
-            this.longPass_label.Text = "Long Pass + -";
+            longPass_label.AutoSize = true;
+            longPass_label.BackColor = Color.Transparent;
+            longPass_label.Location = new Point(23, 74);
+            longPass_label.Margin = new Padding(4, 0, 4, 0);
+            longPass_label.Name = "longPass_label";
+            longPass_label.Size = new Size(79, 15);
+            longPass_label.TabIndex = 63;
+            longPass_label.Text = "Long Pass + -";
             // 
             // KickingSkills_groupBox
             // 
-            this.KickingSkills_groupBox.Controls.Add(this.chipKick_label);
-            this.KickingSkills_groupBox.Controls.Add(this.grubberKick_label);
-            this.KickingSkills_groupBox.Controls.Add(this.chipKick_numericUpDown);
-            this.KickingSkills_groupBox.Controls.Add(this.grubberKick_numericUpDown);
-            this.KickingSkills_groupBox.Controls.Add(this.puntKick_numericUpDown);
-            this.KickingSkills_groupBox.Controls.Add(this.bombKick_label);
-            this.KickingSkills_groupBox.Controls.Add(this.placeKick_label);
-            this.KickingSkills_groupBox.Controls.Add(this.bombKick_numericUpDown);
-            this.KickingSkills_groupBox.Controls.Add(this.puntKick_label);
-            this.KickingSkills_groupBox.Controls.Add(this.fieldgoalKick_label);
-            this.KickingSkills_groupBox.Controls.Add(this.placeKick_numericUpDown);
-            this.KickingSkills_groupBox.Controls.Add(this.fieldgoalKick_numericUpDown);
-            this.KickingSkills_groupBox.Location = new System.Drawing.Point(190, 76);
-            this.KickingSkills_groupBox.Name = "KickingSkills_groupBox";
-            this.KickingSkills_groupBox.Size = new System.Drawing.Size(178, 289);
-            this.KickingSkills_groupBox.TabIndex = 67;
-            this.KickingSkills_groupBox.TabStop = false;
-            this.KickingSkills_groupBox.Text = "Kicking Skills";
+            KickingSkills_groupBox.Controls.Add(chipKick_label);
+            KickingSkills_groupBox.Controls.Add(grubberKick_label);
+            KickingSkills_groupBox.Controls.Add(chipKick_numericUpDown);
+            KickingSkills_groupBox.Controls.Add(grubberKick_numericUpDown);
+            KickingSkills_groupBox.Controls.Add(puntKick_numericUpDown);
+            KickingSkills_groupBox.Controls.Add(bombKick_label);
+            KickingSkills_groupBox.Controls.Add(placeKick_label);
+            KickingSkills_groupBox.Controls.Add(bombKick_numericUpDown);
+            KickingSkills_groupBox.Controls.Add(puntKick_label);
+            KickingSkills_groupBox.Controls.Add(fieldgoalKick_label);
+            KickingSkills_groupBox.Controls.Add(placeKick_numericUpDown);
+            KickingSkills_groupBox.Controls.Add(fieldgoalKick_numericUpDown);
+            KickingSkills_groupBox.Location = new Point(222, 88);
+            KickingSkills_groupBox.Margin = new Padding(4, 3, 4, 3);
+            KickingSkills_groupBox.Name = "KickingSkills_groupBox";
+            KickingSkills_groupBox.Padding = new Padding(4, 3, 4, 3);
+            KickingSkills_groupBox.Size = new Size(208, 333);
+            KickingSkills_groupBox.TabIndex = 67;
+            KickingSkills_groupBox.TabStop = false;
+            KickingSkills_groupBox.Text = "Kicking Skills";
             // 
             // chipKick_label
             // 
-            this.chipKick_label.AutoSize = true;
-            this.chipKick_label.BackColor = System.Drawing.Color.Transparent;
-            this.chipKick_label.Location = new System.Drawing.Point(41, 95);
-            this.chipKick_label.Name = "chipKick_label";
-            this.chipKick_label.Size = new System.Drawing.Size(67, 13);
-            this.chipKick_label.TabIndex = 59;
-            this.chipKick_label.Text = "Chip Kick + -";
+            chipKick_label.AutoSize = true;
+            chipKick_label.BackColor = Color.Transparent;
+            chipKick_label.Location = new Point(48, 110);
+            chipKick_label.Margin = new Padding(4, 0, 4, 0);
+            chipKick_label.Name = "chipKick_label";
+            chipKick_label.Size = new Size(76, 15);
+            chipKick_label.TabIndex = 59;
+            chipKick_label.Text = "Chip Kick + -";
             // 
             // grubberKick_label
             // 
-            this.grubberKick_label.AutoSize = true;
-            this.grubberKick_label.BackColor = System.Drawing.Color.Transparent;
-            this.grubberKick_label.Location = new System.Drawing.Point(24, 35);
-            this.grubberKick_label.Name = "grubberKick_label";
-            this.grubberKick_label.Size = new System.Drawing.Size(84, 13);
-            this.grubberKick_label.TabIndex = 51;
-            this.grubberKick_label.Text = "Grubber Kick + -";
+            grubberKick_label.AutoSize = true;
+            grubberKick_label.BackColor = Color.Transparent;
+            grubberKick_label.Location = new Point(28, 40);
+            grubberKick_label.Margin = new Padding(4, 0, 4, 0);
+            grubberKick_label.Name = "grubberKick_label";
+            grubberKick_label.Size = new Size(94, 15);
+            grubberKick_label.TabIndex = 51;
+            grubberKick_label.Text = "Grubber Kick + -";
             // 
             // chipKick_numericUpDown
             // 
-            this.chipKick_numericUpDown.Location = new System.Drawing.Point(111, 92);
-            this.chipKick_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.chipKick_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.chipKick_numericUpDown.Name = "chipKick_numericUpDown";
-            this.chipKick_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.chipKick_numericUpDown.TabIndex = 60;
+            chipKick_numericUpDown.Location = new Point(130, 106);
+            chipKick_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            chipKick_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            chipKick_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            chipKick_numericUpDown.Name = "chipKick_numericUpDown";
+            chipKick_numericUpDown.Size = new Size(44, 23);
+            chipKick_numericUpDown.TabIndex = 60;
             // 
             // grubberKick_numericUpDown
             // 
-            this.grubberKick_numericUpDown.Location = new System.Drawing.Point(111, 32);
-            this.grubberKick_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.grubberKick_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.grubberKick_numericUpDown.Name = "grubberKick_numericUpDown";
-            this.grubberKick_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.grubberKick_numericUpDown.TabIndex = 52;
+            grubberKick_numericUpDown.Location = new Point(130, 37);
+            grubberKick_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            grubberKick_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            grubberKick_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            grubberKick_numericUpDown.Name = "grubberKick_numericUpDown";
+            grubberKick_numericUpDown.Size = new Size(44, 23);
+            grubberKick_numericUpDown.TabIndex = 52;
             // 
             // puntKick_numericUpDown
             // 
-            this.puntKick_numericUpDown.Location = new System.Drawing.Point(111, 62);
-            this.puntKick_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.puntKick_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.puntKick_numericUpDown.Name = "puntKick_numericUpDown";
-            this.puntKick_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.puntKick_numericUpDown.TabIndex = 58;
+            puntKick_numericUpDown.Location = new Point(130, 72);
+            puntKick_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            puntKick_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            puntKick_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            puntKick_numericUpDown.Name = "puntKick_numericUpDown";
+            puntKick_numericUpDown.Size = new Size(44, 23);
+            puntKick_numericUpDown.TabIndex = 58;
             // 
             // bombKick_label
             // 
-            this.bombKick_label.AutoSize = true;
-            this.bombKick_label.BackColor = System.Drawing.Color.Transparent;
-            this.bombKick_label.Location = new System.Drawing.Point(35, 125);
-            this.bombKick_label.Name = "bombKick_label";
-            this.bombKick_label.Size = new System.Drawing.Size(73, 13);
-            this.bombKick_label.TabIndex = 53;
-            this.bombKick_label.Text = "Bomb Kick + -";
+            bombKick_label.AutoSize = true;
+            bombKick_label.BackColor = Color.Transparent;
+            bombKick_label.Location = new Point(41, 144);
+            bombKick_label.Margin = new Padding(4, 0, 4, 0);
+            bombKick_label.Name = "bombKick_label";
+            bombKick_label.Size = new Size(83, 15);
+            bombKick_label.TabIndex = 53;
+            bombKick_label.Text = "Bomb Kick + -";
             // 
             // placeKick_label
             // 
-            this.placeKick_label.AutoSize = true;
-            this.placeKick_label.BackColor = System.Drawing.Color.Transparent;
-            this.placeKick_label.Location = new System.Drawing.Point(35, 185);
-            this.placeKick_label.Name = "placeKick_label";
-            this.placeKick_label.Size = new System.Drawing.Size(73, 13);
-            this.placeKick_label.TabIndex = 61;
-            this.placeKick_label.Text = "Place Kick + -";
+            placeKick_label.AutoSize = true;
+            placeKick_label.BackColor = Color.Transparent;
+            placeKick_label.Location = new Point(41, 213);
+            placeKick_label.Margin = new Padding(4, 0, 4, 0);
+            placeKick_label.Name = "placeKick_label";
+            placeKick_label.Size = new Size(79, 15);
+            placeKick_label.TabIndex = 61;
+            placeKick_label.Text = "Place Kick + -";
             // 
             // bombKick_numericUpDown
             // 
-            this.bombKick_numericUpDown.Location = new System.Drawing.Point(111, 122);
-            this.bombKick_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.bombKick_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.bombKick_numericUpDown.Name = "bombKick_numericUpDown";
-            this.bombKick_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.bombKick_numericUpDown.TabIndex = 54;
+            bombKick_numericUpDown.Location = new Point(130, 141);
+            bombKick_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            bombKick_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            bombKick_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            bombKick_numericUpDown.Name = "bombKick_numericUpDown";
+            bombKick_numericUpDown.Size = new Size(44, 23);
+            bombKick_numericUpDown.TabIndex = 54;
             // 
             // puntKick_label
             // 
-            this.puntKick_label.AutoSize = true;
-            this.puntKick_label.BackColor = System.Drawing.Color.Transparent;
-            this.puntKick_label.Location = new System.Drawing.Point(40, 65);
-            this.puntKick_label.Name = "puntKick_label";
-            this.puntKick_label.Size = new System.Drawing.Size(68, 13);
-            this.puntKick_label.TabIndex = 57;
-            this.puntKick_label.Text = "Punt Kick + -";
+            puntKick_label.AutoSize = true;
+            puntKick_label.BackColor = Color.Transparent;
+            puntKick_label.Location = new Point(47, 75);
+            puntKick_label.Margin = new Padding(4, 0, 4, 0);
+            puntKick_label.Name = "puntKick_label";
+            puntKick_label.Size = new Size(76, 15);
+            puntKick_label.TabIndex = 57;
+            puntKick_label.Text = "Punt Kick + -";
             // 
             // fieldgoalKick_label
             // 
-            this.fieldgoalKick_label.AutoSize = true;
-            this.fieldgoalKick_label.BackColor = System.Drawing.Color.Transparent;
-            this.fieldgoalKick_label.Location = new System.Drawing.Point(15, 155);
-            this.fieldgoalKick_label.Name = "fieldgoalKick_label";
-            this.fieldgoalKick_label.Size = new System.Drawing.Size(93, 13);
-            this.fieldgoalKick_label.TabIndex = 55;
-            this.fieldgoalKick_label.Text = "Field Goal Kick + -";
+            fieldgoalKick_label.AutoSize = true;
+            fieldgoalKick_label.BackColor = Color.Transparent;
+            fieldgoalKick_label.Location = new Point(18, 179);
+            fieldgoalKick_label.Margin = new Padding(4, 0, 4, 0);
+            fieldgoalKick_label.Name = "fieldgoalKick_label";
+            fieldgoalKick_label.Size = new Size(103, 15);
+            fieldgoalKick_label.TabIndex = 55;
+            fieldgoalKick_label.Text = "Field Goal Kick + -";
             // 
             // placeKick_numericUpDown
             // 
-            this.placeKick_numericUpDown.Location = new System.Drawing.Point(111, 182);
-            this.placeKick_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.placeKick_numericUpDown.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.placeKick_numericUpDown.Name = "placeKick_numericUpDown";
-            this.placeKick_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.placeKick_numericUpDown.TabIndex = 62;
+            placeKick_numericUpDown.Location = new Point(130, 210);
+            placeKick_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            placeKick_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            placeKick_numericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
+            placeKick_numericUpDown.Name = "placeKick_numericUpDown";
+            placeKick_numericUpDown.Size = new Size(44, 23);
+            placeKick_numericUpDown.TabIndex = 62;
             // 
             // fieldgoalKick_numericUpDown
             // 
-            this.fieldgoalKick_numericUpDown.Location = new System.Drawing.Point(111, 152);
-            this.fieldgoalKick_numericUpDown.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.fieldgoalKick_numericUpDown.Name = "fieldgoalKick_numericUpDown";
-            this.fieldgoalKick_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.fieldgoalKick_numericUpDown.TabIndex = 56;
+            fieldgoalKick_numericUpDown.Location = new Point(130, 175);
+            fieldgoalKick_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            fieldgoalKick_numericUpDown.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            fieldgoalKick_numericUpDown.Name = "fieldgoalKick_numericUpDown";
+            fieldgoalKick_numericUpDown.Size = new Size(44, 23);
+            fieldgoalKick_numericUpDown.TabIndex = 56;
             // 
             // IncrementsValue_numericUpDown
             // 
-            this.IncrementsValue_numericUpDown.Location = new System.Drawing.Point(663, 30);
-            this.IncrementsValue_numericUpDown.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.IncrementsValue_numericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.IncrementsValue_numericUpDown.Name = "IncrementsValue_numericUpDown";
-            this.IncrementsValue_numericUpDown.Size = new System.Drawing.Size(38, 20);
-            this.IncrementsValue_numericUpDown.TabIndex = 79;
-            this.IncrementsValue_numericUpDown.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.IncrementsValue_numericUpDown.ValueChanged += new System.EventHandler(this.IncrementsValue_numericUpDown_ValueChanged);
+            IncrementsValue_numericUpDown.Location = new Point(774, 35);
+            IncrementsValue_numericUpDown.Margin = new Padding(4, 3, 4, 3);
+            IncrementsValue_numericUpDown.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
+            IncrementsValue_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            IncrementsValue_numericUpDown.Name = "IncrementsValue_numericUpDown";
+            IncrementsValue_numericUpDown.Size = new Size(44, 23);
+            IncrementsValue_numericUpDown.TabIndex = 79;
+            IncrementsValue_numericUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            IncrementsValue_numericUpDown.ValueChanged += IncrementsValue_numericUpDown_ValueChanged;
             // 
             // IncrementsValue_label
             // 
-            this.IncrementsValue_label.AutoSize = true;
-            this.IncrementsValue_label.Location = new System.Drawing.Point(568, 33);
-            this.IncrementsValue_label.Name = "IncrementsValue_label";
-            this.IncrementsValue_label.Size = new System.Drawing.Size(92, 13);
-            this.IncrementsValue_label.TabIndex = 78;
-            this.IncrementsValue_label.Text = "Increments Value:";
+            IncrementsValue_label.AutoSize = true;
+            IncrementsValue_label.Location = new Point(663, 38);
+            IncrementsValue_label.Margin = new Padding(4, 0, 4, 0);
+            IncrementsValue_label.Name = "IncrementsValue_label";
+            IncrementsValue_label.Size = new Size(100, 15);
+            IncrementsValue_label.TabIndex = 78;
+            IncrementsValue_label.Text = "Increments Value:";
             // 
             // All_Player_Stats_Querys
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(722, 430);
-            this.Controls.Add(this.IncrementsValue_numericUpDown);
-            this.Controls.Add(this.IncrementsValue_label);
-            this.Controls.Add(this.MiscSkills_groupBox);
-            this.Controls.Add(this.TackleSkills_groupBox);
-            this.Controls.Add(this.EvasionSkills_groupBox);
-            this.Controls.Add(this.PassingSkills_groupBox);
-            this.Controls.Add(this.KickingSkills_groupBox);
-            this.Controls.Add(this.Stats_groupBox);
-            this.Controls.Add(this.ChangeStats_button);
-            this.Controls.Add(this.PlayerRole_comboBox);
-            this.Controls.Add(this.Role_label);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(738, 469);
-            this.Name = "All_Player_Stats_Querys";
-            this.Text = "All Player Stats Querys";
-            this.Load += new System.EventHandler(this.All_Player_Stats_Querys_Load);
-            this.Stats_groupBox.ResumeLayout(false);
-            this.Stats_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SprintSpeed_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Fitness_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Strength_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Agility_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Acceleration_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Durability_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Discipline_numericUpDown)).EndInit();
-            this.MiscSkills_groupBox.ResumeLayout(false);
-            this.MiscSkills_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ballStrip_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contestedCollect_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diveCollect_numericUpDown)).EndInit();
-            this.TackleSkills_groupBox.ResumeLayout(false);
-            this.TackleSkills_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.impactTackle_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diveTackle_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tackle_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driveTackle_numericUpDown)).EndInit();
-            this.EvasionSkills_groupBox.ResumeLayout(false);
-            this.EvasionSkills_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.breakTackle_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sideStep_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dummyPass_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fend_numericUpDown)).EndInit();
-            this.PassingSkills_groupBox.ResumeLayout(false);
-            this.PassingSkills_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.offload_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.basicPass_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.longPass_numericUpDown)).EndInit();
-            this.KickingSkills_groupBox.ResumeLayout(false);
-            this.KickingSkills_groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chipKick_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grubberKick_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puntKick_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bombKick_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placeKick_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fieldgoalKick_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IncrementsValue_numericUpDown)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            ClientSize = new Size(842, 496);
+            Controls.Add(IncrementsValue_numericUpDown);
+            Controls.Add(IncrementsValue_label);
+            Controls.Add(MiscSkills_groupBox);
+            Controls.Add(TackleSkills_groupBox);
+            Controls.Add(EvasionSkills_groupBox);
+            Controls.Add(PassingSkills_groupBox);
+            Controls.Add(KickingSkills_groupBox);
+            Controls.Add(Stats_groupBox);
+            Controls.Add(ChangeStats_button);
+            Controls.Add(PlayerRole_comboBox);
+            Controls.Add(Role_label);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MaximumSize = new Size(858, 535);
+            Name = "All_Player_Stats_Querys";
+            Text = "All Player Stats Querys";
+            Load += All_Player_Stats_Querys_Load;
+            Stats_groupBox.ResumeLayout(false);
+            Stats_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SprintSpeed_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Fitness_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Strength_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Agility_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Acceleration_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Durability_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Discipline_numericUpDown).EndInit();
+            MiscSkills_groupBox.ResumeLayout(false);
+            MiscSkills_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ballStrip_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)contestedCollect_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)diveCollect_numericUpDown).EndInit();
+            TackleSkills_groupBox.ResumeLayout(false);
+            TackleSkills_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)impactTackle_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)diveTackle_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tackle_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)driveTackle_numericUpDown).EndInit();
+            EvasionSkills_groupBox.ResumeLayout(false);
+            EvasionSkills_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)breakTackle_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sideStep_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dummyPass_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fend_numericUpDown).EndInit();
+            PassingSkills_groupBox.ResumeLayout(false);
+            PassingSkills_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)offload_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)basicPass_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)longPass_numericUpDown).EndInit();
+            KickingSkills_groupBox.ResumeLayout(false);
+            KickingSkills_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chipKick_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)grubberKick_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)puntKick_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bombKick_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)placeKick_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fieldgoalKick_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)IncrementsValue_numericUpDown).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

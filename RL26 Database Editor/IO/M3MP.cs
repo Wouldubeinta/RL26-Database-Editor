@@ -117,15 +117,15 @@ namespace RL26_Database_Editor
 
         public static void WriteM3MP(byte[] dataBuffer, int[] RawFileSize, List<int> RawFileOffsets, ToolStripProgressBar PB, ToolStripLabel tslp, StatusStrip ss)
         {
-            MemoryStream stream = null;
-            Reader br = null;
-            Writer bw = null;
+            MemoryStream? stream = null;
+            Reader? br = null;
+            Writer? bw = null;
 
-            List<byte[]> UnCompressed_data = null;
-            List<int> UnCompressed_sizes = null;
-            List<byte[]> Compressed_data = null;
-            List<int> Compressed_sizes = null;
-            List<int> Data_offsets = null;
+            List<byte[]>? UnCompressed_data = null;
+            List<int>? UnCompressed_sizes = null;
+            List<byte[]>? Compressed_data = null;
+            List<int>? Compressed_sizes = null;
+            List<int>? Data_offsets = null;
 
             int[] FileNameOffsets = new int[3];
             string[] FileName = new string[3];

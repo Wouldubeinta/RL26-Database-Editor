@@ -31,6 +31,7 @@ namespace RL26_Database_Editor
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player_Editor));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            club_comboBox = new ComboBox();
             commentaryNameHash_comboBox = new ComboBox();
             Hidden_checkBox = new CheckBox();
             commentaryNameHash_label = new Label();
@@ -43,7 +44,6 @@ namespace RL26_Database_Editor
             PlayerGender_textBox = new TextBox();
             PlayerGender_label = new Label();
             PlayerGenderImage_label = new Label();
-            club_textBox = new TextBox();
             club_label = new Label();
             slJerseyNumber_checkBox = new CheckBox();
             ContractExpiry_comboBox = new ComboBox();
@@ -481,6 +481,7 @@ namespace RL26_Database_Editor
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(club_comboBox);
             tabPage1.Controls.Add(commentaryNameHash_comboBox);
             tabPage1.Controls.Add(Hidden_checkBox);
             tabPage1.Controls.Add(commentaryNameHash_label);
@@ -493,7 +494,6 @@ namespace RL26_Database_Editor
             tabPage1.Controls.Add(PlayerGender_textBox);
             tabPage1.Controls.Add(PlayerGender_label);
             tabPage1.Controls.Add(PlayerGenderImage_label);
-            tabPage1.Controls.Add(club_textBox);
             tabPage1.Controls.Add(club_label);
             tabPage1.Controls.Add(slJerseyNumber_checkBox);
             tabPage1.Controls.Add(ContractExpiry_comboBox);
@@ -550,6 +550,16 @@ namespace RL26_Database_Editor
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Player Identity";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // club_comboBox
+            // 
+            club_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            club_comboBox.FormattingEnabled = true;
+            club_comboBox.Items.AddRange(new object[] { "None" });
+            club_comboBox.Location = new Point(120, 136);
+            club_comboBox.Name = "club_comboBox";
+            club_comboBox.Size = new Size(246, 23);
+            club_comboBox.TabIndex = 165;
             // 
             // commentaryNameHash_comboBox
             // 
@@ -659,14 +669,6 @@ namespace RL26_Database_Editor
             PlayerGenderImage_label.Name = "PlayerGenderImage_label";
             PlayerGenderImage_label.Size = new Size(22, 20);
             PlayerGenderImage_label.TabIndex = 154;
-            // 
-            // club_textBox
-            // 
-            club_textBox.Location = new Point(120, 136);
-            club_textBox.MaxLength = 6;
-            club_textBox.Name = "club_textBox";
-            club_textBox.Size = new Size(246, 23);
-            club_textBox.TabIndex = 81;
             // 
             // club_label
             // 
@@ -3955,7 +3957,6 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.Label Nconversions_label;
         private System.Windows.Forms.NumericUpDown Nconversions_numericUpDown;
         private System.Windows.Forms.CheckBox slJerseyNumber_checkBox;
-        private System.Windows.Forms.TextBox club_textBox;
         private System.Windows.Forms.Label club_label;
         private System.Windows.Forms.TextBox PlayerGender_textBox;
         private System.Windows.Forms.Label PlayerGender_label;
@@ -3972,5 +3973,6 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.Label commentaryNameHash_label;
         private System.Windows.Forms.CheckBox Hidden_checkBox;
         private ComboBox commentaryNameHash_comboBox;
+        private ComboBox club_comboBox;
     }
 }

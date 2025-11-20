@@ -16,8 +16,11 @@ namespace RL26_Database_Editor
 
         private void Team_Player_List_Load(object sender, EventArgs e)
         {
+            CountryOfBirth_toolStripComboBox.Items.AddRange(StringArrays.CountryOfBirth);
+            CountryOfBirth_toolStripComboBox.Items.Add("All Countries");
+            CountryOfBirth_toolStripComboBox.SelectedIndex = 196;
+            Roles_toolStripComboBox.SelectedIndex = 9;
             OriginalPlayers();
-            Gender_toolStripComboBox.SelectedIndex = 2;
         }
 
         private void OriginalPlayers()
@@ -40,31 +43,20 @@ namespace RL26_Database_Editor
 
                 for (int i = 0; i < Global.player_amount; i++)
                 {
-                    if (Global.player[i].gender == Gender_toolStripComboBox.SelectedIndex)
+                    bool isGenderMatch = Global.player[i].gender == Global.team[TeamIndex].gender;
+                    bool isCountryMatch = Global.player[i].countryOfBirth == CountryOfBirth_toolStripComboBox.SelectedIndex;
+                    bool isAllCountries = CountryOfBirth_toolStripComboBox.SelectedIndex == 196; // 196 is the CountryOfBirth array count
+                    bool isRoleMatch = Global.player[i].primaryRole == Roles_toolStripComboBox.SelectedIndex;
+                    bool isAllRoles = Roles_toolStripComboBox.SelectedIndex == 9;
+
+                    // Check for matches based on gender, country and roles
+                    if (isGenderMatch && (isCountryMatch || isAllCountries))
                     {
-                        index++;
-                        dt.Rows.Add();
-                        dt.Rows[dt.Rows.Count - 1]["Index"] = index;
-                        dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[i].id;
-                        dt.Rows[dt.Rows.Count - 1]["Rating"] = Rating.PlayerRating(i);
-                        dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName;
-                        dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName;
-                        dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[i].primaryRole);
-                        dt.Rows[dt.Rows.Count - 1]["Secondary Role"] = Roles.playerRoles(Global.player[i].secondaryRole);
-                        dt.Rows[dt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[i].tertiaryRole);
-                    }
-                    else if (Gender_toolStripComboBox.SelectedIndex == 2)
-                    {
-                        index++;
-                        dt.Rows.Add();
-                        dt.Rows[dt.Rows.Count - 1]["Index"] = index;
-                        dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[i].id;
-                        dt.Rows[dt.Rows.Count - 1]["Rating"] = Rating.PlayerRating(i);
-                        dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName;
-                        dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName;
-                        dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[i].primaryRole);
-                        dt.Rows[dt.Rows.Count - 1]["Secondary Role"] = Roles.playerRoles(Global.player[i].secondaryRole);
-                        dt.Rows[dt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[i].tertiaryRole);
+                        if (isRoleMatch || isAllRoles)
+                        {
+                            index++;
+                            DataTableRows(i, index, dt);
+                        }
                     }
                 }
 
@@ -74,6 +66,19 @@ namespace RL26_Database_Editor
             {
                 MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void DataTableRows(int i, int index, DataTable dt)
+        {
+            dt.Rows.Add();
+            dt.Rows[dt.Rows.Count - 1]["Index"] = index;
+            dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[i].id;
+            dt.Rows[dt.Rows.Count - 1]["Rating"] = Rating.PlayerRating(i);
+            dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName;
+            dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName;
+            dt.Rows[dt.Rows.Count - 1]["Primary Role"] = Roles.playerRoles(Global.player[i].primaryRole);
+            dt.Rows[dt.Rows.Count - 1]["Secondary Role"] = Roles.playerRoles(Global.player[i].secondaryRole);
+            dt.Rows[dt.Rows.Count - 1]["Tertiary Role"] = Roles.playerRoles(Global.player[i].tertiaryRole);
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,11 +151,6 @@ namespace RL26_Database_Editor
             }
         }
 
-        private void Gender_toolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            OriginalPlayers();
-        }
-
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0 && MainDataGridView1.Rows.Count > 0)
@@ -214,6 +214,16 @@ namespace RL26_Database_Editor
             {
                 MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void CountryOfBirth_toolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OriginalPlayers();
+        }
+
+        private void Roles_toolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OriginalPlayers();
         }
 
         private void refreshPlayersToolStripMenuItem_Click(object sender, EventArgs e)

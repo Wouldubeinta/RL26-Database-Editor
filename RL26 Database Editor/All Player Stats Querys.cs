@@ -9,7 +9,7 @@
 
         private void All_Player_Stats_Querys_Load(object sender, EventArgs e)
         {
-            PlayerRole_comboBox.SelectedIndex = 0;
+            PlayerRole_comboBox.SelectedIndex = 9;
         }
 
         private void ChangeStats_button_Click(object sender, EventArgs e)
@@ -20,7 +20,7 @@
 
                 if (Role == PlayerRole_comboBox.SelectedIndex)
                     SkillChange(i);
-                else
+                else if (PlayerRole_comboBox.SelectedIndex == 9)
                     SkillChange(i);
             }
 
@@ -73,13 +73,12 @@
         {
             int temp = 0;
             int Results = Skill + Convert.ToInt32(control);
+            temp = Results;
 
             if (Results < 0)
                 temp = 0;
             else if (Results > 99)
                 temp = 99;
-            else if (Results > -1 && Results < 100)
-                temp = Results;
             return temp;
         }
 

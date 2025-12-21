@@ -26,7 +26,7 @@ namespace RL26_Database_Editor
                 dt.Columns.Add("Club Name", Type.GetType("System.String"));
                 dt.Columns.Add("Team Player Amount", Type.GetType("System.String"));
 
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < 64; i++)
                 {
                     int value = i + 1;
                     dt.Columns.Add("Player " + value.ToString(), Type.GetType("System.String"));

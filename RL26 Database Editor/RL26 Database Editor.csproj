@@ -15,7 +15,7 @@
     <Copyright>Wouldy Mods 2025</Copyright>
     <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
     <FileVersion>$(VersionPrefix)</FileVersion>
-    <Version>1.0.2.12</Version>
+    <Version>1.0.2.13</Version>
   </PropertyGroup>
 
   <ItemGroup>

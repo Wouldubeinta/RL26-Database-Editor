@@ -452,9 +452,9 @@ namespace RL26_Database_Editor
         {
             Players_dataGridView.DataSource = null;
 
-            Reader br = null;
-            DataTable dt = null;
-            Bitmap[] Imagelist = null;
+            Reader? br = null;
+            DataTable? dt = null;
+            Bitmap[]? Imagelist = null;
 
             try
             {
@@ -484,15 +484,27 @@ namespace RL26_Database_Editor
                     Global.player[i].isId = br.ReadBoolean();
                     Global.player[i].id = br.ReadInt32(Endian.Little);
 
-                    // FirstName
+                    // First Name
                     Global.player[i].isFirstName = br.ReadBoolean();
-                    Global.player[i].firstNameSize = br.ReadByte();
-                    Global.player[i].firstName = br.ReadString(Global.player[i].firstNameSize);
+                    Global.player[i].firstNameSize = 0;
+                    Global.player[i].firstName = string.Empty;
 
-                    // Lastname
+                    if (Global.player[i].isFirstName)
+                    {
+                        Global.player[i].firstNameSize = br.ReadByte();
+                        Global.player[i].firstName = br.ReadString(Global.player[i].firstNameSize);
+                    }
+
+                    // Last Name
                     Global.player[i].isLastName = br.ReadBoolean();
-                    Global.player[i].lastNameSize = br.ReadByte();
-                    Global.player[i].lastName = br.ReadString(Global.player[i].lastNameSize);
+                    Global.player[i].lastNameSize = 0;
+                    Global.player[i].lastName = string.Empty;
+
+                    if (Global.player[i].isLastName)
+                    {
+                        Global.player[i].lastNameSize = br.ReadByte();
+                        Global.player[i].lastName = br.ReadString(Global.player[i].lastNameSize);
+                    }
 
                     Global.player[i].isLicensed = br.ReadBoolean();
                     Global.player[i].licensed = true;
@@ -673,25 +685,46 @@ namespace RL26_Database_Editor
                         Global.player[i].appearance.hairTopVisual = br.ReadInt32(Endian.Little);
 
                     Global.player[i].technicalAbility.isStrength = br.ReadBoolean();
-                    Global.player[i].technicalAbility.strength = br.ReadInt32(Endian.Little);
+                    Global.player[i].technicalAbility.strength = 0;
+
+                    if (Global.player[i].technicalAbility.isStrength)
+                        Global.player[i].technicalAbility.strength = br.ReadInt32(Endian.Little);
 
                     Global.player[i].technicalAbility.isDurability = br.ReadBoolean();
-                    Global.player[i].technicalAbility.durability = br.ReadInt32(Endian.Little);
+                    Global.player[i].technicalAbility.durability = 0;
+
+                    if (Global.player[i].technicalAbility.isDurability)
+                        Global.player[i].technicalAbility.durability = br.ReadInt32(Endian.Little);
 
                     Global.player[i].technicalAbility.isDiscipline = br.ReadBoolean();
-                    Global.player[i].technicalAbility.discipline = br.ReadInt32(Endian.Little);
+                    Global.player[i].technicalAbility.discipline = 0;
+
+                    if (Global.player[i].technicalAbility.isDiscipline)
+                        Global.player[i].technicalAbility.discipline = br.ReadInt32(Endian.Little);
 
                     Global.player[i].skills.tackleSkills.isTackle = br.ReadBoolean();
-                    Global.player[i].skills.tackleSkills.tackle = br.ReadInt32(Endian.Little);
+                    Global.player[i].skills.tackleSkills.tackle = 0;
+
+                    if (Global.player[i].skills.tackleSkills.isTackle)
+                        Global.player[i].skills.tackleSkills.tackle = br.ReadInt32(Endian.Little);
 
                     Global.player[i].skills.tackleSkills.isDriveTackle = br.ReadBoolean();
-                    Global.player[i].skills.tackleSkills.driveTackle = br.ReadInt32(Endian.Little);
+                    Global.player[i].skills.tackleSkills.driveTackle = 0;
+
+                    if (Global.player[i].skills.tackleSkills.isDriveTackle)
+                        Global.player[i].skills.tackleSkills.driveTackle = br.ReadInt32(Endian.Little);
 
                     Global.player[i].skills.tackleSkills.isDiveTackle = br.ReadBoolean();
-                    Global.player[i].skills.tackleSkills.diveTackle = br.ReadInt32(Endian.Little);
+                    Global.player[i].skills.tackleSkills.diveTackle = 0;
+
+                    if (Global.player[i].skills.tackleSkills.isDiveTackle)
+                        Global.player[i].skills.tackleSkills.diveTackle = br.ReadInt32(Endian.Little);
 
                     Global.player[i].skills.tackleSkills.isImpactTackle = br.ReadBoolean();
-                    Global.player[i].skills.tackleSkills.impactTackle = br.ReadInt32(Endian.Little);
+                    Global.player[i].skills.tackleSkills.impactTackle = 0;
+
+                    if (Global.player[i].skills.tackleSkills.isImpactTackle)
+                        Global.player[i].skills.tackleSkills.impactTackle = br.ReadInt32(Endian.Little);
 
                     Global.player[i].technicalAbility.isAgility = br.ReadBoolean();
                     Global.player[i].technicalAbility.agility = br.ReadInt32(Endian.Little);

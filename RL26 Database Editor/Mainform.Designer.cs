@@ -97,7 +97,7 @@
             // 
             exitToolStripMenuItem.Image = Properties.Resources.close_16;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(92, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -112,7 +112,7 @@
             // 
             saveDatabaseToolStripMenuItem.Image = (Image)resources.GetObject("saveDatabaseToolStripMenuItem.Image");
             saveDatabaseToolStripMenuItem.Name = "saveDatabaseToolStripMenuItem";
-            saveDatabaseToolStripMenuItem.Size = new Size(180, 22);
+            saveDatabaseToolStripMenuItem.Size = new Size(178, 22);
             saveDatabaseToolStripMenuItem.Text = "Save Database";
             saveDatabaseToolStripMenuItem.Click += saveDatabaseToolStripMenuItem_Click;
             // 
@@ -120,7 +120,7 @@
             // 
             compressDatabaseToolStripMenuItem.Image = Properties.Resources.winzip;
             compressDatabaseToolStripMenuItem.Name = "compressDatabaseToolStripMenuItem";
-            compressDatabaseToolStripMenuItem.Size = new Size(180, 22);
+            compressDatabaseToolStripMenuItem.Size = new Size(178, 22);
             compressDatabaseToolStripMenuItem.Text = "Compress Database";
             compressDatabaseToolStripMenuItem.Click += compressDatabaseToolStripMenuItem_Click;
             // 
@@ -221,7 +221,7 @@
             // 
             allPlayerStatsToolStripMenuItem.Image = Properties.Resources.PlusMinus;
             allPlayerStatsToolStripMenuItem.Name = "allPlayerStatsToolStripMenuItem";
-            allPlayerStatsToolStripMenuItem.Size = new Size(180, 22);
+            allPlayerStatsToolStripMenuItem.Size = new Size(151, 22);
             allPlayerStatsToolStripMenuItem.Text = "All Player Stats";
             allPlayerStatsToolStripMenuItem.Click += allPlayerStatsToolStripMenuItem_Click;
             // 
@@ -251,8 +251,9 @@
             // toolStripStatusLabel2
             // 
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(1018, 19);
+            toolStripStatusLabel2.Size = new Size(987, 19);
             toolStripStatusLabel2.Spring = true;
+            toolStripStatusLabel2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // ProgressLabel
             // 

@@ -238,9 +238,15 @@ IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY C
 If the disclaimer of warranty and limitation of liability provided above cannot be given local legal effect according to their terms, reviewing courts shall apply local law that most closely approximates an absolute waiver of all civil liability in connection with the Program, unless a warranty or assumption of liability accompanies a copy of the Program in return for a fee.</value>
   </data>
   <data name="changelog_richTextBox.Text" xml:space="preserve">
-    <value>-1.0.2.13-
+    <value>-1.0.3.14-
+* Added latest team and player database from - v1.0.3731
+* Fixed a issue where the player database would not load because of no first player name.
+* Changed the player data of birth in the Player Editor.
+* Added player age to Player Editor. It get's updated automatically.
+ 
+-1.0.2.13-
 * Added latest team and player database from - v1.0.3539
-* FIxed up Raw Team Players amount from 50 to 64.
+* Fixed up Raw Team Players amount from 50 to 64.
 
 -1.0.2.12-
 * Added latest team and player database from - v1.0.3326

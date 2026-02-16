@@ -50,7 +50,7 @@ namespace RL26_Database_Editor
 
             string[] clubs = new string[Global.team_amount];
 
-            for (int i = 0; i < Global.team_amount; i++) 
+            for (int i = 0; i < Global.team_amount; i++)
             {
                 clubs[i] = Global.team[i].fullName;
             }
@@ -67,9 +67,8 @@ namespace RL26_Database_Editor
                 PlayerGenderImage_label.Image = Properties.Resources.Female;
             }
 
-            Day_numericUpDown.Value = Global.player[Player_Index].dob.day;
-            Month_numericUpDown.Value = Global.player[Player_Index].dob.month;
-            Year_numericUpDown.Value = Global.player[Player_Index].dob.year;
+            DateTime dateOfBirth = new DateTime(Convert.ToInt32(Global.player[Player_Index].dob.year), Convert.ToInt32(Global.player[Player_Index].dob.month), Convert.ToInt32(Global.player[Player_Index].dob.day));
+            dateTimePicker1.Value = dateOfBirth;
 
             if (Global.player[Player_Index].jerseyNumber < 1 || Global.player[Player_Index].jerseyNumber > 99)
                 Jersey_Number_numericUpDown.Value = 1;
@@ -280,9 +279,9 @@ namespace RL26_Database_Editor
             Global.player[Player_Index].isPreferredFoot = true;
             Global.player[Player_Index].preferredFoot = Convert.ToByte(Preferred_Foot_comboBox.SelectedIndex);
 
-            Global.player[Player_Index].dob.day = Convert.ToInt32(Day_numericUpDown.Value);
-            Global.player[Player_Index].dob.month = Convert.ToInt32(Month_numericUpDown.Value);
-            Global.player[Player_Index].dob.year = Convert.ToInt32(Year_numericUpDown.Value);
+            Global.player[Player_Index].dob.day = Convert.ToInt32(dateTimePicker1.Value.Day);
+            Global.player[Player_Index].dob.month = Convert.ToInt32(dateTimePicker1.Value.Month);
+            Global.player[Player_Index].dob.year = Convert.ToInt32(dateTimePicker1.Value.Year);
 
             Global.player[Player_Index].firstNameSize = Convert.ToByte(First_Name_textBox.Text.Length);
             Global.player[Player_Index].firstName = First_Name_textBox.Text;
@@ -968,6 +967,19 @@ namespace RL26_Database_Editor
                     impactTackle_numericUpDown.Value = RandomizeStats(65, 79);
                 }
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime today = DateTime.Today;
+            int age = today.Year - dateTimePicker1.Value.Year;
+
+            // Adjust age if the birthday has not yet occurred this year
+            if (dateTimePicker1.Value.Date > today.AddYears(-age))
+                age--;
+
+            AgeValue_label.Text = age.ToString();
+            Global.player[Player_Index].age = age;
         }
     }
 }

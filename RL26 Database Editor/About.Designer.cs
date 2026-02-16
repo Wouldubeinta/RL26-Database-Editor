@@ -197,11 +197,11 @@
             // copyright_label
             // 
             copyright_label.AutoSize = true;
-            copyright_label.Location = new Point(445, 392);
+            copyright_label.Location = new Point(436, 392);
             copyright_label.Name = "copyright_label";
             copyright_label.Size = new Size(167, 15);
             copyright_label.TabIndex = 5;
-            copyright_label.Text = "Copyright: Wouldy Mods 2025";
+            copyright_label.Text = "Copyright: Wouldy Mods 2026";
             // 
             // About
             // 

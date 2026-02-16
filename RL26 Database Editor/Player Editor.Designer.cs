@@ -31,6 +31,9 @@ namespace RL26_Database_Editor
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player_Editor));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            AgeValue_label = new Label();
+            Age_label = new Label();
+            dateTimePicker1 = new DateTimePicker();
             club_comboBox = new ComboBox();
             commentaryNameHash_comboBox = new ComboBox();
             Hidden_checkBox = new CheckBox();
@@ -78,12 +81,6 @@ namespace RL26_Database_Editor
             Primary_Role_label = new Label();
             Jersey_Number_numericUpDown = new NumericUpDown();
             Jersey_Number_label = new Label();
-            Year_numericUpDown = new NumericUpDown();
-            Year_label = new Label();
-            Month_numericUpDown = new NumericUpDown();
-            Month_label = new Label();
-            Day_label = new Label();
-            Day_numericUpDown = new NumericUpDown();
             DOB_label = new Label();
             Last_Name_textBox = new TextBox();
             Last_Name_label = new Label();
@@ -339,9 +336,6 @@ namespace RL26_Database_Editor
             ((System.ComponentModel.ISupportInitialize)Weight_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Height_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Jersey_Number_numericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Year_numericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Month_numericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Day_numericUpDown).BeginInit();
             tabPage3.SuspendLayout();
             RandomizeStats_groupBox.SuspendLayout();
             Attributes_groupBox.SuspendLayout();
@@ -481,6 +475,9 @@ namespace RL26_Database_Editor
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(AgeValue_label);
+            tabPage1.Controls.Add(Age_label);
+            tabPage1.Controls.Add(dateTimePicker1);
             tabPage1.Controls.Add(club_comboBox);
             tabPage1.Controls.Add(commentaryNameHash_comboBox);
             tabPage1.Controls.Add(Hidden_checkBox);
@@ -528,12 +525,6 @@ namespace RL26_Database_Editor
             tabPage1.Controls.Add(Primary_Role_label);
             tabPage1.Controls.Add(Jersey_Number_numericUpDown);
             tabPage1.Controls.Add(Jersey_Number_label);
-            tabPage1.Controls.Add(Year_numericUpDown);
-            tabPage1.Controls.Add(Year_label);
-            tabPage1.Controls.Add(Month_numericUpDown);
-            tabPage1.Controls.Add(Month_label);
-            tabPage1.Controls.Add(Day_label);
-            tabPage1.Controls.Add(Day_numericUpDown);
             tabPage1.Controls.Add(DOB_label);
             tabPage1.Controls.Add(Last_Name_textBox);
             tabPage1.Controls.Add(Last_Name_label);
@@ -550,6 +541,32 @@ namespace RL26_Database_Editor
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Player Identity";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // AgeValue_label
+            // 
+            AgeValue_label.AutoSize = true;
+            AgeValue_label.Location = new Point(358, 234);
+            AgeValue_label.Name = "AgeValue_label";
+            AgeValue_label.Size = new Size(19, 15);
+            AgeValue_label.TabIndex = 168;
+            AgeValue_label.Text = "18";
+            // 
+            // Age_label
+            // 
+            Age_label.AutoSize = true;
+            Age_label.Location = new Point(327, 234);
+            Age_label.Name = "Age_label";
+            Age_label.Size = new Size(31, 15);
+            Age_label.TabIndex = 167;
+            Age_label.Text = "Age:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(120, 229);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 166;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // club_comboBox
             // 
@@ -988,67 +1005,10 @@ namespace RL26_Database_Editor
             Jersey_Number_label.TabIndex = 33;
             Jersey_Number_label.Text = "Jersey Number:";
             // 
-            // Year_numericUpDown
-            // 
-            Year_numericUpDown.Location = new Point(317, 231);
-            Year_numericUpDown.Maximum = new decimal(new int[] { 2500, 0, 0, 0 });
-            Year_numericUpDown.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
-            Year_numericUpDown.Name = "Year_numericUpDown";
-            Year_numericUpDown.Size = new Size(49, 23);
-            Year_numericUpDown.TabIndex = 32;
-            Year_numericUpDown.Value = new decimal(new int[] { 2500, 0, 0, 0 });
-            // 
-            // Year_label
-            // 
-            Year_label.AutoSize = true;
-            Year_label.Location = new Point(277, 235);
-            Year_label.Name = "Year_label";
-            Year_label.Size = new Size(37, 15);
-            Year_label.TabIndex = 31;
-            Year_label.Text = "Year -";
-            // 
-            // Month_numericUpDown
-            // 
-            Month_numericUpDown.Location = new Point(237, 231);
-            Month_numericUpDown.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
-            Month_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            Month_numericUpDown.Name = "Month_numericUpDown";
-            Month_numericUpDown.Size = new Size(35, 23);
-            Month_numericUpDown.TabIndex = 30;
-            Month_numericUpDown.Value = new decimal(new int[] { 12, 0, 0, 0 });
-            // 
-            // Month_label
-            // 
-            Month_label.AutoSize = true;
-            Month_label.Location = new Point(183, 235);
-            Month_label.Name = "Month_label";
-            Month_label.Size = new Size(51, 15);
-            Month_label.TabIndex = 29;
-            Month_label.Text = "Month -";
-            // 
-            // Day_label
-            // 
-            Day_label.AutoSize = true;
-            Day_label.Location = new Point(106, 234);
-            Day_label.Name = "Day_label";
-            Day_label.Size = new Size(35, 15);
-            Day_label.TabIndex = 28;
-            Day_label.Text = "Day -";
-            // 
-            // Day_numericUpDown
-            // 
-            Day_numericUpDown.Location = new Point(144, 230);
-            Day_numericUpDown.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
-            Day_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            Day_numericUpDown.Name = "Day_numericUpDown";
-            Day_numericUpDown.Size = new Size(35, 23);
-            Day_numericUpDown.TabIndex = 27;
-            Day_numericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
             // DOB_label
             // 
             DOB_label.AutoSize = true;
-            DOB_label.Location = new Point(67, 234);
+            DOB_label.Location = new Point(83, 234);
             DOB_label.Name = "DOB_label";
             DOB_label.Size = new Size(34, 15);
             DOB_label.TabIndex = 26;
@@ -3527,9 +3487,6 @@ namespace RL26_Database_Editor
             ((System.ComponentModel.ISupportInitialize)Weight_numericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)Height_numericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)Jersey_Number_numericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Year_numericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Month_numericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Day_numericUpDown).EndInit();
             tabPage3.ResumeLayout(false);
             RandomizeStats_groupBox.ResumeLayout(false);
             Attributes_groupBox.ResumeLayout(false);
@@ -3676,12 +3633,6 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.NumericUpDown Jersey_Number_numericUpDown;
         private System.Windows.Forms.Label Jersey_Number_label;
-        private System.Windows.Forms.NumericUpDown Year_numericUpDown;
-        private System.Windows.Forms.Label Year_label;
-        private System.Windows.Forms.NumericUpDown Month_numericUpDown;
-        private System.Windows.Forms.Label Month_label;
-        private System.Windows.Forms.Label Day_label;
-        private System.Windows.Forms.NumericUpDown Day_numericUpDown;
         private System.Windows.Forms.Label DOB_label;
         private System.Windows.Forms.TextBox Last_Name_textBox;
         private System.Windows.Forms.Label Last_Name_label;
@@ -3974,5 +3925,8 @@ namespace RL26_Database_Editor
         private System.Windows.Forms.CheckBox Hidden_checkBox;
         private ComboBox commentaryNameHash_comboBox;
         private ComboBox club_comboBox;
+        private DateTimePicker dateTimePicker1;
+        private Label AgeValue_label;
+        private Label Age_label;
     }
 }

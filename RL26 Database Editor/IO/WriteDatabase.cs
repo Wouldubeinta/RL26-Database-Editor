@@ -51,8 +51,12 @@ namespace RL26_Database_Editor
 
                     // FullName
                     bw.WriteBool(Global.team[i].isFullName);
-                    bw.WriteUInt8(Global.team[i].fullNameSize);
-                    bw.WriteString(Global.team[i].fullName, Global.team[i].fullNameSize, Endian.Little);
+
+                    if (Global.team[i].isFullName) 
+                    {
+                        bw.WriteUInt8(Global.team[i].fullNameSize);
+                        bw.WriteString(Global.team[i].fullName, Global.team[i].fullNameSize, Endian.Little);
+                    }
 
                     // LocationName
                     bw.WriteBool(Global.team[i].isLocationName);
@@ -372,12 +376,20 @@ namespace RL26_Database_Editor
                     bw.WriteInt32(Global.player[i].id, Endian.Little);
 
                     bw.WriteBool(Global.player[i].isFirstName);
-                    bw.WriteUInt8(Global.player[i].firstNameSize);
-                    bw.WriteString(Global.player[i].firstName, Global.player[i].firstNameSize, Endian.Little);
+
+                    if (Global.player[i].isFirstName) 
+                    {
+                        bw.WriteUInt8(Global.player[i].firstNameSize);
+                        bw.WriteString(Global.player[i].firstName, Global.player[i].firstNameSize, Endian.Little);
+                    }
 
                     bw.WriteBool(Global.player[i].isLastName);
-                    bw.WriteUInt8(Global.player[i].lastNameSize);
-                    bw.WriteString(Global.player[i].lastName, Global.player[i].lastNameSize, Endian.Little);
+
+                    if (Global.player[i].isLastName) 
+                    {
+                        bw.WriteUInt8(Global.player[i].lastNameSize);
+                        bw.WriteString(Global.player[i].lastName, Global.player[i].lastNameSize, Endian.Little);
+                    }
 
                     bw.WriteBool(Global.player[i].isLicensed);
 
@@ -400,8 +412,12 @@ namespace RL26_Database_Editor
                         bw.WriteInt32(Global.player[i].gender, Endian.Little);
 
                     bw.WriteBool(Global.player[i].isJerseyName);
-                    bw.WriteUInt8(Global.player[i].jerseyNameSize);
-                    bw.WriteString(Global.player[i].jerseyName, Global.player[i].jerseyNameSize, Endian.Little);
+
+                    if (Global.player[i].isJerseyName) 
+                    {
+                        bw.WriteUInt8(Global.player[i].jerseyNameSize);
+                        bw.WriteString(Global.player[i].jerseyName, Global.player[i].jerseyNameSize, Endian.Little);
+                    }
 
                     bw.WriteBool(Global.player[i].isJerseyNumber);
 
@@ -409,11 +425,19 @@ namespace RL26_Database_Editor
                         bw.WriteInt32(Global.player[i].jerseyNumber, Endian.Little);
 
                     bw.WriteBool(Global.player[i].dob.isDay);
-                    bw.WriteInt32(Global.player[i].dob.day, Endian.Little);
+
+                    if (Global.player[i].dob.isDay)
+                        bw.WriteInt32(Global.player[i].dob.day, Endian.Little);
+
                     bw.WriteBool(Global.player[i].dob.isMonth);
-                    bw.WriteInt32(Global.player[i].dob.month, Endian.Little);
+
+                    if (Global.player[i].dob.isMonth)
+                        bw.WriteInt32(Global.player[i].dob.month, Endian.Little);
+
                     bw.WriteBool(Global.player[i].dob.isYear);
-                    bw.WriteInt32(Global.player[i].dob.year, Endian.Little);
+
+                    if (Global.player[i].dob.isYear)
+                        bw.WriteInt32(Global.player[i].dob.year, Endian.Little);
 
                     bw.WriteBool(Global.player[i].isAge);
 
@@ -496,9 +520,14 @@ namespace RL26_Database_Editor
                         bw.WriteUInt8(Global.player[i].preferredFoot);
 
                     bw.WriteBool(Global.player[i].appearance.isHeight);
-                    bw.WriteInt32(Global.player[i].appearance.height, Endian.Little);
+
+                    if (Global.player[i].appearance.isHeight)
+                        bw.WriteInt32(Global.player[i].appearance.height, Endian.Little);
+
                     bw.WriteBool(Global.player[i].appearance.isWeight);
-                    bw.WriteInt32(Global.player[i].appearance.weight, Endian.Little);
+
+                    if (Global.player[i].appearance.isWeight)
+                        bw.WriteInt32(Global.player[i].appearance.weight, Endian.Little);
 
                     bw.WriteBool(Global.player[i].attributes.isReputation);
 

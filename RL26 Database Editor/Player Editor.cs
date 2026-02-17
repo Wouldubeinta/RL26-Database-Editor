@@ -284,9 +284,22 @@ namespace RL26_Database_Editor
             Global.player[Player_Index].dob.year = Convert.ToInt32(dateTimePicker1.Value.Year);
 
             Global.player[Player_Index].firstNameSize = Convert.ToByte(First_Name_textBox.Text.Length);
+
+            if (Global.player[Player_Index].firstNameSize == 0)
+                Global.player[Player_Index].isFirstName = false;
+            else
+                Global.player[Player_Index].isFirstName = true;
+
             Global.player[Player_Index].firstName = First_Name_textBox.Text;
+
             Global.player[Player_Index].lastNameSize = Convert.ToByte(Last_Name_textBox.Text.Length);
-            Global.player[Player_Index].lastName = Last_Name_textBox.Text;
+
+            if (Global.player[Player_Index].lastNameSize == 0)
+                Global.player[Player_Index].isLastName = false;
+            else
+                Global.player[Player_Index].isLastName = true;
+
+                Global.player[Player_Index].lastName = Last_Name_textBox.Text;
 
             Global.player[Player_Index].isClub = true;
             Global.player[Player_Index].club = club_comboBox.SelectedIndex;

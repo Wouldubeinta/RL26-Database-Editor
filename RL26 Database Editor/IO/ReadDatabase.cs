@@ -462,10 +462,10 @@ namespace RL26_Database_Editor
                 Imagelist = BitmapImage.genderImages();
 
                 dt.Columns.Add("Gender", typeof(Image));
-                dt.Columns.Add("Player Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
-                dt.Columns.Add("First Name", Type.GetType("System.String"));
-                dt.Columns.Add("Last Name", Type.GetType("System.String"));
+                dt.Columns.Add("Player Index", typeof(int));
+                dt.Columns.Add("Player ID", typeof(int));
+                dt.Columns.Add("First Name", typeof(string));
+                dt.Columns.Add("Last Name", typeof(string));
 
                 br = new Reader(file, FileMode.Open, Endian.Little);
 

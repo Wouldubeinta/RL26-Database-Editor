@@ -14,65 +14,67 @@ namespace RL26_Database_Editor
 
         private void Raw_Team_Database_Load(object sender, EventArgs e)
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.String"));
-                dt.Columns.Add("Id", Type.GetType("System.String"));
-                dt.Columns.Add("Full Name", Type.GetType("System.String"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
-                dt.Columns.Add("Abbreviated Name", Type.GetType("System.String"));
-                dt.Columns.Add("Logo", Type.GetType("System.String"));
-                dt.Columns.Add("Primary R Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Primary G Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Primary B Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Secondary R Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Secondary G Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Secondary B Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Hud Text R Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Hud Text G Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Hud Text B Colour", Type.GetType("System.String"));
-                dt.Columns.Add("Team Type", Type.GetType("System.String"));
-                dt.Columns.Add("Affiliations", Type.GetType("System.String"));
-                dt.Columns.Add("Supporters", Type.GetType("System.String"));
-                dt.Columns.Add("Commentary Team Location Hash", Type.GetType("System.String"));
-                dt.Columns.Add("Commentary Team Mascot Hash", Type.GetType("System.String"));
-                dt.Columns.Add("Alternate Numbering", Type.GetType("System.Boolean"));
-                dt.Columns.Add("Alternate Numbering System", Type.GetType("System.String"));
-                dt.Columns.Add("Frontend Visible", Type.GetType("System.Boolean"));
-                dt.Columns.Add("World Cup Team", Type.GetType("System.Boolean"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Id", typeof(int));
+                dt.Columns.Add("Full Name", typeof(string));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
+                dt.Columns.Add("Abbreviated Name", typeof(string));
+                dt.Columns.Add("Logo", typeof(string));
+                dt.Columns.Add("Primary R Colour", typeof(byte));
+                dt.Columns.Add("Primary G Colour", typeof(byte));
+                dt.Columns.Add("Primary B Colour", typeof(byte));
+                dt.Columns.Add("Secondary R Colour", typeof(byte));
+                dt.Columns.Add("Secondary G Colour", typeof(byte));
+                dt.Columns.Add("Secondary B Colour", typeof(byte));
+                dt.Columns.Add("Hud Text R Colour", typeof(byte));
+                dt.Columns.Add("Hud Text G Colour", typeof(byte));
+                dt.Columns.Add("Hud Text B Colour", typeof(byte));
+                dt.Columns.Add("Team Type", typeof(int));
+                dt.Columns.Add("Affiliations", typeof(int));
+                dt.Columns.Add("Supporters", typeof(int));
+                dt.Columns.Add("Commentary Team Location Hash", typeof(uint));
+                dt.Columns.Add("Commentary Team Mascot Hash", typeof(uint));
+                dt.Columns.Add("Alternate Numbering", typeof(bool));
+                dt.Columns.Add("Alternate Numbering System", typeof(int));
+                dt.Columns.Add("Frontend Visible", typeof(bool));
+                dt.Columns.Add("Default Lineup Category", typeof(int));
+                dt.Columns.Add("World Cup Team", typeof(bool));
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Id"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i;
+                    dt.Rows[dt.Rows.Count - 1]["Id"] = Global.team[i].id;
                     dt.Rows[dt.Rows.Count - 1]["Full Name"] = Global.team[i].fullName;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
                     dt.Rows[dt.Rows.Count - 1]["Abbreviated Name"] = Global.team[i].abbreviatedName;
                     dt.Rows[dt.Rows.Count - 1]["Logo"] = Global.team[i].logo;
-                    dt.Rows[dt.Rows.Count - 1]["Primary R Colour"] = Global.team[i].primaryColour.r.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Primary G Colour"] = Global.team[i].primaryColour.g.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Primary B Colour"] = Global.team[i].primaryColour.b.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Secondary R Colour"] = Global.team[i].secondaryColour.r.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Secondary G Colour"] = Global.team[i].secondaryColour.g.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Secondary B Colour"] = Global.team[i].secondaryColour.b.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Hud Text R Colour"] = Global.team[i].hudTextColour.r.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Hud Text G Colour"] = Global.team[i].hudTextColour.g.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Hud Text B Colour"] = Global.team[i].hudTextColour.b.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Type"] = Global.team[i].clubType.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Affiliations"] = Global.team[i].affiliations.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Supporters"] = Global.team[i].supporters.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Commentary Team Location Hash"] = Global.team[i].commentaryTeamLocationHash.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Commentary Team Mascot Hash"] = Global.team[i].commentaryTeamMascotHash.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Primary R Colour"] = Global.team[i].primaryColour.r;
+                    dt.Rows[dt.Rows.Count - 1]["Primary G Colour"] = Global.team[i].primaryColour.g;
+                    dt.Rows[dt.Rows.Count - 1]["Primary B Colour"] = Global.team[i].primaryColour.b;
+                    dt.Rows[dt.Rows.Count - 1]["Secondary R Colour"] = Global.team[i].secondaryColour.r;
+                    dt.Rows[dt.Rows.Count - 1]["Secondary G Colour"] = Global.team[i].secondaryColour.g;
+                    dt.Rows[dt.Rows.Count - 1]["Secondary B Colour"] = Global.team[i].secondaryColour.b;
+                    dt.Rows[dt.Rows.Count - 1]["Hud Text R Colour"] = Global.team[i].hudTextColour.r;
+                    dt.Rows[dt.Rows.Count - 1]["Hud Text G Colour"] = Global.team[i].hudTextColour.g;
+                    dt.Rows[dt.Rows.Count - 1]["Hud Text B Colour"] = Global.team[i].hudTextColour.b;
+                    dt.Rows[dt.Rows.Count - 1]["Team Type"] = Global.team[i].clubType;
+                    dt.Rows[dt.Rows.Count - 1]["Affiliations"] = Global.team[i].affiliations;
+                    dt.Rows[dt.Rows.Count - 1]["Supporters"] = Global.team[i].supporters;
+                    dt.Rows[dt.Rows.Count - 1]["Commentary Team Location Hash"] = Global.team[i].commentaryTeamLocationHash;
+                    dt.Rows[dt.Rows.Count - 1]["Commentary Team Mascot Hash"] = Global.team[i].commentaryTeamMascotHash;
                     dt.Rows[dt.Rows.Count - 1]["Alternate Numbering"] = Global.team[i].alternateNumbering;
-                    dt.Rows[dt.Rows.Count - 1]["Alternate Numbering System"] = Global.team[i].alternateNumberingSystem.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Alternate Numbering System"] = Global.team[i].alternateNumberingSystem;
                     dt.Rows[dt.Rows.Count - 1]["Frontend Visible"] = Global.team[i].frontendVisible;
+                    dt.Rows[dt.Rows.Count - 1]["Default Lineup Category"] = Global.team[i].defaultLineupCategory;
                     dt.Rows[dt.Rows.Count - 1]["World Cup Team"] = Global.team[i].WorldCupTeam;
                 }
 
@@ -121,10 +123,11 @@ namespace RL26_Database_Editor
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumbering = Convert.ToBoolean(dataGridView1.Rows[i].Cells[20].Value);
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumberingSystem = Convert.ToInt32(dataGridView1.Rows[i].Cells[21].Value);
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].frontendVisible = Convert.ToBoolean(dataGridView1.Rows[i].Cells[22].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].WorldCupTeam = Convert.ToBoolean(dataGridView1.Rows[i].Cells[23].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].defaultLineupCategory = Convert.ToInt32(dataGridView1.Rows[i].Cells[23].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].WorldCupTeam = Convert.ToBoolean(dataGridView1.Rows[i].Cells[24].Value);
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
-                toolStripProgressBar1.Value = (i);
+                toolStripProgressBar1.Value = i;
                 toolStripProgressBar1.PerformStep();
             }
 

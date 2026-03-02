@@ -5,7 +5,7 @@
     /// </summary>
     /// <remarks>
     ///   RL26 Database Editor. Written by Wouldubeinta
-    ///   Copyright (C) 2025 Wouldy Mods.
+    ///   Copyright (C) 2026 Wouldy Mods.
     ///   
     ///   This program is free software; you can redistribute it and/or
     ///   modify it under the terms of the GNU General Public License
@@ -31,15 +31,18 @@
     {
         public const int MAX_TOTAL_TEAMS = 300;
 
+        public const int MIN_PLAYERS_PER_TEAM_ROLES = 4;
         public const int MIN_PLAYERS_PER_TEAM = 17;
+        public const int MIN_PLAYERS_PER_TEAM_NINES = 14;
+        public const int MIN_PLAYERS_PER_TEAM_NRL2026 = 19;
         public const int MAX_PLAYERS_PER_TEAM = 64;
         public const int MAX_TOTAL_PLAYERS = MAX_TOTAL_TEAMS * MAX_PLAYERS_PER_TEAM;
 
         private static TeamData.Team[] _team = new TeamData.Team[MAX_TOTAL_TEAMS];
         private static PlayerData.Player[] _player = new PlayerData.Player[MAX_TOTAL_PLAYERS];
 
-        private static byte[] _TeamHeader = new byte[3205];
-        private static byte[] _PlayerHeader = new byte[2678];
+        private static byte[] _TeamHeader = new byte[3801];
+        private static byte[] _PlayerHeader = new byte[2795];
 
         private static string _version = string.Empty;
         private static string _currentPath = string.Empty;

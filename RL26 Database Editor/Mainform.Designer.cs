@@ -112,7 +112,7 @@
             // 
             saveDatabaseToolStripMenuItem.Image = (Image)resources.GetObject("saveDatabaseToolStripMenuItem.Image");
             saveDatabaseToolStripMenuItem.Name = "saveDatabaseToolStripMenuItem";
-            saveDatabaseToolStripMenuItem.Size = new Size(178, 22);
+            saveDatabaseToolStripMenuItem.Size = new Size(180, 22);
             saveDatabaseToolStripMenuItem.Text = "Save Database";
             saveDatabaseToolStripMenuItem.Click += saveDatabaseToolStripMenuItem_Click;
             // 
@@ -251,7 +251,7 @@
             // toolStripStatusLabel2
             // 
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(987, 19);
+            toolStripStatusLabel2.Size = new Size(1018, 19);
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -328,8 +328,9 @@
             // 
             // exportTeamListToolStripMenuItem
             // 
+            exportTeamListToolStripMenuItem.Image = Properties.Resources.list_16;
             exportTeamListToolStripMenuItem.Name = "exportTeamListToolStripMenuItem";
-            exportTeamListToolStripMenuItem.Size = new Size(160, 22);
+            exportTeamListToolStripMenuItem.Size = new Size(180, 22);
             exportTeamListToolStripMenuItem.Text = "Export Team List";
             exportTeamListToolStripMenuItem.Click += exportTeamListToolStripMenuItem_Click;
             // 
@@ -342,6 +343,7 @@
             // 
             // exportPlayerListToolStripMenuItem
             // 
+            exportPlayerListToolStripMenuItem.Image = Properties.Resources.list_16;
             exportPlayerListToolStripMenuItem.Name = "exportPlayerListToolStripMenuItem";
             exportPlayerListToolStripMenuItem.Size = new Size(163, 22);
             exportPlayerListToolStripMenuItem.Text = "Export Player List";

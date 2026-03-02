@@ -14,43 +14,43 @@ namespace RL26_Database_Editor
 
         private void Raw_Team_Lineup_Load(object sender, EventArgs e)
         {
-            DataTable dt = null;
-            string[] Positions = new string[17] { "1 - Fullback", "5 - LWing", "4 - LCentre", "3 - RCentre", "2 - RWing", "6 - Five Eight", "7 - Halfback", "8 - Prop", "9 - Hooker", "10 - FrontRow", "11 - Second Row 1", "12 - Second Row 2", "13 - Lock", "14 - Int1", "15 - Int2", "16 - Int3", "17 - Int4" };
+            DataTable? dt = null;
+            string[] Positions = ["1 - Fullback", "5 - LWing", "4 - LCentre", "3 - RCentre", "2 - RWing", "6 - Five Eight", "7 - Halfback", "8 - Prop", "9 - Hooker", "10 - FrontRow", "11 - Second Row 1", "12 - Second Row 2", "13 - Lock", "14 - Sub 1", "15 - Sub 2", "16 - Sub 3", "17 - Sub 4", "18 - Sub 5", "19 - Sub 6"];
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.String"));
-                dt.Columns.Add("Team Id", Type.GetType("System.String"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
-                dt.Columns.Add("Team Captain Id", Type.GetType("System.String"));
-                dt.Columns.Add("Team GoalKicker Id", Type.GetType("System.String"));
-                dt.Columns.Add("Team PlayMaker1 Id", Type.GetType("System.String"));
-                dt.Columns.Add("Team PlayMaker2 Id", Type.GetType("System.String"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Team Id", typeof(int));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
+                dt.Columns.Add("Team Captain Id", typeof(int));
+                dt.Columns.Add("Team GoalKicker Id", typeof(int));
+                dt.Columns.Add("Team PlayMaker1 Id", typeof(int));
+                dt.Columns.Add("Team PlayMaker2 Id", typeof(int));
 
-                for (int i = 0; i < 17; i++)
+                for (int i = 0; i < Global.MIN_PLAYERS_PER_TEAM_NRL2026; i++)
                 {
-                    dt.Columns.Add(Positions[i], Type.GetType("System.String"));
+                    dt.Columns.Add(Positions[i], typeof(int));
                 }
 
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i;
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
-                    dt.Rows[dt.Rows.Count - 1]["Team Captain Id"] = Global.team[i].roles[0].roleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team GoalKicker Id"] = Global.team[i].roles[1].roleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker1 Id"] = Global.team[i].roles[2].roleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker2 Id"] = Global.team[i].roles[3].roleId.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team Captain Id"] = Global.team[i].rolesNew[0].roleId;
+                    dt.Rows[dt.Rows.Count - 1]["Team GoalKicker Id"] = Global.team[i].rolesNew[1].roleId;
+                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker1 Id"] = Global.team[i].rolesNew[2].roleId;
+                    dt.Rows[dt.Rows.Count - 1]["Team PlayMaker2 Id"] = Global.team[i].rolesNew[3].roleId;
 
-                    for (int j = 0; j < 17; j++)
+                    for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NRL2026; j++)
                     {
-                        dt.Rows[dt.Rows.Count - 1][Positions[j]] = Global.team[i].lineups[j].lineupId.ToString();
+                        dt.Rows[dt.Rows.Count - 1][Positions[j]] = Global.team[i].lineupsNew[j].lineupId;
                     }
                 }
 
@@ -73,36 +73,58 @@ namespace RL26_Database_Editor
 
             for (int i = 0; i < Global.team_amount; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
                 {
-                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].roles[j].isRoleId = false;
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].rolesOld[j].isRoleId = false;
                 }
 
-                for (int j = 0; j < 17; j++)
+                for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM; j++)
                 {
-                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineups[j].isLineupId = false;
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineupsOld[j].isLineupId = false;
+                }
+
+                for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                {
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].rolesNew[j].isRoleId = false;
+                }
+
+                for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NRL2026; j++)
+                {
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineupsNew[j].isLineupId = false;
                 }
             }
 
             for (int i = 0; i < Global.team_amount; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
                 {
-                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].roles[j].isRoleId = true;
-                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].roles[j].roleId = Convert.ToInt32(dataGridView1.Rows[i].Cells[j + 4].Value);
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].rolesOld[j].isRoleId = true;
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].rolesOld[j].roleId = Convert.ToInt32(dataGridView1.Rows[i].Cells[j + 4].Value);
+
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].rolesNew[j].isRoleId = true;
+                    Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].rolesNew[j].roleId = Convert.ToInt32(dataGridView1.Rows[i].Cells[j + 4].Value);
                 }
 
-                for (int j = 0; j < 17; j++)
+                for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM; j++)
                 {
                     if (!(dataGridView1.Rows[i].Cells[j + 8].Value is DBNull))
                     {
-                        Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineups[j].isLineupId = true;
-                        Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineups[j].lineupId = Convert.ToInt32(dataGridView1.Rows[i].Cells[j + 8].Value);
+                        Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineupsOld[j].isLineupId = true;
+                        Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineupsOld[j].lineupId = Convert.ToInt32(dataGridView1.Rows[i].Cells[j + 8].Value);
+                    }
+                }
+
+                for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NRL2026; j++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[j + 8].Value is DBNull))
+                    {
+                        Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineupsNew[j].isLineupId = true;
+                        Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].lineupsNew[j].lineupId = Convert.ToInt32(dataGridView1.Rows[i].Cells[j + 8].Value);
                     }
                 }
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
-                toolStripProgressBar1.Value = (i);
+                toolStripProgressBar1.Value = i;
                 toolStripProgressBar1.PerformStep();
             }
 

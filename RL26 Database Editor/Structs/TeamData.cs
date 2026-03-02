@@ -5,7 +5,7 @@
     /// </summary>
     /// <remarks>
     ///   RL26 Database Editor. Written by Wouldubeinta
-    ///   Copyright (C) 2025 Wouldy Mods.
+    ///   Copyright (C) 2026 Wouldy Mods.
     ///   
     ///   This program is free software; you can redistribute it and/or
     ///   modify it under the terms of the GNU General Public License
@@ -51,6 +51,8 @@
             public string abbreviatedName;
             public bool isFrontendVisible;
             public bool frontendVisible;
+            public bool isDefaultLineupCategory;
+            public int defaultLineupCategory;
             public bool isJerseyName;
             public byte jerseyNameSize;
             public string jerseyName;
@@ -92,14 +94,17 @@
             public bool isPlayerRoster;
             public byte playerAmount;
             public TeamPlayers[] players;
-            public bool isStandardMatch;
-            public Roles[] roles;
-            public Lineups[] lineups;
-            public bool isNines;
+            public bool isLeagueMatch;
+            public bool isNRL2026Match;
+            public Roles[] rolesOld;
+            public Lineups[] lineupsOld;
+            public Roles[] rolesNew;
+            public Lineups[] lineupsNew;
+            public bool isNinesMatch;
             public NineRoles[] nineRoles;
             public NineLineups[] nineLineups;
-            public int dataSize;
-            public byte[] data;
+            public int jerseyDataSize;
+            public byte[] jerseyData;
             public short jerseyAmount;
             public Jerseys[] jerseys;
             public byte[] padding2;

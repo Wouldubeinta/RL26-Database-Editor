@@ -1230,6 +1230,7 @@ namespace RL26_Database_Editor
             // 
             // addPlayerToolStripMenuItem
             // 
+            addPlayerToolStripMenuItem.Image = Properties.Resources.add_16;
             addPlayerToolStripMenuItem.Name = "addPlayerToolStripMenuItem";
             addPlayerToolStripMenuItem.ShortcutKeys = Keys.Insert;
             addPlayerToolStripMenuItem.Size = new Size(200, 22);
@@ -1238,6 +1239,7 @@ namespace RL26_Database_Editor
             // 
             // deletePlayerToolStripMenuItem
             // 
+            deletePlayerToolStripMenuItem.Image = Properties.Resources.remove_16;
             deletePlayerToolStripMenuItem.Name = "deletePlayerToolStripMenuItem";
             deletePlayerToolStripMenuItem.ShortcutKeys = Keys.Delete;
             deletePlayerToolStripMenuItem.Size = new Size(200, 22);
@@ -1246,6 +1248,7 @@ namespace RL26_Database_Editor
             // 
             // sortAZToolStripMenuItem
             // 
+            sortAZToolStripMenuItem.Image = Properties.Resources.sortAZ_16;
             sortAZToolStripMenuItem.Name = "sortAZToolStripMenuItem";
             sortAZToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
             sortAZToolStripMenuItem.Size = new Size(200, 22);
@@ -1254,6 +1257,7 @@ namespace RL26_Database_Editor
             // 
             // teamPlayerListToolStripMenuItem
             // 
+            teamPlayerListToolStripMenuItem.Image = Properties.Resources.list_16;
             teamPlayerListToolStripMenuItem.Name = "teamPlayerListToolStripMenuItem";
             teamPlayerListToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
             teamPlayerListToolStripMenuItem.Size = new Size(200, 22);
@@ -1270,6 +1274,7 @@ namespace RL26_Database_Editor
             // 
             // teamRolesPlayerListToolStripMenuItem
             // 
+            teamRolesPlayerListToolStripMenuItem.Image = Properties.Resources.list_16;
             teamRolesPlayerListToolStripMenuItem.Name = "teamRolesPlayerListToolStripMenuItem";
             teamRolesPlayerListToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.R;
             teamRolesPlayerListToolStripMenuItem.Size = new Size(196, 22);
@@ -1284,6 +1289,7 @@ namespace RL26_Database_Editor
             // 
             // Lineup_toolStripMenuItem
             // 
+            Lineup_toolStripMenuItem.Image = Properties.Resources.list_16;
             Lineup_toolStripMenuItem.Name = "Lineup_toolStripMenuItem";
             Lineup_toolStripMenuItem.ShortcutKeys = Keys.Control | Keys.L;
             Lineup_toolStripMenuItem.Size = new Size(203, 22);
@@ -1299,6 +1305,7 @@ namespace RL26_Database_Editor
             // 
             // NinesLineup_toolStripMenuItem
             // 
+            NinesLineup_toolStripMenuItem.Image = Properties.Resources.list_16;
             NinesLineup_toolStripMenuItem.Name = "NinesLineup_toolStripMenuItem";
             NinesLineup_toolStripMenuItem.Size = new Size(196, 22);
             NinesLineup_toolStripMenuItem.Text = "Team Nines Lineup List";
@@ -1312,6 +1319,7 @@ namespace RL26_Database_Editor
             // 
             // NinesRoles_toolStripMenuItem
             // 
+            NinesRoles_toolStripMenuItem.Image = Properties.Resources.list_16;
             NinesRoles_toolStripMenuItem.Name = "NinesRoles_toolStripMenuItem";
             NinesRoles_toolStripMenuItem.Size = new Size(188, 22);
             NinesRoles_toolStripMenuItem.Text = "Team Nines Roles List";
@@ -1339,6 +1347,7 @@ namespace RL26_Database_Editor
             // 
             // addTeam1ToolStripMenuItem
             // 
+            addTeam1ToolStripMenuItem.Image = Properties.Resources.add_16;
             addTeam1ToolStripMenuItem.Name = "addTeam1ToolStripMenuItem";
             addTeam1ToolStripMenuItem.Size = new Size(190, 22);
             addTeam1ToolStripMenuItem.Text = "Add Team";
@@ -1346,6 +1355,7 @@ namespace RL26_Database_Editor
             // 
             // deleteTeam1ToolStripMenuItem
             // 
+            deleteTeam1ToolStripMenuItem.Image = Properties.Resources.remove_16;
             deleteTeam1ToolStripMenuItem.Name = "deleteTeam1ToolStripMenuItem";
             deleteTeam1ToolStripMenuItem.Size = new Size(190, 22);
             deleteTeam1ToolStripMenuItem.Text = "Delete Team";
@@ -1353,6 +1363,7 @@ namespace RL26_Database_Editor
             // 
             // teamFeederClubListToolStripMenuItem
             // 
+            teamFeederClubListToolStripMenuItem.Image = Properties.Resources.list_16;
             teamFeederClubListToolStripMenuItem.Name = "teamFeederClubListToolStripMenuItem";
             teamFeederClubListToolStripMenuItem.Size = new Size(190, 22);
             teamFeederClubListToolStripMenuItem.Text = "Team Feeder Club List";
@@ -1362,10 +1373,11 @@ namespace RL26_Database_Editor
             // 
             FedFromClubs_contextMenuStrip.Items.AddRange(new ToolStripItem[] { addTeam2ToolStripMenuItem, deleteTeam2ToolStripMenuItem, teamFedFromClubListToolStripMenuItem });
             FedFromClubs_contextMenuStrip.Name = "FedFromClubs_contextMenuStrip";
-            FedFromClubs_contextMenuStrip.Size = new Size(206, 70);
+            FedFromClubs_contextMenuStrip.Size = new Size(206, 92);
             // 
             // addTeam2ToolStripMenuItem
             // 
+            addTeam2ToolStripMenuItem.Image = Properties.Resources.add_16;
             addTeam2ToolStripMenuItem.Name = "addTeam2ToolStripMenuItem";
             addTeam2ToolStripMenuItem.Size = new Size(205, 22);
             addTeam2ToolStripMenuItem.Text = "Add Team";
@@ -1373,6 +1385,7 @@ namespace RL26_Database_Editor
             // 
             // deleteTeam2ToolStripMenuItem
             // 
+            deleteTeam2ToolStripMenuItem.Image = Properties.Resources.remove_16;
             deleteTeam2ToolStripMenuItem.Name = "deleteTeam2ToolStripMenuItem";
             deleteTeam2ToolStripMenuItem.Size = new Size(205, 22);
             deleteTeam2ToolStripMenuItem.Text = "Delete Team";
@@ -1380,6 +1393,7 @@ namespace RL26_Database_Editor
             // 
             // teamFedFromClubListToolStripMenuItem
             // 
+            teamFedFromClubListToolStripMenuItem.Image = Properties.Resources.list_16;
             teamFedFromClubListToolStripMenuItem.Name = "teamFedFromClubListToolStripMenuItem";
             teamFedFromClubListToolStripMenuItem.Size = new Size(205, 22);
             teamFedFromClubListToolStripMenuItem.Text = "Team Fed From Club List";

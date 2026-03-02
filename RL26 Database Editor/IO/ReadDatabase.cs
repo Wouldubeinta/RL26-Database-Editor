@@ -8,7 +8,7 @@ namespace RL26_Database_Editor
     /// </summary>
     /// <remarks>
     ///   RL26 Database Editor. Written by Wouldubeinta
-    ///   Copyright (C) 2025 Wouldy Mods.
+    ///   Copyright (C) 2026 Wouldy Mods.
     ///   
     ///   This program is free software; you can redistribute it and/or
     ///   modify it under the terms of the GNU General Public License
@@ -44,57 +44,100 @@ namespace RL26_Database_Editor
                 Imagelist = BitmapImage.genderImages();
 
                 dt.Columns.Add("Gender", typeof(Image));
-                dt.Columns.Add("Team Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Team ID", Type.GetType("System.Int32"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
+                dt.Columns.Add("Team Index", typeof(int));
+                dt.Columns.Add("Team ID", typeof(int));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
 
                 br = new Reader(file, FileMode.Open, Endian.Little);
 
-                //Global.TeamHeader = br.ReadBytes(3361, Endian.Little); // old db
-                Global.TeamHeader = br.ReadBytes(3304, Endian.Little);
+                Global.TeamHeader = br.ReadBytes(3801, Endian.Little);
                 Global.team_amount = br.ReadInt32(Endian.Little);
-
-                //Writer writer = new(Global.currentPath + @"\jersey_database", Endian.Little);
-                //writer.WriteInt32(0); //count
-                //int count = 0;
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     Global.team[i].identifier = br.ReadInt32(Endian.Little);
+
                     Global.team[i].isTeamEnabled = br.ReadBoolean();
+
                     Global.team[i].isId = br.ReadBoolean();
-                    Global.team[i].id = br.ReadInt32(Endian.Little);
+                    Global.team[i].id = 0;
+
+                    if (Global.team[i].isId)
+                        Global.team[i].id = br.ReadInt32(Endian.Little);
 
                     Global.team[i].isFullName = br.ReadBoolean();
-                    Global.team[i].fullNameSize = br.ReadByte();
-                    Global.team[i].fullName = br.ReadString(Global.team[i].fullNameSize);
+                    Global.team[i].fullNameSize = 0;
+                    Global.team[i].fullName = string.Empty;
+
+                    if (Global.team[i].isFullName) 
+                    {
+                        Global.team[i].fullNameSize = br.ReadByte();
+                        Global.team[i].fullName = br.ReadString(Global.team[i].fullNameSize);
+                    }
 
                     Global.team[i].isLocationName = br.ReadBoolean();
-                    Global.team[i].locationNameSize = br.ReadByte();
-                    Global.team[i].locationName = br.ReadString(Global.team[i].locationNameSize);
+                    Global.team[i].locationNameSize = 0;
+                    Global.team[i].locationName = string.Empty;
+
+                    if (Global.team[i].isLocationName) 
+                    {
+                        Global.team[i].locationNameSize = br.ReadByte();
+                        Global.team[i].locationName = br.ReadString(Global.team[i].locationNameSize);
+                    }
 
                     Global.team[i].isClubName = br.ReadBoolean();
-                    Global.team[i].clubNameSize = br.ReadByte();
-                    Global.team[i].clubName = br.ReadString(Global.team[i].clubNameSize);
+                    Global.team[i].clubNameSize = 0;
+                    Global.team[i].clubName = string.Empty;
+
+                    if (Global.team[i].isClubName) 
+                    {
+                        Global.team[i].clubNameSize = br.ReadByte();
+                        Global.team[i].clubName = br.ReadString(Global.team[i].clubNameSize);
+                    }
 
                     Global.team[i].isAbbreviatedName = br.ReadBoolean();
-                    Global.team[i].abbreviatedNameSize = br.ReadByte();
-                    Global.team[i].abbreviatedName = br.ReadString(Global.team[i].abbreviatedNameSize);
+                    Global.team[i].abbreviatedNameSize = 0;
+                    Global.team[i].abbreviatedName = string.Empty;
+
+                    if (Global.team[i].isAbbreviatedName) 
+                    {
+                        Global.team[i].abbreviatedNameSize = br.ReadByte();
+                        Global.team[i].abbreviatedName = br.ReadString(Global.team[i].abbreviatedNameSize);
+                    }
 
                     Global.team[i].isFrontendVisible = br.ReadBoolean();
-                    Global.team[i].frontendVisible = br.ReadBoolean();
+                    Global.team[i].frontendVisible = false;
+
+                    if (Global.team[i].isFrontendVisible)
+                        Global.team[i].frontendVisible = br.ReadBoolean();
+
+                    Global.team[i].isDefaultLineupCategory = br.ReadBoolean();
+                    Global.team[i].defaultLineupCategory = 0;
+
+                    if (Global.team[i].isDefaultLineupCategory)
+                        Global.team[i].defaultLineupCategory = br.ReadInt32(Endian.Little);
 
                     Global.team[i].isJerseyName = br.ReadBoolean(); // ?
 
                     Global.team[i].isGender = br.ReadBoolean();
-                    Global.team[i].gender = br.ReadInt32(Endian.Little);
+                    Global.team[i].gender = 0;
+
+                    if (Global.team[i].isGender)
+                        Global.team[i].gender = br.ReadInt32(Endian.Little);
 
                     Global.team[i].islogo = br.ReadBoolean();
-                    Global.team[i].logoSize = br.ReadByte();
-                    Global.team[i].logo = br.ReadString(Global.team[i].logoSize);
+                    Global.team[i].logoSize = 0;
+                    Global.team[i].logo = string.Empty;
+
+                    if (Global.team[i].islogo) 
+                    {
+                        Global.team[i].logoSize = br.ReadByte();
+                        Global.team[i].logo = br.ReadString(Global.team[i].logoSize);
+                    }
 
                     Global.team[i].isWcLogo = br.ReadBoolean();
+
                     Global.team[i].wcLogoSize = 0;
                     Global.team[i].wcLogo = string.Empty;
 
@@ -105,28 +148,58 @@ namespace RL26_Database_Editor
                     }
 
                     Global.team[i].isSupporters = br.ReadBoolean();
-                    Global.team[i].supporters = br.ReadInt32(Endian.Little);
+                    Global.team[i].supporters = 0;
+
+                    if (Global.team[i].isSupporters)
+                        Global.team[i].supporters = br.ReadInt32(Endian.Little);
 
                     Global.team[i].isCommentaryTeamLocationHash = br.ReadBoolean();
-                    Global.team[i].commentaryTeamLocationHash = br.ReadUInt32(Endian.Little);
+                    Global.team[i].commentaryTeamLocationHash = 0;
+
+                    if (Global.team[i].isCommentaryTeamLocationHash)
+                        Global.team[i].commentaryTeamLocationHash = br.ReadUInt32(Endian.Little);
 
                     Global.team[i].isCommentaryTeamMascotHash = br.ReadBoolean();
-                    Global.team[i].commentaryTeamMascotHash = br.ReadUInt32(Endian.Little);
+                    Global.team[i].commentaryTeamMascotHash = 0;
+
+                    if (Global.team[i].isCommentaryTeamMascotHash)
+                        Global.team[i].commentaryTeamMascotHash = br.ReadUInt32(Endian.Little);
 
                     Global.team[i].primaryColour.isRgb = br.ReadBoolean();
-                    Global.team[i].primaryColour.r = br.ReadByte();
-                    Global.team[i].primaryColour.g = br.ReadByte();
-                    Global.team[i].primaryColour.b = br.ReadByte();
+                    Global.team[i].primaryColour.r = 0;
+                    Global.team[i].primaryColour.g = 0;
+                    Global.team[i].primaryColour.b = 0;
+
+                    if (Global.team[i].primaryColour.isRgb) 
+                    {
+                        Global.team[i].primaryColour.r = br.ReadByte();
+                        Global.team[i].primaryColour.g = br.ReadByte();
+                        Global.team[i].primaryColour.b = br.ReadByte();
+                    }
 
                     Global.team[i].secondaryColour.isRgb = br.ReadBoolean();
-                    Global.team[i].secondaryColour.r = br.ReadByte();
-                    Global.team[i].secondaryColour.g = br.ReadByte();
-                    Global.team[i].secondaryColour.b = br.ReadByte();
+                    Global.team[i].secondaryColour.r = 0;
+                    Global.team[i].secondaryColour.g = 0;
+                    Global.team[i].secondaryColour.b = 0;
+
+                    if (Global.team[i].secondaryColour.isRgb) 
+                    {
+                        Global.team[i].secondaryColour.r = br.ReadByte();
+                        Global.team[i].secondaryColour.g = br.ReadByte();
+                        Global.team[i].secondaryColour.b = br.ReadByte();
+                    }
 
                     Global.team[i].hudTextColour.isRgb = br.ReadBoolean();
-                    Global.team[i].hudTextColour.r = br.ReadByte();
-                    Global.team[i].hudTextColour.g = br.ReadByte();
-                    Global.team[i].hudTextColour.b = br.ReadByte();
+                    Global.team[i].hudTextColour.r = 0;
+                    Global.team[i].hudTextColour.g = 0;
+                    Global.team[i].hudTextColour.b = 0;
+
+                    if (Global.team[i].hudTextColour.isRgb) 
+                    {
+                        Global.team[i].hudTextColour.r = br.ReadByte();
+                        Global.team[i].hudTextColour.g = br.ReadByte();
+                        Global.team[i].hudTextColour.b = br.ReadByte();
+                    }
 
                     Global.team[i].isClubType = br.ReadBoolean();
                     Global.team[i].clubType = 0;
@@ -147,7 +220,10 @@ namespace RL26_Database_Editor
                         Global.team[i].WorldCupTeam = br.ReadBoolean();
 
                     Global.team[i].isStadiumAmount = br.ReadBoolean();
-                    Global.team[i].stadiumAmount = br.ReadInt32(Endian.Little);
+                    Global.team[i].stadiumAmount = 0;
+
+                    if (Global.team[i].isStadiumAmount)
+                        Global.team[i].stadiumAmount = br.ReadInt32(Endian.Little);
 
                     Global.team[i].stadium = new TeamData.Stadium[3];
 
@@ -253,97 +329,152 @@ namespace RL26_Database_Editor
                     Global.team[i].isPlayerRoster = br.ReadBoolean();
 
                     Global.team[i].players = new TeamData.TeamPlayers[Global.MAX_PLAYERS_PER_TEAM]; // 64 players max.
-                    byte team_players_amount = 0;
+                    Global.team[i].playerAmount = 0;
 
-                    for (int j = 0; j < Global.MAX_PLAYERS_PER_TEAM; j++) // 64 players max.
+                    if (Global.team[i].isPlayerRoster) 
                     {
-                        Global.team[i].players[j].isPlayerId = br.ReadBoolean();
-                        Global.team[i].players[j].playerId = 1;
-
-                        if (Global.team[i].players[j].isPlayerId)
+                        for (int j = 0; j < Global.MAX_PLAYERS_PER_TEAM; j++) // 64 players max.
                         {
-                            team_players_amount++;
-                            Global.team[i].players[j].playerId = br.ReadInt32(Endian.Little);
+                            Global.team[i].players[j].isPlayerId = br.ReadBoolean();
+                            Global.team[i].players[j].playerId = 1;
+
+                            if (Global.team[i].players[j].isPlayerId)
+                            {
+                                Global.team[i].playerAmount++;
+                                Global.team[i].players[j].playerId = br.ReadInt32(Endian.Little);
+                            }
                         }
                     }
 
-                    Global.team[i].playerAmount = team_players_amount;
+                    Global.team[i].isLeagueMatch = br.ReadBoolean();
+                    Global.team[i].rolesOld = new TeamData.Roles[Global.MIN_PLAYERS_PER_TEAM_ROLES];
+                    Global.team[i].lineupsOld = new TeamData.Lineups[Global.MIN_PLAYERS_PER_TEAM]; // 17 players
 
-                    Global.team[i].isStandardMatch = br.ReadBoolean();
-                    Global.team[i].roles = new TeamData.Roles[4];
-
-                    for (int j = 0; j < 4; j++)
+                    if (Global.team[i].isLeagueMatch) 
                     {
-                        Global.team[i].roles[j].isRoleId = br.ReadBoolean();
-                        Global.team[i].roles[j].roleId = 1;
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                        {
+                            Global.team[i].rolesOld[j].isRoleId = br.ReadBoolean();
+                            Global.team[i].rolesOld[j].roleId = 1;
 
-                        if (Global.team[i].roles[j].isRoleId)
-                            Global.team[i].roles[j].roleId = br.ReadInt32(Endian.Little);
+                            if (Global.team[i].rolesOld[j].isRoleId)
+                                Global.team[i].rolesOld[j].roleId = br.ReadInt32(Endian.Little);
+                        }
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM; j++)
+                        {
+                            Global.team[i].lineupsOld[j].isLineupId = br.ReadBoolean();
+                            Global.team[i].lineupsOld[j].lineupId = 0;
+
+                            if (Global.team[i].lineupsOld[j].isLineupId)
+                            {
+                                Global.team[i].lineupsOld[j].lineupId = br.ReadInt32(Endian.Little);
+                                Global.team[i].lineupsOld[j].shirtNumber = br.ReadByte(); // added to new db
+                            }
+                        }
+
+                        // Swap Wingers
+                        int LWingId = Global.team[i].lineupsOld[1].lineupId;
+                        byte LWingShirtNumber = Global.team[i].lineupsOld[1].shirtNumber;
+                        int RWingId = Global.team[i].lineupsOld[4].lineupId;
+                        byte RWingShirtNumber = Global.team[i].lineupsOld[4].shirtNumber;
+                        Global.team[i].lineupsOld[1].lineupId = RWingId;
+                        Global.team[i].lineupsOld[1].shirtNumber = RWingShirtNumber;
+                        Global.team[i].lineupsOld[4].lineupId = LWingId;
+                        Global.team[i].lineupsOld[4].shirtNumber = LWingShirtNumber;
+
+                        // Swap Centre's
+                        int LCentre = Global.team[i].lineupsOld[2].lineupId;
+                        byte LCentreShirtNumber = Global.team[i].lineupsOld[2].shirtNumber;
+                        int RCentre = Global.team[i].lineupsOld[3].lineupId;
+                        byte RCentreShirtNumber = Global.team[i].lineupsOld[3].shirtNumber;
+                        Global.team[i].lineupsOld[2].lineupId = RCentre;
+                        Global.team[i].lineupsOld[2].shirtNumber = RCentreShirtNumber;
+                        Global.team[i].lineupsOld[3].lineupId = LCentre;
+                        Global.team[i].lineupsOld[3].shirtNumber = LCentreShirtNumber;
                     }
 
-                    Global.team[i].lineups = new TeamData.Lineups[Global.MIN_PLAYERS_PER_TEAM]; // new db 17 players, old db 20 players
+                    Global.team[i].isNRL2026Match = br.ReadBoolean();
+                    Global.team[i].rolesNew = new TeamData.Roles[Global.MIN_PLAYERS_PER_TEAM_ROLES];
+                    Global.team[i].lineupsNew = new TeamData.Lineups[Global.MIN_PLAYERS_PER_TEAM_NRL2026]; // 19 players NRL 2026 lineups
 
-                    for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM; j++)
+                    if (Global.team[i].isNRL2026Match)
                     {
-                        Global.team[i].lineups[j].isLineupId = br.ReadBoolean();
-                        Global.team[i].lineups[j].lineupId = 0;
-
-                        if (Global.team[i].lineups[j].isLineupId)
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
                         {
-                            Global.team[i].lineups[j].lineupId = br.ReadInt32(Endian.Little);
-                            Global.team[i].lineups[j].shirtNumber = br.ReadByte(); // added to new db
+                            Global.team[i].rolesNew[j].isRoleId = br.ReadBoolean();
+                            Global.team[i].rolesNew[j].roleId = 1;
+
+                            if (Global.team[i].rolesNew[j].isRoleId)
+                                Global.team[i].rolesNew[j].roleId = br.ReadInt32(Endian.Little);
+                        }
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NRL2026; j++)
+                        {
+                            Global.team[i].lineupsNew[j].isLineupId = br.ReadBoolean();
+                            Global.team[i].lineupsNew[j].lineupId = 0;
+
+                            if (Global.team[i].lineupsNew[j].isLineupId)
+                            {
+                                Global.team[i].lineupsNew[j].lineupId = br.ReadInt32(Endian.Little);
+                                Global.team[i].lineupsNew[j].shirtNumber = br.ReadByte(); // added to new db
+                            }
+                        }
+
+                        // Swap Wingers
+                        int LWingId = Global.team[i].lineupsNew[1].lineupId;
+                        byte LWingShirtNumber = Global.team[i].lineupsNew[1].shirtNumber;
+                        int RWingId = Global.team[i].lineupsNew[4].lineupId;
+                        byte RWingShirtNumber = Global.team[i].lineupsNew[4].shirtNumber;
+                        Global.team[i].lineupsNew[1].lineupId = RWingId;
+                        Global.team[i].lineupsNew[1].shirtNumber = RWingShirtNumber;
+                        Global.team[i].lineupsNew[4].lineupId = LWingId;
+                        Global.team[i].lineupsNew[4].shirtNumber = LWingShirtNumber;
+
+                        // Swap Centre's
+                        int LCentre = Global.team[i].lineupsNew[2].lineupId;
+                        byte LCentreShirtNumber = Global.team[i].lineupsNew[2].shirtNumber;
+                        int RCentre = Global.team[i].lineupsNew[3].lineupId;
+                        byte RCentreShirtNumber = Global.team[i].lineupsNew[3].shirtNumber;
+                        Global.team[i].lineupsNew[2].lineupId = RCentre;
+                        Global.team[i].lineupsNew[2].shirtNumber = RCentreShirtNumber;
+                        Global.team[i].lineupsNew[3].lineupId = LCentre;
+                        Global.team[i].lineupsNew[3].shirtNumber = LCentreShirtNumber;
+                    }
+
+                    Global.team[i].isNinesMatch = br.ReadBoolean();
+                    Global.team[i].nineRoles = new TeamData.NineRoles[Global.MIN_PLAYERS_PER_TEAM_ROLES];
+                    Global.team[i].nineLineups = new TeamData.NineLineups[Global.MIN_PLAYERS_PER_TEAM_NINES];
+
+                    if (Global.team[i].isNinesMatch) 
+                    {
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                        {
+                            Global.team[i].nineRoles[j].isNinesRoleId = br.ReadBoolean();
+                            Global.team[i].nineRoles[j].nineRoleId = 0;
+
+                            if (Global.team[i].nineRoles[j].isNinesRoleId)
+                                Global.team[i].nineRoles[j].nineRoleId = br.ReadInt32(Endian.Little);
+                        }
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NINES; j++)
+                        {
+                            Global.team[i].nineLineups[j].isNineLineupId = br.ReadBoolean();
+                            Global.team[i].nineLineups[j].nineLineupId = 1;
+
+                            if (Global.team[i].nineLineups[j].isNineLineupId)
+                                Global.team[i].nineLineups[j].nineLineupId = br.ReadInt32(Endian.Little);
                         }
                     }
 
-                    // Swap Wingers
-                    int LWingId = Global.team[i].lineups[1].lineupId;
-                    byte LWingShirtNumber = Global.team[i].lineups[1].shirtNumber;
-                    int RWingId = Global.team[i].lineups[4].lineupId;
-                    byte RWingShirtNumber = Global.team[i].lineups[4].shirtNumber;
-                    Global.team[i].lineups[1].lineupId = RWingId;
-                    Global.team[i].lineups[1].shirtNumber = RWingShirtNumber;
-                    Global.team[i].lineups[4].lineupId = LWingId;
-                    Global.team[i].lineups[4].shirtNumber = LWingShirtNumber;
+                    Global.team[i].jerseyDataSize = br.ReadInt32(Endian.Little);
+                    Global.team[i].jerseyData = br.ReadBytes(Global.team[i].jerseyDataSize, Endian.Little);
 
-                    // Swap Centre's
-                    int LCentre = Global.team[i].lineups[2].lineupId;
-                    byte LCentreShirtNumber = Global.team[i].lineups[2].shirtNumber;
-                    int RCentre = Global.team[i].lineups[3].lineupId;
-                    byte RCentreShirtNumber = Global.team[i].lineups[3].shirtNumber;
-                    Global.team[i].lineups[2].lineupId = RCentre;
-                    Global.team[i].lineups[2].shirtNumber = RCentreShirtNumber;
-                    Global.team[i].lineups[3].lineupId = LCentre;
-                    Global.team[i].lineups[3].shirtNumber = LCentreShirtNumber;
-
-                    Global.team[i].isNines = br.ReadBoolean();
-                    Global.team[i].nineRoles = new TeamData.NineRoles[4];
-
-                    for (int j = 0; j < 4; j++)
-                    {
-                        Global.team[i].nineRoles[j].isNinesRoleId = br.ReadBoolean();
-                        Global.team[i].nineRoles[j].nineRoleId = 0;
-
-                        if (Global.team[i].nineRoles[j].isNinesRoleId)
-                            Global.team[i].nineRoles[j].nineRoleId = br.ReadInt32(Endian.Little);
-                    }
-
-                    Global.team[i].nineLineups = new TeamData.NineLineups[14];
-
-                    for (int j = 0; j < 14; j++)
-                    {
-                        Global.team[i].nineLineups[j].isNineLineupId = br.ReadBoolean();
-                        Global.team[i].nineLineups[j].nineLineupId = 1;
-
-                        if (Global.team[i].nineLineups[j].isNineLineupId)
-                            Global.team[i].nineLineups[j].nineLineupId = br.ReadInt32(Endian.Little);
-                    }
-
-                    Global.team[i].dataSize = br.ReadInt32(Endian.Little);
-                    Global.team[i].data = br.ReadBytes(Global.team[i].dataSize, Endian.Little);
+                    int o = 0;
 
                     /*
-                    //int dataSize = Global.team[i].dataSize - (2 + (518 * 8) + 9);
-                    //Global.team[i].data = br.ReadBytes(dataSize, Endian.Little);
+                    //int jerseyDataSize = Global.team[i].jerseyDataSize - (2 + (518 * 8) + 9);
+                    //Global.team[i].jerseyData = br.ReadBytes(jerseyDataSize, Endian.Little);
 
                     Global.team[i].jerseyAmount = br.ReadInt16();
                     Global.team[i].jerseys = new TeamData.Jerseys[8];
@@ -381,47 +512,47 @@ namespace RL26_Database_Editor
                         }
                         */
 
-                        /*
-                        Global.team[i].jerseys[j].nameColour.g = br.ReadByte();
-                        Global.team[i].jerseys[j].padding2 = br.ReadBytes(14, Endian.Little);
-                        Global.team[i].jerseys[j].nameColour.r = br.ReadByte();
-                        Global.team[i].jerseys[j].padding3 = br.ReadBytes(35, Endian.Little);
-                        Global.team[i].jerseys[j].nameColour.b = br.ReadByte();
-                        Global.team[i].jerseys[j].padding4 = br.ReadBytes(8, Endian.Little);
-                        Global.team[i].jerseys[j].keylineColour.b = br.ReadByte();
-                        Global.team[i].jerseys[j].padding5 = br.ReadBytes(57, Endian.Little);
-                        Global.team[i].jerseys[j].showNumber = br.ReadBoolean();
-                        Global.team[i].jerseys[j].padding6 = br.ReadUInt16(Endian.Little);
-                        Global.team[i].jerseys[j].keylineColour.g = br.ReadByte();
-                        Global.team[i].jerseys[j].padding7 = br.ReadBytes(5, Endian.Little);
-                        Global.team[i].jerseys[j].showInternalKeyline = br.ReadBoolean();
-                        Global.team[i].jerseys[j].padding8 = br.ReadBytes(61, Endian.Little);
-                        Global.team[i].jerseys[j].padding9 = br.ReadBytes(53, Endian.Little);
-                        Global.team[i].jerseys[j].padding10 = br.ReadBytes(42, Endian.Little);
-                        Global.team[i].jerseys[j].padding11 = br.ReadBytes(19, Endian.Little);
-                        Global.team[i].jerseys[j].licensedId = br.ReadInt16(Endian.Little);
-                        Global.team[i].jerseys[j].padding12 = br.ReadBytes(39, Endian.Little);
-                        Global.team[i].jerseys[j].keylineSize = br.ReadByte();
-                        Global.team[i].jerseys[j].padding13 = br.ReadBytes(48, Endian.Little);
-                        Global.team[i].jerseys[j].numberFont = br.ReadByte();
-                        Global.team[i].jerseys[j].padding14 = br.ReadBytes(79, Endian.Little);
-                        Global.team[i].jerseys[j].nameFont = br.ReadByte();
-                        Global.team[i].jerseys[j].padding15 = br.ReadBytes(15, Endian.Little);
-                        Global.team[i].jerseys[j].keylineOffset = br.ReadByte();
-                        Global.team[i].jerseys[j].showingLeadingZero = br.ReadBoolean();
-                        Global.team[i].jerseys[j].padding16 = br.ReadBytes(7, Endian.Little);
-                        Global.team[i].jerseys[j].showName = br.ReadBoolean();
-                        Global.team[i].jerseys[j].padding17 = br.ReadBytes(39, Endian.Little);
-                        Global.team[i].jerseys[j].keylineColour.r = br.ReadByte();
-                        Global.team[i].jerseys[j].padding18 = br.ReadBytes(9, Endian.Little);
-                    }
+                    /*
+                    Global.team[i].jerseys[j].nameColour.g = br.ReadByte();
+                    Global.team[i].jerseys[j].padding2 = br.ReadBytes(14, Endian.Little);
+                    Global.team[i].jerseys[j].nameColour.r = br.ReadByte();
+                    Global.team[i].jerseys[j].padding3 = br.ReadBytes(35, Endian.Little);
+                    Global.team[i].jerseys[j].nameColour.b = br.ReadByte();
+                    Global.team[i].jerseys[j].padding4 = br.ReadBytes(8, Endian.Little);
+                    Global.team[i].jerseys[j].keylineColour.b = br.ReadByte();
+                    Global.team[i].jerseys[j].padding5 = br.ReadBytes(57, Endian.Little);
+                    Global.team[i].jerseys[j].showNumber = br.ReadBoolean();
+                    Global.team[i].jerseys[j].padding6 = br.ReadUInt16(Endian.Little);
+                    Global.team[i].jerseys[j].keylineColour.g = br.ReadByte();
+                    Global.team[i].jerseys[j].padding7 = br.ReadBytes(5, Endian.Little);
+                    Global.team[i].jerseys[j].showInternalKeyline = br.ReadBoolean();
+                    Global.team[i].jerseys[j].padding8 = br.ReadBytes(61, Endian.Little);
+                    Global.team[i].jerseys[j].padding9 = br.ReadBytes(53, Endian.Little);
+                    Global.team[i].jerseys[j].padding10 = br.ReadBytes(42, Endian.Little);
+                    Global.team[i].jerseys[j].padding11 = br.ReadBytes(19, Endian.Little);
+                    Global.team[i].jerseys[j].licensedId = br.ReadInt16(Endian.Little);
+                    Global.team[i].jerseys[j].padding12 = br.ReadBytes(39, Endian.Little);
+                    Global.team[i].jerseys[j].keylineSize = br.ReadByte();
+                    Global.team[i].jerseys[j].padding13 = br.ReadBytes(48, Endian.Little);
+                    Global.team[i].jerseys[j].numberFont = br.ReadByte();
+                    Global.team[i].jerseys[j].padding14 = br.ReadBytes(79, Endian.Little);
+                    Global.team[i].jerseys[j].nameFont = br.ReadByte();
+                    Global.team[i].jerseys[j].padding15 = br.ReadBytes(15, Endian.Little);
+                    Global.team[i].jerseys[j].keylineOffset = br.ReadByte();
+                    Global.team[i].jerseys[j].showingLeadingZero = br.ReadBoolean();
+                    Global.team[i].jerseys[j].padding16 = br.ReadBytes(7, Endian.Little);
+                    Global.team[i].jerseys[j].showName = br.ReadBoolean();
+                    Global.team[i].jerseys[j].padding17 = br.ReadBytes(39, Endian.Little);
+                    Global.team[i].jerseys[j].keylineColour.r = br.ReadByte();
+                    Global.team[i].jerseys[j].padding18 = br.ReadBytes(9, Endian.Little);
+                }
 
-                    writer.Position = 0;
+                writer.Position = 0;
 
-                    writer.WriteInt32(count);
+                writer.WriteInt32(count);
 
-                    Global.team[i].padding2 = br.ReadBytes(9, Endian.Little);
-                    */
+                Global.team[i].padding2 = br.ReadBytes(9, Endian.Little);
+                */
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["Gender"] = Imagelist[Global.team[i].gender];
                     dt.Rows[dt.Rows.Count - 1]["Team Index"] = i;

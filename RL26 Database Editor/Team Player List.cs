@@ -31,14 +31,14 @@ namespace RL26_Database_Editor
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
-                dt.Columns.Add("Rating", Type.GetType("System.Int32"));
-                dt.Columns.Add("First Name", Type.GetType("System.String"));
-                dt.Columns.Add("Last Name", Type.GetType("System.String"));
-                dt.Columns.Add("Primary Role", Type.GetType("System.String"));
-                dt.Columns.Add("Secondary Role", Type.GetType("System.String"));
-                dt.Columns.Add("Tertiary Role", Type.GetType("System.String"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Player Id", typeof(int));
+                dt.Columns.Add("Rating", typeof(int));
+                dt.Columns.Add("First Name", typeof(string));
+                dt.Columns.Add("Last Name", typeof(string));
+                dt.Columns.Add("Primary Role", typeof(string));
+                dt.Columns.Add("Secondary Role", typeof(string));
+                dt.Columns.Add("Tertiary Role", typeof(string));
                 int index = -1;
 
                 for (int i = 0; i < Global.player_amount; i++)
@@ -181,13 +181,13 @@ namespace RL26_Database_Editor
             {
                 Playersdt = new DataTable();
 
-                Playersdt.Columns.Add("Index", Type.GetType("System.Int32"));
-                Playersdt.Columns.Add("Player Id", Type.GetType("System.Int32"));
-                Playersdt.Columns.Add("First Name", Type.GetType("System.String"));
-                Playersdt.Columns.Add("Last Name", Type.GetType("System.String"));
-                Playersdt.Columns.Add("Primary Role", Type.GetType("System.String"));
-                Playersdt.Columns.Add("Secondary Role", Type.GetType("System.String"));
-                Playersdt.Columns.Add("Tertiary Role", Type.GetType("System.String"));
+                Playersdt.Columns.Add("Index", typeof(int));
+                Playersdt.Columns.Add("Player Id", typeof(int));
+                Playersdt.Columns.Add("First Name", typeof(string));
+                Playersdt.Columns.Add("Last Name", typeof(string));
+                Playersdt.Columns.Add("Primary Role", typeof(string));
+                Playersdt.Columns.Add("Secondary Role", typeof(string));
+                Playersdt.Columns.Add("Tertiary Role", typeof(string));
 
 
                 for (int i = 0; i < Global.team[TeamIndex].playerAmount; i++)

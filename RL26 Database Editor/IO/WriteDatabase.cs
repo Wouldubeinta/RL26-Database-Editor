@@ -7,7 +7,7 @@ namespace RL26_Database_Editor
     /// </summary>
     /// <remarks>
     ///   RL26 Database Editor. Written by Wouldubeinta
-    ///   Copyright (C) 2025 Wouldy Mods.
+    ///   Copyright (C) 2026 Wouldy Mods.
     ///   
     ///   This program is free software; you can redistribute it and/or
     ///   modify it under the terms of the GNU General Public License
@@ -40,14 +40,20 @@ namespace RL26_Database_Editor
                 bw = new Writer(file, FileMode.Create, Endian.Little);
 
                 bw.Write(Global.TeamHeader, Endian.Little);
-                bw.WriteInt32(Global.team_amount, Endian.Little);
+                bw.WriteInt32(Global.team_amount, Endian.Little); // Team Count
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     bw.WriteInt32(Global.team[i].identifier, Endian.Little);
+
+                    // Team Enabled ?
                     bw.WriteBool(Global.team[i].isTeamEnabled);
+
+                    // Team Id
                     bw.WriteBool(Global.team[i].isId);
-                    bw.WriteInt32(Global.team[i].id, Endian.Little);
+
+                    if (Global.team[i].isId)
+                        bw.WriteInt32(Global.team[i].id, Endian.Little);
 
                     // FullName
                     bw.WriteBool(Global.team[i].isFullName);
@@ -60,34 +66,60 @@ namespace RL26_Database_Editor
 
                     // LocationName
                     bw.WriteBool(Global.team[i].isLocationName);
-                    bw.WriteUInt8(Global.team[i].locationNameSize);
-                    bw.WriteString(Global.team[i].locationName, Global.team[i].locationNameSize, Endian.Little);
+
+                    if (Global.team[i].isLocationName) 
+                    {
+                        bw.WriteUInt8(Global.team[i].locationNameSize);
+                        bw.WriteString(Global.team[i].locationName, Global.team[i].locationNameSize, Endian.Little);
+                    }
 
                     // ClubName
                     bw.WriteBool(Global.team[i].isClubName);
-                    bw.WriteUInt8(Global.team[i].clubNameSize);
-                    bw.WriteString(Global.team[i].clubName, Global.team[i].clubNameSize);
+
+                    if (Global.team[i].isClubName) 
+                    {
+                        bw.WriteUInt8(Global.team[i].clubNameSize);
+                        bw.WriteString(Global.team[i].clubName, Global.team[i].clubNameSize);
+                    }
 
                     // AbbreviatedName
                     bw.WriteBool(Global.team[i].isAbbreviatedName);
-                    bw.WriteUInt8(Global.team[i].abbreviatedNameSize);
-                    bw.WriteString(Global.team[i].abbreviatedName, Global.team[i].abbreviatedNameSize, Endian.Little);
 
+                    if (Global.team[i].isAbbreviatedName) 
+                    {
+                        bw.WriteUInt8(Global.team[i].abbreviatedNameSize);
+                        bw.WriteString(Global.team[i].abbreviatedName, Global.team[i].abbreviatedNameSize, Endian.Little);
+                    }
+
+                    // Frontend Visible
                     bw.WriteBool(Global.team[i].isFrontendVisible);
 
                     if (Global.team[i].isFrontendVisible)
                         bw.WriteBool(Global.team[i].frontendVisible);
 
+                    // Default Lineup Category
+                    bw.WriteBool(Global.team[i].isDefaultLineupCategory);
+
+                    if (Global.team[i].isDefaultLineupCategory)
+                        bw.WriteInt32(Global.team[i].defaultLineupCategory, Endian.Little);
+
+                    // Jersey Name ? Not sure why this is here.
                     bw.WriteBool(Global.team[i].isJerseyName); // ?
 
                     // Gender
                     bw.WriteBool(Global.team[i].isGender);
-                    bw.WriteInt32(Global.team[i].gender, Endian.Little);
+
+                    if (Global.team[i].isGender)
+                        bw.WriteInt32(Global.team[i].gender, Endian.Little);
 
                     // Logo
                     bw.WriteBool(Global.team[i].islogo);
-                    bw.WriteUInt8(Global.team[i].logoSize);
-                    bw.WriteString(Global.team[i].logo, Global.team[i].logoSize, Endian.Little);
+
+                    if (Global.team[i].islogo) 
+                    {
+                        bw.WriteUInt8(Global.team[i].logoSize);
+                        bw.WriteString(Global.team[i].logo, Global.team[i].logoSize, Endian.Little);
+                    }
 
                     // WC Logo
                     bw.WriteBool(Global.team[i].isWcLogo);
@@ -100,50 +132,74 @@ namespace RL26_Database_Editor
 
                     // Supporters
                     bw.WriteBool(Global.team[i].isSupporters);
-                    bw.WriteInt32(Global.team[i].supporters, Endian.Little);
+
+                    if (Global.team[i].isSupporters)
+                        bw.WriteInt32(Global.team[i].supporters, Endian.Little);
 
                     // Commentary
                     bw.WriteBool(Global.team[i].isCommentaryTeamLocationHash);
-                    bw.WriteUInt32(Global.team[i].commentaryTeamLocationHash, Endian.Little);
+
+                    if (Global.team[i].isCommentaryTeamLocationHash)
+                        bw.WriteUInt32(Global.team[i].commentaryTeamLocationHash, Endian.Little);
 
                     bw.WriteBool(Global.team[i].isCommentaryTeamMascotHash);
-                    bw.WriteUInt32(Global.team[i].commentaryTeamMascotHash, Endian.Little);
+
+                    if (Global.team[i].isCommentaryTeamMascotHash)
+                        bw.WriteUInt32(Global.team[i].commentaryTeamMascotHash, Endian.Little);
 
                     // PrimaryColour
                     bw.WriteBool(Global.team[i].primaryColour.isRgb);
-                    bw.WriteUInt8(Global.team[i].primaryColour.r);
-                    bw.WriteUInt8(Global.team[i].primaryColour.g);
-                    bw.WriteUInt8(Global.team[i].primaryColour.b);
+
+                    if (Global.team[i].primaryColour.isRgb) 
+                    {
+                        bw.WriteUInt8(Global.team[i].primaryColour.r);
+                        bw.WriteUInt8(Global.team[i].primaryColour.g);
+                        bw.WriteUInt8(Global.team[i].primaryColour.b);
+                    }
 
                     // SecondaryColour
                     bw.WriteBool(Global.team[i].secondaryColour.isRgb);
-                    bw.WriteUInt8(Global.team[i].secondaryColour.r);
-                    bw.WriteUInt8(Global.team[i].secondaryColour.g);
-                    bw.WriteUInt8(Global.team[i].secondaryColour.b);
+
+                    if (Global.team[i].secondaryColour.isRgb)
+                    {
+                        bw.WriteUInt8(Global.team[i].secondaryColour.r);
+                        bw.WriteUInt8(Global.team[i].secondaryColour.g);
+                        bw.WriteUInt8(Global.team[i].secondaryColour.b);
+                    }
 
                     // HudTextColour
                     bw.WriteBool(Global.team[i].hudTextColour.isRgb);
-                    bw.WriteUInt8(Global.team[i].hudTextColour.r);
-                    bw.WriteUInt8(Global.team[i].hudTextColour.g);
-                    bw.WriteUInt8(Global.team[i].hudTextColour.b);
 
+                    if (Global.team[i].hudTextColour.isRgb) 
+                    {
+                        bw.WriteUInt8(Global.team[i].hudTextColour.r);
+                        bw.WriteUInt8(Global.team[i].hudTextColour.g);
+                        bw.WriteUInt8(Global.team[i].hudTextColour.b);
+                    }
+
+                    // Club Type
                     bw.WriteBool(Global.team[i].isClubType);
 
                     if (Global.team[i].isClubType)
                         bw.WriteInt32(Global.team[i].clubType, Endian.Little);
 
+                    // Affilations
                     bw.WriteBool(Global.team[i].isAffiliations);
 
                     if (Global.team[i].isAffiliations)
                         bw.WriteInt32(Global.team[i].affiliations, Endian.Little);
 
+                    // Is World Cup Team
                     bw.WriteBool(Global.team[i].isWorldCupTeam);
 
                     if (Global.team[i].isWorldCupTeam)
                         bw.WriteBool(Global.team[i].WorldCupTeam);
 
+                    // Stadium Data
                     bw.WriteBool(Global.team[i].isStadiumAmount);
-                    bw.WriteInt32(Global.team[i].stadiumAmount, Endian.Little);
+
+                    if (Global.team[i].isStadiumAmount)
+                        bw.WriteInt32(Global.team[i].stadiumAmount, Endian.Little);
 
                     for (int j = 0; j < 3; j++)
                     {
@@ -189,6 +245,7 @@ namespace RL26_Database_Editor
                         bw.WriteString(Global.team[i].finalStadium.customName, Global.team[i].finalStadium.customNameSize, Endian.Little);
                     }
 
+                    // Feeder Clubs
                     for (int j = 0; j < 7; j++)
                     {
                         bw.WriteBool(Global.team[i].feederClubs[j].isFeederClubs);
@@ -197,6 +254,7 @@ namespace RL26_Database_Editor
                             bw.WriteInt32(Global.team[i].feederClubs[j].feederClubsId, Endian.Little);
                     }
 
+                    // Fed From Clubs
                     for (int j = 0; j < 7; j++)
                     {
                         bw.WriteBool(Global.team[i].fedFromClubs[j].isFedFromClubs);
@@ -205,90 +263,151 @@ namespace RL26_Database_Editor
                             bw.WriteInt32(Global.team[i].fedFromClubs[j].fedFromClubsId, Endian.Little);
                     }
 
+                    // Is Alternate Numbering
                     bw.WriteBool(Global.team[i].isAlternateNumbering);
 
                     if (Global.team[i].isAlternateNumbering)
                         bw.WriteBool(Global.team[i].alternateNumbering);
 
+                    // Alternative Numbering System
                     bw.WriteBool(Global.team[i].isAlternativeNumberingSystem);
 
                     if (Global.team[i].isAlternativeNumberingSystem)
                         bw.WriteInt32(Global.team[i].alternateNumberingSystem, Endian.Little);
 
+                    // Player Roster
                     bw.WriteBool(Global.team[i].isPlayerRoster);
 
-                    for (int j = 0; j < Global.MAX_PLAYERS_PER_TEAM; j++)
+                    if (Global.team[i].isPlayerRoster) 
                     {
-                        bw.WriteBool(Global.team[i].players[j].isPlayerId);
-
-                        if (Global.team[i].players[j].isPlayerId)
-                            bw.WriteInt32(Global.team[i].players[j].playerId, Endian.Little);
-                    }
-
-                    bw.WriteBool(Global.team[i].isStandardMatch);
-
-                    for (int j = 0; j < 4; j++)
-                    {
-                        bw.WriteBool(Global.team[i].roles[j].isRoleId);
-
-                        if (Global.team[i].roles[j].isRoleId)
-                            bw.WriteInt32(Global.team[i].roles[j].roleId, Endian.Little);
-                    }
-
-                    // Swap Wingers
-                    int LWingId = Global.team[i].lineups[1].lineupId;
-                    byte LWingShirtNumber = Global.team[i].lineups[1].shirtNumber;
-                    int RWingId = Global.team[i].lineups[4].lineupId;
-                    byte RWingShirtNumber = Global.team[i].lineups[4].shirtNumber;
-                    Global.team[i].lineups[1].lineupId = RWingId;
-                    Global.team[i].lineups[1].shirtNumber = RWingShirtNumber;
-                    Global.team[i].lineups[4].lineupId = LWingId;
-                    Global.team[i].lineups[4].shirtNumber = LWingShirtNumber;
-
-                    // Swap Centre's
-                    int LCentre = Global.team[i].lineups[2].lineupId;
-                    byte LCentreShirtNumber = Global.team[i].lineups[2].shirtNumber;
-                    int RCentre = Global.team[i].lineups[3].lineupId;
-                    byte RCentreShirtNumber = Global.team[i].lineups[3].shirtNumber;
-                    Global.team[i].lineups[2].lineupId = RCentre;
-                    Global.team[i].lineups[2].shirtNumber = RCentreShirtNumber;
-                    Global.team[i].lineups[3].lineupId = LCentre;
-                    Global.team[i].lineups[3].shirtNumber = LCentreShirtNumber;
-
-                    for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM; j++)
-                    {
-                        bw.WriteBool(Global.team[i].lineups[j].isLineupId);
-
-                        if (Global.team[i].lineups[j].isLineupId)
+                        for (int j = 0; j < Global.MAX_PLAYERS_PER_TEAM; j++)
                         {
-                            bw.WriteInt32(Global.team[i].lineups[j].lineupId, Endian.Little);
-                            bw.WriteUInt8(Global.team[i].lineups[j].shirtNumber);
-                        }
+                            bw.WriteBool(Global.team[i].players[j].isPlayerId);
 
-                    }
-
-                    bw.WriteBool(Global.team[i].isNines);
-
-                    for (int j = 0; j < 4; j++)
-                    {
-                        bw.WriteBool(Global.team[i].nineRoles[j].isNinesRoleId);
-
-                        if (Global.team[i].nineRoles[j].isNinesRoleId)
-                            bw.WriteInt32(Global.team[i].nineRoles[j].nineRoleId, Endian.Little);
-                    }
-
-                    for (int j = 0; j < 14; j++)
-                    {
-                        bw.WriteBool(Global.team[i].nineLineups[j].isNineLineupId);
-
-                        if (Global.team[i].nineLineups[j].isNineLineupId)
-                        {
-                            bw.WriteInt32(Global.team[i].nineLineups[j].nineLineupId, Endian.Little);
+                            if (Global.team[i].players[j].isPlayerId)
+                                bw.WriteInt32(Global.team[i].players[j].playerId, Endian.Little);
                         }
                     }
 
-                    bw.WriteInt32(Global.team[i].dataSize, Endian.Little);
-                    bw.Write(Global.team[i].data, Endian.Little);
+                    // Lineup - League Match
+                    bw.WriteBool(Global.team[i].isLeagueMatch);
+
+                    if (Global.team[i].isLeagueMatch) 
+                    {
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                        {
+                            bw.WriteBool(Global.team[i].rolesOld[j].isRoleId);
+
+                            if (Global.team[i].rolesOld[j].isRoleId)
+                                bw.WriteInt32(Global.team[i].rolesOld[j].roleId, Endian.Little);
+                        }
+
+                        // Swap Wingers
+                        int LWingId = Global.team[i].lineupsOld[1].lineupId;
+                        byte LWingShirtNumber = Global.team[i].lineupsOld[1].shirtNumber;
+                        int RWingId = Global.team[i].lineupsOld[4].lineupId;
+                        byte RWingShirtNumber = Global.team[i].lineupsOld[4].shirtNumber;
+                        Global.team[i].lineupsOld[1].lineupId = RWingId;
+                        Global.team[i].lineupsOld[1].shirtNumber = RWingShirtNumber;
+                        Global.team[i].lineupsOld[4].lineupId = LWingId;
+                        Global.team[i].lineupsOld[4].shirtNumber = LWingShirtNumber;
+
+                        // Swap Centre's
+                        int LCentre = Global.team[i].lineupsOld[2].lineupId;
+                        byte LCentreShirtNumber = Global.team[i].lineupsOld[2].shirtNumber;
+                        int RCentre = Global.team[i].lineupsOld[3].lineupId;
+                        byte RCentreShirtNumber = Global.team[i].lineupsOld[3].shirtNumber;
+                        Global.team[i].lineupsOld[2].lineupId = RCentre;
+                        Global.team[i].lineupsOld[2].shirtNumber = RCentreShirtNumber;
+                        Global.team[i].lineupsOld[3].lineupId = LCentre;
+                        Global.team[i].lineupsOld[3].shirtNumber = LCentreShirtNumber;
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM; j++)
+                        {
+                            bw.WriteBool(Global.team[i].lineupsOld[j].isLineupId);
+
+                            if (Global.team[i].lineupsOld[j].isLineupId)
+                            {
+                                bw.WriteInt32(Global.team[i].lineupsOld[j].lineupId, Endian.Little);
+                                bw.WriteUInt8(Global.team[i].lineupsOld[j].shirtNumber);
+                            }
+
+                        }
+                    }
+
+                    // Lineup - NRL 2026 Match
+                    bw.WriteBool(Global.team[i].isNRL2026Match);
+
+                    if (Global.team[i].isNRL2026Match)
+                    {
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                        {
+                            bw.WriteBool(Global.team[i].rolesNew[j].isRoleId);
+
+                            if (Global.team[i].rolesNew[j].isRoleId)
+                                bw.WriteInt32(Global.team[i].rolesNew[j].roleId, Endian.Little);
+                        }
+
+                        // Swap Wingers
+                        int LWingId = Global.team[i].lineupsNew[1].lineupId;
+                        byte LWingShirtNumber = Global.team[i].lineupsNew[1].shirtNumber;
+                        int RWingId = Global.team[i].lineupsNew[4].lineupId;
+                        byte RWingShirtNumber = Global.team[i].lineupsNew[4].shirtNumber;
+                        Global.team[i].lineupsNew[1].lineupId = RWingId;
+                        Global.team[i].lineupsNew[1].shirtNumber = RWingShirtNumber;
+                        Global.team[i].lineupsNew[4].lineupId = LWingId;
+                        Global.team[i].lineupsNew[4].shirtNumber = LWingShirtNumber;
+
+                        // Swap Centre's
+                        int LCentre = Global.team[i].lineupsNew[2].lineupId;
+                        byte LCentreShirtNumber = Global.team[i].lineupsNew[2].shirtNumber;
+                        int RCentre = Global.team[i].lineupsNew[3].lineupId;
+                        byte RCentreShirtNumber = Global.team[i].lineupsNew[3].shirtNumber;
+                        Global.team[i].lineupsNew[2].lineupId = RCentre;
+                        Global.team[i].lineupsNew[2].shirtNumber = RCentreShirtNumber;
+                        Global.team[i].lineupsNew[3].lineupId = LCentre;
+                        Global.team[i].lineupsNew[3].shirtNumber = LCentreShirtNumber;
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NRL2026; j++)
+                        {
+                            bw.WriteBool(Global.team[i].lineupsNew[j].isLineupId);
+
+                            if (Global.team[i].lineupsNew[j].isLineupId)
+                            {
+                                bw.WriteInt32(Global.team[i].lineupsNew[j].lineupId, Endian.Little);
+                                bw.WriteUInt8(Global.team[i].lineupsNew[j].shirtNumber);
+                            }
+
+                        }
+                    }
+
+                    // Lineup Nines Match
+                    bw.WriteBool(Global.team[i].isNinesMatch);
+
+                    if (Global.team[i].isNinesMatch) 
+                    {
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                        {
+                            bw.WriteBool(Global.team[i].nineRoles[j].isNinesRoleId);
+
+                            if (Global.team[i].nineRoles[j].isNinesRoleId)
+                                bw.WriteInt32(Global.team[i].nineRoles[j].nineRoleId, Endian.Little);
+                        }
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NINES; j++)
+                        {
+                            bw.WriteBool(Global.team[i].nineLineups[j].isNineLineupId);
+
+                            if (Global.team[i].nineLineups[j].isNineLineupId)
+                            {
+                                bw.WriteInt32(Global.team[i].nineLineups[j].nineLineupId, Endian.Little);
+                            }
+                        }
+                    }
+
+                    // Jersey Data
+                    bw.WriteInt32(Global.team[i].jerseyDataSize, Endian.Little);
+                    bw.Write(Global.team[i].jerseyData, Endian.Little);
 
                     /*
                     bw.WriteInt16(Global.team[i].jerseyAmount);
@@ -362,18 +481,22 @@ namespace RL26_Database_Editor
                 bw = new Writer(file, FileMode.Create, Endian.Little);
 
                 bw.Write(Global.PlayerHeader, Endian.Little);
-                bw.WriteInt32(Global.player_amount); // player_amount
+                bw.WriteInt32(Global.player_amount); // Player Count
 
                 for (int i = 0; i < Global.player_amount; i++)
                 {
                     bw.WriteInt32(Global.player[i].identifier, Endian.Little);
-                    bw.WriteInt32(Global.player[i].dataSize, Endian.Little);
 
+                    // Player Appearance Data
+                    bw.WriteInt32(Global.player[i].dataSize, Endian.Little);
                     bw.Write(Global.player[i].data, Endian.Little);
 
                     bw.WriteBool(Global.player[i].isPlayerEnabled);
+
                     bw.WriteBool(Global.player[i].isId);
-                    bw.WriteInt32(Global.player[i].id, Endian.Little);
+
+                    if (Global.player[i].isId)
+                        bw.WriteInt32(Global.player[i].id, Endian.Little);
 
                     bw.WriteBool(Global.player[i].isFirstName);
 

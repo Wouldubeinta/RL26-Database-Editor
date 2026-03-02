@@ -8,7 +8,7 @@ namespace RL26_Database_Editor
     /// </summary>
     /// <remarks>
     ///   RL26 Database Editor. Written by Wouldubeinta
-    ///   Copyright (C) 2025 Wouldy Mods.
+    ///   Copyright (C) 2026 Wouldy Mods.
     ///   
     ///   This program is free software; you can redistribute it and/or
     ///   modify it under the terms of the GNU General Public License

@@ -14,44 +14,44 @@ namespace RL26_Database_Editor
 
         private void Raw_Team_Nines_Lineup_Load(object sender, EventArgs e)
         {
-            DataTable dt = null;
-            string[] Positions = new string[14] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10 - Int1", "11 - Int2", "12 - Int3", "13 - Int4", "14 - Int5" };
+            DataTable? dt = null;
+            string[] Positions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10 - Int1", "11 - Int2", "12 - Int3", "13 - Int4", "14 - Int5"];
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.String"));
-                dt.Columns.Add("Team Id", Type.GetType("System.String"));
-                dt.Columns.Add("Full Name", Type.GetType("System.String"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
-                dt.Columns.Add("Team Nines Captain ID", Type.GetType("System.String"));
-                dt.Columns.Add("Team Nines GoalKicker ID", Type.GetType("System.String"));
-                dt.Columns.Add("Team Nines PlayMaker1 ID", Type.GetType("System.String"));
-                dt.Columns.Add("Team Nines PlayMaker2 ID", Type.GetType("System.String"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Team Id", typeof(int));
+                dt.Columns.Add("Full Name", typeof(string));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
+                dt.Columns.Add("Team Nines Captain ID", typeof(int));
+                dt.Columns.Add("Team Nines GoalKicker ID", typeof(int));
+                dt.Columns.Add("Team Nines PlayMaker1 ID", typeof(int));
+                dt.Columns.Add("Team Nines PlayMaker2 ID", typeof(int));
 
                 for (int i = 0; i < Positions.Length; i++)
                 {
-                    dt.Columns.Add(Positions[i], Type.GetType("System.String"));
+                    dt.Columns.Add(Positions[i], typeof(int));
                 }
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i;
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id;
                     dt.Rows[dt.Rows.Count - 1]["Full Name"] = Global.team[i].fullName;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
-                    dt.Rows[dt.Rows.Count - 1]["Team Nines Captain ID"] = Global.team[i].nineRoles[0].nineRoleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Nines GoalKicker ID"] = Global.team[i].nineRoles[1].nineRoleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Nines PlayMaker1 ID"] = Global.team[i].nineRoles[2].nineRoleId.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Nines PlayMaker2 ID"] = Global.team[i].nineRoles[3].nineRoleId.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team Nines Captain ID"] = Global.team[i].nineRoles[0].nineRoleId;
+                    dt.Rows[dt.Rows.Count - 1]["Team Nines GoalKicker ID"] = Global.team[i].nineRoles[1].nineRoleId;
+                    dt.Rows[dt.Rows.Count - 1]["Team Nines PlayMaker1 ID"] = Global.team[i].nineRoles[2].nineRoleId;
+                    dt.Rows[dt.Rows.Count - 1]["Team Nines PlayMaker2 ID"] = Global.team[i].nineRoles[3].nineRoleId;
 
                     for (int j = 0; j < 14; j++)
                     {
-                        dt.Rows[dt.Rows.Count - 1][Positions[j]] = Global.team[i].nineLineups[j].nineLineupId.ToString();
+                        dt.Rows[dt.Rows.Count - 1][Positions[j]] = Global.team[i].nineLineups[j].nineLineupId;
                     }
                 }
 
@@ -106,7 +106,7 @@ namespace RL26_Database_Editor
                 }
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
-                toolStripProgressBar1.Value = (i);
+                toolStripProgressBar1.Value = i;
                 toolStripProgressBar1.PerformStep();
             }
 

@@ -14,37 +14,37 @@ namespace RL26_Database_Editor
 
         private void Raw_Team_Players_Load(object sender, EventArgs e)
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.String"));
-                dt.Columns.Add("Team Id", Type.GetType("System.String"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
-                dt.Columns.Add("Team Player Amount", Type.GetType("System.String"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Team Id", typeof(int));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
+                dt.Columns.Add("Team Player Amount", typeof(int));
 
                 for (int i = 0; i < 64; i++)
                 {
                     int value = i + 1;
-                    dt.Columns.Add("Player " + value.ToString(), Type.GetType("System.String"));
+                    dt.Columns.Add($"Player {value}", typeof(int));
                 }
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i;
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
-                    dt.Rows[dt.Rows.Count - 1]["Team Player Amount"] = Global.team[i].playerAmount.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Team Player Amount"] = Global.team[i].playerAmount;
 
                     for (int j = 0; j < Global.team[i].playerAmount; j++)
                     {
                         int value = j + 1;
-                        dt.Rows[dt.Rows.Count - 1]["Player " + value.ToString()] = Global.team[i].players[j].playerId.ToString();
+                        dt.Rows[dt.Rows.Count - 1][$"Player {value}"] = Global.team[i].players[j].playerId;
                     }
                 }
 
@@ -67,7 +67,7 @@ namespace RL26_Database_Editor
 
             for (int i = 0; i < Global.team_amount; i++)
             {
-                for (int j = 0; j < 64; j++)
+                for (int j = 0; j < Global.MAX_PLAYERS_PER_TEAM; j++)
                 {
                     Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].players[j].isPlayerId = false;
                 }
@@ -87,7 +87,7 @@ namespace RL26_Database_Editor
                 }
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
-                toolStripProgressBar1.Value = (i);
+                toolStripProgressBar1.Value = i;
                 toolStripProgressBar1.PerformStep();
             }
 

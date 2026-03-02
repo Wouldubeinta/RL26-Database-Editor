@@ -11,37 +11,37 @@ namespace RL26_Database_Editor
 
         private void Raw_Team_Feeder_Clubs_Load(object sender, EventArgs e)
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.String"));
-                dt.Columns.Add("Team Id", Type.GetType("System.String"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
-                dt.Columns.Add("Feeder Club Amount", Type.GetType("System.String"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Team Id", typeof(int));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
+                dt.Columns.Add("Feeder Club Amount", typeof(int));
 
                 for (int i = 0; i < 7; i++)
                 {
                     int value = i + 1;
-                    dt.Columns.Add("Feeder Club ID - " + value.ToString(), Type.GetType("System.String"));
+                    dt.Columns.Add($"Feeder Club ID - {value}", typeof(int));
                 }
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i;
+                    dt.Rows[dt.Rows.Count - 1]["Team Id"] = Global.team[i].id;
                     dt.Rows[dt.Rows.Count - 1]["Location Name"] = Global.team[i].locationName;
                     dt.Rows[dt.Rows.Count - 1]["Club Name"] = Global.team[i].clubName;
-                    dt.Rows[dt.Rows.Count - 1]["Feeder Club Amount"] = Global.team[i].feederClubsAmount.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Feeder Club Amount"] = Global.team[i].feederClubsAmount;
 
                     for (int j = 0; j < Global.team[i].feederClubsAmount; j++)
                     {
                         int value = j + 1;
-                        dt.Rows[dt.Rows.Count - 1]["Feeder Club ID - " + value.ToString()] = Global.team[i].feederClubs[j].feederClubsId.ToString();
+                        dt.Rows[dt.Rows.Count - 1][$"Feeder Club ID - {value}"] = Global.team[i].feederClubs[j].feederClubsId;
                     }
                 }
 
@@ -84,7 +84,7 @@ namespace RL26_Database_Editor
                 }
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
-                toolStripProgressBar1.Value = (i);
+                toolStripProgressBar1.Value = i;
                 toolStripProgressBar1.PerformStep();
             }
 

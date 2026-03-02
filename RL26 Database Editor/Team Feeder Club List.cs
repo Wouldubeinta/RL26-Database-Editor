@@ -22,16 +22,16 @@ namespace RL26_Database_Editor
 
         private void OriginalTeams()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Team Id", Type.GetType("System.Int32"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Team Id", typeof(int));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
                 int index = -1;
 
                 for (int i = 0; i < Global.team_amount; i++)
@@ -164,7 +164,7 @@ namespace RL26_Database_Editor
 
         private void Teams()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
@@ -172,10 +172,10 @@ namespace RL26_Database_Editor
                 {
                     dt = new DataTable();
 
-                    dt.Columns.Add("FeederClubs Index", Type.GetType("System.Int32"));
-                    dt.Columns.Add("Team Id", Type.GetType("System.Int32"));
-                    dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                    dt.Columns.Add("Club Name", Type.GetType("System.String"));
+                    dt.Columns.Add("FeederClubs Index", typeof(int));
+                    dt.Columns.Add("Team Id", typeof(int));
+                    dt.Columns.Add("Location Name", typeof(string));
+                    dt.Columns.Add("Club Name", typeof(string));
 
                     for (int i = 0; i < Global.team[Team_Index].feederClubsAmount; i++)
                     {

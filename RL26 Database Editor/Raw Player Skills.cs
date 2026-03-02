@@ -14,64 +14,64 @@ namespace RL26_Database_Editor
 
         private void Raw_Player_Skills_Load(object sender, EventArgs e)
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
                 dt = new DataTable();
 
-                dt.Columns.Add("Index", Type.GetType("System.String"));
-                dt.Columns.Add("Id", Type.GetType("System.String"));
-                dt.Columns.Add("First Name", Type.GetType("System.String"));
-                dt.Columns.Add("Last Name", Type.GetType("System.String"));
-                dt.Columns.Add("Gender", Type.GetType("System.String"));
-                dt.Columns.Add("Grubber Kick", Type.GetType("System.String"));
-                dt.Columns.Add("Punt Kick", Type.GetType("System.String"));
-                dt.Columns.Add("Chip Kick", Type.GetType("System.String"));
-                dt.Columns.Add("Bomb Kick", Type.GetType("System.String"));
-                dt.Columns.Add("Field Goal Kick", Type.GetType("System.String"));
-                dt.Columns.Add("Place Kick", Type.GetType("System.String"));
-                dt.Columns.Add("Basic Pass", Type.GetType("System.String"));
-                dt.Columns.Add("Long Pass", Type.GetType("System.String"));
-                dt.Columns.Add("Offload", Type.GetType("System.String"));
-                dt.Columns.Add("Dummy Pass", Type.GetType("System.String"));
-                dt.Columns.Add("Fend", Type.GetType("System.String"));
-                dt.Columns.Add("Side Step", Type.GetType("System.String"));
-                dt.Columns.Add("Break Tackle", Type.GetType("System.String"));
-                dt.Columns.Add("Tackle", Type.GetType("System.String"));
-                dt.Columns.Add("Drive Tackle", Type.GetType("System.String"));
-                dt.Columns.Add("Dive Tackle", Type.GetType("System.String"));
-                dt.Columns.Add("Impact Tackle", Type.GetType("System.String"));
-                dt.Columns.Add("Contested Collect", Type.GetType("System.String"));
-                dt.Columns.Add("Dive Collect", Type.GetType("System.String"));
+                dt.Columns.Add("Index", typeof(int));
+                dt.Columns.Add("Id", typeof(int));
+                dt.Columns.Add("First Name", typeof(string));
+                dt.Columns.Add("Last Name", typeof(string));
+                dt.Columns.Add("Gender", typeof(int));
+                dt.Columns.Add("Grubber Kick", typeof(int));
+                dt.Columns.Add("Punt Kick", typeof(int));
+                dt.Columns.Add("Chip Kick", typeof(int));
+                dt.Columns.Add("Bomb Kick", typeof(int));
+                dt.Columns.Add("Field Goal Kick", typeof(int));
+                dt.Columns.Add("Place Kick", typeof(int));
+                dt.Columns.Add("Basic Pass", typeof(int));
+                dt.Columns.Add("Long Pass", typeof(int));
+                dt.Columns.Add("Offload", typeof(int));
+                dt.Columns.Add("Dummy Pass", typeof(int));
+                dt.Columns.Add("Fend", typeof(int));
+                dt.Columns.Add("Side Step", typeof(int));
+                dt.Columns.Add("Break Tackle", typeof(int));
+                dt.Columns.Add("Tackle", typeof(int));
+                dt.Columns.Add("Drive Tackle", typeof(int));
+                dt.Columns.Add("Dive Tackle", typeof(int));
+                dt.Columns.Add("Impact Tackle", typeof(int));
+                dt.Columns.Add("Contested Collect", typeof(int));
+                dt.Columns.Add("Dive Collect", typeof(int));
 
                 for (int i = 0; i < Global.player_amount; i++)
                 {
                     dt.Rows.Add();
-                    dt.Rows[dt.Rows.Count - 1]["Index"] = i.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Id"] = Global.player[i].id.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Gender"] = Global.player[i].gender.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Grubber Kick"] = Global.player[i].skills.kickingSkills.grubberKick.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Punt Kick"] = Global.player[i].skills.kickingSkills.puntKick.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Chip Kick"] = Global.player[i].skills.kickingSkills.chipKick.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Bomb Kick"] = Global.player[i].skills.kickingSkills.bombKick.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Field Goal Kick"] = Global.player[i].skills.kickingSkills.fieldgoalKick.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Place Kick"] = Global.player[i].skills.kickingSkills.placeKick.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Basic Pass"] = Global.player[i].skills.passingSkills.basicPass.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Long Pass"] = Global.player[i].skills.passingSkills.longPass.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Offload"] = Global.player[i].skills.passingSkills.offload.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Dummy Pass"] = Global.player[i].skills.evasionSkills.dummyPass.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Fend"] = Global.player[i].skills.evasionSkills.fend.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Side Step"] = Global.player[i].skills.evasionSkills.sideStep.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Break Tackle"] = Global.player[i].skills.evasionSkills.breakTackle.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Tackle"] = Global.player[i].skills.tackleSkills.tackle.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Drive Tackle"] = Global.player[i].skills.tackleSkills.driveTackle.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Dive Tackle"] = Global.player[i].skills.tackleSkills.diveTackle.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Impact Tackle"] = Global.player[i].skills.tackleSkills.impactTackle.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Contested Collect"] = Global.player[i].skills.miscSkills.contestedCollect.ToString();
-                    dt.Rows[dt.Rows.Count - 1]["Dive Collect"] = Global.player[i].skills.miscSkills.diveCollect.ToString();
+                    dt.Rows[dt.Rows.Count - 1]["Index"] = i;
+                    dt.Rows[dt.Rows.Count - 1]["Id"] = Global.player[i].id;
+                    dt.Rows[dt.Rows.Count - 1]["First Name"] = Global.player[i].firstName;
+                    dt.Rows[dt.Rows.Count - 1]["Last Name"] = Global.player[i].lastName;
+                    dt.Rows[dt.Rows.Count - 1]["Gender"] = Global.player[i].gender;
+                    dt.Rows[dt.Rows.Count - 1]["Grubber Kick"] = Global.player[i].skills.kickingSkills.grubberKick;
+                    dt.Rows[dt.Rows.Count - 1]["Punt Kick"] = Global.player[i].skills.kickingSkills.puntKick;
+                    dt.Rows[dt.Rows.Count - 1]["Chip Kick"] = Global.player[i].skills.kickingSkills.chipKick;
+                    dt.Rows[dt.Rows.Count - 1]["Bomb Kick"] = Global.player[i].skills.kickingSkills.bombKick;
+                    dt.Rows[dt.Rows.Count - 1]["Field Goal Kick"] = Global.player[i].skills.kickingSkills.fieldgoalKick;
+                    dt.Rows[dt.Rows.Count - 1]["Place Kick"] = Global.player[i].skills.kickingSkills.placeKick;
+                    dt.Rows[dt.Rows.Count - 1]["Basic Pass"] = Global.player[i].skills.passingSkills.basicPass;
+                    dt.Rows[dt.Rows.Count - 1]["Long Pass"] = Global.player[i].skills.passingSkills.longPass;
+                    dt.Rows[dt.Rows.Count - 1]["Offload"] = Global.player[i].skills.passingSkills.offload;
+                    dt.Rows[dt.Rows.Count - 1]["Dummy Pass"] = Global.player[i].skills.evasionSkills.dummyPass;
+                    dt.Rows[dt.Rows.Count - 1]["Fend"] = Global.player[i].skills.evasionSkills.fend;
+                    dt.Rows[dt.Rows.Count - 1]["Side Step"] = Global.player[i].skills.evasionSkills.sideStep;
+                    dt.Rows[dt.Rows.Count - 1]["Break Tackle"] = Global.player[i].skills.evasionSkills.breakTackle;
+                    dt.Rows[dt.Rows.Count - 1]["Tackle"] = Global.player[i].skills.tackleSkills.tackle;
+                    dt.Rows[dt.Rows.Count - 1]["Drive Tackle"] = Global.player[i].skills.tackleSkills.driveTackle;
+                    dt.Rows[dt.Rows.Count - 1]["Dive Tackle"] = Global.player[i].skills.tackleSkills.diveTackle;
+                    dt.Rows[dt.Rows.Count - 1]["Impact Tackle"] = Global.player[i].skills.tackleSkills.impactTackle;
+                    dt.Rows[dt.Rows.Count - 1]["Contested Collect"] = Global.player[i].skills.miscSkills.contestedCollect;
+                    dt.Rows[dt.Rows.Count - 1]["Dive Collect"] = Global.player[i].skills.miscSkills.diveCollect;
                 }
 
                 dataGridView1.DataSource = dt;
@@ -120,7 +120,7 @@ namespace RL26_Database_Editor
                 Global.player[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].skills.miscSkills.diveCollect = Convert.ToInt32(dataGridView1.Rows[i].Cells[23].Value);
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
-                toolStripProgressBar1.Value = (i);
+                toolStripProgressBar1.Value = i;
                 toolStripProgressBar1.PerformStep();
             }
 

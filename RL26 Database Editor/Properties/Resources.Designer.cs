@@ -63,9 +63,29 @@ namespace RL26_Database_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_16 {
+            get {
+                object obj = ResourceManager.GetObject("add_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_16 {
             get {
                 object obj = ResourceManager.GetObject("close_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap copy_16 {
+            get {
+                object obj = ResourceManager.GetObject("copy_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +103,29 @@ namespace RL26_Database_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap list_16 {
+            get {
+                object obj = ResourceManager.GetObject("list_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Male {
             get {
                 object obj = ResourceManager.GetObject("Male", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paste_16 {
+            get {
+                object obj = ResourceManager.GetObject("paste_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +153,39 @@ namespace RL26_Database_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap remove_16 {
+            get {
+                object obj = ResourceManager.GetObject("remove_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_16 {
+            get {
+                object obj = ResourceManager.GetObject("save_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_icon {
             get {
                 object obj = ResourceManager.GetObject("save_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sortAZ_16 {
+            get {
+                object obj = ResourceManager.GetObject("sortAZ_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

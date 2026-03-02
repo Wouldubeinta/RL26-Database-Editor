@@ -21,24 +21,24 @@ namespace RL26_Database_Editor
 
         private void TeamRoles()
         {
-            DataTable dt = null;
-            string[] Positions = new string[14] { "1", "2", "3", "4", "5", "6", "7", "8", "9", " 10 - Int1", "11 - Int2", "12 - Int3", "13 - Int4", "14 - Int5" };
+            DataTable? dt = null;
+            string[] Positions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", " 10 - Int1", "11 - Int2", "12 - Int3", "13 - Int4", "14 - Int5"];
 
             try
             {
                 dt = new DataTable();
-                dt.Columns.Add("Position", Type.GetType("System.String"));
-                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
-                dt.Columns.Add("Rating", Type.GetType("System.Int32"));
-                dt.Columns.Add("First Name", Type.GetType("System.String"));
-                dt.Columns.Add("Last Name", Type.GetType("System.String"));
-                dt.Columns.Add("Primary Role", Type.GetType("System.String"));
-                dt.Columns.Add("Secondary Role", Type.GetType("System.String"));
-                dt.Columns.Add("Tertiary Role", Type.GetType("System.String"));
+                dt.Columns.Add("Position", typeof(string));
+                dt.Columns.Add("Player Id", typeof(int));
+                dt.Columns.Add("Rating", typeof(int));
+                dt.Columns.Add("First Name", typeof(string));
+                dt.Columns.Add("Last Name", typeof(string));
+                dt.Columns.Add("Primary Role", typeof(string));
+                dt.Columns.Add("Secondary Role", typeof(string));
+                dt.Columns.Add("Tertiary Role", typeof(string));
 
-                for (int i = 0; i < 14; i++)
+                for (int i = 0; i < Global.MIN_PLAYERS_PER_TEAM_NINES; i++)
                 {
-                    int SelectedIndex = SearchID.PlayersIndex(Global.team[TeamIndex].lineups[i].lineupId);
+                    int SelectedIndex = SearchID.PlayersIndex(Global.team[TeamIndex].lineupsNew[i].lineupId);
                     dt.Rows.Add();
                     dt.Rows[dt.Rows.Count - 1]["Position"] = Positions[i];
                     dt.Rows[dt.Rows.Count - 1]["Player Id"] = Global.player[SelectedIndex].id;
@@ -65,25 +65,25 @@ namespace RL26_Database_Editor
 
         private void PlayerRoles()
         {
-            DataTable dt = null;
+            DataTable? dt = null;
 
             try
             {
-                string[] PlyRoles = new string[4] { "Captain", "GoalKicker", "PlayMaker1", "PlayMaker2" };
+                string[] PlyRoles = ["Captain", "GoalKicker", "PlayMaker1", "PlayMaker2"];
 
                 dt = new DataTable();
 
-                dt.Columns.Add("Roles", Type.GetType("System.String"));
-                dt.Columns.Add("Player Id", Type.GetType("System.Int32"));
-                dt.Columns.Add("First Name", Type.GetType("System.String"));
-                dt.Columns.Add("Last Name", Type.GetType("System.String"));
-                dt.Columns.Add("Primary Role", Type.GetType("System.String"));
-                dt.Columns.Add("Secondary Role", Type.GetType("System.String"));
-                dt.Columns.Add("Tertiary Role", Type.GetType("System.String"));
+                dt.Columns.Add("Roles", typeof(string));
+                dt.Columns.Add("Player Id", typeof(int));
+                dt.Columns.Add("First Name", typeof(string));
+                dt.Columns.Add("Last Name", typeof(string));
+                dt.Columns.Add("Primary Role", typeof(string));
+                dt.Columns.Add("Secondary Role", typeof(string));
+                dt.Columns.Add("Tertiary Role", typeof(string));
 
                 if (MainDataGridView5.Rows.Count != 0)
                 {
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < Global.MIN_PLAYERS_PER_TEAM_ROLES; i++)
                     {
                         int SelectedIndex = SearchID.PlayersIndex(Global.team[TeamIndex].nineRoles[i].nineRoleId);
                         dt.Rows.Add();

@@ -62,9 +62,9 @@ namespace RL26_Database_Editor
 
                 dataGridView1.DataSource = dt;
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -129,9 +129,9 @@ namespace RL26_Database_Editor
                     return;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -210,9 +210,9 @@ namespace RL26_Database_Editor
                     MainDataGridView1.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

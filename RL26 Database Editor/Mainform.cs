@@ -330,51 +330,65 @@ namespace RL26_Database_Editor
 
         private void Search()
         {
-            bool valueResult = true;
+            if (string.IsNullOrWhiteSpace(SearchToolStripTextBox.Text)) // Handles empty or whitespace-only input
+            {
+                return;
+            }
 
             try
             {
-                if (SearchToolStripTextBox.Text == string.Empty)
-                    return;
+                bool found = false;
 
-                int RowIndex = Players_dataGridView.CurrentCell.RowIndex;
-                int RowCount = Players_dataGridView.Rows.Count;
-                int index = Players_dataGridView.CurrentCell.RowIndex + 1;
-
-                if (RowIndex == 0)
-                    index = 0;
-
-                if (index > RowCount - 1)
-                    index = 0;
-
-                for (int j = index; j < RowCount; j++)
+                // Determine the starting index for the search
+                int startIndex = 0;
+                if (Players_dataGridView.CurrentCell != null) // Check if a cell is selected
                 {
-                    if ((Players_dataGridView.Rows[j].Cells[3].Value.ToString() + " " + Players_dataGridView.Rows[j].Cells[4].Value.ToString()).Contains(SearchToolStripTextBox.Text))
+                    startIndex = Players_dataGridView.CurrentCell.RowIndex + 1;
+                    if (startIndex >= Players_dataGridView.Rows.Count)
                     {
-                        Players_dataGridView.Focus();
-                        Players_dataGridView.Rows[j].Visible = true;
-                        Players_dataGridView.Rows[j].Selected = true;
-                        Players_dataGridView.CurrentCell = Players_dataGridView.Rows[j].Cells[0];
-                        Players_dataGridView.Refresh();
-                        valueResult = false;
-                        break;
+                        startIndex = 0; // Wrap around to the beginning
                     }
                 }
 
-                if (valueResult)
+                // Iterate through the rows
+                for (int i = startIndex; i < Players_dataGridView.Rows.Count; i++)
+                {
+                    DataGridViewRow row = Players_dataGridView.Rows[i]; // Cache the row for efficiency
+
+                    // Build the full name string
+                    string fullName = $"{row.Cells[3].Value?.ToString() ?? string.Empty} {row.Cells[4].Value?.ToString() ?? string.Empty}"; // Null-conditional operator and null-coalescing operator
+
+                    // Perform the search (case-insensitive)
+                    if (fullName.Contains(SearchToolStripTextBox.Text, StringComparison.OrdinalIgnoreCase)) // Case-insensitive comparison
+                    {
+                        // Found a match!
+                        Players_dataGridView.Focus();
+                        row.Visible = true; // Ensure the row is visible (if filtering is in place)
+                        row.Selected = true;
+                        Players_dataGridView.CurrentCell = row.Cells[0];
+                        Players_dataGridView.Refresh(); // Consider if Refresh() is truly needed here.
+                        found = true;
+                        break; // Exit the loop once a match is found
+                    }
+                }
+
+                // Handle the case where no match was found
+                if (!found)
                 {
                     Players_dataGridView.Focus();
-                    Players_dataGridView.Rows[0].Visible = true;
-                    Players_dataGridView.Rows[0].Selected = true;
-                    Players_dataGridView.CurrentCell = Players_dataGridView.Rows[0].Cells[0];
-                    Players_dataGridView.Refresh();
+                    if (Players_dataGridView.Rows.Count > 0) // Check if there are any rows to select
+                    {
+                        Players_dataGridView.Rows[0].Visible = true;
+                        Players_dataGridView.Rows[0].Selected = true;
+                        Players_dataGridView.CurrentCell = Players_dataGridView.Rows[0].Cells[0];
+                    }
+                    Players_dataGridView.Refresh(); // Consider if Refresh() is truly needed here.
                     MessageBox.Show("Could not find player name.", "No Results Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

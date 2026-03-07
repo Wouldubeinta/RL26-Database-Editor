@@ -44,9 +44,9 @@
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             return selectedIndex;
         }
@@ -66,9 +66,9 @@
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             return SelectedIndex;
         }

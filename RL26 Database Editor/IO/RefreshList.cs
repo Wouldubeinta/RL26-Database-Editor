@@ -93,10 +93,10 @@ namespace RL26_Database_Editor
                 Imagelist = BitmapImage.genderImages();
 
                 dt.Columns.Add("Gender", typeof(Image));
-                dt.Columns.Add("Team Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Team ID", Type.GetType("System.Int32"));
-                dt.Columns.Add("Location Name", Type.GetType("System.String"));
-                dt.Columns.Add("Club Name", Type.GetType("System.String"));
+                dt.Columns.Add("Team Index", typeof(int));
+                dt.Columns.Add("Team ID", typeof(int));
+                dt.Columns.Add("Location Name", typeof(string));
+                dt.Columns.Add("Club Name", typeof(string));
 
                 for (int i = 0; i < Global.team_amount; i++)
                 {
@@ -120,9 +120,9 @@ namespace RL26_Database_Editor
                 Teams_dataGridView.CurrentCell = Teams_dataGridView.Rows[Global.teamRowIndex].Cells[0];
                 Teams_dataGridView.Rows[Global.teamRowIndex].Visible = true;
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -139,10 +139,10 @@ namespace RL26_Database_Editor
                 Imagelist = BitmapImage.genderImages();
 
                 dt.Columns.Add("Gender", typeof(Image));
-                dt.Columns.Add("Player Index", Type.GetType("System.Int32"));
-                dt.Columns.Add("Player ID", Type.GetType("System.Int32"));
-                dt.Columns.Add("First Name", Type.GetType("System.String"));
-                dt.Columns.Add("Last Name", Type.GetType("System.String"));
+                dt.Columns.Add("Player Index", typeof(int));
+                dt.Columns.Add("Player ID", typeof(int));
+                dt.Columns.Add("First Name", typeof(string));
+                dt.Columns.Add("Last Name", typeof(string));
 
                 for (int i = 0; i < Global.player_amount; i++)
                 {
@@ -166,9 +166,9 @@ namespace RL26_Database_Editor
                 Players_dataGridView.CurrentCell = Players_dataGridView.Rows[Global.playerRowIndex].Cells[0];
                 Players_dataGridView.Rows[Global.playerRowIndex].Visible = true;
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

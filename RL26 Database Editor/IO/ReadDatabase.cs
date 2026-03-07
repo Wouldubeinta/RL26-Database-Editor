@@ -470,8 +470,6 @@ namespace RL26_Database_Editor
                     Global.team[i].jerseyDataSize = br.ReadInt32(Endian.Little);
                     Global.team[i].jerseyData = br.ReadBytes(Global.team[i].jerseyDataSize, Endian.Little);
 
-                    int o = 0;
-
                     /*
                     //int jerseyDataSize = Global.team[i].jerseyDataSize - (2 + (518 * 8) + 9);
                     //Global.team[i].jerseyData = br.ReadBytes(jerseyDataSize, Endian.Little);
@@ -568,9 +566,9 @@ namespace RL26_Database_Editor
                 Teams_dataGridView.Columns[3].Width = 185;
                 Teams_dataGridView.Columns[4].Width = 185;
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
@@ -1378,9 +1376,9 @@ namespace RL26_Database_Editor
                 Players_dataGridView.Columns[3].Width = 155;
                 Players_dataGridView.Columns[4].Width = 155;
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {

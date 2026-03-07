@@ -488,6 +488,7 @@ namespace RL26_Database_Editor
             Global.team[Team_Index].logoSize = Convert.ToByte(Logo_comboBox.Text.Length);
             Global.team[Team_Index].logo = Logo_comboBox.Text;
 
+            Global.team[Team_Index].isWcLogo = isWorldCup_checkBox.Checked;
             Global.team[Team_Index].wcLogoSize = Convert.ToByte(Logo_comboBox.Text.Length);
             Global.team[Team_Index].wcLogo = Logo_comboBox.Text;
 
@@ -785,9 +786,9 @@ namespace RL26_Database_Editor
 
                 players_dataGridView.DataSource = Playersdt;
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -830,9 +831,9 @@ namespace RL26_Database_Editor
                     lineup_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -873,9 +874,9 @@ namespace RL26_Database_Editor
                     assignRoles_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -917,9 +918,9 @@ namespace RL26_Database_Editor
                     ninesLineup_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -961,9 +962,9 @@ namespace RL26_Database_Editor
                     ninesAssignRoles_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -997,9 +998,9 @@ namespace RL26_Database_Editor
                     feederClubs_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -1033,9 +1034,9 @@ namespace RL26_Database_Editor
                     fedFromClubs_dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -1824,9 +1825,9 @@ namespace RL26_Database_Editor
                     MessageBox.Show("Team Jersey has finished importing", "Team Jersey Importing Is Complete :)", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
@@ -1904,9 +1905,9 @@ namespace RL26_Database_Editor
 
                 MessageBox.Show("Team Jersey has finished exporting", "Team Jersey Exporting Is Complete :)", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {

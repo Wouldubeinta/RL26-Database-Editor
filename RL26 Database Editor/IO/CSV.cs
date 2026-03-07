@@ -85,7 +85,7 @@ namespace RL26_Database_Editor
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + ex, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -128,10 +128,10 @@ namespace RL26_Database_Editor
                                 if (bm.Width == 13)
                                     gender = "Female";
 
-                                output[i] += gender.TrimEnd(new char[] { (char)0 }) + ",";
+                                output[i] += gender.TrimEnd([(char)0]) + ",";
                             }
                             else
-                                output[i] += dGV.Rows[i - 1].Cells[j].Value.ToString().TrimEnd(new char[] { (char)0 }) + ",";
+                                output[i] += dGV.Rows[i - 1].Cells[j].Value.ToString().TrimEnd([(char)0]) + ",";
 
                             if (j == columnCount - 1)
                             {
@@ -150,9 +150,10 @@ namespace RL26_Database_Editor
 
                 File.WriteAllLines(filename, output, Encoding.Default);
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
             }
             finally
             {

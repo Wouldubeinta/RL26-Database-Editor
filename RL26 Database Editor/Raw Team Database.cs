@@ -85,9 +85,9 @@ namespace RL26_Database_Editor
                     dataGridView1.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show($"Error occurred, report it to Wouldy : {ex}", "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -106,25 +106,28 @@ namespace RL26_Database_Editor
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].clubName = dataGridView1.Rows[i].Cells[4].Value.ToString();
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].abbreviatedNameSize = Convert.ToByte(dataGridView1.Rows[i].Cells[5].Value.ToString().Length);
                 Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].abbreviatedName = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryColour.r = Convert.ToByte(dataGridView1.Rows[i].Cells[6].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryColour.g = Convert.ToByte(dataGridView1.Rows[i].Cells[7].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryColour.b = Convert.ToByte(dataGridView1.Rows[i].Cells[8].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryColour.r = Convert.ToByte(dataGridView1.Rows[i].Cells[9].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryColour.g = Convert.ToByte(dataGridView1.Rows[i].Cells[10].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryColour.b = Convert.ToByte(dataGridView1.Rows[i].Cells[11].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hudTextColour.r = Convert.ToByte(dataGridView1.Rows[i].Cells[12].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hudTextColour.g = Convert.ToByte(dataGridView1.Rows[i].Cells[13].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hudTextColour.b = Convert.ToByte(dataGridView1.Rows[i].Cells[14].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].clubType = Convert.ToInt32(dataGridView1.Rows[i].Cells[15].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].affiliations = Convert.ToInt32(dataGridView1.Rows[i].Cells[16].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].supporters = Convert.ToInt32(dataGridView1.Rows[i].Cells[17].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].commentaryTeamLocationHash = Convert.ToUInt32(dataGridView1.Rows[i].Cells[18].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].commentaryTeamMascotHash = Convert.ToUInt32(dataGridView1.Rows[i].Cells[19].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumbering = Convert.ToBoolean(dataGridView1.Rows[i].Cells[20].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumberingSystem = Convert.ToInt32(dataGridView1.Rows[i].Cells[21].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].frontendVisible = Convert.ToBoolean(dataGridView1.Rows[i].Cells[22].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].defaultLineupCategory = Convert.ToInt32(dataGridView1.Rows[i].Cells[23].Value);
-                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].WorldCupTeam = Convert.ToBoolean(dataGridView1.Rows[i].Cells[24].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].logo = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].wcLogo = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryColour.r = Convert.ToByte(dataGridView1.Rows[i].Cells[7].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryColour.g = Convert.ToByte(dataGridView1.Rows[i].Cells[8].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].primaryColour.b = Convert.ToByte(dataGridView1.Rows[i].Cells[9].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryColour.r = Convert.ToByte(dataGridView1.Rows[i].Cells[10].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryColour.g = Convert.ToByte(dataGridView1.Rows[i].Cells[11].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].secondaryColour.b = Convert.ToByte(dataGridView1.Rows[i].Cells[12].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hudTextColour.r = Convert.ToByte(dataGridView1.Rows[i].Cells[13].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hudTextColour.g = Convert.ToByte(dataGridView1.Rows[i].Cells[14].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].hudTextColour.b = Convert.ToByte(dataGridView1.Rows[i].Cells[15].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].clubType = Convert.ToInt32(dataGridView1.Rows[i].Cells[16].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].affiliations = Convert.ToInt32(dataGridView1.Rows[i].Cells[17].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].supporters = Convert.ToInt32(dataGridView1.Rows[i].Cells[18].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].commentaryTeamLocationHash = Convert.ToUInt32(dataGridView1.Rows[i].Cells[19].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].commentaryTeamMascotHash = Convert.ToUInt32(dataGridView1.Rows[i].Cells[20].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumbering = Convert.ToBoolean(dataGridView1.Rows[i].Cells[21].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].alternateNumberingSystem = Convert.ToInt32(dataGridView1.Rows[i].Cells[22].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].frontendVisible = Convert.ToBoolean(dataGridView1.Rows[i].Cells[23].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].defaultLineupCategory = Convert.ToInt32(dataGridView1.Rows[i].Cells[24].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].WorldCupTeam = Convert.ToBoolean(dataGridView1.Rows[i].Cells[25].Value);
+                Global.team[Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value)].isWcLogo = Convert.ToBoolean(dataGridView1.Rows[i].Cells[25].Value);
 
                 toolStripProgressBar1.Maximum = dataGridView1.Rows.Count;
                 toolStripProgressBar1.Value = i;

@@ -238,8 +238,12 @@ IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY C
 If the disclaimer of warranty and limitation of liability provided above cannot be given local legal effect according to their terms, reviewing courts shall apply local law that most closely approximates an absolute waiver of all civil liability in connection with the Program, unless a warranty or assumption of liability accompanies a copy of the Program in return for a fee.</value>
   </data>
   <data name="changelog_richTextBox.Text" xml:space="preserve">
-    <value>-1.0.4.17-
-* Added latest team and player database from - v1.0.3893
+    <value>-1.0.4.18-
+* Added FolderHash and FileHash to the xml, so it works with the Blobset Tools update v1.1.9.45.
+* Updated default data files to v1.0.5033! Also fixed the data files because they somehow ended up doubled up again... classic.
+
+-1.0.4.17-
+* Added latest team and player database from - v1.0.5013.
 * Fixed a issue with Raw Team DB not saving.
 
 -1.0.3.16-

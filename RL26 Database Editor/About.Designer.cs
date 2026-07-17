@@ -207,7 +207,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(625, 450);
+            ClientSize = new Size(625, 446);
             Controls.Add(copyright_label);
             Controls.Add(version_label);
             Controls.Add(title_label);
@@ -216,9 +216,9 @@
             Controls.Add(changelog_tabControl);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(641, 489);
+            MaximumSize = new Size(641, 485);
             MinimizeBox = false;
-            MinimumSize = new Size(641, 489);
+            MinimumSize = new Size(641, 485);
             Name = "About";
             Text = "About";
             Load += About_Load;

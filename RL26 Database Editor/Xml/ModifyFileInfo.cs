@@ -34,6 +34,8 @@ namespace RL26_Database_Editor
     {
         #region Fields
         private int index = 0;
+        private string folderHash = "2b";
+        private string fileNameHash = "e30c8187cabaf6";
         private bool isCompressed = true;
         private int mainCompressedSize = 0;
         private int mainUnCompressedSize = 0;
@@ -47,6 +49,20 @@ namespace RL26_Database_Editor
         {
             get { return index; }
             set { index = value; }
+        }
+
+        [XmlAttribute()]
+        public string FolderHash
+        {
+            get { return folderHash; }
+            set { folderHash = value; }
+        }
+
+        [XmlAttribute()]
+        public string FileNameHash
+        {
+            get { return fileNameHash; }
+            set { fileNameHash = value; }
         }
 
         [XmlAttribute()]

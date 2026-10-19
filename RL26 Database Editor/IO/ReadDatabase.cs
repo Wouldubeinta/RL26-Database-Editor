@@ -394,6 +394,31 @@ namespace RL26_Database_Editor
                         Global.team[i].lineupsOld[3].shirtNumber = LCentreShirtNumber;
                     }
 
+                    Global.team[i].isNinesMatch = br.ReadBoolean();
+                    Global.team[i].nineRoles = new TeamData.NineRoles[Global.MIN_PLAYERS_PER_TEAM_ROLES];
+                    Global.team[i].nineLineups = new TeamData.NineLineups[Global.MIN_PLAYERS_PER_TEAM_NINES];
+
+                    if (Global.team[i].isNinesMatch) 
+                    {
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                        {
+                            Global.team[i].nineRoles[j].isNinesRoleId = br.ReadBoolean();
+                            Global.team[i].nineRoles[j].nineRoleId = 0;
+
+                            if (Global.team[i].nineRoles[j].isNinesRoleId)
+                                Global.team[i].nineRoles[j].nineRoleId = br.ReadInt32(Endian.Little);
+                        }
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NINES; j++)
+                        {
+                            Global.team[i].nineLineups[j].isNineLineupId = br.ReadBoolean();
+                            Global.team[i].nineLineups[j].nineLineupId = 1;
+
+                            if (Global.team[i].nineLineups[j].isNineLineupId)
+                                Global.team[i].nineLineups[j].nineLineupId = br.ReadInt32(Endian.Little);
+                        }
+                    }
+
                     Global.team[i].isNRL2026Match = br.ReadBoolean();
                     Global.team[i].rolesNew = new TeamData.Roles[Global.MIN_PLAYERS_PER_TEAM_ROLES];
                     Global.team[i].lineupsNew = new TeamData.Lineups[Global.MIN_PLAYERS_PER_TEAM_NRL2026]; // 19 players NRL 2026 lineups
@@ -440,31 +465,6 @@ namespace RL26_Database_Editor
                         Global.team[i].lineupsNew[2].shirtNumber = RCentreShirtNumber;
                         Global.team[i].lineupsNew[3].lineupId = LCentre;
                         Global.team[i].lineupsNew[3].shirtNumber = LCentreShirtNumber;
-                    }
-
-                    Global.team[i].isNinesMatch = br.ReadBoolean();
-                    Global.team[i].nineRoles = new TeamData.NineRoles[Global.MIN_PLAYERS_PER_TEAM_ROLES];
-                    Global.team[i].nineLineups = new TeamData.NineLineups[Global.MIN_PLAYERS_PER_TEAM_NINES];
-
-                    if (Global.team[i].isNinesMatch) 
-                    {
-                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
-                        {
-                            Global.team[i].nineRoles[j].isNinesRoleId = br.ReadBoolean();
-                            Global.team[i].nineRoles[j].nineRoleId = 0;
-
-                            if (Global.team[i].nineRoles[j].isNinesRoleId)
-                                Global.team[i].nineRoles[j].nineRoleId = br.ReadInt32(Endian.Little);
-                        }
-
-                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NINES; j++)
-                        {
-                            Global.team[i].nineLineups[j].isNineLineupId = br.ReadBoolean();
-                            Global.team[i].nineLineups[j].nineLineupId = 1;
-
-                            if (Global.team[i].nineLineups[j].isNineLineupId)
-                                Global.team[i].nineLineups[j].nineLineupId = br.ReadInt32(Endian.Little);
-                        }
                     }
 
                     Global.team[i].jerseyDataSize = br.ReadInt32(Endian.Little);

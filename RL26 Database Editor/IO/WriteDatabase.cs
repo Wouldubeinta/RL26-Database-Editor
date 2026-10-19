@@ -335,6 +335,30 @@ namespace RL26_Database_Editor
                         }
                     }
 
+                    // Lineup Nines Match
+                    bw.WriteBool(Global.team[i].isNinesMatch);
+
+                    if (Global.team[i].isNinesMatch) 
+                    {
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
+                        {
+                            bw.WriteBool(Global.team[i].nineRoles[j].isNinesRoleId);
+
+                            if (Global.team[i].nineRoles[j].isNinesRoleId)
+                                bw.WriteInt32(Global.team[i].nineRoles[j].nineRoleId, Endian.Little);
+                        }
+
+                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NINES; j++)
+                        {
+                            bw.WriteBool(Global.team[i].nineLineups[j].isNineLineupId);
+
+                            if (Global.team[i].nineLineups[j].isNineLineupId)
+                            {
+                                bw.WriteInt32(Global.team[i].nineLineups[j].nineLineupId, Endian.Little);
+                            }
+                        }
+                    }
+
                     // Lineup - NRL 2026 Match
                     bw.WriteBool(Global.team[i].isNRL2026Match);
 
@@ -378,30 +402,6 @@ namespace RL26_Database_Editor
                                 bw.WriteUInt8(Global.team[i].lineupsNew[j].shirtNumber);
                             }
 
-                        }
-                    }
-
-                    // Lineup Nines Match
-                    bw.WriteBool(Global.team[i].isNinesMatch);
-
-                    if (Global.team[i].isNinesMatch) 
-                    {
-                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_ROLES; j++)
-                        {
-                            bw.WriteBool(Global.team[i].nineRoles[j].isNinesRoleId);
-
-                            if (Global.team[i].nineRoles[j].isNinesRoleId)
-                                bw.WriteInt32(Global.team[i].nineRoles[j].nineRoleId, Endian.Little);
-                        }
-
-                        for (int j = 0; j < Global.MIN_PLAYERS_PER_TEAM_NINES; j++)
-                        {
-                            bw.WriteBool(Global.team[i].nineLineups[j].isNineLineupId);
-
-                            if (Global.team[i].nineLineups[j].isNineLineupId)
-                            {
-                                bw.WriteInt32(Global.team[i].nineLineups[j].nineLineupId, Endian.Little);
-                            }
                         }
                     }
 
